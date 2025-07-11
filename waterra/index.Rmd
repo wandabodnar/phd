@@ -1,0 +1,93 @@
+---
+title: "Environmental DNA Workflow Guide"
+author: "Wanda Bodnar"
+date: "2025"
+output:
+  rmarkdown::html_document:
+    toc: true
+    toc_float: true
+    number_sections: false
+    toc_depth: 3
+    css: style.css
+---
+
+
+## Introduction
+
+> This guide outlines the complete workflow for **environmental DNA** using *Waterra™ capsule filters*, from field sampling to bioinformatics and ecological interpretation. It includes protocols, materials, explanations, and quality control steps.
+
+## 1. Water Collection
+
+- Aim water collection for high slack tide, ideally within the 30 mins window of high tide.
+- Collect water samples using rope and 8L bucket from each  site using 3x2L Nalgene HDPE bottles.
+- Also measure environmental parameters (temperature, DO, salinity and turbidity) at each haul.
+
+## 2. Water Filtration
+- Filter the 2L Nalgene HDPE bottles with sample water through a single Waterra™ capsule using a peristaltic pump and Masterflex® silicone tubing (size 15).
+- Label filters and store them at -20 °C until processing.
+
+## 3. DNA Extraction
+
+### 🧊 Resuspension of the eDNA
+
+1. Waterra filters should be removed from the freezer beforehand and can be defrosted in the fridge while they await extraction. Give around 1 hour to defrost.
+2. Clean work area with 25% bleach solution and blue roll.  
+   - This will avoid cross-contamination.
+3. Fill two 50 mL Falcon/large centrifuge tubes (per Waterra) with TE resuspension buffer, making sure to label the tubes with the sample number.
+4. Shake out any residual water from the Waterra’s ‘inlet.’ Apply parafilm to cover the smooth ‘outlet’ of the filter.
+5. Pipette 50 mL of the TE resuspension buffer into the capsule through the ridged ‘inlet’ and seal with more parafilm.
+6. Agitate capsule for five minutes; a fingertip can be placed over each end and the capsule manually shaken, or if parafilm is securely taped into place, the capsule can be held against a vortex.
+7. Pour the solution back into the first 50 mL Falcon tube, and repeat steps 5 and 6 for the second 50 mL Falcon tube, ending up with two 50 mL Falcon tubes of eDNA resuspended from the Waterras in turbid TE buffer. The spent Waterra filter can be thrown away.
+   - TE buffer (50 mM Tris, 10 mM EDTA, pH 8.0) gently washes off DNA stuck inside the Waterra capsule.
+     - Tris: stabilises pH
+     - EDTA: chelates divalent cations (Mg²⁺, Ca²⁺) to prevent DNase activity (The process of DNA being cut/broken down)
+
+### 🌀 Centrifuging
+
+8. The two 50 mL Falcon tubes can be accommodated in the large centrifuge in lab 223. Centrifuge the samples for 10 minutes at 4500 rpm to separate debris/sediment from the liquid DNA-containing fraction.
+   - Supernatant (DNA in solution)
+   - Pellet (sediment or cells)
+
+### 💧 Filtering through funnel filter
+
+9. An analytical test filter funnel attached to a Buchner funnel and peristaltic pump is used to filter the buffer mix through a 0.45-micron disc filter (Nalgene™).
+10. Combine the two Falcon tubes per sample by pouring the now clear supernatant from both tubes through the funnel, trying to retain the sediment in the tubes.
+11. Adjust the speed of the peristaltic pump to pull the supernatant through the funnel, with an additional minute of filtering to dry the funnel filter disc. Samples which required multiple filters due to build-up of sediment can be consolidated into one analytical filter funnel.
+12. You should be left with one funnel filter disc which has had the clear supernatant passed through, and two Falcon tubes with sediment left at the bottom.
+
+### 🧬 Qiagen DNeasy PowerWater steps
+
+13. FILTER: Remove the upper portion of the disposable filter funnel to expose the white membrane of the filter disc. Using sterile forceps (use 25% bleach solution and rinse with RO water (Reverse Osmosis)). Roll up the filter membrane with the top side facing inwards, and insert into a 5 mL PowerWater DNA bead tube. Add 1 mL of PW1 solution.
+14. SEDIMENT: Add 1 mL PW1 solution to one of the Falcon tubes containing sediment. Use the PW1 solution to rinse out the tube into the second Falcon. This sediment in PW1 mixture is then poured into a 5 mL PowerWater DNA bead tube.
+   - PW1 (lysis buffer): breaks open cell walls/membranes
+   - Proteinase K: digests proteins and DNases, freeing up the DNA
+   - Beads: provide mechanical disruption (especially for bacteria, algae, etc.)
+   - QIAshredder column: filters debris, allowing only clean lysate through
+
+### ℹ️ Additional info
+
+- All work was carried out in a lateral flow cabinet which was regularly sterilised using 25% bleach solution (dH₂O).
+- All bottles were autoclaved, and all equipment sterilised regularly using 50% bleach.
+- An additional chemical lysis stage was incorporated by adding 100 µL Proteinase K and 900 µL PW1 to the Eppendorf tubes containing the dry filter paper.
+- The samples were placed in a heat block at 56 °C and agitated overnight to promote the complete breakdown of cells.
+- During overnight lysis, the Waterra disc filters absorbed a significant amount of the lysate (mixture after breaking open cells). To compensate for this, the disc filter pieces were placed into a QIAshredder column, and the remaining lysate was pooled before continuing with the DNeasy protocol.
+- A negative control was included in every extraction batch. All extractions and controls were quantified on a Qubit v2 using the Qubit dsDNA BR Assay Kit (Invitrogen).
+
+### 🧪 Materials
+- TE buffer (50 mM Tris, 10 mM EDTA)
+- 50 mL Falcon tubes
+- Parafilm
+- Buchner funnel
+- 0.45-micron disc filter (Nalgene™)
+- Proteinase K
+- QIAshredder
+- DNeasy PowerWater Kit
+- Blue roll and bleach for cleaning
+
+
+## Appendix: Shopping list
+
+
+---
+
+> **Note:** Always work in sterile conditions, document batch numbers, and maintain a detailed lab notebook throughout.
