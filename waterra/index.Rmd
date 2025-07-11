@@ -16,15 +16,21 @@ output:
 
 > This guide outlines the complete workflow for **environmental DNA** using *Waterra™ capsule filters*, from field sampling to bioinformatics and ecological interpretation. It includes protocols, materials, explanations, and quality control steps.
 
-## 1. Water Collection
+--- 
+
+## 1. Water collection
 
 - Aim water collection for high slack tide, ideally within the 30 mins window of high tide.
 - Collect water samples using rope and 8L bucket from each  site using 3x2L Nalgene HDPE bottles.
 - Also measure environmental parameters (temperature, DO, salinity and turbidity) at each haul.
 
-## 2. Water Filtration
+---
+
+## 2. Water filtration
 - Filter the 2L Nalgene HDPE bottles with sample water through a single Waterra™ capsule using a peristaltic pump and Masterflex® silicone tubing (size 15).
 - Label filters and store them at -20 °C until processing.
+
+---
 
 ## 3. DNA Extraction
 
@@ -55,7 +61,7 @@ output:
 11. Adjust the speed of the peristaltic pump to pull the supernatant through the funnel, with an additional minute of filtering to dry the funnel filter disc. Samples which required multiple filters due to build-up of sediment can be consolidated into one analytical filter funnel.
 12. You should be left with one funnel filter disc which has had the clear supernatant passed through, and two Falcon tubes with sediment left at the bottom.
 
-### 🧬 Qiagen DNeasy PowerWater steps
+### 🧬 Qiagen DNeasy PowerWater
 
 13. FILTER: Remove the upper portion of the disposable filter funnel to expose the white membrane of the filter disc. Using sterile forceps (use 25% bleach solution and rinse with RO water (Reverse Osmosis)). Roll up the filter membrane with the top side facing inwards, and insert into a 5 mL PowerWater DNA bead tube. Add 1 mL of PW1 solution.
 14. SEDIMENT: Add 1 mL PW1 solution to one of the Falcon tubes containing sediment. Use the PW1 solution to rinse out the tube into the second Falcon. This sediment in PW1 mixture is then poured into a 5 mL PowerWater DNA bead tube.
@@ -83,6 +89,101 @@ output:
 - QIAshredder
 - DNeasy PowerWater Kit
 - Blue roll and bleach for cleaning
+
+---
+
+## 4. DNA Quantification (Qubit)
+
+### 🎯 Purpose:
+- To accurately measure the concentration of double-stranded DNA (dsDNA) in the extracted samples using the Qubit fluorometer. 
+- This helps assess whether the DNA extraction was successful and whether there’s enough DNA for PCR.
+
+### 🧪 Materials:
+- Qubit v2 or v3 fluorometer
+- Qubit dsDNA BR Assay Kit (Broad Range) — suitable for 2–1000 ng
+- Qubit buffer and dye (comes with kit)
+- Qubit assay tubes (thin transparent plastic)
+- Extracted DNA samples
+- Pipettes and filter tips
+
+### 🧬 Protocol (BR or HS Assay):
+
+- Prepare Qubit working solution: Mix dye and buffer at a 1:200 ratio (e.g., 199 µL buffer + 1 µL dye per sample).
+- Label assay tubes for each standard and sample.
+- Add 190 µL of working solution to each tube.
+- Add 10 µL of your DNA sample (or Qubit standard) into each tube.
+- Vortex gently and incubate at room temperature for 2 minutes (light-sensitive!).
+- Insert tubes one at a time into the Qubit and record concentrations (ng/µL).
+
+### Expected results:
+- DNA concentrations around 1–10 ng/µL are typically good for downstream PCR.
+- Lower concentrations may require re-extraction or more cycles during PCR.
+- Controls should show DNA in positives, and none in negatives.
+
+---
+
+## 5. Gel Electrophoresis
+
+### 🎯 Purpose:
+- Confirm the presence of DNA.
+- Check its integrity (not degraded).
+- Detect any contamination.
+
+### 🔍 How it works:
+A small amount of your extracted DNA (e.g., 5 µL) is loaded into a gel alongside a **hyperladder** (DNA size standard) and **positive/negative controls**. When voltage is applied, DNA fragments migrate through the gel based on size.
+
+### It will show:
+- **Sharp band at expected size (~200–600 bp)** → Good DNA
+- **Smear** → Degraded DNA or possible contamination
+- **No band** → Low yield or failed extraction
+- **Band in negative control** → Cross-contamination (serious issue)
+
+### 🧪 Materials:
+- Agarose gel
+- TAE or TBE buffer
+- DNA stain (GelRed or SYBR Safe)
+- Hyperladder
+- Gel casting tray & comb
+- Electrophoresis chamber & power supply
+- UV or blue light transilluminator
+
+### 🧬 Lane setup example
+| Lane | Contents                    |
+|------|-----------------------------|
+| 1    | Hyperladder (size marker)   |
+| 2    | Positive control DNA        |
+| 3    | Sample 1                    |
+| 4    | Sample 2                    |
+| …    | …                           |
+| N    | Negative extraction control |
+
+---
+
+## 6. PCR Amplification
+
+### 🎯 Purpose:
+Polymerase Chain Reaction (PCR) is used to **amplify a target gene region** (e.g., mitochondrial 12S rRNA) from your extracted eDNA. This step increases the amount of target DNA so it can be sequenced.
+
+### 🔧 What happens:
+Add your extracted DNA to a PCR reaction mix containing:
+
+- Primers (Short, synthetic DNA sequences (usually ~20 bases long) that are designed to bind to a specific gene region in the target organisms’ DNA — like the 12S or COI region in fish or invertebrates.)
+- Polymerase enzyme
+- dNTPs
+- Buffer solution
+
+The mix goes through thermal cycling:
+
+1. Denaturation (~95 °C): DNA strands separate.
+2. Annealing (~50–60 °C): Primers bind to target DNA.
+3. Extension (~72 °C): Polymerase extends the new DNA strands.
+
+### 🧪 Controls:
+- **Positive control**: Known DNA template to confirm PCR is working.
+- **Negative control**: No DNA template to check for contamination.
+- **Annealing temperature**: Carefully optimised based on primers used (typically 50–60 °C).
+
+---
 
 
 ## Appendix: Shopping list
