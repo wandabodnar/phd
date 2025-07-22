@@ -53,7 +53,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#dna-extraction" id="toc-dna-extraction" class="nav-link" data-scroll-target="#dna-extraction">3. DNA extraction</a></li>
   <li><a href="#dna-quantification-qubit" id="toc-dna-quantification-qubit" class="nav-link" data-scroll-target="#dna-quantification-qubit">4. DNA quantification (Qubit)</a></li>
   <li><a href="#pcr-amplification" id="toc-pcr-amplification" class="nav-link" data-scroll-target="#pcr-amplification">5. PCR amplification</a></li>
-  <li><a href="#gel-electrophoresis-quality-check" id="toc-gel-electrophoresis-quality-check" class="nav-link" data-scroll-target="#gel-electrophoresis-quality-check">6. Gel Electrophoresis – Quality Check</a></li>
+  <li><a href="#gel-electrophoresis" id="toc-gel-electrophoresis" class="nav-link" data-scroll-target="#gel-electrophoresis">6. Gel Electrophoresis</a></li>
   <li><a href="#sequencing" id="toc-sequencing" class="nav-link" data-scroll-target="#sequencing">7. Sequencing</a></li>
   <li><a href="#bioinformatics" id="toc-bioinformatics" class="nav-link" data-scroll-target="#bioinformatics">8. Bioinformatics</a></li>
   </ul></li>
@@ -62,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#basic-concepts" id="toc-basic-concepts" class="nav-link" data-scroll-target="#basic-concepts">Basic concepts</a></li>
   <li><a href="#why-pcr-can-skew-abundance" id="toc-why-pcr-can-skew-abundance" class="nav-link" data-scroll-target="#why-pcr-can-skew-abundance">Why PCR can skew abundance</a></li>
   <li><a href="#estimating-relative-abundance" id="toc-estimating-relative-abundance" class="nav-link" data-scroll-target="#estimating-relative-abundance">Estimating relative abundance</a></li>
+  <li><a href="#how-representative-are-my-results" id="toc-how-representative-are-my-results" class="nav-link" data-scroll-target="#how-representative-are-my-results">How representative are my results?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -320,8 +321,8 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 </section>
-<section id="gel-electrophoresis-quality-check" class="level2">
-<h2 class="anchored" data-anchor-id="gel-electrophoresis-quality-check">6. Gel Electrophoresis – Quality Check</h2>
+<section id="gel-electrophoresis" class="level2">
+<h2 class="anchored" data-anchor-id="gel-electrophoresis">6. Gel Electrophoresis</h2>
 <blockquote class="blockquote">
 <p><strong>Goal</strong>: Visually confirm that PCR worked and check for contamination.</p>
 </blockquote>
@@ -531,6 +532,47 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>For actual copy numbers, use quantitative PCR (qPCR) or digital PCR (dPCR) instead.</li>
 <li>These measure amplification in real-time or partition the DNA to count molecules — far more precise.</li>
+</ul>
+</section>
+<section id="how-representative-are-my-results" class="level2">
+<h2 class="anchored" data-anchor-id="how-representative-are-my-results">How representative are my results?</h2>
+<p>Typically only a small aliquot (e.g.&nbsp;5–20 μL) of each PCR reaction sent for sequencing, and that’s okay because:</p>
+<ul>
+<li>PCR creates millions of identical amplicons.</li>
+<li>Every tube has the same sequence information.</li>
+<li>Amplification is exponential and uniform, so a small subsample contains the same DNA content as the whole tube.</li>
+</ul>
+<p>In other words, the amplicons are clonal (identical), so the portion sent is just as informative as the rest.</p>
+<p>To ensure meaningful results, focus on consistency and care in earlier stages:</p>
+<ol type="1">
+<li>Water collection
+<ul>
+<li>Collect consistent volumes (e.g., 5 L per sample).</li>
+<li>Cover spatial and temporal variation in your study area.</li>
+</ul></li>
+<li>Filtration
+<ul>
+<li>Avoid filter clogging.</li>
+<li>Use consistent filter pore size and pumping technique.</li>
+</ul></li>
+<li>DNA extraction
+<ul>
+<li>Efficient extraction is key — get as much DNA off the filter as possible.</li>
+<li>Clean up inhibitors and ensure even lysis of cells.</li>
+</ul></li>
+<li>PCR setup
+<ul>
+<li>Use validated primers.</li>
+<li>Run positive and negative controls.</li>
+<li>Minimise contamination and inhibition.</li>
+</ul></li>
+</ol>
+<p>Tips:</p>
+<ul>
+<li>Use technical replicates (repeat PCRs on the same extract).</li>
+<li>Pool multiple PCR replicates before sequencing.</li>
+<li>Standardise sampling, extraction, and amplification protocols.</li>
+<li>Always run controls.</li>
 </ul>
 </section>
 </section>
