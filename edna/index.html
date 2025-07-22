@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a>
+  <li><a href="#detailed-workflow" id="toc-detailed-workflow" class="nav-link" data-scroll-target="#detailed-workflow">Detailed workflow</a>
   <ul class="collapse">
   <li><a href="#water-collection" id="toc-water-collection" class="nav-link" data-scroll-target="#water-collection">1. Water collection</a></li>
   <li><a href="#water-filtration" id="toc-water-filtration" class="nav-link" data-scroll-target="#water-filtration">2. Water filtration</a></li>
@@ -55,6 +55,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#pcr-amplification" id="toc-pcr-amplification" class="nav-link" data-scroll-target="#pcr-amplification">5. PCR amplification</a></li>
   <li><a href="#gel-electrophoresis-quality-check" id="toc-gel-electrophoresis-quality-check" class="nav-link" data-scroll-target="#gel-electrophoresis-quality-check">6. Gel Electrophoresis – Quality Check</a></li>
   <li><a href="#sequencing" id="toc-sequencing" class="nav-link" data-scroll-target="#sequencing">7. Sequencing</a></li>
+  <li><a href="#bioinformatics" id="toc-bioinformatics" class="nav-link" data-scroll-target="#bioinformatics">8. Bioinformatics</a></li>
   </ul></li>
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
   <ul class="collapse">
@@ -91,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="summary" class="level1">
 <h1>Summary</h1>
 <p>💧 <strong>1. Water Collection</strong></p>
-<p>→ Collect environmental water samples using sterile techniques (e.g.&nbsp;Waterra pump or syringes).</p>
+<p>→ Collect environmental water samples using sterile techniques.</p>
 <p>🧪 <strong>2. Filtration</strong></p>
 <p>→ Pass water through membrane filters to capture suspended DNA (eDNA) from the environment.</p>
 <p>🧬 <strong>3. DNA Extraction</strong></p>
@@ -106,8 +107,8 @@ ul.task-list li input[type="checkbox"] {
 <p>→ Pool PCR amplicons, add sample-specific barcodes (indexes), and sequence using a platform like Illumina MiSeq.</p>
 <hr>
 </section>
-<section id="workflow" class="level1">
-<h1>Workflow</h1>
+<section id="detailed-workflow" class="level1">
+<h1>Detailed workflow</h1>
 <section id="water-collection" class="level2">
 <h2 class="anchored" data-anchor-id="water-collection">1. Water collection</h2>
 <blockquote class="blockquote">
@@ -118,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Use sterile sampling bottles and gloves to avoid contamination.</li>
 </ul></li>
-<li><p>Optional: record environmental variables (e.g., salinity, temperature, DO).</p></li>
+<li><p><em>Optional: record environmental variables (e.g., salinity, temperature, DO).</em></p></li>
 </ul>
 <hr>
 </section>
@@ -132,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>These filters trap DNA and cell fragments on the internal membrane.</li>
 </ul></li>
-<li><p>Filters are then stored frozen at -20 °C or lower to preserve DNA integrity.</p></li>
+<li><p>Store filters at -20 °C or lower to preserve DNA integrity.</p></li>
 </ul>
 <hr>
 </section>
@@ -273,11 +274,11 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>A forward primer binds to the start of the barcode region on the 5′→3′ strand.</p>
 <ul>
-<li>Forward primer (12S MiFish-U-F) forward_primer &lt;- “GTCGGTAAAACTCGTGCCAGC”</li>
+<li>Forward primer (12S MiFish-U-F): “GTCGGTAAAACTCGTGCCAGC”</li>
 </ul></li>
 <li><p>A reverse primer binds to the opposite strand, flanking the end of the barcode in 3′→5′ direction but written 5′→3′.</p>
 <ul>
-<li>Reverse primer (12S MiFish-U-R) reverse_primer &lt;- “CATAGTGGGGTATCTAATCCCAGTTTG”</li>
+<li>Reverse primer (12S MiFish-U-R): “CATAGTGGGGTATCTAATCCCAGTTTG”</li>
 </ul></li>
 </ul></li>
 <li><p>Primers bind to flanking regions — just before and after the barcode — to selectively copy that section and ignore the rest of the genome.</p></li>
@@ -304,8 +305,8 @@ ul.task-list li input[type="checkbox"] {
 <p>PCR mix typically includes:</p>
 <ul>
 <li>eDNA extract</li>
-<li>Forward primer (e.g., “GTCGGTAAAACTCGTGCCAGC”)</li>
-<li>Reverse primer (e.g., “CATAGTGGGGTATCTAATCCCAGTTTG”)</li>
+<li>Forward primer</li>
+<li>Reverse primer</li>
 <li>Polymerase enzyme (e.g.&nbsp;Taq)</li>
 <li>dNTPs (A, T, C, G building blocks)</li>
 <li>Buffer</li>
@@ -344,7 +345,6 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>A clear band at the expected size means the PCR likely worked.</li>
 <li>Smearing, multiple bands, or bands of unexpected size may indicate non-specific amplification or degraded DNA.</li>
-<li>A band in the negative control suggests contamination (a serious issue).</li>
 <li>No band at all can mean PCR failed or there was insufficient template DNA.</li>
 </ul></li>
 <li>Check for:
@@ -397,7 +397,15 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="materials-2">🧪 Materials</h3>
 <ul>
 <li>Agarose gel</li>
-<li>TAE or TBE buffer</li>
+<li>TAE or TBE buffer
+<ul>
+<li>TAE (Tris-Acetate-EDTA) and TBE (Tris-Borate-EDTA) are both buffer solutions used in agarose gel electrophoresis to separate DNA fragments.
+<ul>
+<li>Both maintain a stable pH (~8.0) during electrophoresis.</li>
+<li>Both conduct electricity so that DNA can migrate through the gel.</li>
+<li>Both contain EDTA, which binds divalent metal ions (like Mg²⁺) to inhibit DNases (enzymes that could degrade DNA).</li>
+</ul></li>
+</ul></li>
 <li>DNA stain (GelRed or SYBR Safe)</li>
 <li>Hyperladder</li>
 <li>Gel casting tray &amp; comb</li>
@@ -437,6 +445,11 @@ ul.task-list li input[type="checkbox"] {
 <li>Each read ideally represents a copy of the barcode region you amplified (e.g.&nbsp;mitochondrial 12S for fish).</li>
 </ul>
 <p>A read like AGCCTTGAGAACTGCTTAC… might match European seabass.</p>
+<hr>
+</section>
+<section id="bioinformatics" class="level2">
+<h2 class="anchored" data-anchor-id="bioinformatics">8. Bioinformatics</h2>
+<p>TBA…</p>
 <hr>
 </section>
 </section>
