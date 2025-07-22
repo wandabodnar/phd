@@ -1,0 +1,411 @@
+---
+title: "Environmental DNA Workflow Guide"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    sidebar:
+      style: floating
+---
+
+# Summary
+
+💧 **1. Water Collection**
+
+→ Collect environmental water samples using sterile techniques (e.g. Waterra pump or syringes).
+
+🧪 **2. Filtration**
+
+→ Pass water through membrane filters to capture suspended DNA (eDNA) from the environment.
+
+🧬 **3. DNA Extraction**
+
+→ Isolate DNA from the filters using a commercial extraction kit (e.g. Qiagen DNeasy).
+
+🔬 **4. DNA Quantification (Qubit)**
+
+→ Measure DNA concentration to assess extraction success and ensure enough material for PCR.
+
+🧬 **5. PCR Amplification**
+
+→ Use primers to target and amplify a barcode gene (e.g. mitochondrial 12S rRNA) via thermal cycling.
+
+🧫 **6. Gel Electrophoresis**
+
+→ Run PCR products on an agarose gel to check for successful amplification and absence of contamination.
+
+📦 **7. Sequencing**
+
+→ Pool PCR amplicons, add sample-specific barcodes (indexes), and sequence using a platform like Illumina MiSeq.
+
+---
+
+# Workflow
+
+## 1. Water collection
+
+> **Goal:** Capture a snapshot of the aquatic community by collecting DNA shed by organisms into the water.
+
+- Collect surface water (ideally at high slack tide) using bottles or a bucket.
+
+  - Use sterile sampling bottles and gloves to avoid contamination.
+
+- Optional: record environmental variables (e.g., salinity, temperature, DO).
+
+---
+
+## 2. Water filtration
+
+> **Goal:** Concentrate the trace DNA onto a membrane.
+
+- Filter the water through Waterra™ capsule filters using a peristaltic pump.
+
+  - These filters trap DNA and cell fragments on the internal membrane.
+
+- Filters are then stored frozen at -20 °C or lower to preserve DNA integrity.
+
+---
+
+## 3. DNA extraction
+
+> **Goal:** Release and purify the DNA from the filters and remove unwanted material.
+
+### 🧊 Resuspension of the eDNA
+
+1. Waterra filters should be removed from the freezer beforehand and can be defrosted in the fridge while they await extraction. Give around 1 hour to defrost.
+
+2. Clean work area with 25% bleach solution and blue roll.  
+
+  - This will avoid cross-contamination.
+   
+3. Fill two 50 mL Falcon/large centrifuge tubes (per Waterra) with TE resuspension buffer, making sure to label the tubes with the sample number.
+
+4. Shake out any residual water from the Waterra’s *inlet*. Apply parafilm to cover the smooth *outlet* of the filter.
+
+5. Pipette 50 mL of the TE resuspension buffer into the capsule through the ridged *inlet* and seal with more parafilm.
+
+6. Agitate capsule for five minutes; a fingertip can be placed over each end and the capsule manually shaken, or if parafilm is securely taped into place, the capsule can be held against a vortex.
+
+7. Pour the solution back into the first 50 mL Falcon tube, and repeat steps 5 and 6 for the second 50 mL Falcon tube, ending up with two 50 mL Falcon tubes of eDNA resuspended from the Waterras in turbid TE buffer. The spent Waterra filter can be thrown away.
+
+   - TE buffer (50 mM Tris, 10 mM EDTA, pH 8.0) gently washes off DNA stuck inside the Waterra capsule.
+   
+     - Tris: stabilises pH.
+     
+     - EDTA: chelates divalent cations (Mg²⁺, Ca²⁺) to prevent DNase activity, which is the process of DNA being cut/broken down.
+
+### 🌀 Centrifuging
+
+8. The two 50 mL Falcon tubes can be accommodated in the large centrifuge in lab 223. Centrifuge the samples for 10 minutes at 4500 rpm to separate debris/sediment from the liquid DNA-containing fraction.
+   - Supernatant (DNA in solution)
+   - Pellet (sediment or cells)
+
+### 💧 Filtering through funnel filter
+
+9. An analytical test filter funnel attached to a Buchner funnel and peristaltic pump is used to filter the buffer mix through a 0.45-micron disc filter (Nalgene™).
+
+10. Combine the two Falcon tubes per sample by pouring the now clear supernatant from both tubes through the funnel, trying to retain the sediment in the tubes.
+
+11. Adjust the speed of the peristaltic pump to pull the supernatant through the funnel, with an additional minute of filtering to dry the funnel filter disc. Samples which required multiple filters due to build-up of sediment can be consolidated into one analytical filter funnel.
+
+12. You should be left with one funnel filter disc which has had the clear supernatant passed through, and two Falcon tubes with sediment left at the bottom.
+
+### 🧬 Qiagen DNeasy PowerWater
+
+13. FILTER: Remove the upper portion of the disposable filter funnel to expose the white membrane of the filter disc. Using sterile forceps (use 25% bleach solution and rinse with RO water (Reverse Osmosis)). Roll up the filter membrane with the top side facing inwards, and insert into a 5 mL PowerWater DNA bead tube. Add 1 mL of PW1 solution.
+
+14. SEDIMENT: Add 1 mL PW1 solution to one of the Falcon tubes containing sediment. Use the PW1 solution to rinse out the tube into the second Falcon. This sediment in PW1 mixture is then poured into a 5 mL PowerWater DNA bead tube.
+   - PW1 (lysis buffer): breaks open cell walls/membranes
+   - Proteinase K: digests proteins and DNases, freeing up the DNA
+   - Beads: provide mechanical disruption (especially for bacteria, algae, etc.)
+   - QIAshredder column: filters debris, allowing only clean lysate through
+
+### ℹ️ Additional info
+
+- All work was carried out in a lateral flow cabinet which was regularly sterilised using 25% bleach solution (dH₂O).
+- All bottles were autoclaved, and all equipment sterilised regularly using 50% bleach.
+- An additional chemical lysis stage was incorporated by adding 100 µL Proteinase K and 900 µL PW1 to the Eppendorf tubes containing the dry filter paper.
+- The samples were placed in a heat block at 56 °C and agitated overnight to promote the complete breakdown of cells.
+- During overnight lysis, the Waterra disc filters absorbed a significant amount of the lysate (mixture after breaking open cells). To compensate for this, the disc filter pieces were placed into a QIAshredder column, and the remaining lysate was pooled before continuing with the DNeasy protocol.
+- A negative control was included in every extraction batch. All extractions and controls were quantified on a Qubit v2 using the Qubit dsDNA BR Assay Kit (Invitrogen).
+
+### 🧪 Materials
+
+- TE buffer (50 mM Tris, 10 mM EDTA)
+- 50 mL Falcon tubes
+- Parafilm
+- Buchner funnel
+- 0.45-micron disc filter (Nalgene™)
+- Proteinase K
+- QIAshredder
+- DNeasy PowerWater Kit
+- Blue roll and bleach for cleaning
+
+---
+
+## 4. DNA quantification (Qubit)
+
+> **Goal**: Measures how much double-stranded DNA (dsDNA) there is in the extract.
+
+- Prepare Qubit working solution: Mix dye and buffer at a 1:200 ratio (e.g., 199 µL buffer + 1 µL dye per sample).
+- Label assay tubes for each standard and sample.
+- Add 190 µL of working solution to each tube.
+- Add 10 µL of your DNA sample (or Qubit standard) into each tube.
+- Vortex gently and incubate at room temperature for 2 minutes (light-sensitive!).
+- Insert tubes one at a time into the Qubit and record concentrations (ng/µL).
+
+### Expected results:
+
+- DNA concentrations around 1–10 ng/µL are typically good for downstream PCR.
+- Lower concentrations may require re-extraction or more cycles during PCR.
+- Controls should show DNA in positives, and none in negatives.
+
+### 🧪 Materials
+
+- Qubit v2 or v3 fluorometer
+- Qubit dsDNA BR Assay Kit (Broad Range) — suitable for 2–1000 ng
+- Qubit buffer and dye (comes with kit)
+- Qubit assay tubes (thin transparent plastic)
+- Extracted DNA samples
+- Pipettes and filter tips
+
+---
+
+## 5. PCR amplification
+
+> **Goal**: To amplify (copy) a target gene region from the DNA extract to detectable levels.
+
+- Use primers that bind to a known DNA barcode — a short, standardised region of the genome used to identify species — like a genetic fingerprint.
+
+  - For fish, a commonly used barcode is the 12S rRNA mitochondrial gene.
+
+- Primers are short, synthetic DNA sequences (~18–25 bases long) that define the start and end of the barcode region to be copied.
+
+- Two primers:
+
+  - A forward primer binds to the start of the barcode region on the 5′→3′ strand.
+  
+    - Forward primer (12S MiFish-U-F) forward_primer <- "GTCGGTAAAACTCGTGCCAGC"
+    
+
+  - A reverse primer binds to the opposite strand, flanking the end of the barcode in 3′→5′ direction but written 5′→3′.
+  
+    - Reverse primer (12S MiFish-U-R) reverse_primer <- "CATAGTGGGGTATCTAATCCCAGTTTG"
+    
+
+- Primers bind to flanking regions — just before and after the barcode — to selectively copy that section and ignore the rest of the genome.
+
+Primers:
+
+- Act as anchors for DNA synthesis.
+
+- Ensure only the target barcode region is amplified.
+
+- Make it possible to later match sequences to reference databases like GenBank or MIDORI.
+
+- Primes are trimmed from the final sequence to focus on the barcode itself.
+
+PCR uses temperature cycling to copy DNA in three main steps:
+
+1. Denaturation (~94–95 °C): The double-stranded DNA melts apart into single strands so primers can bind.
+
+2. Annealing (~50–60 °C): The primers attach or bind (anneal) to their specific target regions on each strand.
+
+3. Extension (72 °C): A heat-stable enzyme (e.g., *Taq polymerase*) builds a new strand of DNA using the original as a template.
+
+- Each cycle doubles the amount of target DNA.  
+
+- After ~35–40 cycles, millions of identical copies — called amplicons are created.
+
+### 🧪 PCR mix & controls
+
+PCR mix typically includes:
+
+- eDNA extract
+- Forward primer (e.g., "GTCGGTAAAACTCGTGCCAGC")
+- Reverse primer (e.g., "CATAGTGGGGTATCTAATCCCAGTTTG")
+- Polymerase enzyme (e.g. Taq)
+- dNTPs (A, T, C, G building blocks)
+- Buffer
+
+Controls:
+
+- Positive control: Known DNA to confirm PCR is working.
+- Negative control: No DNA added — checks for contamination.
+- Optimised annealing temperature: Ensures specificity and success of primer binding.
+
+---
+
+## 6. Gel Electrophoresis – Quality Check
+
+> **Goal**: Visually confirm that PCR worked and check for contamination.
+
+- Run PCR products through an agarose gel.
+  - Agarose is a seaweed-derived polysaccharide that forms a porous gel matrix when cooled.
+  - The gel acts as a molecular sieve, allowing DNA fragments to separate by size under an electric field.
+  
+- How it works:
+  - DNA samples are loaded into wells in the gel.
+  - An electric current is applied, causing negatively charged DNA to migrate towards the positive electrode.
+  - Smaller DNA fragments move faster through the gel pores, while larger fragments move more slowly.
+  - After running the gel, it is stained with a DNA-binding dye (e.g., GelRed or SYBR Safe) to visualise the bands under UV or blue light.
+
+- Interpreting results:
+  - Compare bands to a DNA ladder (size marker) run in the first lane.
+  - Bands should appear at expected sizes based on the primers used (e.g., 200–600 bp for a 12S amplicon).
+    - A clear band at the expected size means the PCR likely worked.
+    - Smearing, multiple bands, or bands of unexpected size may indicate non-specific amplification or degraded DNA.
+    - A band in the negative control suggests contamination (a serious issue).
+    - No band at all can mean PCR failed or there was insufficient template DNA.
+  - Check for:
+    - Positive control: Should show a clear band at the expected size.
+    - Negative control: Should show no bands (indicating no contamination).
+    - Sample lanes: Should show distinct bands at the expected size.
+
+- This step is a cheap, simple, and fast method to verify that DNA amplification was successful before committing to sequencing.
+
+### 🧬 Lane setup example
+| Lane | Contents                    |
+|------|-----------------------------|
+| 1    | Hyperladder (size marker)   |
+| 2    | Positive control DNA        |
+| 3    | Sample 1                    |
+| 4    | Sample 2                    |
+| …    | …                           |
+| N    | Negative extraction control |
+
+### 🧪 Materials
+
+- Agarose gel
+- TAE or TBE buffer
+- DNA stain (GelRed or SYBR Safe)
+- Hyperladder
+- Gel casting tray & comb
+- Electrophoresis chamber & power supply
+- UV or blue light transilluminator
+
+---
+
+## 7. Sequencing
+
+> **Goal**: To determine which species are present in the sample by reading the DNA sequences of the amplified gene regions (produced during PCR).
+
+After PCR (and any optional clean-up), DNA samples go through these key steps:
+
+1.	Pooling: PCR products (amplicons) from different samples are combined into a single library – a collection of DNA fragments prepared for sequencing.
+
+2.	Barcoding (Indexing): Each sample is tagged with a unique short DNA sequence (barcode or index). This allows to identify which sequence came from which sample. This process is called multiplexing.
+
+3.	Sequencing: The full library is loaded into a high-throughput sequencing machine, typically on an Illumina platform (e.g. MiSeq).
+
+Illumina uses sequencing by synthesis:
+
+- Each DNA fragment is copied one base at a time.
+- As each base is added, it emits a fluorescent signal:
+  - A = green, T = red, C = blue, G = yellow.
+- A camera records this base-by-base as a sequence of coloured flashes.
+
+Output:
+
+- FASTQ files – text files containing:
+  - Millions of short DNA reads (typically 150–300 base pairs),
+  - Quality scores for each base.
+- Each read ideally represents a copy of the barcode region you amplified (e.g. mitochondrial 12S for fish).
+
+A read like AGCCTTGAGAACTGCTTAC… might match European seabass.
+
+---
+
+# Appendix
+
+## Basic concepts
+
+🧫 Cell
+
+- The basic unit of life.
+
+- All living organisms are made of cells — from single-celled bacteria to multi-celled animals and plants.
+
+
+🧠 Nucleus
+
+- Found in eukaryotic cells (like those in animals, plants, fungi).
+
+- Acts like the control centre of the cell.
+
+- Contains DNA, tightly packed into structures called chromosomes (tightly coiled strand of DNA).
+
+
+🧬 DNA (Deoxyribonucleic Acid)
+
+- A long molecule made up of nucleotides, carrying all genetic instructions.
+
+- DNA is a double helix structure, like a twisted ladder.
+
+
+🧱 Bases (Nucleotides)
+
+- The rungs of the DNA ladder are made from base pairs:
+  - Adenine (A)
+  - Thymine (T)
+  - Cytosine (C)
+  - Guanine (G)
+- Bases pair up in a specific way:
+  - Adenine (A) pairs with Thymine (T)
+  - Cytosine (C) pairs with Guanine (G)
+
+- These bases form a code that tells the cell what to do.
+
+- A sequence like ATCGGAT is part of the genetic code.
+
+
+🔧 Gene
+
+- A specific stretch of DNA that contains instructions for making a particular protein.
+
+- For example, one gene might code for eye colour, another for fin development in fish.
+
+- Genes are made up of hundreds to thousands of base pairs.
+
+
+🧾 DNA Barcode
+
+- A short, standardised region of DNA used to identify species, much like a supermarket barcode identifies products.
+
+- Different species have unique sequences in these regions.
+
+- In animals, common barcodes include:
+  - COI (cytochrome c oxidase I): Used for many invertebrates.
+  - 12S rRNA: Used for fish.
+
+- Barcoding is central to eDNA metabarcoding: amplify barcode regions and compare them to a database to see which species were present.
+
+
+## Why PCR can skew abundance
+
+PCR is not linear — it's exponential and influenced by:
+
+- Primer bias: Some DNA sequences amplify more efficiently than others.
+- Template competition: Abundant DNA might outcompete rare DNA.
+- Cycle limits: Amplification slows down as reagents get used up.
+- Stochasticity: Tiny starting amounts can vary wildly between replicates.
+
+So, while PCR tells us what species were present, it doesn’t tell us exactly how much of each species was in the water.
+
+## Estimating relative abundance
+
+Read counts (semi-quantitative):
+
+- After sequencing, the number of DNA reads assigned to each species can reflect relative presence (e.g., Species A had 10,000 reads, Species B had 500).
+- This gives a semi-quantitative picture — not exact, but often still meaningful.
+
+Replicates:
+- Using technical and biological replicates helps average out random PCR effects.
+- If Species A consistently dominates across replicates, it’s likely truly more abundant.
+
+qPCR / dPCR (for absolute quantification):
+
+- For actual copy numbers, use quantitative PCR (qPCR) or digital PCR (dPCR) instead.
+- These measure amplification in real-time or partition the DNA to count molecules — far more precise.
