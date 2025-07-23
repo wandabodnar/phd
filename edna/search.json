@@ -4,14 +4,14 @@
     "href": "workflow.html",
     "title": "Workflow",
     "section": "",
-    "text": "Goal: Capture a snapshot of the aquatic community by collecting DNA shed by organisms into the water.\n\n\nCollect surface water using bottles or a bucket.\n\nUse sterile sampling bottles and gloves to avoid contamination.\n\nOptional: record environmental variables (e.g., salinity, temperature, DO)."
+    "text": "Goal: Capture a snapshot of the aquatic community by collecting DNA shed by organisms into the water.\n\n\nCollect surface water using bottles or a bucket.\n\nUse sterile sampling bottles and gloves to avoid contamination.\n\nOptional: record environmental variables (e.g. salinity, temperature, DO)."
   },
   {
     "objectID": "workflow.html#water-collection",
     "href": "workflow.html#water-collection",
     "title": "Workflow",
     "section": "",
-    "text": "Goal: Capture a snapshot of the aquatic community by collecting DNA shed by organisms into the water.\n\n\nCollect surface water using bottles or a bucket.\n\nUse sterile sampling bottles and gloves to avoid contamination.\n\nOptional: record environmental variables (e.g., salinity, temperature, DO)."
+    "text": "Goal: Capture a snapshot of the aquatic community by collecting DNA shed by organisms into the water.\n\n\nCollect surface water using bottles or a bucket.\n\nUse sterile sampling bottles and gloves to avoid contamination.\n\nOptional: record environmental variables (e.g. salinity, temperature, DO)."
   },
   {
     "objectID": "workflow.html#filtration",
@@ -67,14 +67,126 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "🧭 Summary: A visual, step-by-step overview of the full workflow\n\n⚗️ Workflow: Detailed methods, protocols, and materials for each stage"
+    "text": "🧭 Summary: A visual, step-by-step overview of the full workflow\n\n⚗️ Workflow: Detailed methods, protocols, and materials for each stage\n🔬 DADA2: Step-by-step guide to processing eDNA sequence data using the DADA2 pipeline"
   },
   {
     "objectID": "index.html#contents",
     "href": "index.html#contents",
     "title": "Home",
     "section": "",
-    "text": "🧭 Summary: A visual, step-by-step overview of the full workflow\n\n⚗️ Workflow: Detailed methods, protocols, and materials for each stage"
+    "text": "🧭 Summary: A visual, step-by-step overview of the full workflow\n\n⚗️ Workflow: Detailed methods, protocols, and materials for each stage\n🔬 DADA2: Step-by-step guide to processing eDNA sequence data using the DADA2 pipeline"
+  },
+  {
+    "objectID": "dada.html",
+    "href": "dada.html",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "",
+    "text": "This guide breaks down the DADA2 workflow in R for amplicon-based eDNA studies — no prior bioinformatics experience needed.\nFor full documentation, visit the official DADA2 tutorial."
+  },
+  {
+    "objectID": "dada.html#overview",
+    "href": "dada.html#overview",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "",
+    "text": "This guide breaks down the DADA2 workflow in R for amplicon-based eDNA studies — no prior bioinformatics experience needed.\nFor full documentation, visit the official DADA2 tutorial."
+  },
+  {
+    "objectID": "dada.html#setup-input",
+    "href": "dada.html#setup-input",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Setup & input",
+    "text": "Setup & input\n\nStart with paired-end FASTQ files (e.g. sample1_R1.fastq, sample1_R2.fastq)\nFiles must be:\n\nDemultiplexed (split by sample)\nPrimer-trimmed\n\nDADA2 matches forward (R1) and reverse (R2) files automatically by sample name.\n\n\n\n\n\n\n\nWhy forward (R1) and reverse (R2) reads?\n\n\n\nPaired-end sequencing (e.g. Illumina MiSeq) reads both ends of a DNA fragment, generating two FASTQ files per sample:\n\nR1.fastq → Forward read\nR2.fastq → Reverse read\nThe forward read comes from the 5′ end of the top strand\n\nThe reverse read comes from the 5′ end of the bottom strand (reverse complement)\n\nThe two reads may overlap, allowing better reconstruction of the full DNA fragment\n\nDADA2 uses paired-end reads to:\n\nIndependently filter and model errors in each direction\n\nMerge the reads using their overlap to:\n\nCorrect sequencing errors\n\nReconstruct the full barcode (amplicon)\n\nImprove accuracy and resolution\n\n\n\n\n\nFile\nDescription\n\n\n\n\nR1.fastq\nForward reads (5′→3′ of one strand)\n\n\nR2.fastq\nReverse reads (5′→3′ of the other strand)\n\n\n\n→ Both are needed to build full-length, high-quality sequences."
+  },
+  {
+    "objectID": "dada.html#inspecting-quality",
+    "href": "dada.html#inspecting-quality",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Inspecting quality",
+    "text": "Inspecting quality\n\n\nCode\nplotQualityProfile(fwd)\nplotQualityProfile(rev)\n\n\n\nForward reads: generally good quality\nReverse reads: quality often drops toward the end\nUse this to decide truncation lengths (e.g. 240 bp forward, 160 bp reverse)"
+  },
+  {
+    "objectID": "dada.html#filter-trim",
+    "href": "dada.html#filter-trim",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Filter & trim",
+    "text": "Filter & trim\n\n\nCode\nfilterAndTrim(fwd, filtF,\n              rev, filtR,\n              truncLen = c(240,160),\n              maxN = 0,\n              maxEE = c(2,2),\n              truncQ = 2,\n              rm.phix = TRUE,\n              compress = TRUE,\n              multithread = TRUE)\n\n\n\nRemoves poor-quality and ambiguous reads\nDrops PhiX contaminants\nOutputs retained read counts per sample\n\n\n\n\n\n\n\nWhat is PhiX and why is it removed?\n\n\n\nPhiX (or PhiX174) is a small viral genome often added as a control during Illumina sequencing runs.\n\nIt helps calibrate the sequencer and improve performance in low-diversity samples (like amplicon-based eDNA).\nIt’s not part of your actual biological sample, so it needs to be filtered out.\n\nIn DADA2, this is done automatically:\n\n\nCode\nrm.phix = TRUE"
+  },
+  {
+    "objectID": "dada.html#learn-error-rates",
+    "href": "dada.html#learn-error-rates",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Learn error rates",
+    "text": "Learn error rates\n\n\nCode\nerrF &lt;- learnErrors(filtFs, multithread = TRUE)\nerrR &lt;- learnErrors(filtRs, multithread = TRUE)\n\n\n\nBuilds a parametric error model from observed data\nSeparately for forward and reverse reads"
+  },
+  {
+    "objectID": "dada.html#denoise-sample-inference",
+    "href": "dada.html#denoise-sample-inference",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Denoise / Sample inference",
+    "text": "Denoise / Sample inference\n\n\nCode\ndadaFs &lt;- dada(filtFs, err = errF, multithread = TRUE)\ndadaRs &lt;- dada(filtRs, err = errR, multithread = TRUE)\n\n\n\nInfers ASVs (Amplicon Sequence Variants)\nCorrects sequencing errors to identify true biological sequences"
+  },
+  {
+    "objectID": "dada.html#merge-paired-reads",
+    "href": "dada.html#merge-paired-reads",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Merge paired reads",
+    "text": "Merge paired reads\n\n\nCode\nmergers &lt;- mergePairs(dadaFs, filtFs, dadaRs, filtRs)\n\n\n\nMerges forward and reverse reads\nRequires overlap (e.g., ≥12 bp) and agreement in the overlap region"
+  },
+  {
+    "objectID": "dada.html#build-sequence-table",
+    "href": "dada.html#build-sequence-table",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Build sequence table",
+    "text": "Build sequence table\n\n\nCode\nseqtab &lt;- makeSequenceTable(mergers)\n\n\n\nRows = samples\nColumns = ASVs\nCells = read counts"
+  },
+  {
+    "objectID": "dada.html#chimera-removal",
+    "href": "dada.html#chimera-removal",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Chimera removal",
+    "text": "Chimera removal\n\n\nCode\nseqtab.nochim &lt;- removeBimeraDenovo(seqtab, method = \"consensus\", multithread = TRUE)\n\n\n\nRemoves PCR artifacts (chimeras)\nYields a cleaned-up ASV table\n\n\n\n\n\n\n\nWhat are chimeras and why remove them?\n\n\n\nChimeras are artificial DNA sequences created during PCR amplification.\n\nThey form when a partially extended DNA strand from one template accidentally binds to a different, but similar, template in the next PCR cycle.\nThis creates a hybrid sequence that does not exist in any real organism.\n\nThese artefacts:\n\nAre common in amplicon-based workflows.\nCan inflate biodiversity estimates or lead to false species detections."
+  },
+  {
+    "objectID": "dada.html#track-read-loss",
+    "href": "dada.html#track-read-loss",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Track read loss",
+    "text": "Track read loss\n\n\nCode\ngetN &lt;- function(x) sum(getUniques(x))\ntrack &lt;- cbind(out, sapply(dadaFs, getN), sapply(dadaRs, getN), sapply(mergers, getN), rowSums(seqtab.nochim))\ncolnames(track) &lt;- c(\"input\", \"filtered\", \"denoisedF\", \"denoisedR\", \"merged\", \"nonchim\")\n\n\n\nMonitors how many reads pass each step\nHelps catch major data loss or pipeline issues"
+  },
+  {
+    "objectID": "dada.html#assign-taxonomy",
+    "href": "dada.html#assign-taxonomy",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Assign taxonomy",
+    "text": "Assign taxonomy\n\n\nCode\ntaxa &lt;- assignTaxonomy(seqtab.nochim, \"silva_nr_v138_train_set.fa.gz\", multithread = TRUE)\ntaxa &lt;- addSpecies(taxa, \"silva_species_assignment_v138.fa.gz\")\n\n\n\nClassifies ASVs by comparing to a reference database (e.g., SILVA)\nAdds species-level IDs for exact matches"
+  },
+  {
+    "objectID": "dada.html#optional-species-level-matching",
+    "href": "dada.html#optional-species-level-matching",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Optional: Species-level matching",
+    "text": "Optional: Species-level matching\n\nUse curated references like MiFish for fish-specific identification\nAlternatives:\n\nBLAST for manual species checks\nDECIPHER’s IdTaxa() function"
+  },
+  {
+    "objectID": "dada.html#validate-with-mock-community",
+    "href": "dada.html#validate-with-mock-community",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Validate with mock community",
+    "text": "Validate with mock community\n\nRun pipeline on a known “mock” sample\nShould recover expected species with high accuracy"
+  },
+  {
+    "objectID": "dada.html#export-to-phyloseq",
+    "href": "dada.html#export-to-phyloseq",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Export to phyloseq",
+    "text": "Export to phyloseq\n\n\nCode\nlibrary(phyloseq)\nps &lt;- phyloseq(otu_table(seqtab.nochim, taxa_are_rows = FALSE),\n               tax_table(taxa),\n               sample_data(metadata))\n\n\n\nEnables diversity analysis, ordination, visualisation"
+  },
+  {
+    "objectID": "dada.html#summary-flow",
+    "href": "dada.html#summary-flow",
+    "title": "DADA2 Pipeline — Step-by-Step",
+    "section": "Summary flow",
+    "text": "Summary flow\n\n\n\nStep\nAction\n\n\n\n\n1\nImport FASTQ files\n\n\n2\nVisualise quality\n\n\n3\nFilter & trim reads\n\n\n4\nLearn error rates\n\n\n5\nInfer ASVs (denoise)\n\n\n6\nMerge paired reads\n\n\n7\nBuild sequence table\n\n\n8\nRemove chimeras\n\n\n9\nTrack read retention\n\n\n10\nAssign taxonomy\n\n\n11\nOptional: species matching\n\n\n12\nValidate with known samples\n\n\n13\nExport to phyloseq"
   },
   {
     "objectID": "summary.html",
