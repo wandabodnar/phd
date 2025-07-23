@@ -119,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#pcr-amplification" id="toc-pcr-amplification" class="nav-link" data-scroll-target="#pcr-amplification">📈 PCR amplification</a></li>
   <li><a href="#gel-electrophoresis" id="toc-gel-electrophoresis" class="nav-link" data-scroll-target="#gel-electrophoresis">🧫 Gel electrophoresis</a></li>
   <li><a href="#sequencing" id="toc-sequencing" class="nav-link" data-scroll-target="#sequencing">📦 Sequencing</a></li>
-  <li><a href="#bioinformatics" id="toc-bioinformatics" class="nav-link" data-scroll-target="#bioinformatics">🧠 Bioinformatics</a></li>
+  <li><a href="#bioinformatics" id="toc-bioinformatics" class="nav-link" data-scroll-target="#bioinformatics">💻 Bioinformatics</a></li>
   </ul>
 </nav>
 </nav>
@@ -627,10 +627,198 @@ A read like <code>AGCCTTGAGAACTGCTTAC...</code> might be identified as <strong>E
 <hr>
 </section>
 <section id="bioinformatics" class="level2">
-<h2 class="anchored" data-anchor-id="bioinformatics">🧠 Bioinformatics</h2>
-<p>TBA…</p>
+<h2 class="anchored" data-anchor-id="bioinformatics">💻 Bioinformatics</h2>
+<blockquote class="blockquote">
+<p><strong>Goal:</strong> To process and interpret raw DNA sequence data to identify which species were present in each sample.</p>
+</blockquote>
+<p>After sequencing (e.g.&nbsp;on an <strong>Illumina MiSeq</strong>), each sample produces <strong>FASTQ files</strong> — text files containing:</p>
+<ul>
+<li>Millions of short DNA reads<br>
+</li>
+<li>A quality score for each base indicating confidence in base calls</li>
+</ul>
+<section id="step-1-quality-filtering" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-quality-filtering">Step 1: Quality filtering</h3>
+<ul>
+<li>Remove <strong>low-quality reads</strong> and unreliable base calls</li>
+<li>Trim off:
+<ul>
+<li>Residual <strong>primers</strong><br>
+</li>
+<li>Adapter sequences<br>
+</li>
+<li>Noisy bases at the ends</li>
+</ul></li>
+</ul>
+<p>🛠 <strong>Common tools</strong>:<br>
+<code>cutadapt</code>, <code>fastp</code>, <code>Trimmomatic</code></p>
+</section>
+<section id="step-2-denoising-dereplication" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-denoising-dereplication">Step 2: Denoising &amp; dereplication</h3>
+<p>This is where <a href="https://benjjneb.github.io/dada2/index.html">DADA2</a> plays a central role.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="What is DADA2?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is DADA2?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>DADA2</strong> (<em>Divisive Amplicon Denoising Algorithm 2</em>) is an R package that turns raw reads into exact sequences called <strong>Amplicon Sequence Variants (ASVs)</strong>.</p>
+<p>It models and corrects sequencing errors to recover the <strong>true biological sequences</strong> present in your samples.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>What DADA2 Does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Learn error rates</strong></td>
+<td>Builds a model of sequencing error patterns</td>
+</tr>
+<tr class="even">
+<td><strong>Denoise</strong></td>
+<td>Corrects errors and resolves true sequences</td>
+</tr>
+<tr class="odd">
+<td><strong>Dereplicate</strong></td>
+<td>Merges identical reads into unique sequences + counts</td>
+</tr>
+<tr class="even">
+<td><strong>Merge reads</strong></td>
+<td>Combines paired-end reads (forward + reverse)</td>
+</tr>
+<tr class="odd">
+<td><strong>Remove chimeras</strong></td>
+<td>Eliminates artificial recombination products from PCR</td>
+</tr>
+<tr class="even">
+<td><strong>Assign taxonomy</strong></td>
+<td>Labels ASVs using a reference database (e.g.&nbsp;MiFish, GenBank)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="step-3-taxonomic-assignment" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-taxonomic-assignment">Step 3: Taxonomic assignment</h3>
+<p>ASVs are matched to known species or genera using a <strong>reference database</strong>.</p>
+<p>🗂 <strong>Common databases</strong>:</p>
+<ul>
+<li><strong>GenBank</strong> – Broad nucleotide database</li>
+<li><strong>MiFish</strong> – Fish-specific 12S rRNA barcodes<br>
+</li>
+<li><strong>BOLD</strong> – Barcode of Life Data System (especially for COI gene)</li>
+</ul>
+<p>🧠 <strong>Matching tools</strong>:</p>
+<ul>
+<li><p><strong>BLAST</strong> – Finds the closest match in a database<br>
+&gt; e.g.&nbsp;ASV <code>AGCCTTGAGAACTGCTTAC...</code> → <em>Dicentrarchus labrax</em> (European seabass), 99.3% identity</p></li>
+<li><p><strong>QIIME2</strong> – End-to-end pipeline with taxonomy plugins (e.g.&nbsp;BLAST, naive Bayes)<br>
+</p></li>
+<li><p><strong>MEGAN</strong> – Converts BLAST results into taxonomic trees &amp; summaries</p></li>
+</ul>
+<blockquote class="blockquote">
+<p>🧬 This is where anonymous DNA fragments are assigned species names — transforming data into <strong>ecological meaning</strong>.</p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled" title="🔎 What is BLAST and how does it work?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🔎 What is BLAST and how does it work?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>BLAST</strong> stands for <strong>Basic Local Alignment Search Tool</strong>.<br>
+It is one of the most widely used tools in bioinformatics for identifying DNA sequences.</p>
+<p>BLAST compares your unknown DNA sequence (e.g., an <strong>ASV</strong>) against a reference database such as <strong>GenBank</strong>, <strong>BOLD</strong>, or <strong>MiFish</strong>.</p>
+<p>It finds the <strong>most similar sequences</strong> and tells you:</p>
+<ul>
+<li>✅ Which known species your sequence most closely matches<br>
+</li>
+<li>🧠 How confident that match is, based on:
+<ul>
+<li><strong>% Identity</strong>: how many bases are exactly the same<br>
+</li>
+<li><strong>Query Coverage</strong>: how much of your sequence aligned with the reference<br>
+</li>
+<li><strong>E-value</strong>: the probability that this match occurred by chance (lower is better)</li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>If an ASV like <code>AGCCTTGAGAACTGCTTAC...</code> is run through BLAST:</p>
+</blockquote>
+<ul>
+<li>The top hit might be <em>Dicentrarchus labrax</em> (European seabass)<br>
+</li>
+<li>With <strong>99.3% identity</strong>, <strong>98% coverage</strong>, and <strong>E-value = 2e-50</strong></li>
+</ul>
+<p>This suggests that the ASV very likely belongs to <strong>European seabass</strong>.</p>
+<p>🛠 Where BLAST fits into your workflow:</p>
+<ul>
+<li>Run BLAST after denoising to assign taxonomy to ASVs</li>
+<li>Use it with a curated database to avoid spurious matches</li>
+<li>Optionally refine with thresholds (e.g.&nbsp;only accept matches &gt;97% identity)</li>
+</ul>
+<blockquote class="blockquote">
+<p>BLAST is essential for translating raw DNA into <strong>real species names</strong>.</p>
+</blockquote>
+</div>
+</div>
+</section>
+<section id="step-4-generate-an-abundance-table" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-generate-an-abundance-table">Step 4: Generate an abundance table</h3>
+<p>The final step is building a <strong>species-by-sample matrix</strong> to visualise biodiversity patterns.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Species</th>
+<th>Sample 1</th>
+<th>Sample 2</th>
+<th>Sample 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>European seabass</em></td>
+<td>2134</td>
+<td>98</td>
+<td>712</td>
+</tr>
+<tr class="even">
+<td><em>Three-spine stickleback</em></td>
+<td>435</td>
+<td>0</td>
+<td>220</td>
+</tr>
+<tr class="odd">
+<td><em>Goby</em> spp.</td>
+<td>12</td>
+<td>33</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>This process turns millions of anonymous DNA fragments into actionable insights:</p>
+<ul>
+<li>✅ <strong>What species were present?</strong></li>
+<li>🌍 <strong>Which sites had higher biodiversity?</strong></li>
+<li>🔁 <strong>How did communities change across space or time?</strong></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
