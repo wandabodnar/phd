@@ -61,5 +61,26 @@
     "title": "Workflow",
     "section": "",
     "text": "TBA…"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Environmental DNA Workflow Guide",
+    "section": "",
+    "text": "🧭 Summary: A visual, step-by-step overview of the full workflow\n\n⚗️ Workflow: Detailed methods, protocols, and materials for each stage"
+  },
+  {
+    "objectID": "index.html#contents",
+    "href": "index.html#contents",
+    "title": "Environmental DNA Workflow Guide",
+    "section": "",
+    "text": "🧭 Summary: A visual, step-by-step overview of the full workflow\n\n⚗️ Workflow: Detailed methods, protocols, and materials for each stage"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "Summary",
+    "section": "",
+    "text": "💧 Water collection\n→ Collect environmental water samples using sterile techniques.\n🧪 Filtration\n→ Pass water through membrane filters to capture suspended DNA (eDNA) from the environment.\n🧬 DNA extraction\n→ Isolate DNA from the filters using a commercial extraction kit (e.g. Qiagen DNeasy).\n🔬 DNA quantification (Qubit)\n→ Measure DNA concentration to assess extraction success and ensure enough material for PCR.\n📈 PCR Amplification\n→ Use primers to target and amplify a barcode gene (e.g. mitochondrial 12S rRNA) via thermal cycling.\n🧫 Gel electrophoresis\n→ Run PCR products on an agarose gel to check for successful amplification and absence of contamination.\n📦 Sequencing\n→ Pool PCR amplicons, add sample-specific barcodes (indexes), and sequence using a platform like Illumina MiSeq.\n🧠 Bioinformatics\n→ Demultiplex, quality-filter, and assign taxonomy to sequence data using a bioinformatics pipeline (e.g. DADA2)."
   }
 ]
