@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DADA2 Pipeline — Step-by-Step – Environmental DNA Workflow Guide</title>
+<title>DADA2 Pipeline – Environmental DNA Workflow Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,8 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#setup-input" id="toc-setup-input" class="nav-link" data-scroll-target="#setup-input">Setup &amp; input</a></li>
+  <li><a href="#setup-input" id="toc-setup-input" class="nav-link active" data-scroll-target="#setup-input">Setup &amp; input</a></li>
   <li><a href="#inspecting-quality" id="toc-inspecting-quality" class="nav-link" data-scroll-target="#inspecting-quality">Inspecting quality</a></li>
   <li><a href="#filter-trim" id="toc-filter-trim" class="nav-link" data-scroll-target="#filter-trim">Filter &amp; trim</a></li>
   <li><a href="#learn-error-rates" id="toc-learn-error-rates" class="nav-link" data-scroll-target="#learn-error-rates">Learn error rates</a></li>
@@ -165,6 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#validate-with-mock-community" id="toc-validate-with-mock-community" class="nav-link" data-scroll-target="#validate-with-mock-community">Validate with mock community</a></li>
   <li><a href="#export-to-phyloseq" id="toc-export-to-phyloseq" class="nav-link" data-scroll-target="#export-to-phyloseq">Export to phyloseq</a></li>
   <li><a href="#summary-flow" id="toc-summary-flow" class="nav-link" data-scroll-target="#summary-flow">Summary flow</a></li>
+  <li><a href="#example-code" id="toc-example-code" class="nav-link" data-scroll-target="#example-code">Example code</a></li>
   </ul>
 </nav>
 </nav>
@@ -177,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DADA2 Pipeline — Step-by-Step</h1>
+<h1 class="title">DADA2 Pipeline</h1>
 </div>
 
 
@@ -194,11 +194,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This guide breaks down the DADA2 workflow in R for amplicon-based eDNA studies — no prior bioinformatics experience needed.</p>
-<p>For full documentation, visit the <a href="https://benjjneb.github.io/dada2/tutorial.html">official DADA2 tutorial</a>.</p>
-</section>
 <section id="setup-input" class="level2">
 <h2 class="anchored" data-anchor-id="setup-input">Setup &amp; input</h2>
 <ul>
@@ -268,11 +263,8 @@ Why forward (<code>R1</code>) and reverse (<code>R2</code>) reads?
 <section id="inspecting-quality" class="level2">
 <h2 class="anchored" data-anchor-id="inspecting-quality">Inspecting quality</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotQualityProfile</span>(fwd)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotQualityProfile</span>(rev)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li>Forward reads: generally good quality</li>
@@ -283,8 +275,6 @@ Why forward (<code>R1</code>) and reverse (<code>R2</code>) reads?
 <section id="filter-trim" class="level2">
 <h2 class="anchored" data-anchor-id="filter-trim">Filter &amp; trim</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filterAndTrim</span>(fwd, filtF,</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>              rev, filtR,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">truncLen =</span> <span class="fu">c</span>(<span class="dv">240</span>,<span class="dv">160</span>),</span>
@@ -294,7 +284,6 @@ Why forward (<code>R1</code>) and reverse (<code>R2</code>) reads?
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">rm.phix =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">compress =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li>Removes poor-quality and ambiguous reads</li>
@@ -318,10 +307,7 @@ What is PhiX and why is it removed?
 </ul>
 <p>In DADA2, this is done automatically:</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rm.phix <span class="ot">=</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </div>
 </div>
@@ -329,11 +315,8 @@ What is PhiX and why is it removed?
 <section id="learn-error-rates" class="level2">
 <h2 class="anchored" data-anchor-id="learn-error-rates">Learn error rates</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>errF <span class="ot">&lt;-</span> <span class="fu">learnErrors</span>(filtFs, <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>errR <span class="ot">&lt;-</span> <span class="fu">learnErrors</span>(filtRs, <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li>Builds a <strong>parametric error model</strong> from observed data</li>
@@ -343,11 +326,8 @@ What is PhiX and why is it removed?
 <section id="denoise-sample-inference" class="level2">
 <h2 class="anchored" data-anchor-id="denoise-sample-inference">Denoise / Sample inference</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dadaFs <span class="ot">&lt;-</span> <span class="fu">dada</span>(filtFs, <span class="at">err =</span> errF, <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dadaRs <span class="ot">&lt;-</span> <span class="fu">dada</span>(filtRs, <span class="at">err =</span> errR, <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li>Infers <strong>ASVs</strong> (Amplicon Sequence Variants)</li>
@@ -357,10 +337,7 @@ What is PhiX and why is it removed?
 <section id="merge-paired-reads" class="level2">
 <h2 class="anchored" data-anchor-id="merge-paired-reads">Merge paired reads</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mergers <span class="ot">&lt;-</span> <span class="fu">mergePairs</span>(dadaFs, filtFs, dadaRs, filtRs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li>Merges forward and reverse reads</li>
@@ -370,10 +347,7 @@ What is PhiX and why is it removed?
 <section id="build-sequence-table" class="level2">
 <h2 class="anchored" data-anchor-id="build-sequence-table">Build sequence table</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>seqtab <span class="ot">&lt;-</span> <span class="fu">makeSequenceTable</span>(mergers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li>Rows = samples</li>
@@ -384,10 +358,7 @@ What is PhiX and why is it removed?
 <section id="chimera-removal" class="level2">
 <h2 class="anchored" data-anchor-id="chimera-removal">Chimera removal</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>seqtab.nochim <span class="ot">&lt;-</span> <span class="fu">removeBimeraDenovo</span>(seqtab, <span class="at">method =</span> <span class="st">"consensus"</span>, <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li>Removes PCR artifacts (chimeras)</li>
@@ -419,12 +390,9 @@ What are chimeras and why remove them?
 <section id="track-read-loss" class="level2">
 <h2 class="anchored" data-anchor-id="track-read-loss">Track read loss</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>getN <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">getUniques</span>(x))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>track <span class="ot">&lt;-</span> <span class="fu">cbind</span>(out, <span class="fu">sapply</span>(dadaFs, getN), <span class="fu">sapply</span>(dadaRs, getN), <span class="fu">sapply</span>(mergers, getN), <span class="fu">rowSums</span>(seqtab.nochim))</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(track) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"input"</span>, <span class="st">"filtered"</span>, <span class="st">"denoisedF"</span>, <span class="st">"denoisedR"</span>, <span class="st">"merged"</span>, <span class="st">"nonchim"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li>Monitors how many reads pass each step</li>
@@ -434,11 +402,8 @@ What are chimeras and why remove them?
 <section id="assign-taxonomy" class="level2">
 <h2 class="anchored" data-anchor-id="assign-taxonomy">Assign taxonomy</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">&lt;-</span> <span class="fu">assignTaxonomy</span>(seqtab.nochim, <span class="st">"silva_nr_v138_train_set.fa.gz"</span>, <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">&lt;-</span> <span class="fu">addSpecies</span>(taxa, <span class="st">"silva_species_assignment_v138.fa.gz"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li>Classifies ASVs by comparing to a reference database (e.g., SILVA)</li>
@@ -466,13 +431,10 @@ What are chimeras and why remove them?
 <section id="export-to-phyloseq" class="level2">
 <h2 class="anchored" data-anchor-id="export-to-phyloseq">Export to phyloseq</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(phyloseq)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ps <span class="ot">&lt;-</span> <span class="fu">phyloseq</span>(<span class="fu">otu_table</span>(seqtab.nochim, <span class="at">taxa_are_rows =</span> <span class="cn">FALSE</span>),</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">tax_table</span>(taxa),</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>               <span class="fu">sample_data</span>(metadata))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li>Enables diversity analysis, ordination, visualisation</li>
@@ -542,6 +504,140 @@ What are chimeras and why remove them?
 </tr>
 </tbody>
 </table>
+</section>
+<section id="example-code" class="level2">
+<h2 class="anchored" data-anchor-id="example-code">Example code</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dada2)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(phyloseq)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Biostrings)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># File set up</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">"MiSeq_SOP"</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(path)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Forward and reverse fastq filenames have format: SAMPLENAME_R1_001.fastq and SAMPLENAME_R2_001.fastq</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>fnFs <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">list.files</span>(path, <span class="at">pattern=</span><span class="st">"_R1_001.fastq"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>fnRs <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">list.files</span>(path, <span class="at">pattern=</span><span class="st">"_R2_001.fastq"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract sample names, assuming filenames have format: SAMPLENAME_XXX.fastq</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>sample.names <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">strsplit</span>(<span class="fu">basename</span>(fnFs), <span class="st">"_"</span>), <span class="st">`</span><span class="at">[</span><span class="st">`</span>, <span class="dv">1</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect quality</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plotQualityProfile</span>(fnFs[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="fu">plotQualityProfile</span>(fnRs[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter &amp; trim</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>filtFs <span class="ot">&lt;-</span> <span class="fu">file.path</span>(path, <span class="st">"filtered"</span>, <span class="fu">basename</span>(fnFs))</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>filtRs <span class="ot">&lt;-</span> <span class="fu">file.path</span>(path, <span class="st">"filtered"</span>, <span class="fu">basename</span>(fnRs))</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">filterAndTrim</span>(fnFs, filtFs, fnRs, filtRs,</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>                     <span class="at">truncLen=</span><span class="fu">c</span>(<span class="dv">240</span>,<span class="dv">200</span>), <span class="at">maxN=</span><span class="dv">0</span>, <span class="at">maxEE=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>),</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>                     <span class="at">truncQ=</span><span class="dv">2</span>, <span class="at">rm.phix=</span><span class="cn">TRUE</span>, <span class="at">compress=</span><span class="cn">TRUE</span>, <span class="at">multithread=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(out)</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Learn error rates</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>errF <span class="ot">&lt;-</span> <span class="fu">learnErrors</span>(filtFs, <span class="at">multithread=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>errR <span class="ot">&lt;-</span> <span class="fu">learnErrors</span>(filtRs, <span class="at">multithread=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="fu">plotErrors</span>(errF, <span class="at">nominalQ=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Dereplicate</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>derepFs <span class="ot">&lt;-</span> <span class="fu">derepFastq</span>(filtFs, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>derepRs <span class="ot">&lt;-</span> <span class="fu">derepFastq</span>(filtRs, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="co"># DADA denoising</span></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>dadaFs <span class="ot">&lt;-</span> <span class="fu">dada</span>(derepFs, <span class="at">err=</span>errF, <span class="at">multithread=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>dadaRs <span class="ot">&lt;-</span> <span class="fu">dada</span>(derepRs, <span class="at">err=</span>errR, <span class="at">multithread=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge paired reads</span></span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>mergers <span class="ot">&lt;-</span> <span class="fu">mergePairs</span>(dadaFs, derepFs, dadaRs, derepRs, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Create ASV table</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>seqtab <span class="ot">&lt;-</span> <span class="fu">makeSequenceTable</span>(mergers)</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(seqtab)</span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">nchar</span>(<span class="fu">getSequences</span>(seqtab)))</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove chimeras</span></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>seqtab.nochim <span class="ot">&lt;-</span> <span class="fu">removeBimeraDenovo</span>(seqtab, <span class="at">method=</span><span class="st">"consensus"</span>,</span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">multithread=</span><span class="cn">FALSE</span>, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(seqtab.nochim)<span class="sc">/</span><span class="fu">sum</span>(seqtab)</span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Track reads through pipeline</span></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>getN <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">getUniques</span>(x))</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>track <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>  <span class="at">input=</span>out[,<span class="dv">1</span>],</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">filtered=</span>out[,<span class="dv">2</span>],</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">denoisedF=</span><span class="fu">sapply</span>(dadaFs, getN),</span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">denoisedR=</span><span class="fu">sapply</span>(dadaRs, getN),</span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>  <span class="at">merged=</span><span class="fu">sapply</span>(mergers, getN),</span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>  <span class="at">nonchim=</span><span class="fu">rowSums</span>(seqtab.nochim)</span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(track) <span class="ot">&lt;-</span> sample.names <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">strsplit</span>(<span class="fu">basename</span>(fnFs), <span class="st">"_"</span>), <span class="st">`</span><span class="at">[</span><span class="st">`</span>, <span class="dv">1</span>)</span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(track)</span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a><span class="co"># Taxonomic assignment (using Silva v138 trained classifier)</span></span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">&lt;-</span> <span class="fu">assignTaxonomy</span>(seqtab.nochim, <span class="st">"silva_nr_v138_train_set.fa.gz"</span>, <span class="at">multithread=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(taxa))</span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing sequence rownames for display only</span></span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a>taxa.print <span class="ot">&lt;-</span> taxa</span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(taxa.print) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taxa.print)</span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate accuracy</span></span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(seqtab.nochim)</span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>sample.names <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">strsplit</span>(<span class="fu">rownames</span>(seqtab.nochim), <span class="st">"_"</span>), <span class="st">`</span><span class="at">[</span><span class="st">`</span>, <span class="dv">1</span>)</span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(seqtab.nochim) <span class="ot">&lt;-</span> sample.names</span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a>unqs.mock <span class="ot">&lt;-</span> seqtab.nochim[<span class="st">"Mock"</span>,]</span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a>unqs.mock <span class="ot">&lt;-</span> <span class="fu">sort</span>(unqs.mock[unqs.mock<span class="sc">&gt;</span><span class="dv">0</span>], <span class="at">decreasing=</span><span class="cn">TRUE</span>) <span class="co"># Drop ASVs absent in the Mock</span></span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"DADA2 inferred"</span>, <span class="fu">length</span>(unqs.mock), <span class="st">"sample sequences present in the Mock community.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a><span class="co"># Load expected reference sequences for the Mock community</span></span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a>mock.ref <span class="ot">&lt;-</span> <span class="fu">getSequences</span>(<span class="fu">file.path</span>(path, <span class="st">"HMP_MOCK.v35.fasta"</span>))</span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a>match.ref <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(<span class="fu">names</span>(unqs.mock), <span class="cf">function</span>(x) <span class="fu">any</span>(<span class="fu">grepl</span>(x, mock.ref))))</span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Of those,"</span>, <span class="fu">sum</span>(match.ref), <span class="st">"were exact matches to the expected reference sequences.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a><span class="do">######</span></span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span>
+<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a>samples.out <span class="ot">&lt;-</span> <span class="fu">rownames</span>(seqtab.nochim)</span>
+<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a>subject <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">strsplit</span>(samples.out, <span class="st">"D"</span>), <span class="st">`</span><span class="at">[</span><span class="st">`</span>, <span class="dv">1</span>)</span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">substr</span>(subject,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a>subject <span class="ot">&lt;-</span> <span class="fu">substr</span>(subject,<span class="dv">2</span>,<span class="dv">999</span>)</span>
+<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a>day <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">sapply</span>(<span class="fu">strsplit</span>(samples.out, <span class="st">"D"</span>), <span class="st">`</span><span class="at">[</span><span class="st">`</span>, <span class="dv">2</span>))</span>
+<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a>samdf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Subject=</span>subject, <span class="at">Gender=</span>gender, <span class="at">Day=</span>day)</span>
+<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a>samdf<span class="sc">$</span>When <span class="ot">&lt;-</span> <span class="st">"Early"</span></span>
+<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a>samdf<span class="sc">$</span>When[samdf<span class="sc">$</span>Day<span class="sc">&gt;</span><span class="dv">100</span>] <span class="ot">&lt;-</span> <span class="st">"Late"</span></span>
+<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(samdf) <span class="ot">&lt;-</span> samples.out</span>
+<span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a>ps <span class="ot">&lt;-</span> <span class="fu">phyloseq</span>(<span class="fu">otu_table</span>(seqtab.nochim, <span class="at">taxa_are_rows=</span><span class="cn">FALSE</span>), </span>
+<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a>               <span class="fu">sample_data</span>(samdf), </span>
+<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a>               <span class="fu">tax_table</span>(taxa))</span>
+<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a>ps <span class="ot">&lt;-</span> <span class="fu">prune_samples</span>(<span class="fu">sample_names</span>(ps) <span class="sc">!=</span> <span class="st">"Mock"</span>, ps) <span class="co"># Remove mock sample</span></span>
+<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a>dna <span class="ot">&lt;-</span> Biostrings<span class="sc">::</span><span class="fu">DNAStringSet</span>(<span class="fu">taxa_names</span>(ps))</span>
+<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(dna) <span class="ot">&lt;-</span> <span class="fu">taxa_names</span>(ps)</span>
+<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a>ps <span class="ot">&lt;-</span> <span class="fu">merge_phyloseq</span>(ps, dna)</span>
+<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a><span class="fu">taxa_names</span>(ps) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ASV"</span>, <span class="fu">seq</span>(<span class="fu">ntaxa</span>(ps)))</span>
+<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a>ps</span>
+<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a><span class="co"># Alpha diversity</span></span>
+<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_richness</span>(ps, <span class="at">x=</span><span class="st">"Day"</span>, <span class="at">measures=</span><span class="fu">c</span>(<span class="st">"Shannon"</span>, <span class="st">"Simpson"</span>), <span class="at">color=</span><span class="st">"When"</span>)</span>
+<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a><span class="co"># Beta diversity</span></span>
+<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a>ps.prop <span class="ot">&lt;-</span> <span class="fu">transform_sample_counts</span>(ps, <span class="cf">function</span>(otu) otu<span class="sc">/</span><span class="fu">sum</span>(otu))</span>
+<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a>ord.nmds.bray <span class="ot">&lt;-</span> <span class="fu">ordinate</span>(ps.prop, <span class="at">method=</span><span class="st">"NMDS"</span>, <span class="at">distance=</span><span class="st">"bray"</span>)</span>
+<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ordination</span>(ps.prop, ord.nmds.bray, <span class="at">color=</span><span class="st">"When"</span>, <span class="at">title=</span><span class="st">"Bray NMDS"</span>)</span>
+<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a>top20 <span class="ot">&lt;-</span> <span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">taxa_sums</span>(ps), <span class="at">decreasing=</span><span class="cn">TRUE</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>]</span>
+<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a>ps.top20 <span class="ot">&lt;-</span> <span class="fu">transform_sample_counts</span>(ps, <span class="cf">function</span>(OTU) OTU<span class="sc">/</span><span class="fu">sum</span>(OTU))</span>
+<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a>ps.top20 <span class="ot">&lt;-</span> <span class="fu">prune_taxa</span>(top20, ps.top20)</span>
+<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_bar</span>(ps.top20, <span class="at">x=</span><span class="st">"Day"</span>, <span class="at">fill=</span><span class="st">"Family"</span>) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>When, <span class="at">scales=</span><span class="st">"free_x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
