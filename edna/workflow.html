@@ -121,9 +121,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#dna-extraction" id="toc-dna-extraction" class="nav-link" data-scroll-target="#dna-extraction">🧬 DNA extraction</a></li>
   <li><a href="#dna-quantification-qubit" id="toc-dna-quantification-qubit" class="nav-link" data-scroll-target="#dna-quantification-qubit">🔬 DNA quantification (Qubit)</a></li>
   <li><a href="#pcr-amplification" id="toc-pcr-amplification" class="nav-link" data-scroll-target="#pcr-amplification">📈 PCR amplification</a></li>
-  <li><a href="#gel-electrophoresis" id="toc-gel-electrophoresis" class="nav-link" data-scroll-target="#gel-electrophoresis">🧫 Gel electrophoresis</a></li>
-  <li><a href="#sequencing" id="toc-sequencing" class="nav-link" data-scroll-target="#sequencing">📦 Sequencing</a></li>
-  <li><a href="#bioinformatics" id="toc-bioinformatics" class="nav-link" data-scroll-target="#bioinformatics">💻 Bioinformatics</a></li>
   </ul>
 </nav>
 </nav>
@@ -132,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -181,12 +178,12 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <hr>
 </section>
-<section id="dna-extraction" class="level2">
+<section id="dna-extraction" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="dna-extraction">🧬 DNA extraction</h2>
 <blockquote class="blockquote">
 <p><strong>Goal:</strong> Release and purify the DNA from the filters and remove unwanted material.</p>
 </blockquote>
-<section id="resuspension-of-the-edna" class="level3">
+<section id="resuspension-of-the-edna" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="resuspension-of-the-edna">Resuspension of the eDNA</h3>
 <ol type="1">
 <li><p>Remove the Waterra filters from the freezer in advance and allow them to defrost in the fridge for approximately one hour before extraction.</p></li>
@@ -194,10 +191,16 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Fill two 50 mL Falcon tubes (per Waterra) with TE resuspension buffer, making sure to label the tubes with the sample number.</p></li>
 <li><p>Shake out any residual water from the <em>inlet</em> of the filter. Apply parafilm to cover the smooth <em>outlet</em> of the filter.</p></li>
 <li><p>Pipette 50 mL of the TE resuspension buffer into the capsule through the ridged <em>inlet</em> and seal with more parafilm.</p></li>
-<li><p>Agitate capsule for five minutes; a fingertip can be placed over each end and the capsule manually shaken, or if parafilm is securely taped into place, the capsule can be held against a vortex.</p></li>
-<li><p>Pour the solution back into the first 50 mL Falcon tube, and repeat steps 5 and 6 for the second 50 mL Falcon tube, ending up with two 50 mL Falcon tubes of eDNA resuspended from the filter in turbid TE buffer. The spent Waterra filter can be thrown away.</p></li>
+<li><p>Agitate capsule for five minutes.</p>
+<ul>
+<li>A fingertip can be placed over each end and the capsule manually shaken, or if parafilm is securely taped into place, the capsule can be held against a vortex.</li>
+</ul></li>
+<li><p>Pour the solution back into the first 50 mL Falcon tube, and repeat steps 5 and 6 for the second 50 mL Falcon tube, ending up with two 50 mL Falcon tubes of eDNA resuspended from the filter in turbid TE buffer.</p>
+<ul>
+<li>The spent Waterra filter can be thrown away.</li>
+</ul></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="What is TE Buffer?">
+<div class="callout callout-style-default callout-tip callout-titled page-columns page-full" title="What is TE Buffer?">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -206,12 +209,23 @@ ul.task-list li input[type="checkbox"] {
 What is TE Buffer?
 </div>
 </div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container callout-body page-columns page-full">
 <p><strong>TE buffer (Tris-EDTA, pH 8.0)</strong> is used to gently release DNA from inside the Waterra capsule.</p>
-<ul>
-<li><strong>Tris (50 mM):</strong> stabilises pH<br>
-</li>
-<li><strong>EDTA (10 mM):</strong> binds divalent cations (e.g., Mg²⁺, Ca²⁺) to inhibit DNases and protect DNA integrity</li>
+<ul class="page-columns page-full">
+<li class="page-columns page-full"><p><strong>Tris</strong> or Tris(hydroxymethyl) aminomethane: stabilises pH</p>
+<ul class="page-columns page-full">
+<li class="page-columns page-full"><p>Maintaining a stable, slightly alkaline pH is crucial to prevent DNA degradation caused by hydrolysis, which breaks the bonds between <em>nucleotides</em> — the building blocks of DNA.</p>
+<div class="page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="https://nci-media.cancer.gov/pdq/media/images/761781.jpg" class="img-fluid figure-img column-page" style="width:70.0%"></p>
+<figcaption>Structure of DNA (Source: NIH)</figcaption>
+</figure>
+</div>
+</div></li>
+<li><p>If pH drops (becomes acidic), DNA is more prone to hydrolytic cleavage — this breaks the bonds between nucleotides and can irreversibly damage the DNA, interfering with downstream steps like PCR and sequencing.</p></li>
+</ul></li>
+<li><p><strong>EDTA</strong> (Ethylenediaminetetraacetic acid): binds divalent cations (e.g.&nbsp;Mg²⁺, Ca²⁺) to inhibit DNases and protect DNA integrity</p></li>
 </ul>
 </div>
 </div>
@@ -229,10 +243,10 @@ TE Buffer (Tris-EDTA) Recipe – 5 L Total
 <section id="ingredients-for-5-l" class="level4">
 <h4 class="anchored" data-anchor-id="ingredients-for-5-l">🧾 Ingredients (for 5 L)</h4>
 <ul>
-<li><p><strong>250 mL of 1 M Tris-HCl (pH 8.0)</strong><br>
-→ Final concentration: <strong>50 mM</strong></p></li>
-<li><p><strong>100 mL of 0.5 M EDTA (pH 8.0)</strong><br>
-→ Final concentration: <strong>10 mM</strong></p></li>
+<li><p><strong>250 mL of 1 M Tris-HCl</strong><br>
+→ Final concentration: <strong>50 mM (millimolar)</strong></p></li>
+<li><p><strong>100 mL of 0.5 M EDTA</strong><br>
+→ Final concentration: <strong>10 mM (millimolar)</strong></p></li>
 <li><p><strong>4,650 mL of ultrapure water</strong><br>
 → To bring total volume to <strong>5,000 mL (5 L)</strong></p></li>
 </ul>
@@ -243,9 +257,8 @@ TE Buffer (Tris-EDTA) Recipe – 5 L Total
 <ol type="1">
 <li><p>In a clean <strong>5 L glass bottle</strong>, add:</p>
 <ul>
-<li>250 mL of 1 M Tris-HCl (pH 8.0)<br>
-</li>
-<li>100 mL of 0.5 M EDTA (pH 8.0)</li>
+<li>250 mL of 1 M Tris-HCl</li>
+<li>100 mL of 0.5 M EDTA</li>
 </ul></li>
 <li><p>Add ultrapure water up to the <strong>5 L mark</strong>.</p></li>
 <li><p><strong>Mix thoroughly</strong> by gently inverting or stirring.</p></li>
@@ -264,10 +277,10 @@ TE Buffer (Tris-EDTA) Recipe – 5 L Total
 <section id="centrifuging" class="level3">
 <h3 class="anchored" data-anchor-id="centrifuging">Centrifuging</h3>
 <ol start="8" type="1">
-<li>Centrifuge the two 50 mL Falcon tubes for 10 minutes at 4500 rpm to separate debris/sediment from the liquid DNA-containing fraction.
+<li>Centrifuge the two 50 mL Falcon tubes for 10 minutes at 4500 rpm (revolutions per minute, a unit that measures the rotational speed of a centrifuge rotor) to separate debris/sediment from the liquid DNA-containing fraction.
 <ul>
-<li><strong>Supernatant</strong>: the clear upper layer, containing eDNA in solution</li>
-<li><strong>Pellet</strong>: the sediment settled at the bottom of the tube</li>
+<li><em>Supernatant: the clear upper layer, containing eDNA in solution</em></li>
+<li><em>Pellet: the sediment settled at the bottom of the tube</em></li>
 </ul></li>
 </ol>
 </section>
@@ -276,7 +289,10 @@ TE Buffer (Tris-EDTA) Recipe – 5 L Total
 <ol start="9" type="1">
 <li><p>An analytical test filter funnel attached to a Buchner funnel and peristaltic pump is used to filter the buffer mix through a 0.45-micron disc filter (Nalgene™).</p></li>
 <li><p>Combine the two Falcon tubes per sample by pouring the now clear supernatant from both tubes through the funnel, trying to retain the sediment in the tubes.</p></li>
-<li><p>Adjust the speed of the peristaltic pump to pull the supernatant through the funnel, with an additional minute of filtering to dry the funnel filter disc. <em>Samples which required multiple filters due to build-up of sediment can be consolidated into one analytical filter funnel.</em></p></li>
+<li><p>Adjust the speed of the peristaltic pump to pull the supernatant through the funnel, with an additional minute of filtering to dry the funnel filter disc.</p>
+<ul>
+<li>Samples which required multiple filters due to build-up of sediment can be consolidated into one analytical filter funnel.</li>
+</ul></li>
 <li><p>Upon completion, one funnel filter disc should contain the filtered supernatant, and the remaining sediment should be retained in the original two Falcon tubes.</p></li>
 </ol>
 </section>
@@ -297,13 +313,25 @@ Buffer &amp; kit Components
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>PW1 (lysis buffer):</strong> Breaks open cell walls and membranes<br>
-</li>
-<li><strong>Proteinase K:</strong> Degrades proteins and DNases that might otherwise destroy DNA<br>
-</li>
-<li><strong>Beads (inside the bead tube):</strong> Provide <strong>mechanical disruption</strong> during vortexing, especially for tough cell walls (e.g.&nbsp;bacteria, algae)<br>
-</li>
-<li><strong>QIAshredder column (later step):</strong> Removes cellular debris, allowing only the clean lysate to pass through</li>
+<li><p><strong>PW1 (lysis buffer):</strong> Breaks open cell walls and membranes</p>
+<ul>
+<li>Lysis: the breakdown of a cell caused by damage to its plasma (outer) membrane</li>
+</ul></li>
+<li><p><strong>Proteinase K:</strong> Degrades proteins and DNases that might otherwise destroy DNA</p>
+<ul>
+<li>Lipids and proteins can act as PCR inhibitors</li>
+</ul></li>
+<li><p><strong>Beads (inside the bead tube):</strong> Provide <strong>mechanical disruption</strong> during vortexing, especially for tough cell walls (e.g.&nbsp;bacteria, algae)</p></li>
+<li><p><strong>QIAshredder column (later step):</strong> Removes cellular debris, allowing only the clean lysate to pass through</p>
+<ul>
+<li>Lysate is the fluid that results from breaking open cells — a mixture that contains all the internal contents of the cells just lysed (broken apart).</li>
+<li>In DNA extraction:
+<ul>
+<li>Start by disrupting the cells (e.g.&nbsp;with Proteinase K and lysis buffers).</li>
+<li>This releases the DNA into the solution — now called a lysate.</li>
+<li>The goal is to clean up this lysate to isolate just the DNA, removing all the other cellular “junk”.</li>
+</ul></li>
+</ul></li>
 </ul>
 </div>
 </div>
@@ -373,12 +401,15 @@ Materials
 <p><strong>Goal</strong>: Measures how much double-stranded DNA (dsDNA) there is in the extract.</p>
 </blockquote>
 <ul>
-<li>Prepare Qubit working solution: Mix dye and buffer at a 1:200 ratio (e.g.&nbsp;199 µL buffer + 1 µL dye per sample).</li>
-<li>Label assay tubes for each standard and sample.</li>
-<li>Add 190 µL of working solution to each tube.</li>
-<li>Add 10 µL of your DNA sample (or Qubit standard) into each tube.</li>
-<li>Vortex gently and incubate at room temperature for 2 minutes (light-sensitive!).</li>
-<li>Insert tubes one at a time into the Qubit and record concentrations (ng/µL).</li>
+<li><p>Prepare Qubit working solution:</p>
+<ul>
+<li>Mix dye and buffer at a 1:200 ratio (e.g.&nbsp;199 µL buffer + 1 µL dye per sample).</li>
+</ul></li>
+<li><p>Label assay tubes for each standard and sample.</p></li>
+<li><p>Add 190 µL of working solution to each tube.</p></li>
+<li><p>Add 10 µL of your DNA sample (or Qubit standard) into each tube.</p></li>
+<li><p>Vortex gently and incubate at room temperature for 2 minutes (light-sensitive!).</p></li>
+<li><p>Insert tubes one at a time into the Qubit and record concentrations (ng/µL).</p></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled" title="Expected results">
 <div class="callout-header d-flex align-content-center">
@@ -404,61 +435,79 @@ Expected results
 </ul>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Buffer &amp; kit Components">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Buffer &amp; kit Components
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To convert:</p>
+<ul>
+<li><p>µL → mL: divide by 1,000 (e.g.&nbsp;200 µL ÷ 1,000 = 0.2 mL)</p></li>
+<li><p>mL → µL: multiply by 1,000 (e.g.&nbsp;1.5 mL × 1,000 = 1,500 µL)</p></li>
+</ul>
+</div>
+</div>
 <hr>
 </section>
-<section id="pcr-amplification" class="level2">
+<section id="pcr-amplification" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="pcr-amplification">📈 PCR amplification</h2>
 <blockquote class="blockquote">
-<p><strong>Goal:</strong> To amplify a target DNA barcode region from eDNA extracts to detectable levels using polymerase chain reaction (PCR).</p>
+<p><strong>Goal</strong>: To amplify a target DNA barcode region from eDNA extracts to detectable levels using polymerase chain reaction (PCR).</p>
 </blockquote>
-<p>PCR targets a <strong>short, standardised gene region</strong> (a “barcode”) for species identification.</p>
 <ul>
-<li><p>For fish, the <strong>12S rRNA mitochondrial gene</strong> is commonly used.</p></li>
-<li><p><strong>Primers</strong> are short, synthetic sequences (~18–25 bp) that define the region to be amplified.</p>
+<li><p>PCR targets a short, standardised gene region (a “barcode”) used for species identification.</p></li>
+<li><p>For fish, the 12S rRNA mitochondrial gene is commonly used as a barcode.</p></li>
+<li><p>Primers are short, synthetic DNA sequences (~18–25 base pairs) that define the start and end points of the target region to be amplified.</p></li>
+<li><p>They are custom-designed and ordered from commercial suppliers (e.g.&nbsp;IDT, Eurofins) and are essential for selectively amplifying barcode regions.</p></li>
+<li><p>Two primers are needed:</p>
 <ul>
-<li><p><strong>Forward primer</strong> (5′→3′):<br>
-<code>"GTCGGTAAAACTCGTGCCAGC"</code> (12S MiFish-U-F)</p></li>
-<li><p><strong>Reverse primer</strong> (5′→3′):<br>
-<code>"CATAGTGGGGTATCTAATCCCAGTTTG"</code> (12S MiFish-U-R)</p></li>
+<li><p>A forward primer, which binds to one strand at the start of the barcode region (5′→3′ direction).</p></li>
+<li><p>A reverse primer, which binds to the opposite strand at the end of the region (also written 5′→3′ but binds in the reverse orientation).</p></li>
 </ul></li>
-</ul>
-<blockquote class="blockquote">
-<p>These primers bind just outside the barcode region to amplify it while excluding the rest of the genome.</p>
-</blockquote>
-<p>PCR cycles through <strong>three temperature-dependent steps</strong>:</p>
-<ol type="1">
-<li><p><strong>Denaturation</strong> (~94–95 °C):<br>
-DNA strands separate into single strands.</p></li>
-<li><p><strong>Annealing</strong> (~50–60 °C):<br>
-Primers bind (anneal) to target sequences.</p></li>
-<li><p><strong>Extension</strong> (72 °C):<br>
-DNA polymerase (e.g.&nbsp;<em>Taq</em>) synthesises new strands.</p></li>
-</ol>
-<p>Each cycle <strong>doubles the amount of target DNA</strong>.<br>
-After ~35–40 cycles, <strong>millions of identical amplicons</strong> are produced.</p>
-<p>Typical <strong>PCR mix</strong> includes:</p>
+<li><p>These primers flank the barcode, allowing DNA polymerase to copy the specific region between them.</p></li>
+<li><p>Example Primers (MiFish 12S):</p>
 <ul>
-<li>eDNA extract<br>
-</li>
-<li>Forward &amp; reverse primers<br>
-</li>
-<li>DNA polymerase (e.g.&nbsp;<em>Taq</em>)<br>
-</li>
-<li>dNTPs (A, T, C, G)<br>
-</li>
+<li><p>Forward primer: <code>GTCGGTAAAACTCGTGCCAGC</code> (MiFish-U-F)</p></li>
+<li><p>Reverse primer: <code>CATAGTGGGGTATCTAATCCCAGTTTG</code> (MiFish-U-R)</p></li>
+</ul></li>
+<li><p>PCR involves repeated thermal cycling:</p>
+<ul>
+<li><p>Denaturation (~94–95 °C): DNA strands are separated into single strands.</p></li>
+<li><p>Annealing (~50–60 °C): Forward and reverse primers bind to their complementary sequences flanking the target barcode.</p></li>
+<li><p>Synthesis/Extension (72 °C): DNA polymerase (e.g.&nbsp;Taq) synthesises new DNA strands between the primers.</p></li>
+</ul></li>
+<li><p>This cycle is repeated ~35–40 times. Each cycle doubles the amount of target DNA.</p></li>
+</ul>
+<p>The result is millions of identical copies (amplicons) of just the barcode region — ready for sequencing.</p>
+<div class="column-page">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://cdn.britannica.com/77/22477-050-16EFB7B3/process-polymerase-chain-reaction.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>PCR process</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>Typical PCR mix includes:</p>
+<ul>
+<li>eDNA extract</li>
+<li>Forward &amp; reverse primers</li>
+<li>DNA polymerase (e.g.&nbsp;Taq)</li>
+<li>dNTPs (A, T, C, G)</li>
 <li>Buffer</li>
-</ul>
-<p>Controls:</p>
+</ul></li>
+<li><p>Controls:</p>
 <ul>
-<li>✅ <strong>Positive control</strong>: Contains known DNA to confirm amplification<br>
-</li>
-<li>❌ <strong>Negative control</strong>: No DNA added — detects contamination<br>
-</li>
-<li>🌡 <strong>Optimised annealing temperature</strong>: Ensures specific primer binding</li>
+<li>Positive control: Contains known DNA to confirm amplification</li>
+<li>Negative control: No DNA added — detects contamination</li>
+<li>Optimised annealing temperature: Ensures specific primer binding</li>
+</ul></li>
+<li><p>After PCR, amplicons can be verified using gel electrophoresis before sequencing.</p></li>
 </ul>
-<blockquote class="blockquote">
-<p>fter PCR, amplicons can be verified using gel electrophoresis before sequencing.</p>
-</blockquote>
 <div class="callout callout-style-default callout-note callout-titled" title="What is Taq Polymerase and what does it do?">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -490,33 +539,48 @@ It starts at the primer and matches each base with its complement:</p>
 </div>
 </div>
 <hr>
-</section>
 <section id="gel-electrophoresis" class="level2">
 <h2 class="anchored" data-anchor-id="gel-electrophoresis">🧫 Gel electrophoresis</h2>
 <blockquote class="blockquote">
 <p><strong>Goal:</strong> To visually confirm successful PCR amplification and screen for contamination.</p>
 </blockquote>
-<p>PCR products are loaded into an <strong>agarose gel</strong>, a porous matrix made from a seaweed-derived polysaccharide. When an electric current is applied:</p>
+<ul>
+<li>PCR products are loaded into an <strong>agarose gel</strong>, a porous matrix made from a seaweed-derived polysaccharide.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.yourgenome.org/wp-content/uploads/2024/01/1341-Gel-Electrophoresis-set-up-768x626.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>DNA electrophoresis equipment</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>When an electric current is applied:</p>
 <ul>
 <li><strong>Negatively charged DNA</strong> migrates toward the <strong>positive electrode</strong></li>
 <li><strong>Smaller fragments</strong> move faster through the gel pores<br>
 </li>
 <li><strong>Larger fragments</strong> move more slowly</li>
-</ul>
-<p>After running the gel, DNA is stained with a <strong>fluorescent dye</strong> (e.g., <strong>GelRed</strong> or <strong>SYBR Safe</strong>) and visualised under <strong>UV or blue light</strong>.</p>
-<p>Compare each sample’s band to a <strong>DNA ladder</strong> (size marker):</p>
+</ul></li>
+<li><p>After running the gel, DNA is stained with a <strong>fluorescent dye</strong> (e.g., <strong>GelRed</strong> or <strong>SYBR Safe</strong>) and visualised under <strong>UV or blue light</strong>.</p></li>
+<li><p>Compare each sample’s band to a <strong>DNA ladder</strong> (size marker):</p>
 <ul>
-<li>✅ <strong>Clear band at expected size</strong> (e.g., 200–600 bp for 12S): PCR likely succeeded</li>
-<li>⚠️ <strong>Smearing or multiple bands</strong>: Non-specific amplification or degraded DNA</li>
-<li>❌ <strong>No band</strong>: PCR failed or DNA template was insufficient</li>
-</ul>
-<p>Control lanes should show:</p>
+<li><p>*Clear band at expected size** (e.g., 200–600 bp for 12S): PCR likely succeeded</p>
+<ul>
+<li>bp (base pairs): the unit used to measure the length of a DNA fragment.</li>
+<li>1 bp = 1 base pair (A–T or C–G)</li>
+<li>200–600 bp means the DNA fragment is 200 to 600 base pairs long</li>
+</ul></li>
+<li><p><strong>Smearing or multiple bands</strong>: Non-specific amplification or degraded DNA</p></li>
+<li><p>*No band**: PCR failed or DNA template was insufficient</p></li>
+</ul></li>
+<li><p>Control lanes should show:</p>
 <ul>
 <li><strong>Positive control</strong> → Band present at expected size<br>
 </li>
 <li><strong>Negative control</strong> → No bands (confirms absence of contamination)<br>
 </li>
 <li><strong>Samples</strong> → Bands at consistent sizes depending on target gene</li>
+</ul></li>
 </ul>
 <p>Setup example</p>
 <table class="caption-top table">
@@ -553,6 +617,12 @@ It starts at the primer and matches each base with its complement:</p>
 </tr>
 </tbody>
 </table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.yourgenome.org/wp-content/uploads/2024/01/1342-Gel-Electrophoresis-end-product-673x768.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Illustration showing DNA bands separated on a gel</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Materials">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -581,9 +651,6 @@ Materials
 </ul>
 </div>
 </div>
-<blockquote class="blockquote">
-<p>🧪 This step is fast, cost-effective, and helps confirm whether samples are ready for sequencing.</p>
-</blockquote>
 <hr>
 </section>
 <section id="sequencing" class="level2">
@@ -593,19 +660,23 @@ Materials
 </blockquote>
 <p>Steps:</p>
 <ol type="1">
-<li><p><strong>Pooling</strong><br>
-PCR products (<strong>amplicons</strong>) from different samples are <strong>combined into a single sequencing library</strong> — a collective pool of DNA fragments prepared for sequencing.</p></li>
-<li><p><strong>Barcoding (Indexing)</strong><br>
-Each sample is tagged with a <strong>unique short DNA sequence</strong> (barcode/index).<br>
-→ This allows identification of which sequence came from which sample after sequencing.<br>
-→ The process is known as <strong>multiplexing</strong>.</p></li>
-<li><p><strong>Sequencing</strong><br>
-The final library is loaded into a <strong>high-throughput sequencing platform</strong>, typically an <strong>Illumina MiSeq</strong>.</p></li>
-</ol>
-<p>Illumina uses a method called <strong>sequencing by synthesis</strong>:</p>
+<li><p><strong>Pooling</strong></p>
 <ul>
-<li>DNA fragments are copied <strong>one base at a time</strong></li>
-<li>As each base is added, it emits a <strong>fluorescent signal</strong>:
+<li>PCR products (<strong>amplicons</strong>) from different samples are <strong>combined into a single sequencing library</strong> — a collective pool of DNA fragments prepared for sequencing.</li>
+</ul></li>
+<li><p><strong>Barcoding (Indexing)</strong></p>
+<ul>
+<li>Each sample is tagged with a <strong>unique short DNA sequence</strong> (barcode/index).<br>
+→ This allows identification of which sequence came from which sample after sequencing.<br>
+→ The process is known as <strong>multiplexing</strong>.</li>
+</ul></li>
+<li><p><strong>Sequencing</strong></p>
+<ul>
+<li><p>The final library is loaded into a <strong>high-throughput sequencing platform</strong>, typically an <strong>Illumina MiSeq</strong>.</p></li>
+<li><p>Illumina uses a method called <strong>sequencing by synthesis</strong>:</p>
+<ul>
+<li><p>DNA fragments are copied <strong>one base at a time</strong></p></li>
+<li><p>As each base is added, it emits a <strong>fluorescent signal</strong>:</p>
 <ul>
 <li><strong>A</strong> = green<br>
 </li>
@@ -615,19 +686,17 @@ The final library is loaded into a <strong>high-throughput sequencing platform</
 </li>
 <li><strong>G</strong> = yellow</li>
 </ul></li>
-<li>A camera records these signals <strong>base-by-base</strong> as a sequence of coloured flashes</li>
-</ul>
-<p>Each sequencing run produces <strong>FASTQ files</strong> containing:</p>
+<li><p>A camera records these signals <strong>base-by-base</strong> as a sequence of coloured flashes</p></li>
+</ul></li>
+<li><p>Each sequencing run produces <strong>FASTQ files</strong> containing:</p>
 <ul>
-<li><strong>Millions of short DNA reads</strong> (typically 150–300 base pairs)<br>
-</li>
-<li><strong>Quality scores</strong> for each base</li>
-</ul>
-<p>Each read ideally corresponds to a <strong>copy of the amplified barcode region</strong> (e.g., mitochondrial 12S rRNA for fish).</p>
-<blockquote class="blockquote">
-<p>Example:<br>
-A read like <code>AGCCTTGAGAACTGCTTAC...</code> might be identified as <strong>European seabass</strong> through comparison with a reference database.</p>
-</blockquote>
+<li><p><strong>Millions of short DNA reads</strong> (typically 150–300 base pairs)</p></li>
+<li><p><strong>Quality scores</strong> for each base</p></li>
+<li><p>Each read ideally corresponds to a <strong>copy of the amplified barcode region</strong> (e.g.&nbsp;mitochondrial 12S rRNA for fish).</p></li>
+</ul></li>
+<li><p>Example: A read like <code>AGCCTTGAGAACTGCTTAC...</code> might be identified as <strong>European seabass</strong> through comparison with a reference database.</p></li>
+</ul></li>
+</ol>
 <hr>
 </section>
 <section id="bioinformatics" class="level2">
@@ -635,31 +704,30 @@ A read like <code>AGCCTTGAGAACTGCTTAC...</code> might be identified as <strong>E
 <blockquote class="blockquote">
 <p><strong>Goal:</strong> To process and interpret raw DNA sequence data to identify which species were present in each sample.</p>
 </blockquote>
-<p>After sequencing (e.g.&nbsp;on an <strong>Illumina MiSeq</strong>), each sample produces <strong>FASTQ files</strong> — text files containing:</p>
 <ul>
-<li>Millions of short DNA reads<br>
-</li>
-<li>A quality score for each base indicating confidence in base calls</li>
-</ul>
-<section id="step-1-quality-filtering" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-quality-filtering">Step 1: Quality filtering</h3>
+<li><p>After sequencing (e.g.&nbsp;on an <strong>Illumina MiSeq</strong>), each sample produces <strong>FASTQ files</strong> — text files containing:</p>
 <ul>
-<li>Remove <strong>low-quality reads</strong> and unreliable base calls</li>
-<li>Trim off:
+<li><p>Millions of short DNA reads</p></li>
+<li><p>A quality score for each base indicating confidence in base calls</p></li>
+</ul></li>
+<li><p>Quality filtering</p>
+<ul>
+<li><p>Remove <strong>low-quality reads</strong> and unreliable base calls</p></li>
+<li><p>Trim off:</p>
 <ul>
 <li>Residual <strong>primers</strong><br>
 </li>
 <li>Adapter sequences<br>
 </li>
 <li>Noisy bases at the ends</li>
+<li>Common tools: cutadapt<code>,</code>fastp<code>,</code>Trimmomatic`</li>
+</ul></li>
+</ul></li>
+<li><p>Denoising &amp; dereplication</p>
+<ul>
+<li>This is where <a href="https://benjjneb.github.io/dada2/index.html">DADA2</a> plays a central role.</li>
 </ul></li>
 </ul>
-<p>🛠 <strong>Common tools</strong>:<br>
-<code>cutadapt</code>, <code>fastp</code>, <code>Trimmomatic</code></p>
-</section>
-<section id="step-2-denoising-dereplication" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-denoising-dereplication">Step 2: Denoising &amp; dereplication</h3>
-<p>This is where <a href="https://benjjneb.github.io/dada2/index.html">DADA2</a> plays a central role.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="What is DADA2?">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -712,78 +780,73 @@ What is DADA2?
 </table>
 </div>
 </div>
-</section>
-<section id="step-3-taxonomic-assignment" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-taxonomic-assignment">Step 3: Taxonomic assignment</h3>
-<p>ASVs are matched to known species or genera using a <strong>reference database</strong>.</p>
-<p>🗂 <strong>Common databases</strong>:</p>
+<ul>
+<li><p>Taxonomic assignment</p>
+<ul>
+<li><p>ASVs are matched to known species or genera using a <strong>reference database</strong>.</p></li>
+<li><p><strong>Common databases</strong>:</p>
 <ul>
 <li><strong>GenBank</strong> – Broad nucleotide database</li>
 <li><strong>MiFish</strong> – Fish-specific 12S rRNA barcodes<br>
 </li>
 <li><strong>BOLD</strong> – Barcode of Life Data System (especially for COI gene)</li>
-</ul>
-<p>🧠 <strong>Matching tools</strong>:</p>
+</ul></li>
+<li><p><strong>Matching tools</strong>:</p>
 <ul>
-<li><p><strong>BLAST</strong> – Finds the closest match in a database<br>
-&gt; e.g.&nbsp;ASV <code>AGCCTTGAGAACTGCTTAC...</code> → <em>Dicentrarchus labrax</em> (European seabass), 99.3% identity</p></li>
-<li><p><strong>QIIME2</strong> – End-to-end pipeline with taxonomy plugins (e.g.&nbsp;BLAST, naive Bayes)<br>
-</p></li>
-<li><p><strong>MEGAN</strong> – Converts BLAST results into taxonomic trees &amp; summaries</p></li>
+<li><strong>BLAST</strong> – Finds the closest match in a database (e.g.&nbsp;ASV <code>AGCCTTGAGAACTGCTTAC...</code> → <em>Dicentrarchus labrax</em> (European seabass), 99.3% identity)</li>
+<li><strong>QIIME2</strong> – End-to-end pipeline with taxonomy plugins (e.g.&nbsp;BLAST, naive Bayes)<br>
+</li>
+<li><strong>MEGAN</strong> – Converts BLAST results into taxonomic trees &amp; summaries</li>
+</ul></li>
+</ul></li>
+<li><p>This is where anonymous DNA fragments are assigned species names — transforming data into <strong>ecological meaning</strong>.</p></li>
 </ul>
-<blockquote class="blockquote">
-<p>🧬 This is where anonymous DNA fragments are assigned species names — transforming data into <strong>ecological meaning</strong>.</p>
-</blockquote>
-<div class="callout callout-style-default callout-note callout-titled" title="What is BLAST and how does it work?">
+<div class="callout callout-style-default callout-note callout-titled" title="Taxonomic assignment using BLAST and BASTA">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-What is BLAST and how does it work?
+Taxonomic assignment using BLAST and BASTA
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>BLAST</strong> stands for <strong>Basic Local Alignment Search Tool</strong>.<br>
-It is one of the most widely used tools in bioinformatics for identifying DNA sequences.</p>
-<p>BLAST compares your unknown DNA sequence (e.g., an <strong>ASV</strong>) against a reference database such as <strong>GenBank</strong>, <strong>BOLD</strong>, or <strong>MiFish</strong>.</p>
-<p>It finds the <strong>most similar sequences</strong> and tells you:</p>
+<p><strong>BLAST</strong> stands for <strong>Basic Local Alignment Search Tool</strong>.</p>
 <ul>
-<li>✅ Which known species your sequence most closely matches<br>
-</li>
-<li>🧠 How confident that match is, based on:
+<li><p>It compares your unknown DNA sequence (e.g.&nbsp;an ASV) against a reference database such as GenBank, BOLD, or MiFish to find the most similar known sequences.</p></li>
+<li><p>It reports:</p>
 <ul>
-<li><strong>% Identity</strong>: how many bases are exactly the same<br>
-</li>
-<li><strong>Query Coverage</strong>: how much of your sequence aligned with the reference<br>
-</li>
-<li><strong>E-value</strong>: the probability that this match occurred by chance (lower is better)</li>
+<li><p>% Identity – How similar your sequence is to the reference</p></li>
+<li><p>Query Coverage – How much of your ASV aligned with the reference</p></li>
+<li><p>value – The probability the match is random (lower is better)</p></li>
+</ul></li>
+<li><p>Example:</p>
+<ul>
+<li>ASV: <code>AGCCTTGAGAACTGCTTAC</code>… Best match: Dicentrarchus labrax (European seabass)</li>
+<li>Result: 99.3% identity, 98% coverage, E-value = 2e-50</li>
+<li>Strong evidence that this ASV is from European seabass.</li>
 </ul></li>
 </ul>
-<blockquote class="blockquote">
-<p>If an ASV like <code>AGCCTTGAGAACTGCTTAC...</code> is run through BLAST:</p>
-</blockquote>
+<p><strong>BASTA</strong> stands for <strong>BLAST-based Taxonomic Assignment</strong>.</p>
 <ul>
-<li>The top hit might be <em>Dicentrarchus labrax</em> (European seabass)<br>
-</li>
-<li>With <strong>99.3% identity</strong>, <strong>98% coverage</strong>, and <strong>E-value = 2e-50</strong></li>
-</ul>
-<p>This suggests that the ASV very likely belongs to <strong>European seabass</strong>.</p>
-<p>🛠 Where BLAST fits into your workflow:</p>
+<li><p>BASTA is a tool that builds on BLAST results, providing automated and reproducible taxonomic assignment using the Last Common Ancestor (LCA) approach.</p></li>
+<li><p>While BLAST gives a list of possible matches, BASTA summarises those hits and assigns the taxonomy based on:</p>
 <ul>
-<li>Run BLAST after denoising to assign taxonomy to ASVs</li>
-<li>Use it with a curated database to avoid spurious matches</li>
-<li>Optionally refine with thresholds (e.g.&nbsp;only accept matches &gt;97% identity)</li>
+<li><p>A consensus of the top hits</p></li>
+<li><p>User-defined thresholds for identity and coverage</p></li>
+<li><p>Lowest common taxonomic rank shared by all top matches (LCA)</p></li>
+<li><p>This helps avoid overly specific or incorrect species assignments.</p></li>
+</ul></li>
 </ul>
-<blockquote class="blockquote">
-<p>BLAST is essential for translating raw DNA into <strong>real species names</strong>.</p>
-</blockquote>
+<p>BLAST finds best matching sequences in a database, and BASTA assigns taxonomy using consensus of BLAST hits.</p>
 </div>
 </div>
-</section>
-<section id="step-4-generate-an-abundance-table" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-generate-an-abundance-table">Step 4: Generate an abundance table</h3>
-<p>The final step is building a <strong>species-by-sample matrix</strong> to visualise biodiversity patterns.</p>
+<ul>
+<li><p>Generate an abundance table</p>
+<ul>
+<li>The final step is building a <strong>species-by-sample matrix</strong> to visualise biodiversity patterns.</li>
+</ul></li>
+</ul>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -814,15 +877,18 @@ It is one of the most widely used tools in bioinformatics for identifying DNA se
 </tr>
 </tbody>
 </table>
-<p>This process turns millions of anonymous DNA fragments into actionable insights:</p>
 <ul>
-<li>✅ <strong>What species were present?</strong></li>
-<li>🌍 <strong>Which sites had higher biodiversity?</strong></li>
-<li>🔁 <strong>How did communities change across space or time?</strong></li>
+<li><p>This process turns millions of anonymous DNA fragments into actionable insights:</p>
+<ul>
+<li>What species were present?</li>
+<li>Which sites had higher biodiversity?</li>
+<li>How did communities change across space or time?</li>
+</ul></li>
 </ul>
 
 
 </section>
+</div>
 </section>
 
 </main> <!-- /main -->
