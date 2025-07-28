@@ -101,6 +101,16 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">DADA2</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">English</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./hu/index.html"> 
+<span class="menu-text">Magyar</span></a>
+  </li>  
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -121,6 +131,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#dna-extraction" id="toc-dna-extraction" class="nav-link" data-scroll-target="#dna-extraction">🧬 DNA extraction</a></li>
   <li><a href="#dna-quantification-qubit" id="toc-dna-quantification-qubit" class="nav-link" data-scroll-target="#dna-quantification-qubit">🔬 DNA quantification (Qubit)</a></li>
   <li><a href="#pcr-amplification" id="toc-pcr-amplification" class="nav-link" data-scroll-target="#pcr-amplification">📈 PCR amplification</a></li>
+  <li><a href="#gel-electrophoresis" id="toc-gel-electrophoresis" class="nav-link" data-scroll-target="#gel-electrophoresis">🧫 Gel electrophoresis</a></li>
+  <li><a href="#sequencing" id="toc-sequencing" class="nav-link" data-scroll-target="#sequencing">📦 Sequencing</a></li>
+  <li><a href="#bioinformatics" id="toc-bioinformatics" class="nav-link" data-scroll-target="#bioinformatics">💻 Bioinformatics</a></li>
   </ul>
 </nav>
 </nav>
@@ -129,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -178,12 +191,12 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <hr>
 </section>
-<section id="dna-extraction" class="level2 page-columns page-full">
+<section id="dna-extraction" class="level2">
 <h2 class="anchored" data-anchor-id="dna-extraction">🧬 DNA extraction</h2>
 <blockquote class="blockquote">
 <p><strong>Goal:</strong> Release and purify the DNA from the filters and remove unwanted material.</p>
 </blockquote>
-<section id="resuspension-of-the-edna" class="level3 page-columns page-full">
+<section id="resuspension-of-the-edna" class="level3">
 <h3 class="anchored" data-anchor-id="resuspension-of-the-edna">Resuspension of the eDNA</h3>
 <ol type="1">
 <li><p>Remove the Waterra filters from the freezer in advance and allow them to defrost in the fridge for approximately one hour before extraction.</p></li>
@@ -200,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
 <li>The spent Waterra filter can be thrown away.</li>
 </ul></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled page-columns page-full" title="What is TE Buffer?">
+<div class="callout callout-style-default callout-tip callout-titled" title="What is TE Buffer?">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -209,16 +222,16 @@ ul.task-list li input[type="checkbox"] {
 What is TE Buffer?
 </div>
 </div>
-<div class="callout-body-container callout-body page-columns page-full">
+<div class="callout-body-container callout-body">
 <p><strong>TE buffer (Tris-EDTA, pH 8.0)</strong> is used to gently release DNA from inside the Waterra capsule.</p>
-<ul class="page-columns page-full">
-<li class="page-columns page-full"><p><strong>Tris</strong> or Tris(hydroxymethyl) aminomethane: stabilises pH</p>
-<ul class="page-columns page-full">
-<li class="page-columns page-full"><p>Maintaining a stable, slightly alkaline pH is crucial to prevent DNA degradation caused by hydrolysis, which breaks the bonds between <em>nucleotides</em> — the building blocks of DNA.</p>
-<div class="page-columns page-full">
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="https://nci-media.cancer.gov/pdq/media/images/761781.jpg" class="img-fluid figure-img column-page" style="width:70.0%"></p>
+<ul>
+<li><p><strong>Tris</strong> or Tris(hydroxymethyl) aminomethane: stabilises pH</p>
+<ul>
+<li><p>Maintaining a stable, slightly alkaline pH is crucial to prevent DNA degradation caused by hydrolysis, which breaks the bonds between <em>nucleotides</em> — the building blocks of DNA.</p>
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
+<figure class="figure">
+<p><img src="https://nci-media.cancer.gov/pdq/media/images/761781.jpg" class="img-fluid figure-img"></p>
 <figcaption>Structure of DNA (Source: NIH)</figcaption>
 </figure>
 </div>
@@ -447,14 +460,14 @@ Buffer &amp; kit Components
 <div class="callout-body-container callout-body">
 <p>To convert:</p>
 <ul>
-<li><p>µL → mL: divide by 1,000 (e.g.&nbsp;200 µL ÷ 1,000 = 0.2 mL)</p></li>
-<li><p>mL → µL: multiply by 1,000 (e.g.&nbsp;1.5 mL × 1,000 = 1,500 µL)</p></li>
+<li>µL → mL: divide by 1,000 (e.g.&nbsp;200 µL ÷ 1,000 = 0.2 mL)</li>
+<li>mL → µL: multiply by 1,000 (e.g.&nbsp;1.5 mL × 1,000 = 1,500 µL)</li>
 </ul>
 </div>
 </div>
 <hr>
 </section>
-<section id="pcr-amplification" class="level2 page-columns page-full">
+<section id="pcr-amplification" class="level2">
 <h2 class="anchored" data-anchor-id="pcr-amplification">📈 PCR amplification</h2>
 <blockquote class="blockquote">
 <p><strong>Goal</strong>: To amplify a target DNA barcode region from eDNA extracts to detectable levels using polymerase chain reaction (PCR).</p>
@@ -484,12 +497,13 @@ Buffer &amp; kit Components
 <li><p>This cycle is repeated ~35–40 times. Each cycle doubles the amount of target DNA.</p></li>
 </ul>
 <p>The result is millions of identical copies (amplicons) of just the barcode region — ready for sequencing.</p>
-<div class="column-page">
-<div class="quarto-figure quarto-figure-center">
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
 <figure class="figure">
-<p><img src="https://cdn.britannica.com/77/22477-050-16EFB7B3/process-polymerase-chain-reaction.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://cdn.britannica.com/77/22477-050-16EFB7B3/process-polymerase-chain-reaction.jpg" class="img-fluid figure-img"></p>
 <figcaption>PCR process</figcaption>
 </figure>
+</div>
 </div>
 <ul>
 <li><p>Typical PCR mix includes:</p>
@@ -539,6 +553,7 @@ It starts at the primer and matches each base with its complement:</p>
 </div>
 </div>
 <hr>
+</section>
 <section id="gel-electrophoresis" class="level2">
 <h2 class="anchored" data-anchor-id="gel-electrophoresis">🧫 Gel electrophoresis</h2>
 <blockquote class="blockquote">
@@ -547,11 +562,13 @@ It starts at the primer and matches each base with its complement:</p>
 <ul>
 <li>PCR products are loaded into an <strong>agarose gel</strong>, a porous matrix made from a seaweed-derived polysaccharide.</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
 <figure class="figure">
-<p><img src="https://www.yourgenome.org/wp-content/uploads/2024/01/1341-Gel-Electrophoresis-set-up-768x626.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://www.yourgenome.org/wp-content/uploads/2024/01/1341-Gel-Electrophoresis-set-up-768x626.png" class="img-fluid figure-img"></p>
 <figcaption>DNA electrophoresis equipment</figcaption>
 </figure>
+</div>
 </div>
 <ul>
 <li><p>When an electric current is applied:</p>
@@ -617,11 +634,13 @@ It starts at the primer and matches each base with its complement:</p>
 </tr>
 </tbody>
 </table>
-<div class="quarto-figure quarto-figure-center">
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
 <figure class="figure">
-<p><img src="https://www.yourgenome.org/wp-content/uploads/2024/01/1342-Gel-Electrophoresis-end-product-673x768.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://www.yourgenome.org/wp-content/uploads/2024/01/1342-Gel-Electrophoresis-end-product-673x768.png" class="img-fluid figure-img"></p>
 <figcaption>Illustration showing DNA bands separated on a gel</figcaption>
 </figure>
+</div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Materials">
 <div class="callout-header d-flex align-content-center">
@@ -710,7 +729,7 @@ Materials
 <li><p>Millions of short DNA reads</p></li>
 <li><p>A quality score for each base indicating confidence in base calls</p></li>
 </ul></li>
-<li><p>Quality filtering</p>
+<li><p>Quality filtering:</p>
 <ul>
 <li><p>Remove <strong>low-quality reads</strong> and unreliable base calls</p></li>
 <li><p>Trim off:</p>
@@ -723,7 +742,7 @@ Materials
 <li>Common tools: cutadapt<code>,</code>fastp<code>,</code>Trimmomatic`</li>
 </ul></li>
 </ul></li>
-<li><p>Denoising &amp; dereplication</p>
+<li><p>Denoising &amp; dereplication:</p>
 <ul>
 <li>This is where <a href="https://benjjneb.github.io/dada2/index.html">DADA2</a> plays a central role.</li>
 </ul></li>
@@ -781,7 +800,7 @@ What is DADA2?
 </div>
 </div>
 <ul>
-<li><p>Taxonomic assignment</p>
+<li><p>Taxonomic assignment:</p>
 <ul>
 <li><p>ASVs are matched to known species or genera using a <strong>reference database</strong>.</p></li>
 <li><p><strong>Common databases</strong>:</p>
@@ -816,9 +835,9 @@ Taxonomic assignment using BLAST and BASTA
 <li><p>It compares your unknown DNA sequence (e.g.&nbsp;an ASV) against a reference database such as GenBank, BOLD, or MiFish to find the most similar known sequences.</p></li>
 <li><p>It reports:</p>
 <ul>
-<li><p>% Identity – How similar your sequence is to the reference</p></li>
-<li><p>Query Coverage – How much of your ASV aligned with the reference</p></li>
-<li><p>value – The probability the match is random (lower is better)</p></li>
+<li>% Identity – How similar your sequence is to the reference</li>
+<li>Query Coverage – How much of your ASV aligned with the reference</li>
+<li>value – The probability the match is random (lower is better)</li>
 </ul></li>
 <li><p>Example:</p>
 <ul>
@@ -832,17 +851,17 @@ Taxonomic assignment using BLAST and BASTA
 <li><p>BASTA is a tool that builds on BLAST results, providing automated and reproducible taxonomic assignment using the Last Common Ancestor (LCA) approach.</p></li>
 <li><p>While BLAST gives a list of possible matches, BASTA summarises those hits and assigns the taxonomy based on:</p>
 <ul>
-<li><p>A consensus of the top hits</p></li>
-<li><p>User-defined thresholds for identity and coverage</p></li>
-<li><p>Lowest common taxonomic rank shared by all top matches (LCA)</p></li>
-<li><p>This helps avoid overly specific or incorrect species assignments.</p></li>
+<li>A consensus of the top hits</li>
+<li>User-defined thresholds for identity and coverage</li>
+<li>Lowest common taxonomic rank shared by all top matches (LCA)</li>
+<li>This helps avoid overly specific or incorrect species assignments.</li>
 </ul></li>
 </ul>
 <p>BLAST finds best matching sequences in a database, and BASTA assigns taxonomy using consensus of BLAST hits.</p>
 </div>
 </div>
 <ul>
-<li><p>Generate an abundance table</p>
+<li><p>Generate an abundance table:</p>
 <ul>
 <li>The final step is building a <strong>species-by-sample matrix</strong> to visualise biodiversity patterns.</li>
 </ul></li>
@@ -887,8 +906,6 @@ Taxonomic assignment using BLAST and BASTA
 </ul>
 
 
-</section>
-</div>
 </section>
 
 </main> <!-- /main -->
