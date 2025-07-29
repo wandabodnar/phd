@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>DADA2 Pipeline – Environmental DNA Workflow Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f3c2ea88cadbcfb37ba28ffa2c97cfc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ae2d0dcda2edce4ab590422bb373b64f.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Environmental DNA Workflow Guide</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./summary.html"> 
+<span class="menu-text">Summary</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./workflow.html"> 
+<span class="menu-text">Workflow</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./dada.html" aria-current="page"> 
+<span class="menu-text">DADA2</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">English</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./hu/index.qmd"> 
+<span class="menu-text">Magyar</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#setup-input" id="toc-setup-input" class="nav-link active" data-scroll-target="#setup-input">Setup &amp; input</a></li>
+  <li><a href="#inspecting-quality" id="toc-inspecting-quality" class="nav-link" data-scroll-target="#inspecting-quality">Inspecting quality</a></li>
+  <li><a href="#filter-trim" id="toc-filter-trim" class="nav-link" data-scroll-target="#filter-trim">Filter &amp; trim</a></li>
+  <li><a href="#learn-error-rates" id="toc-learn-error-rates" class="nav-link" data-scroll-target="#learn-error-rates">Learn error rates</a></li>
+  <li><a href="#denoise-sample-inference" id="toc-denoise-sample-inference" class="nav-link" data-scroll-target="#denoise-sample-inference">Denoise / Sample inference</a></li>
+  <li><a href="#merge-paired-reads" id="toc-merge-paired-reads" class="nav-link" data-scroll-target="#merge-paired-reads">Merge paired reads</a></li>
+  <li><a href="#build-sequence-table" id="toc-build-sequence-table" class="nav-link" data-scroll-target="#build-sequence-table">Build sequence table</a></li>
+  <li><a href="#chimera-removal" id="toc-chimera-removal" class="nav-link" data-scroll-target="#chimera-removal">Chimera removal</a></li>
+  <li><a href="#track-read-loss" id="toc-track-read-loss" class="nav-link" data-scroll-target="#track-read-loss">Track read loss</a></li>
+  <li><a href="#assign-taxonomy" id="toc-assign-taxonomy" class="nav-link" data-scroll-target="#assign-taxonomy">Assign taxonomy</a></li>
+  <li><a href="#optional-species-level-matching" id="toc-optional-species-level-matching" class="nav-link" data-scroll-target="#optional-species-level-matching">Optional: Species-level matching</a></li>
+  <li><a href="#validate-with-mock-community" id="toc-validate-with-mock-community" class="nav-link" data-scroll-target="#validate-with-mock-community">Validate with mock community</a></li>
+  <li><a href="#export-to-phyloseq" id="toc-export-to-phyloseq" class="nav-link" data-scroll-target="#export-to-phyloseq">Export to phyloseq</a></li>
+  <li><a href="#summary-flow" id="toc-summary-flow" class="nav-link" data-scroll-target="#summary-flow">Summary flow</a></li>
+  <li><a href="#example-code" id="toc-example-code" class="nav-link" data-scroll-target="#example-code">Example code</a></li>
+  <li><a href="#understanding-relative-abundance-in-edna-studies" id="toc-understanding-relative-abundance-in-edna-studies" class="nav-link" data-scroll-target="#understanding-relative-abundance-in-edna-studies">Understanding relative abundance in eDNA studies</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">DADA2 Pipeline</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="setup-input" class="level2">
+<h2 class="anchored" data-anchor-id="setup-input">Setup &amp; input</h2>
+<ul>
+<li><p>Start with <strong>paired-end FASTQ files</strong> (e.g.&nbsp;<code>sample1_R1.fastq</code>, <code>sample1_R2.fastq</code>)</p></li>
+<li><p>Files must be:</p>
+<ul>
+<li><strong>Demultiplexed</strong> (split by sample)</li>
+<li><strong>Primer-trimmed</strong></li>
+</ul></li>
+<li><p>DADA2 matches forward (<code>R1</code>) and reverse (<code>R2</code>) files automatically by sample name.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Why forward (`R1`) and reverse (`R2`) reads?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why forward (<code>R1</code>) and reverse (<code>R2</code>) reads?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Paired-end sequencing (e.g.&nbsp;Illumina MiSeq) reads <strong>both ends of a DNA fragment</strong>, generating two FASTQ files per sample:</p>
+<ul>
+<li><p><code>R1.fastq</code> → <strong>Forward read</strong></p></li>
+<li><p><code>R2.fastq</code> → <strong>Reverse read</strong></p></li>
+<li><p>The <strong>forward read</strong> comes from the 5′ end of the top strand<br>
+</p></li>
+<li><p>The <strong>reverse read</strong> comes from the 5′ end of the bottom strand (reverse complement)<br>
+</p></li>
+<li><p>The two reads may <strong>overlap</strong>, allowing better reconstruction of the full DNA fragment</p></li>
+</ul>
+<p>DADA2 uses paired-end reads to:</p>
+<ol type="1">
+<li><strong>Independently</strong> filter and model errors in each direction<br>
+</li>
+<li><strong>Merge</strong> the reads using their overlap to:
+<ul>
+<li>Correct sequencing errors<br>
+</li>
+<li>Reconstruct the full barcode (amplicon)<br>
+</li>
+<li>Improve accuracy and resolution</li>
+</ul></li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>R1.fastq</code></td>
+<td>Forward reads (5′→3′ of one strand)</td>
+</tr>
+<tr class="even">
+<td><code>R2.fastq</code></td>
+<td>Reverse reads (5′→3′ of the other strand)</td>
+</tr>
+</tbody>
+</table>
+<p>→ Both are needed to build full-length, high-quality sequences.</p>
+</div>
+</div>
+</section>
+<section id="inspecting-quality" class="level2">
+<h2 class="anchored" data-anchor-id="inspecting-quality">Inspecting quality</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotQualityProfile</span>(fwd)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotQualityProfile</span>(rev)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Forward reads: generally good quality</li>
+<li>Reverse reads: quality often drops toward the end</li>
+<li>Use this to decide <strong>truncation lengths</strong> (e.g.&nbsp;240 bp forward, 160 bp reverse)</li>
+</ul>
+</section>
+<section id="filter-trim" class="level2">
+<h2 class="anchored" data-anchor-id="filter-trim">Filter &amp; trim</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filterAndTrim</span>(fwd, filtF,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>              rev, filtR,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">truncLen =</span> <span class="fu">c</span>(<span class="dv">240</span>,<span class="dv">160</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">maxN =</span> <span class="dv">0</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">maxEE =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">truncQ =</span> <span class="dv">2</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">rm.phix =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">compress =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Removes poor-quality and ambiguous reads</li>
+<li>Drops PhiX contaminants</li>
+<li>Outputs retained read counts per sample</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="What is PhiX and why is it removed?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is PhiX and why is it removed?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>PhiX</strong> (or <em>PhiX174</em>) is a small viral genome often added as a <strong>control</strong> during Illumina sequencing runs.</p>
+<ul>
+<li>It helps calibrate the sequencer and improve performance in <strong>low-diversity samples</strong> (like amplicon-based eDNA).</li>
+<li>It’s <strong>not part of your actual biological sample</strong>, so it needs to be filtered out.</li>
+</ul>
+<p>In DADA2, this is done automatically:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rm.phix <span class="ot">=</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="learn-error-rates" class="level2">
+<h2 class="anchored" data-anchor-id="learn-error-rates">Learn error rates</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>errF <span class="ot">&lt;-</span> <span class="fu">learnErrors</span>(filtFs, <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>errR <span class="ot">&lt;-</span> <span class="fu">learnErrors</span>(filtRs, <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Builds a <strong>parametric error model</strong> from observed data</li>
+<li>Separately for forward and reverse reads</li>
+</ul>
+</section>
+<section id="denoise-sample-inference" class="level2">
+<h2 class="anchored" data-anchor-id="denoise-sample-inference">Denoise / Sample inference</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dadaFs <span class="ot">&lt;-</span> <span class="fu">dada</span>(filtFs, <span class="at">err =</span> errF, <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dadaRs <span class="ot">&lt;-</span> <span class="fu">dada</span>(filtRs, <span class="at">err =</span> errR, <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Infers <strong>ASVs</strong> (Amplicon Sequence Variants)</li>
+<li>Corrects sequencing errors to identify true biological sequences</li>
+</ul>
+</section>
+<section id="merge-paired-reads" class="level2">
+<h2 class="anchored" data-anchor-id="merge-paired-reads">Merge paired reads</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mergers <span class="ot">&lt;-</span> <span class="fu">mergePairs</span>(dadaFs, filtFs, dadaRs, filtRs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Merges forward and reverse reads</li>
+<li>Requires overlap (e.g., ≥12 bp) and agreement in the overlap region</li>
+</ul>
+</section>
+<section id="build-sequence-table" class="level2">
+<h2 class="anchored" data-anchor-id="build-sequence-table">Build sequence table</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>seqtab <span class="ot">&lt;-</span> <span class="fu">makeSequenceTable</span>(mergers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Rows = samples</li>
+<li>Columns = ASVs</li>
+<li>Cells = read counts</li>
+</ul>
+</section>
+<section id="chimera-removal" class="level2">
+<h2 class="anchored" data-anchor-id="chimera-removal">Chimera removal</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>seqtab.nochim <span class="ot">&lt;-</span> <span class="fu">removeBimeraDenovo</span>(seqtab, <span class="at">method =</span> <span class="st">"consensus"</span>, <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Removes PCR artifacts (chimeras)</li>
+<li>Yields a cleaned-up ASV table</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled" title="What are chimeras and why remove them?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What are chimeras and why remove them?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Chimeras</strong> are <strong>artificial DNA sequences</strong> created during <strong>PCR amplification</strong>.</p>
+<ul>
+<li>They form when a partially extended DNA strand from one template <strong>accidentally binds</strong> to a different, but similar, template in the next PCR cycle.</li>
+<li>This creates a <strong>hybrid sequence</strong> that does <strong>not exist</strong> in any real organism.</li>
+</ul>
+<p>These artefacts:</p>
+<ul>
+<li>Are common in amplicon-based workflows.</li>
+<li>Can <strong>inflate biodiversity estimates</strong> or lead to <strong>false species detections</strong>.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="track-read-loss" class="level2">
+<h2 class="anchored" data-anchor-id="track-read-loss">Track read loss</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>getN <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">getUniques</span>(x))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>track <span class="ot">&lt;-</span> <span class="fu">cbind</span>(out, <span class="fu">sapply</span>(dadaFs, getN), <span class="fu">sapply</span>(dadaRs, getN), <span class="fu">sapply</span>(mergers, getN), <span class="fu">rowSums</span>(seqtab.nochim))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(track) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"input"</span>, <span class="st">"filtered"</span>, <span class="st">"denoisedF"</span>, <span class="st">"denoisedR"</span>, <span class="st">"merged"</span>, <span class="st">"nonchim"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Monitors how many reads pass each step</li>
+<li>Helps catch major data loss or pipeline issues</li>
+</ul>
+</section>
+<section id="assign-taxonomy" class="level2">
+<h2 class="anchored" data-anchor-id="assign-taxonomy">Assign taxonomy</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">&lt;-</span> <span class="fu">assignTaxonomy</span>(seqtab.nochim, <span class="st">"silva_nr_v138_train_set.fa.gz"</span>, <span class="at">multithread =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">&lt;-</span> <span class="fu">addSpecies</span>(taxa, <span class="st">"silva_species_assignment_v138.fa.gz"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Classifies ASVs by comparing to a reference database (e.g., SILVA)</li>
+<li>Adds species-level IDs for exact matches</li>
+</ul>
+</section>
+<section id="optional-species-level-matching" class="level2">
+<h2 class="anchored" data-anchor-id="optional-species-level-matching">Optional: Species-level matching</h2>
+<ul>
+<li><p>Use curated references like <strong>MiFish</strong> for fish-specific identification</p></li>
+<li><p>Alternatives:</p>
+<ul>
+<li><strong>BLAST</strong> for manual species checks</li>
+<li><strong>DECIPHER</strong>’s <code>IdTaxa()</code> function</li>
+</ul></li>
+</ul>
+</section>
+<section id="validate-with-mock-community" class="level2">
+<h2 class="anchored" data-anchor-id="validate-with-mock-community">Validate with mock community</h2>
+<ul>
+<li>Run pipeline on a known “mock” sample</li>
+<li>Should recover expected species with high accuracy</li>
+</ul>
+</section>
+<section id="export-to-phyloseq" class="level2">
+<h2 class="anchored" data-anchor-id="export-to-phyloseq">Export to phyloseq</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(phyloseq)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ps <span class="ot">&lt;-</span> <span class="fu">phyloseq</span>(<span class="fu">otu_table</span>(seqtab.nochim, <span class="at">taxa_are_rows =</span> <span class="cn">FALSE</span>),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">tax_table</span>(taxa),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>               <span class="fu">sample_data</span>(metadata))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Enables diversity analysis, ordination, visualisation</li>
+</ul>
+</section>
+<section id="summary-flow" class="level2">
+<h2 class="anchored" data-anchor-id="summary-flow">Summary flow</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Import FASTQ files</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Visualise quality</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Filter &amp; trim reads</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Learn error rates</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Infer ASVs (denoise)</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Merge paired reads</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Build sequence table</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Remove chimeras</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Track read retention</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Assign taxonomy</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Optional: species matching</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Validate with known samples</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Export to phyloseq</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="example-code" class="level2">
+<h2 class="anchored" data-anchor-id="example-code">Example code</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dada2)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(phyloseq)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Biostrings)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># File set up</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">"MiSeq_SOP"</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(path)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Forward and reverse fastq filenames have format: SAMPLENAME_R1_001.fastq and SAMPLENAME_R2_001.fastq</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>fnFs <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">list.files</span>(path, <span class="at">pattern=</span><span class="st">"_R1_001.fastq"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>fnRs <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">list.files</span>(path, <span class="at">pattern=</span><span class="st">"_R2_001.fastq"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract sample names, assuming filenames have format: SAMPLENAME_XXX.fastq</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>sample.names <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">strsplit</span>(<span class="fu">basename</span>(fnFs), <span class="st">"_"</span>), <span class="st">`</span><span class="at">[</span><span class="st">`</span>, <span class="dv">1</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect quality</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plotQualityProfile</span>(fnFs[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="fu">plotQualityProfile</span>(fnRs[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter &amp; trim</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>filtFs <span class="ot">&lt;-</span> <span class="fu">file.path</span>(path, <span class="st">"filtered"</span>, <span class="fu">basename</span>(fnFs))</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>filtRs <span class="ot">&lt;-</span> <span class="fu">file.path</span>(path, <span class="st">"filtered"</span>, <span class="fu">basename</span>(fnRs))</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">filterAndTrim</span>(fnFs, filtFs, fnRs, filtRs,</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>                     <span class="at">truncLen=</span><span class="fu">c</span>(<span class="dv">240</span>,<span class="dv">200</span>), <span class="at">maxN=</span><span class="dv">0</span>, <span class="at">maxEE=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>),</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>                     <span class="at">truncQ=</span><span class="dv">2</span>, <span class="at">rm.phix=</span><span class="cn">TRUE</span>, <span class="at">compress=</span><span class="cn">TRUE</span>, <span class="at">multithread=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(out)</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Learn error rates</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>errF <span class="ot">&lt;-</span> <span class="fu">learnErrors</span>(filtFs, <span class="at">multithread=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>errR <span class="ot">&lt;-</span> <span class="fu">learnErrors</span>(filtRs, <span class="at">multithread=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="fu">plotErrors</span>(errF, <span class="at">nominalQ=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Dereplicate</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>derepFs <span class="ot">&lt;-</span> <span class="fu">derepFastq</span>(filtFs, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>derepRs <span class="ot">&lt;-</span> <span class="fu">derepFastq</span>(filtRs, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="co"># DADA denoising</span></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>dadaFs <span class="ot">&lt;-</span> <span class="fu">dada</span>(derepFs, <span class="at">err=</span>errF, <span class="at">multithread=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>dadaRs <span class="ot">&lt;-</span> <span class="fu">dada</span>(derepRs, <span class="at">err=</span>errR, <span class="at">multithread=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge paired reads</span></span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>mergers <span class="ot">&lt;-</span> <span class="fu">mergePairs</span>(dadaFs, derepFs, dadaRs, derepRs, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Create ASV table</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>seqtab <span class="ot">&lt;-</span> <span class="fu">makeSequenceTable</span>(mergers)</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(seqtab)</span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">nchar</span>(<span class="fu">getSequences</span>(seqtab)))</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove chimeras</span></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>seqtab.nochim <span class="ot">&lt;-</span> <span class="fu">removeBimeraDenovo</span>(seqtab, <span class="at">method=</span><span class="st">"consensus"</span>,</span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">multithread=</span><span class="cn">FALSE</span>, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(seqtab.nochim)<span class="sc">/</span><span class="fu">sum</span>(seqtab)</span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Track reads through pipeline</span></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>getN <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">getUniques</span>(x))</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>track <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>  <span class="at">input=</span>out[,<span class="dv">1</span>],</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">filtered=</span>out[,<span class="dv">2</span>],</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">denoisedF=</span><span class="fu">sapply</span>(dadaFs, getN),</span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">denoisedR=</span><span class="fu">sapply</span>(dadaRs, getN),</span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>  <span class="at">merged=</span><span class="fu">sapply</span>(mergers, getN),</span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>  <span class="at">nonchim=</span><span class="fu">rowSums</span>(seqtab.nochim)</span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(track) <span class="ot">&lt;-</span> sample.names <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">strsplit</span>(<span class="fu">basename</span>(fnFs), <span class="st">"_"</span>), <span class="st">`</span><span class="at">[</span><span class="st">`</span>, <span class="dv">1</span>)</span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(track)</span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a><span class="co"># Taxonomic assignment (using Silva v138 trained classifier)</span></span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">&lt;-</span> <span class="fu">assignTaxonomy</span>(seqtab.nochim, <span class="st">"silva_nr_v138_train_set.fa.gz"</span>, <span class="at">multithread=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(taxa))</span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing sequence rownames for display only</span></span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a>taxa.print <span class="ot">&lt;-</span> taxa</span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(taxa.print) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taxa.print)</span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate accuracy</span></span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(seqtab.nochim)</span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>sample.names <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">strsplit</span>(<span class="fu">rownames</span>(seqtab.nochim), <span class="st">"_"</span>), <span class="st">`</span><span class="at">[</span><span class="st">`</span>, <span class="dv">1</span>)</span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(seqtab.nochim) <span class="ot">&lt;-</span> sample.names</span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a>unqs.mock <span class="ot">&lt;-</span> seqtab.nochim[<span class="st">"Mock"</span>,]</span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a>unqs.mock <span class="ot">&lt;-</span> <span class="fu">sort</span>(unqs.mock[unqs.mock<span class="sc">&gt;</span><span class="dv">0</span>], <span class="at">decreasing=</span><span class="cn">TRUE</span>) <span class="co"># Drop ASVs absent in the Mock</span></span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"DADA2 inferred"</span>, <span class="fu">length</span>(unqs.mock), <span class="st">"sample sequences present in the Mock community.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a><span class="co"># Load expected reference sequences for the Mock community</span></span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a>mock.ref <span class="ot">&lt;-</span> <span class="fu">getSequences</span>(<span class="fu">file.path</span>(path, <span class="st">"HMP_MOCK.v35.fasta"</span>))</span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a>match.ref <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(<span class="fu">names</span>(unqs.mock), <span class="cf">function</span>(x) <span class="fu">any</span>(<span class="fu">grepl</span>(x, mock.ref))))</span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Of those,"</span>, <span class="fu">sum</span>(match.ref), <span class="st">"were exact matches to the expected reference sequences.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a><span class="do">######</span></span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span>
+<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a>samples.out <span class="ot">&lt;-</span> <span class="fu">rownames</span>(seqtab.nochim)</span>
+<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a>subject <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">strsplit</span>(samples.out, <span class="st">"D"</span>), <span class="st">`</span><span class="at">[</span><span class="st">`</span>, <span class="dv">1</span>)</span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">substr</span>(subject,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a>subject <span class="ot">&lt;-</span> <span class="fu">substr</span>(subject,<span class="dv">2</span>,<span class="dv">999</span>)</span>
+<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a>day <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">sapply</span>(<span class="fu">strsplit</span>(samples.out, <span class="st">"D"</span>), <span class="st">`</span><span class="at">[</span><span class="st">`</span>, <span class="dv">2</span>))</span>
+<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a>samdf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Subject=</span>subject, <span class="at">Gender=</span>gender, <span class="at">Day=</span>day)</span>
+<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a>samdf<span class="sc">$</span>When <span class="ot">&lt;-</span> <span class="st">"Early"</span></span>
+<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a>samdf<span class="sc">$</span>When[samdf<span class="sc">$</span>Day<span class="sc">&gt;</span><span class="dv">100</span>] <span class="ot">&lt;-</span> <span class="st">"Late"</span></span>
+<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(samdf) <span class="ot">&lt;-</span> samples.out</span>
+<span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a>ps <span class="ot">&lt;-</span> <span class="fu">phyloseq</span>(<span class="fu">otu_table</span>(seqtab.nochim, <span class="at">taxa_are_rows=</span><span class="cn">FALSE</span>), </span>
+<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a>               <span class="fu">sample_data</span>(samdf), </span>
+<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a>               <span class="fu">tax_table</span>(taxa))</span>
+<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a>ps <span class="ot">&lt;-</span> <span class="fu">prune_samples</span>(<span class="fu">sample_names</span>(ps) <span class="sc">!=</span> <span class="st">"Mock"</span>, ps) <span class="co"># Remove mock sample</span></span>
+<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a>dna <span class="ot">&lt;-</span> Biostrings<span class="sc">::</span><span class="fu">DNAStringSet</span>(<span class="fu">taxa_names</span>(ps))</span>
+<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(dna) <span class="ot">&lt;-</span> <span class="fu">taxa_names</span>(ps)</span>
+<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a>ps <span class="ot">&lt;-</span> <span class="fu">merge_phyloseq</span>(ps, dna)</span>
+<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a><span class="fu">taxa_names</span>(ps) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ASV"</span>, <span class="fu">seq</span>(<span class="fu">ntaxa</span>(ps)))</span>
+<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a>ps</span>
+<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a><span class="co"># Alpha diversity</span></span>
+<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_richness</span>(ps, <span class="at">x=</span><span class="st">"Day"</span>, <span class="at">measures=</span><span class="fu">c</span>(<span class="st">"Shannon"</span>, <span class="st">"Simpson"</span>), <span class="at">color=</span><span class="st">"When"</span>)</span>
+<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a><span class="co"># Beta diversity</span></span>
+<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a>ps.prop <span class="ot">&lt;-</span> <span class="fu">transform_sample_counts</span>(ps, <span class="cf">function</span>(otu) otu<span class="sc">/</span><span class="fu">sum</span>(otu))</span>
+<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a>ord.nmds.bray <span class="ot">&lt;-</span> <span class="fu">ordinate</span>(ps.prop, <span class="at">method=</span><span class="st">"NMDS"</span>, <span class="at">distance=</span><span class="st">"bray"</span>)</span>
+<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ordination</span>(ps.prop, ord.nmds.bray, <span class="at">color=</span><span class="st">"When"</span>, <span class="at">title=</span><span class="st">"Bray NMDS"</span>)</span>
+<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a>top20 <span class="ot">&lt;-</span> <span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">taxa_sums</span>(ps), <span class="at">decreasing=</span><span class="cn">TRUE</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>]</span>
+<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a>ps.top20 <span class="ot">&lt;-</span> <span class="fu">transform_sample_counts</span>(ps, <span class="cf">function</span>(OTU) OTU<span class="sc">/</span><span class="fu">sum</span>(OTU))</span>
+<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a>ps.top20 <span class="ot">&lt;-</span> <span class="fu">prune_taxa</span>(top20, ps.top20)</span>
+<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_bar</span>(ps.top20, <span class="at">x=</span><span class="st">"Day"</span>, <span class="at">fill=</span><span class="st">"Family"</span>) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>When, <span class="at">scales=</span><span class="st">"free_x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
+<section id="understanding-relative-abundance-in-edna-studies" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-relative-abundance-in-edna-studies">Understanding relative abundance in eDNA studies</h2>
+<div class="callout callout-style-default callout-tip callout-titled" title="RRA">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+RRA
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When using eDNA, only a portion of the total sample is being used, and then PCR introduces bias by creating millions of DNA copies. This raises the question:</p>
+<p><em>How can we trust that the number of DNA reads (or “read counts”) reflects the true abundance of species in the environment?</em></p>
+<p>PCR amplifies DNA exponentially — ideally doubling the number of DNA copies with each cycle. However, this process introduces amplification bias, such as:</p>
+<ul>
+<li>Primer efficiency bias: some sequences bind primers better and amplify more easily.</li>
+<li>Template preference: certain DNA sequences are preferentially copied.</li>
+<li>Plateau effect: as resources deplete, amplification slows and stops.</li>
+<li>Subsampling: only a small portion of the total DNA is used for PCR and sequencing.</li>
+</ul>
+<p>This means PCR doesn’t preserve the original proportions of DNA exactly — it confirms presence, but not perfect abundance. Read counts still be useful but cautiously. While PCR distorts absolute quantities, read counts still carry ecological signals, especially for dominant species. Researchers typically use:</p>
+<ul>
+<li><p>Relative Read Abundance (RRA):</p>
+<ul>
+<li>40% of reads = European seabass</li>
+<li>10% of reads = Threespine stickleback</li>
+</ul></li>
+</ul>
+<p>RRA allows us to compare patterns across sites or conditions, not exact organism numbers.</p>
+<p>After sequencing, a read count table shows how many reads were detected for each species per sample. To make this data comparable, the following techniques are applied:</p>
+<p><strong>Normalisation</strong></p>
+<p>Goal: Adjust for different sequencing depths (i.e.&nbsp;different total read numbers per sample).</p>
+<ul>
+<li>Proportional scaling: convert raw counts to relative proportions (% of total reads).</li>
+<li>Log transformation: dampens the influence of very abundant species.</li>
+<li>Model-based approaches: e.g.&nbsp;DESeq2, edgeR — account for count variability statistically.</li>
+</ul>
+<p><strong>Rarefaction</strong></p>
+<p>Goal: Standardise sequencing effort across samples.</p>
+<ul>
+<li>Subsample each dataset to a common number of reads (e.g.&nbsp;10,000 per sample).</li>
+<li>Ensures fair comparisons of diversity.</li>
+<li>Prevents overestimating richness in deeper sequenced samples.</li>
+</ul>
+<p>Trade-off: some data (e.g.&nbsp;rare reads) is lost, but results are less biased.</p>
+<p><strong>Statistical tools</strong></p>
+<p>Once data is normalised or rarefied, we can use various ecological and statistical analyses:</p>
+<ul>
+<li>Diversity indices: Shannon, Simpson – to measure species richness and evenness</li>
+<li>Ordination: PCA, NMDS, PCoA – to visualise patterns between sites</li>
+<li>Hypothesis testing: PERMANOVA, ANOSIM – to compare groups or treatments</li>
+<li>Ecological modelling: Explore links between environmental drivers and communities</li>
+</ul>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
