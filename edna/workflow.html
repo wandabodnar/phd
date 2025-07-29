@@ -357,7 +357,7 @@ Additional notes
 </ul>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Materials">
+<div class="callout callout-style-default callout-note callout-titled" title="Materials">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -536,14 +536,83 @@ Understanding DNA barcoding vs.&nbsp;metabarcoding
 <li><p>A forward primer, which binds to one strand at the start of the barcode region (5′→3′ direction).</p></li>
 <li><p>A reverse primer, which binds to the opposite strand at the end of the region (also written 5′→3′ but binds in the reverse orientation).</p></li>
 </ul></li>
-<li><p>These primers flank the barcode, allowing DNA polymerase to copy the specific region between them.</p>
+<li><p>These primers flank the barcode, allowing DNA polymerase to copy the specific region between them.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Understanding primers and binding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding primers and binding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>DNA is storing genetic instructions in the form of a double-stranded helix.</p>
+<p>Each strand is made up of nucleotides, the fundamental building blocks of DNA.</p>
+<p>There are four types of nucleotides, each containing a base represented by a letter:</p>
 <ul>
-<li><p>Example Primers (MiFish 12S):</p>
+<li>A = Adenine</li>
+<li>T = Thymine</li>
+<li>C = Cytosine</li>
+<li>G = Guanine</li>
+</ul>
+<p>These bases pair in a specific way:</p>
 <ul>
-<li><p>Forward primer: <code>GTCGGTAAAACTCGTGCCAGC</code> (MiFish-U-F)</p></li>
-<li><p>Reverse primer: <code>CATAGTGGGGTATCTAATCCCAGTTTG</code> (MiFish-U-R)</p></li>
-</ul></li>
-</ul></li>
+<li>A = T</li>
+<li>C = G</li>
+</ul>
+<p>So, if one strand reads: <code>5′– A T G C C A T –3′</code></p>
+<p>Its complementary strand would read: <code>3′– T A C G G T A –5′</code></p>
+<p>DNA strands have directionality, determined by the orientation of the sugar-phosphate backbone. One end is labeled 5′ (five prime), the other 3′ (three prime).</p>
+<p>DNA synthesis and reading always proceed from the 5′ to 3′ direction. This is crucial in molecular biology because:</p>
+<ul>
+<li>Polymerase enzymes that copy DNA during replication or PCR can only extend new DNA strands in the 5′ → 3′ direction.</li>
+<li>When designing primers, we must consider which strand is being targeted and in which direction it is read.</li>
+</ul>
+<p>To amplify a specific region of DNA, two primers are used:</p>
+<ul>
+<li><strong>Forward primer</strong> binds to the <strong>forward strand</strong>, just <strong>before</strong> the barcode region (in the 5′ → 3′ direction).</li>
+<li><strong>Reverse primer</strong> binds to the <strong>reverse (complementary) strand</strong>, just <strong>after</strong> the barcode region — but still written in the 5′ → 3′ direction..</li>
+</ul>
+<p>Imagine a 1000 bp DNA fragment, and the barcode region is between <strong>position 421 and 579</strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 23%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Position range</th>
+<th>Example sequence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Forward primer</td>
+<td>400–420 (5′ → 3′)</td>
+<td><code>GTCGGTAAAACTCGTGCCAGC</code> <em>(MiFish-U-F)</em></td>
+</tr>
+<tr class="even">
+<td>Barcode region</td>
+<td>421–579</td>
+<td><code>AGCCTTGAGAACTGCTTAC...</code></td>
+</tr>
+<tr class="odd">
+<td>Reverse primer</td>
+<td>580–600 (5′ → 3′ on reverse strand)</td>
+<td><code>CATAGTGGGGTATCTAATCCCAGTTTG</code> <em>(MiFish-U-R)</em></td>
+</tr>
+</tbody>
+</table>
+<p>The forward primer binds just upstream of the barcode on the forward strand.<br>
+The reverse primer binds downstream of the barcode on the complementary strand.<br>
+DNA polymerase then copies the segment between them — called an <strong>amplicon</strong> — which includes the barcode.</p>
+</div>
+</div>
+<ul>
 <li><p>PCR involves repeated thermal cycling:</p>
 <ul>
 <li><p>Denaturation (~94–95 °C): DNA strands are separated into single strands.</p></li>
@@ -552,7 +621,7 @@ Understanding DNA barcoding vs.&nbsp;metabarcoding
 </ul></li>
 <li><p>This cycle is repeated ~35–40 times. Each cycle doubles the amount of target DNA.</p></li>
 </ul>
-<p>The result is millions of identical copies (amplicons) of just the barcode region — ready for sequencing.</p>
+<p>The result is millions of identical copies or amplicons of just the barcode region — ready for sequencing.</p>
 <div class="container">
 <div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
 <figure class="figure">
@@ -572,13 +641,13 @@ Understanding DNA barcoding vs.&nbsp;metabarcoding
 </ul></li>
 <li><p>Controls:</p>
 <ul>
-<li>Positive control: Contains known DNA to confirm amplification</li>
-<li>Negative control: No DNA added — detects contamination</li>
-<li>Optimised annealing temperature: Ensures specific primer binding</li>
+<li>Positive control: contains known DNA to confirm amplification</li>
+<li>Negative control: no DNA added — detects contamination</li>
+<li>Optimised annealing temperature: ensures specific primer binding</li>
 </ul></li>
 <li><p>After PCR, amplicons can be verified using gel electrophoresis before sequencing.</p></li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled" title="What is Taq Polymerase and what does it do?">
+<div class="callout callout-style-default callout-tip callout-titled" title="What is Taq Polymerase and what does it do?">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -590,7 +659,7 @@ What is Taq Polymerase and what does it do?
 <div class="callout-body-container callout-body">
 <p><strong>Taq polymerase</strong> is a DNA polymerase originally isolated from the heat-tolerant bacterium <em>Thermus aquaticus</em>.</p>
 <ul>
-<li>It is <strong>heat-stable</strong>, meaning it remains active during high-temperature cycles (e.g., 94–95 °C).</li>
+<li>It is <strong>heat-stable</strong>, meaning it remains active during high-temperature cycles (e.g.&nbsp;94–95 °C).</li>
 <li>It is the most widely used enzyme for standard PCR because it:
 <ul>
 <li>Tolerates repeated heating and cooling<br>
@@ -637,7 +706,7 @@ It starts at the primer and matches each base with its complement:</p>
 <li><p>After running the gel, DNA is stained with a <strong>fluorescent dye</strong> (e.g., <strong>GelRed</strong> or <strong>SYBR Safe</strong>) and visualised under <strong>UV or blue light</strong>.</p></li>
 <li><p>Compare each sample’s band to a <strong>DNA ladder</strong> (size marker):</p>
 <ul>
-<li><p>*Clear band at expected size** (e.g., 200–600 bp for 12S): PCR likely succeeded</p>
+<li><p>*Clear band at expected size** (e.g.&nbsp;200–600 bp for 12S): PCR likely succeeded</p>
 <ul>
 <li>bp (base pairs): the unit used to measure the length of a DNA fragment.</li>
 <li>1 bp = 1 base pair (A–T or C–G)</li>
@@ -698,7 +767,7 @@ It starts at the primer and matches each base with its complement:</p>
 </figure>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Materials">
+<div class="callout callout-style-default callout-note callout-titled" title="Materials">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -876,7 +945,7 @@ What is DADA2?
 </ul></li>
 <li><p>This is where anonymous DNA fragments are assigned species names — transforming data into <strong>ecological meaning</strong>.</p></li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled" title="Taxonomic assignment using BLAST and BASTA">
+<div class="callout callout-style-default callout-tip callout-titled" title="Taxonomic assignment using BLAST and BASTA">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
