@@ -67,14 +67,56 @@
     "href": "index.html",
     "title": "Környezeti DNS Munkafolyamat Útmutató",
     "section": "",
-    "text": "🧭 Összefoglaló: A teljes munkafolyamat lépésről lépésre történő áttekintése\n⚗️ Munkafolyamat: Részletes módszerek, protokollok és anyagok az egyes szakaszokhoz\n🔬 DADA2: Útmutató az DNS-szekvenciaadatok feldolgozásához a DADA2 adatcsatorna segítségével.\n\n\n\n\n\neDNS fogalom (Forrás: Fishbio)"
+    "text": "eDNS fogalom (Forrás: Fishbio)"
   },
   {
-    "objectID": "index.html#tartalom",
-    "href": "index.html#tartalom",
+    "objectID": "attekintes.html",
+    "href": "attekintes.html",
     "title": "Környezeti DNS Munkafolyamat Útmutató",
     "section": "",
-    "text": "🧭 Összefoglaló: A teljes munkafolyamat lépésről lépésre történő áttekintése\n⚗️ Munkafolyamat: Részletes módszerek, protokollok és anyagok az egyes szakaszokhoz\n🔬 DADA2: Útmutató az DNS-szekvenciaadatok feldolgozásához a DADA2 adatcsatorna segítségével.\n\n\n\n\n\neDNS fogalom (Forrás: Fishbio)"
+    "text": "Az eukariótákban a genetikai információ DNS-ben (dezoxiribonukleinsav) tárolódik. A DNS a sejtmagban található, és tartalmazza mindazokat az utasításokat, amelyek szükségesek egy élőlény felépítéséhez és működéséhez. Ez az információ a DNS bázissorrendjében van kódolva, amely meghatározza a fehérjék és egyes RNS-molekulák szerkezetét és működését.\nA DNS meghatározott funkciójú szakaszait géneknek nevezzük. Egy gén egy adott fehérje vagy RNS előállításának tervét hordozza. A gének között nem kódoló szakaszok is találhatók, amelyek például a génműködés szabályozásában vagy a DNS szerkezetének fenntartásában vesznek részt.\nHa egy emberi sejt teljes DNS-ét kinyújtanánk, körülbelül 2 méter hosszú lenne, mégis rendkívül tömören, hisztonfehérjékkel csomagolva fér el a sejtmagban, amely mindössze 5–10 µm (0,005–0,01 mm) átmérőjű. A DNS és a hisztonfehérjék együtt kromatint alkotnak, amely a sejtosztódás során tovább tömörödik, és létrehozza a mikroszkóp alatt is jól látható kromoszómákat.\nAz ember testi sejtjeiben 46 kromoszóma található, 23 párba rendeződve – a pár egyik tagja az anyától, a másik az apától származik. Az összes kromoszóma együtt alkotja a genomot, vagyis a teljes genetikai állományt."
+  },
+  {
+    "objectID": "attekintes.html#a-dns",
+    "href": "attekintes.html#a-dns",
+    "title": "Környezeti DNS Munkafolyamat Útmutató",
+    "section": "",
+    "text": "Az eukariótákban a genetikai információ DNS-ben (dezoxiribonukleinsav) tárolódik. A DNS a sejtmagban található, és tartalmazza mindazokat az utasításokat, amelyek szükségesek egy élőlény felépítéséhez és működéséhez. Ez az információ a DNS bázissorrendjében van kódolva, amely meghatározza a fehérjék és egyes RNS-molekulák szerkezetét és működését.\nA DNS meghatározott funkciójú szakaszait géneknek nevezzük. Egy gén egy adott fehérje vagy RNS előállításának tervét hordozza. A gének között nem kódoló szakaszok is találhatók, amelyek például a génműködés szabályozásában vagy a DNS szerkezetének fenntartásában vesznek részt.\nHa egy emberi sejt teljes DNS-ét kinyújtanánk, körülbelül 2 méter hosszú lenne, mégis rendkívül tömören, hisztonfehérjékkel csomagolva fér el a sejtmagban, amely mindössze 5–10 µm (0,005–0,01 mm) átmérőjű. A DNS és a hisztonfehérjék együtt kromatint alkotnak, amely a sejtosztódás során tovább tömörödik, és létrehozza a mikroszkóp alatt is jól látható kromoszómákat.\nAz ember testi sejtjeiben 46 kromoszóma található, 23 párba rendeződve – a pár egyik tagja az anyától, a másik az apától származik. Az összes kromoszóma együtt alkotja a genomot, vagyis a teljes genetikai állományt."
+  },
+  {
+    "objectID": "attekintes.html#a-dns-szerkezete",
+    "href": "attekintes.html#a-dns-szerkezete",
+    "title": "Környezeti DNS Munkafolyamat Útmutató",
+    "section": "A DNS szerkezete",
+    "text": "A DNS szerkezete\nA DNS jellegzetes kettős hélix szerkezetű, amely két, egymással komplementer polinukleotid-láncból áll.\nFő szerkezeti elemek:\n\nCukor–foszfát gerinc: a hélix külső részén váltakozó foszfátcsoportok és ötszénatomos cukrok (dezoxiribóz) alkotják a vázat.\nNitrogéntartalmú bázisok: befelé irányulnak, és hidrogénkötésekkel párosodnak a másik szál bázisaival, így kialakítva a „létrafokokat”:\n\nAdenin (A) – Timin (T): két hidrogénkötés\nGuanin (G) – Citozin (C): három hidrogénkötés\n\n\n\n\n\n\nA DNS szerkezete (Forrás: NIH)\n\n\n\nMinden nukleotid három részből áll:\n\negy ötszénatomos cukor (dezoxiribóz)\negy foszfátcsoport\negy nitrogéntartalmú bázis (A, T, G vagy C)\n\n\n\n\n\nDNS nukleotid\n\n\n\nA nukleotidok úgy kapcsolódnak egymáshoz, hogy az egyik nukleotid foszfátcsoportja foszfodiészter-kötéssel kapcsolódik a következő nukleotid cukorrészének 3′ szénatomjához. Így jön létre a folyamatos cukor–foszfát gerinc.\nA dezoxiribóz szénatomjait 1′-től 5′-ig számozzuk:\n\n1′ szénatom: ehhez kapcsolódik a nitrogéntartalmú bázis\n5′ szénatom: ehhez kapcsolódik a foszfátcsoport\n3′ szénatom: –OH csoportot hordoz, amely a következő nukleotid foszfátcsoportjával képez kötést\n\nAz egyik DNS-szál 5′ → 3′ irányban fut (5′ vég: szabad foszfátcsoport, 3′ vég: szabad –OH csoport), míg a komplementer szál 3′ → 5′ irányban.\n\n\n\n\nBázispárosodás\n\n\n\nEz az antiparallel elrendezés elengedhetetlen a következő okok miatt:\n\nBázispárosodás: stabil hidrogénkötések csak ellentétes irányú szálak között jönnek létre, így marad a helix szabályos alakja.\nReplikáció: a DNS-polimeráz csak a növekvő szál 3′ végéhez tud új nukleotidot kapcsolni.\nStabilitás: az ellentétes irány és a foszfátcsoportok elhelyezkedése csökkenti az elektrosztatikus taszítást, így stabilizálja a kettős hélixet."
+  },
+  {
+    "objectID": "attekintes.html#dns-a-környezetben",
+    "href": "attekintes.html#dns-a-környezetben",
+    "title": "Környezeti DNS Munkafolyamat Útmutató",
+    "section": "DNS a környezetben",
+    "text": "DNS a környezetben\nAmikor a DNS elhagyja a sejtet, környezeti DNS-sé (eDNA) válik. Ez lehet:\n\nIntracelluláris: még sejtekben vagy sejtszervecskékben található, így védettebb.\nExtracelluláris: szabadon lebegő, részecskékhez kötődő vagy üledékfelszínen adszorbeálódott.\nAdszorbeált: agyagásványokhoz vagy szerves anyaghoz kötődve, ami növelheti a stabilitását.\n\nA környezeti DNS lebomlását okozhatja:\n\nmikrobiális nukleázok (enzimes lebontás)\nUV-sugárzás (timindimerek kialakulása)\nhőmérséklet (magasabb = gyorsabb lebomlás)\nszélsőséges pH (sav/bázis hidrolízis)\nsótartalom (átmenetileg stabilizálhat, de kicsapódást is okozhat)\n\nVízben az eDNS töredékhossza jellemzően &lt;200 bp a lebomlás miatt."
+  },
+  {
+    "objectID": "attekintes.html#molekuláris-szempontok-edns-analízisnél",
+    "href": "attekintes.html#molekuláris-szempontok-edns-analízisnél",
+    "title": "Környezeti DNS Munkafolyamat Útmutató",
+    "section": "Molekuláris szempontok eDNS-analízisnél",
+    "text": "Molekuláris szempontok eDNS-analízisnél\nInhibíció:\n\nHuminsavak, tanninok és fémionok gátolhatják a PCR/qPCR-t polimerázhoz kötődve vagy Mg²⁺ ionokat megkötve.\n\nPrimertervezés:\n\nRövidebb amplikonok (80–150 bp) jobban teljesítenek degradált eDNA esetén.\nA GC-tartalom befolyásolja az olvadáspontot és a PCR-hatékonyságot.\n\nExtrakció:\n\nA hatékonyság függ a sejtfeltárás módjától és attól, hogy a DNS intracelluláris vagy részecskékhez kötött."
+  },
+  {
+    "objectID": "attekintes.html#perzisztencia",
+    "href": "attekintes.html#perzisztencia",
+    "title": "Környezeti DNS Munkafolyamat Útmutató",
+    "section": "Perzisztencia",
+    "text": "Perzisztencia\n\nPerzisztencia: vízben órák–hetek, üledékben hónapok vagy akár évek.\nTranszport: áramlás elszállíthatja az eDNS-t a forrástól.\nHamis pozitív: elpusztult szervezetek „örökség-DNS-e”.\nHamis negatív: gyors lebomlás vagy alacsony kibocsátás."
+  },
+  {
+    "objectID": "attekintes.html#technológiák",
+    "href": "attekintes.html#technológiák",
+    "title": "Környezeti DNS Munkafolyamat Útmutató",
+    "section": "Technológiák",
+    "text": "Technológiák\n\nqPCR: fajspecifikus, nagy érzékenységű.\nMetabarkódolás: közösségi szintű biodiverzitás, de ritka fajoknál alacsonyabb érzékenység.\nddPCR: nagy érzékenység, inhibitorokkal szembeni jobb ellenállás."
   },
   {
     "objectID": "dada.html",
