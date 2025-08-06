@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>workflow – Environmental DNA Workflow Guide</title>
+<title>workflow – Environmental DNA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Environmental DNA Workflow Guide</span>
+    <span class="navbar-title">Environmental DNA</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -211,15 +211,7 @@ What is TE Buffer?
 <ul>
 <li><p><strong>Tris</strong> or Tris(hydroxymethyl) aminomethane: stabilises pH</p>
 <ul>
-<li><p>Maintaining a stable, slightly alkaline pH is crucial to prevent DNA degradation caused by hydrolysis, which breaks the bonds between <em>nucleotides</em> — the building blocks of DNA.</p>
-<div class="container">
-<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
-<figure class="figure">
-<p><img src="https://nci-media.cancer.gov/pdq/media/images/761781.jpg" class="img-fluid figure-img"></p>
-<figcaption>Structure of DNA (Source: NIH)</figcaption>
-</figure>
-</div>
-</div></li>
+<li><p>Maintaining a stable, slightly alkaline pH is crucial to prevent DNA degradation caused by hydrolysis, which breaks the bonds between <em>nucleotides</em>.</p></li>
 <li><p>If pH drops (becomes acidic), DNA is more prone to hydrolytic cleavage — this breaks the bonds between nucleotides and can irreversibly damage the DNA, interfering with downstream steps like PCR and sequencing.</p></li>
 </ul></li>
 <li><p><strong>EDTA</strong> (Ethylenediaminetetraacetic acid): binds divalent cations (e.g.&nbsp;Mg²⁺, Ca²⁺) to inhibit DNases and protect DNA integrity</p></li>
@@ -466,7 +458,7 @@ Understanding DNA barcoding vs.&nbsp;metabarcoding
 <li><p>For fish, a commonly used barcode is the <strong>12S rRNA mitochondrial gene</strong>.</p></li>
 <li><p>After amplification, these sequences are compared against <strong>reference databases</strong> like GenBank or BOLD to determine species identity.</p></li>
 </ul>
-<p>This approach enables species detection from even trace amounts of environmental DNA.</p>
+<p>This approach enables species detection from even trace amounts of eDNA.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -526,17 +518,14 @@ Understanding DNA barcoding vs.&nbsp;metabarcoding
 <p><strong>Goal</strong>: To amplify a target DNA barcode region from eDNA extracts to detectable levels using polymerase chain reaction (PCR).</p>
 </blockquote>
 <ul>
-<li><p>PCR targets a barcode used for species identification.</p></li>
-<li><p>Primers are used to define the start and end points of the target region to be amplified.</p>
-<ul>
-<li>They are custom-designed and ordered from commercial suppliers (e.g.&nbsp;IDT, Eurofins) and are essential for selectively amplifying barcode regions.</li>
-</ul></li>
+<li><p>PCR targets a barcode region used for species identification (e.g.&nbsp;12S rRNA in vertebrates).</p></li>
+<li><p>Primers are short, custom‑made DNA sequences that define the start and end points of the region to be amplified. They are ordered from suppliers such as IDT or Eurofins.</p></li>
 <li><p>Two primers are needed:</p>
 <ul>
-<li><p>A forward primer, which binds to one strand at the start of the barcode region (5′→3′ direction).</p></li>
-<li><p>A reverse primer, which binds to the opposite strand at the end of the region (also written 5′→3′ but binds in the reverse orientation).</p></li>
+<li><p>Forward primer – binds to the forward strand just before the barcode region, matching the sequence in the 5′ → 3′ direction.</p></li>
+<li><p>Reverse primer – binds to the complementary strand just after the barcode region, but its sequence is still written in the 5′ → 3′ direction by convention, even though it binds in the opposite orientation.</p></li>
 </ul></li>
-<li><p>These primers flank the barcode, allowing DNA polymerase to copy the specific region between them.</p></li>
+<li><p>These primers flank the barcode, allowing DNA polymerase to copy the specific region between them, producing a copy or an amplicon containing the barcode.</p></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled" title="Understanding primers and binding">
 <div class="callout-header d-flex align-content-center">
@@ -548,39 +537,19 @@ Understanding primers and binding
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>DNA is storing genetic instructions in the form of a double-stranded helix.</p>
-<p>Each strand is made up of nucleotides, the fundamental building blocks of DNA.</p>
-<p>There are four types of nucleotides, each containing a base represented by a letter:</p>
-<ul>
-<li>A = Adenine</li>
-<li>T = Thymine</li>
-<li>C = Cytosine</li>
-<li>G = Guanine</li>
-</ul>
-<p>These bases pair in a specific way:</p>
-<ul>
-<li>A = T</li>
-<li>C = G</li>
-</ul>
-<p>So, if one strand reads: <code>5′– A T G C C A T –3′</code></p>
-<p>Its complementary strand would read: <code>3′– T A C G G T A –5′</code></p>
-<p>DNA strands have directionality, determined by the orientation of the sugar-phosphate backbone. One end is labeled 5′ (five prime), the other 3′ (three prime).</p>
-<p>DNA synthesis and reading always proceed from the 5′ to 3′ direction. This is crucial in molecular biology because:</p>
-<ul>
-<li>Polymerase enzymes that copy DNA during replication or PCR can only extend new DNA strands in the 5′ → 3′ direction.</li>
-<li>When designing primers, we must consider which strand is being targeted and in which direction it is read.</li>
-</ul>
-<p>To amplify a specific region of DNA, two primers are used:</p>
-<ul>
-<li><strong>Forward primer</strong> binds to the <strong>forward strand</strong>, just <strong>before</strong> the barcode region (in the 5′ → 3′ direction).</li>
-<li><strong>Reverse primer</strong> binds to the <strong>reverse (complementary) strand</strong>, just <strong>after</strong> the barcode region — but still written in the 5′ → 3′ direction..</li>
-</ul>
-<p>Imagine a 1000 bp DNA fragment, and the barcode region is between <strong>position 421 and 579</strong>.</p>
+<p>DNA stores genetic instructions as a double‑stranded helix made of <strong>nucleotides</strong>, each containing one of four bases.</p>
+<p>Bases pair specifically (<strong>A</strong> with <strong>T</strong>, <strong>C</strong> with <strong>G</strong>), so if one strand reads:<br>
+<code>5′– A T G C C A T –3′</code><br>
+the complementary strand will read:<br>
+<code>3′– T A C G G T A –5′</code></p>
+<p>DNA strands are <strong>antiparallel</strong>, running in opposite directions, with one end labeled <strong>5′</strong> (five prime) and the other <strong>3′</strong> (three prime). DNA synthesis always proceeds in the <strong>5′ → 3′</strong> direction, which is important because DNA polymerases can only extend in this direction. This directionality must be considered when designing primers.</p>
+<p>In PCR, two primers define the start and end of the region to be amplified.</p>
+<p><strong>Example:</strong> For a 1000 bp DNA fragment with a barcode between positions 421 and 579:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 24%">
-<col style="width: 23%">
-<col style="width: 51%">
+<col style="width: 20%">
+<col style="width: 25%">
+<col style="width: 55%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -607,9 +576,7 @@ Understanding primers and binding
 </tr>
 </tbody>
 </table>
-<p>The forward primer binds just upstream of the barcode on the forward strand.<br>
-The reverse primer binds downstream of the barcode on the complementary strand.<br>
-DNA polymerase then copies the segment between them — called an <strong>amplicon</strong> — which includes the barcode.</p>
+<p>The primers flank the barcode, allowing DNA polymerase to copy the segment between them — the <strong>amplicon</strong> — which is then used for species identification.</p>
 </div>
 </div>
 <ul>
@@ -621,7 +588,7 @@ DNA polymerase then copies the segment between them — called an <strong>amplic
 </ul></li>
 <li><p>This cycle is repeated ~35–40 times. Each cycle doubles the amount of target DNA.</p></li>
 </ul>
-<p>The result is millions of identical copies or amplicons of just the barcode region — ready for sequencing.</p>
+<p>The result is millions of identical amplicons of just the barcode region — ready for sequencing.</p>
 <div class="container">
 <div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
 <figure class="figure">
@@ -704,9 +671,9 @@ It starts at the primer and matches each base with its complement:</p>
 <li><strong>Larger fragments</strong> move more slowly</li>
 </ul></li>
 <li><p>After running the gel, DNA is stained with a <strong>fluorescent dye</strong> (e.g., <strong>GelRed</strong> or <strong>SYBR Safe</strong>) and visualised under <strong>UV or blue light</strong>.</p></li>
-<li><p>Compare each sample’s band to a <strong>DNA ladder</strong> (size marker):</p>
+<li><p>Compare each sample band to a <strong>DNA ladder</strong> (size marker):</p>
 <ul>
-<li><p>*Clear band at expected size** (e.g.&nbsp;200–600 bp for 12S): PCR likely succeeded</p>
+<li><p><strong>Clear band at expected size</strong> (e.g.&nbsp;200–600 bp for 12S): PCR likely succeeded</p>
 <ul>
 <li>bp (base pairs): the unit used to measure the length of a DNA fragment.</li>
 <li>1 bp = 1 base pair (A–T or C–G)</li>

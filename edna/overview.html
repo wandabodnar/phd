@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>overview – Environmental DNA Workflow Guide</title>
+<title>overview – Environmental DNA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Environmental DNA Workflow Guide</span>
+    <span class="navbar-title">Environmental DNA</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -127,11 +127,12 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#the-dna" id="toc-the-dna" class="nav-link active" data-scroll-target="#the-dna">The DNA</a></li>
+  <li><a href="#mitochondrial-dna" id="toc-mitochondrial-dna" class="nav-link" data-scroll-target="#mitochondrial-dna">Mitochondrial DNA</a></li>
   <li><a href="#the-structure-of-dna" id="toc-the-structure-of-dna" class="nav-link" data-scroll-target="#the-structure-of-dna">The structure of DNA</a></li>
   <li><a href="#dna-in-the-environment" id="toc-dna-in-the-environment" class="nav-link" data-scroll-target="#dna-in-the-environment">DNA in the environment</a></li>
   <li><a href="#molecular-considerations-in-edna-analysis" id="toc-molecular-considerations-in-edna-analysis" class="nav-link" data-scroll-target="#molecular-considerations-in-edna-analysis">Molecular considerations in eDNA analysis</a></li>
   <li><a href="#persistence-and-interpretation" id="toc-persistence-and-interpretation" class="nav-link" data-scroll-target="#persistence-and-interpretation">Persistence and interpretation</a></li>
-  <li><a href="#techniques" id="toc-techniques" class="nav-link" data-scroll-target="#techniques">Techniques</a></li>
+  <li><a href="#technologies-and-biotechnological-background" id="toc-technologies-and-biotechnological-background" class="nav-link" data-scroll-target="#technologies-and-biotechnological-background">Technologies and biotechnological background</a></li>
   </ul>
 </nav>
 </nav>
@@ -147,23 +148,211 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="the-dna" class="level2">
 <h2 class="anchored" data-anchor-id="the-dna">The DNA</h2>
-<p>In eukaryotes, genetic information is stored in <strong>DNA (deoxyribonucleic acid)</strong>. DNA is located in the cell nucleus and carries all the instructions required to build and operate a living organism. This information is encoded in the sequence of DNA bases, which determines the structure and function of proteins and certain RNA molecules.</p>
-<p>Specific functional segments of DNA are called <strong>genes</strong>. A gene contains the blueprint for producing a particular protein or RNA. Between genes, there are also non-coding sequences, which can regulate gene expression or help maintain DNA’s structure.</p>
+<p>In eukaryotes, genetic information is stored in <strong>DNA (deoxyribonucleic acid)</strong>. DNA is located in the cell nucleus and carries all the instructions required to build and operate a living organism. This information is encoded in the specific order of the four DNA bases (A, T, G, and C), which determines the genetic instructions for building proteins and functional RNA molecules.</p>
+<p>Specific functional segments of DNA are called <strong>genes</strong>. A gene contains the blueprint for producing a particular protein or RNA. Between genes, there are also non-coding sequences, which can regulate gene expression or help maintain the structure of the DNA.</p>
 <p>If the DNA from a single human cell were stretched out, it would be about 2 metres long, yet it is packed extremely tightly with histone proteins to fit into the cell nucleus, which is only 5–10 µm (0.005–0.01 mm) in diameter. DNA and histone proteins together form chromatin, which condenses even further during cell division to form the clearly visible <strong>chromosomes</strong>.</p>
-<p>Human somatic cells contain 46 chromosomes arranged in 23 pairs – one chromosome of each pair is inherited from the mother, and the other from the father. All chromosomes together make up the <strong>genome</strong>, which represents the organism’s entire genetic material.</p>
+<p>Human somatic cells contain 46 chromosomes arranged in 23 pairs – one chromosome of each pair is inherited from the mother, and the other from the father. All chromosomes together make up the <strong>genome</strong>, which represents the entire genetic material of an organism.</p>
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
+<figure class="figure">
+<p><img src="http://52.29.31.254/moonshotblog/wp-content/uploads/2018/04/from-cell-to-gene.jpg" class="img-fluid figure-img"></p>
+<figcaption>The relationship between genes, DNA and chromosomes</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="mitochondrial-dna" class="level2">
+<h2 class="anchored" data-anchor-id="mitochondrial-dna">Mitochondrial DNA</h2>
+<p>In addition to the DNA found in the cell nucleus, eukaryotic cells also contain mitochondrial DNA (mtDNA). Mitochondria are energy‑producing organelles that evolved from ancestral bacteria, and they retain their own small, circular genome.</p>
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
+<figure class="figure">
+<p><img src="https://ifg-ivf.com/cache/axa/content/122221.png" class="img-fluid figure-img"></p>
+<figcaption>mtDNA</figcaption>
+</figure>
+</div>
+</div>
+<p>Key features of mtDNA:</p>
+<ul>
+<li><p>Much smaller than nuclear DNA (about 16,500 base pairs in humans).</p></li>
+<li><p>Present in many identical copies per cell, because each cell contains multiple mitochondria.</p></li>
+<li><p>Inherited maternally in most animals.</p></li>
+<li><p>Contains protein‑coding genes, transfer RNA (tRNA) genes, and ribosomal RNA (rRNA) genes.</p></li>
+</ul>
+<section id="the-12s-rrna-gene-in-edna-studies" class="level3">
+<h3 class="anchored" data-anchor-id="the-12s-rrna-gene-in-edna-studies">The 12S rRNA gene in eDNA studies</h3>
+<p>One of the mitochondrial rRNA genes, the 12S ribosomal RNA (12S rRNA) gene, encodes part of the small subunit of the mitochondrial ribosome.</p>
+<ul>
+<li><em>Ribosomal RNA (rRNA) is an RNA molecule that forms the structural and functional core of ribosomes, enabling them to read mRNA and assemble amino acids into proteins.</em></li>
+</ul>
+<p>This gene is widely used as a marker in environmental DNA (eDNA) studies, especially for vertebrates, because:</p>
+<ul>
+<li><p>High copy number of mtDNA increases detection probability in degraded environmental samples.</p></li>
+<li><p>Conserved regions allow for the design of universal primers that work across many species.</p>
+<ul>
+<li><em>Universal primers are short synthetic DNA sequences that bind to conserved regions of a target gene, allowing the same PCR reaction to amplify that gene from many different species.</em></li>
+</ul></li>
+<li><p>Variable regions within the gene differ between species, enabling species‑level identification when the amplified DNA is sequenced.</p></li>
+<li><p>Short target fragments (80–150 bp) are well‑suited to the typically degraded nature of eDNA.</p></li>
+</ul>
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
+<figure class="figure">
+<p><img src="http://www.contexo.info/dna_basics/chromosomes/mitochondria/index_files/mitochondrial_dna.png" class="img-fluid figure-img"></p>
+<figcaption>Human mitochondrial DNA “chromosome” showing the arrangement of regions that code for proteins and RNA molecules</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="nuclear-vs-mitochondrial-dna" class="level3">
+<h3 class="anchored" data-anchor-id="nuclear-vs-mitochondrial-dna">Nuclear vs mitochondrial DNA</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 44%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Nuclear DNA (nDNA)</th>
+<th>Mitochondrial DNA (mtDNA)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Location</strong></td>
+<td>Found in the cell nucleus</td>
+<td>Found in the mitochondria</td>
+</tr>
+<tr class="even">
+<td><strong>Structure</strong></td>
+<td>Linear chromosomes</td>
+<td>Circular molecule</td>
+</tr>
+<tr class="odd">
+<td><strong>Number of copies</strong></td>
+<td>Two copies per cell (diploid genome, one from each parent)</td>
+<td>Hundreds to thousands of copies per cell</td>
+</tr>
+<tr class="even">
+<td><strong>Size</strong></td>
+<td>~3.2 billion base pairs in humans</td>
+<td>~16,500 base pairs in humans</td>
+</tr>
+<tr class="odd">
+<td><strong>Genes encoded</strong></td>
+<td>~20,000–25,000 protein‑coding genes</td>
+<td>37 genes (13 proteins, 22 tRNAs, 2 rRNAs)</td>
+</tr>
+<tr class="even">
+<td><strong>Inheritance</strong></td>
+<td>Biparental (from both mother and father)</td>
+<td>Maternal only</td>
+</tr>
+<tr class="odd">
+<td><strong>Function</strong></td>
+<td>Encodes most of the proteins and regulatory elements</td>
+<td>Encodes key components of oxidative phosphorylation</td>
+</tr>
+<tr class="even">
+<td><strong>Mutation rate</strong></td>
+<td>Relatively low (protected by histones and repair mechanisms)</td>
+<td>Higher (exposed to reactive oxygen species in mitochondria)</td>
+</tr>
+<tr class="odd">
+<td><strong>Use in research</strong></td>
+<td>Genome‑wide studies, genetic disorders, evolutionary analyses</td>
+<td>Tracing maternal lineages, species identification, phylogenetics</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="common-marker-genes-in-edna" class="level3">
+<h3 class="anchored" data-anchor-id="common-marker-genes-in-edna">Common marker genes in eDNA</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 17%">
+<col style="width: 37%">
+<col style="width: 21%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Marker Gene</th>
+<th>Location in Genome</th>
+<th>Function</th>
+<th>Typical Amplicon Length for eDNA</th>
+<th>Main Use Cases in eDNA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>12S rRNA</strong></td>
+<td>Mitochondrial DNA</td>
+<td>Encodes part of the <strong>small subunit</strong> of the mitochondrial ribosome</td>
+<td>80–150 bp (short fragments for degraded DNA)</td>
+<td>Vertebrate metabarcoding (fish, amphibians, birds, mammals); high detection sensitivity due to high mtDNA copy number</td>
+</tr>
+<tr class="even">
+<td><strong>16S rRNA</strong></td>
+<td>Prokaryotic genomes (bacteria &amp; archaea) and mitochondrial DNA in eukaryotes</td>
+<td>Encodes part of the <strong>large subunit</strong> of the ribosome (in mitochondria or prokaryotes)</td>
+<td>100–500 bp (varies by study)</td>
+<td>Microbial community profiling; some invertebrate and mitochondrial studies</td>
+</tr>
+<tr class="odd">
+<td><strong>COI</strong></td>
+<td>Mitochondrial DNA</td>
+<td>Encodes subunit I of cytochrome c oxidase, part of the mitochondrial respiratory chain</td>
+<td>~650 bp (full barcode), 150–300 bp (mini‑barcode for eDNA)</td>
+<td>Standard animal DNA barcoding (BOLD, GenBank); species ID, especially invertebrates and fish</td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="the-structure-of-dna" class="level2">
 <h2 class="anchored" data-anchor-id="the-structure-of-dna">The structure of DNA</h2>
-<p>DNA has a distinctive double helix structure, made up of two complementary polynucleotide strands.</p>
-<p>Main structural elements:</p>
+<p>DNA has a distinctive double helix structure, consisting of two complementary polynucleotide strands twisted around each other.</p>
+<p>Each nucleotide — the basic unit of DNA — contains three components:</p>
 <ul>
-<li><p>Sugar–phosphate backbone: Along the outside of the helix, phosphate groups and five-carbon sugars (deoxyribose) alternate to form the framework of each strand.</p></li>
-<li><p>Nitrogenous bases: These project inward and pair with bases on the opposite strand via hydrogen bonds, forming the “rungs” of the helix:</p>
+<li>A pentose sugar (<strong>deoxyribose</strong>, a five carbon sugar)</li>
+<li>A phosphate group</li>
+<li>A nitrogen containing base</li>
+</ul>
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
+<figure class="figure">
+<p><img src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1094/2016/11/03164446/OSC_Microbio_10_02_Nucleotide.jpg" class="img-fluid figure-img"></p>
+<figcaption>a) DNA nucleotide. b) The five carbons within deoxyribose are designated as 1ʹ, 2ʹ, 3ʹ, 4ʹ, and 5ʹ.</figcaption>
+</figure>
+</div>
+</div>
+<section id="polynucleotide-strand" class="level3">
+<h3 class="anchored" data-anchor-id="polynucleotide-strand">Polynucleotide strand</h3>
+<p>Nucleotides are joined together through a condensation reaction between the phosphate group of one nucleotide and the sugar of another. This reaction forms a <strong>phosphodiester bond</strong>, linking the 3′ carbon of one sugar to the phosphate on the 5′ carbon of the next nucleotide. The result is a continuous sugar–phosphate backbone.</p>
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
+<figure class="figure">
+<p><img src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1094/2016/11/03164452/OSC_Microbio_10_02_NAcidStrand.jpg" class="img-fluid figure-img"></p>
+<figcaption>Sugar-phosphate backbone</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="arrangement-in-the-double-helix" class="level3">
+<h3 class="anchored" data-anchor-id="arrangement-in-the-double-helix">Arrangement in the double helix</h3>
 <ul>
-<li><p>Adenine (A) pairs with Thymine (T) via two hydrogen bonds.</p></li>
-<li><p>Guanine (G) pairs with Cytosine (C) via three hydrogen bonds.</p></li>
+<li><p>Backbone location: the sugar–phosphate backbones run along the outside edges of the helix.</p></li>
+<li><p>Base pairing: the nitrogenous bases project inward from the backbone and pair specifically with bases on the opposite strand:</p>
+<ul>
+<li>Adenine (A) pairs with Thymine (T) via two hydrogen bonds</li>
+<li>Guanine (G) pairs with Cytosine (C) via three hydrogen bonds</li>
 </ul></li>
 </ul>
+<p>These complementary base pairs hold the two strands together, maintaining the uniform shape of the double helix.</p>
 <div class="container">
 <div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
 <figure class="figure">
@@ -172,46 +361,36 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </div>
-<p>Each nucleotide consists of:</p>
-<ul>
-<li><p>A five-carbon sugar (deoxyribose)</p></li>
-<li><p>A phosphate group</p></li>
-<li><p>A nitrogenous base (A, T, G, or C)</p></li>
-</ul>
-<div class="container">
-<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
-<figure class="figure">
-<p><img src="https://opentextbc.ca/biology/wp-content/uploads/sites/96/2015/02/Figure_09_01_02a.jpg" class="img-fluid figure-img"></p>
-<figcaption>DNA nucleotide</figcaption>
-</figure>
-</div>
-</div>
-<p>Nucleotides are linked when the phosphate group of one nucleotide forms a phosphodiester bond with the 3′ carbon of the sugar in the next nucleotide. This creates a continuous sugar–phosphate backbone for each DNA strand.</p>
+</section>
+<section id="directionality-of-strands" class="level3">
+<h3 class="anchored" data-anchor-id="directionality-of-strands">Directionality of strands</h3>
 <p>The carbon atoms in deoxyribose are numbered 1′ to 5′:</p>
 <ul>
-<li><p>1′ carbon: attached to the nitrogenous base</p></li>
-<li><p>5′ carbon: attached to a phosphate group</p></li>
-<li><p>3′ carbon: carries a hydroxyl group (–OH) that bonds to the next nucleotide</p></li>
+<li>C1′ – bonds to the nitrogenous base</li>
+<li>C3′ – has an –OH group that bonds to the phosphate of the next nucleotide</li>
+<li>C4′ – part of the ring structure</li>
+<li>C5′ is not in the ring — it sticks out from C4′ and is attached to the phosphate group</li>
 </ul>
-<p>One DNA strand runs from its 5′ end (free phosphate group) to its 3′ end (free –OH group). The complementary strand runs in the opposite direction, 3′ → 5′.</p>
+<p>One strand runs 5′ → 3′ (free phosphate at the 5′ end, free –OH at the 3′ end), while the complementary strand runs 3′ → 5′.</p>
 <div class="container">
 <div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
 <figure class="figure">
-<p><img src="https://opentextbc.ca/biology/wp-content/uploads/sites/96/2021/03/Figure_09_01_03ab-768x417.jpg" class="img-fluid figure-img"></p>
-<figcaption>Pairing</figcaption>
+<p><img src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1094/2016/11/03164502/OSC_Microbio_10_02_DoubHelix.jpg" class="img-fluid figure-img"></p>
+<figcaption>a) The sugar-phosphate backbones are on the outside of the double helix and purines (A, G) and pyrimidines (C, T) form the “rungs” of the DNA helix ladder. b) The two DNA strands are antiparallel to each other. c) The direction of each strand is identified by numbering the carbons (1 through 5) in each sugar molecule.</figcaption>
 </figure>
 </div>
 </div>
-<p>This antiparallel arrangement is essential for:</p>
+<p>Importance of the antiparallel arrangement</p>
 <ul>
-<li><p>Base pairing: stable hydrogen bonds between A–T and G–C form only if strands run in opposite directions, ensuring the helix’s uniform shape.</p></li>
-<li><p>Replication: DNA polymerase can only add nucleotides to the 3′ end of a growing strand.</p></li>
-<li><p>Stability: the opposite orientation and phosphate positioning reduce electrostatic repulsion, helping to stabilise the helical structure.</p></li>
+<li><p>Base pairing: stable hydrogen bonds form only when strands run in opposite directions, maintaining the uniform width of the helix.</p></li>
+<li><p>Replication: DNA polymerase adds nucleotides only to the 3′ end of a growing strand.</p></li>
+<li><p>Stability: opposite orientation and phosphate positioning reduce electrostatic repulsion, helping stabilise the helical structure.</p></li>
 </ul>
+</section>
 </section>
 <section id="dna-in-the-environment" class="level2">
 <h2 class="anchored" data-anchor-id="dna-in-the-environment">DNA in the environment</h2>
-<p>Once DNA leaves a cell, it becomes environmental DNA. It may be:</p>
+<p>Once DNA leaves a cell, it becomes environmental DNA where it may be:</p>
 <ul>
 <li><p>Intracellular: still inside cells or organelles, offering more protection.</p></li>
 <li><p>Extracellular: free-floating, bound to particles, or adsorbed onto sediment surfaces.</p></li>
@@ -225,7 +404,20 @@ ul.task-list li input[type="checkbox"] {
 <li><p>pH extremes (acid/base hydrolysis)</p></li>
 <li><p>Salinity (can stabilise temporarily but also cause precipitation)</p></li>
 </ul>
-<p>Typical fragment sizes in aquatic eDNA are &lt;200 bp due to degradation.</p>
+<p>Typical fragment sizes in aquatic eDNA are &lt;200 bp due to degradation.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Primer Binding in Fragmented eDNA">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Primer Binding in Fragmented eDNA
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Because mitochondrial DNA contains many identical copies of the target gene, even when it is broken into short fragments, some of those fragments will still include the primer binding sites. Although mitochondrial DNA in the environment is highly fragmented, the large number of genome copies per cell and the random nature of DNA breakage mean that some fragments will still contain the exact sequence where the primers can bind. By targeting short, conserved regions (typically 80–150 bp) and collecting enough sample material, the likelihood of capturing an intact target fragment is high enough for reliable amplification.</p>
+</div>
+</div>
 </section>
 <section id="molecular-considerations-in-edna-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="molecular-considerations-in-edna-analysis">Molecular considerations in eDNA analysis</h2>
@@ -235,7 +427,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Primer design:</p>
 <ul>
-<li><p>Shorter amplicons (80–150 bp) perform better with degraded eDNA.</p></li>
+<li><p>Shorter amplicons (80–150 bp) — meaning smaller target DNA fragments — perform better with degraded eDNA because they are more likely to remain intact in environmental samples.</p></li>
 <li><p>GC content affects melting temperature and amplification success.</p></li>
 </ul>
 <p>Extraction:</p>
@@ -252,12 +444,33 @@ ul.task-list li input[type="checkbox"] {
 <li><p>False negatives: rapid degradation or low shedding rates.</p></li>
 </ul>
 </section>
-<section id="techniques" class="level2">
-<h2 class="anchored" data-anchor-id="techniques">Techniques</h2>
+<section id="technologies-and-biotechnological-background" class="level2">
+<h2 class="anchored" data-anchor-id="technologies-and-biotechnological-background">Technologies and biotechnological background</h2>
+<p>Every step of eDNA analysis – from sampling to bioinformatic processing – is based on modern molecular biotechnological methods.</p>
+<p>Sampling and DNA extraction</p>
 <ul>
-<li><p>qPCR: species-specific, high sensitivity.</p></li>
-<li><p>Metabarcoding: community-level biodiversity, but lower sensitivity for rare taxa.</p></li>
-<li><p>ddPCR: high sensitivity, inhibitor resistance.</p></li>
+<li>DNA from water, sediment, or soil is obtained using lysis buffers, enzymatic cell disruption (e.g., proteinase K), and filtration – all of which are classical molecular biotechnology laboratory procedures.</li>
+</ul>
+<p>DNA amplification and detection methods</p>
+<p>The multiplication and detection of target DNA regions can be performed using various PCR‑based techniques. In eDNA analysis, the choice of target region is critical: short fragments of mitochondrial genes (such as the 12S rRNA gene) are often selected for their high copy number per cell, good primer compatibility across species, and suitability for degraded DNA.</p>
+<ul>
+<li><p>Polymerase Chain Reaction (PCR): enables the billion‑fold amplification of a specific DNA fragment in vitro so that sequences present in very small quantities can be detected.</p></li>
+<li><p>Quantitative real‑time PCR (qPCR): uses fluorescent labeling to track the increase in DNA quantity during the reaction, providing not only detection but also an estimate of the initial DNA amount.</p></li>
+<li><p>Digital PCR (ddPCR): partitions the sample into thousands of microscopic reactions, detecting presence or absence individually in each; offers high sensitivity and is more tolerant to PCR inhibitors.</p></li>
+<li><p>Metabarcoding: amplifies DNA from multiple species simultaneously using universal primers targeting conserved regions of genes (e.g., 12S in vertebrates), then determines community composition via next‑generation sequencing (NGS). This approach is suitable for broad biodiversity surveys but may have lower sensitivity for very rare species.</p></li>
+</ul>
+<p>Next‑generation sequencing (NGS)</p>
+<ul>
+<li>Platforms such as Illumina or Ion Torrent sequence large numbers of short DNA fragments, enabling species identification and community structure analysis.</li>
+</ul>
+<p>Bioinformatic processing</p>
+<ul>
+<li>Raw sequence data are cleaned, error‑corrected, and taxonomically assigned using software tools (e.g., DADA2, QIIME2); this step connects laboratory molecular work with ecological interpretation.</li>
+</ul>
+<p>Environmental biotechnology applications</p>
+<ul>
+<li><p>eDNA methods allow the study of species and communities without capturing or directly observing them, minimizing disturbance to habitats.</p></li>
+<li><p>They can be used for the early detection of invasive species, monitoring protected or rare species, and assessing the effectiveness of restoration projects.</p></li>
 </ul>
 
 
