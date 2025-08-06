@@ -438,7 +438,7 @@
     "href": "overview.html#molecular-considerations-in-edna-analysis",
     "title": "Environmental DNA",
     "section": "Molecular considerations in eDNA analysis",
-    "text": "Molecular considerations in eDNA analysis\nInhibition:\n\nHumic acids, tannins, and metals can inhibit PCR or qPCR by binding polymerases or chelating Mg²⁺.\n\nPrimer design:\n\nShorter amplicons (80–150 bp) — meaning smaller target DNA fragments — perform better with degraded eDNA because they are more likely to remain intact in environmental samples.\nGC content affects melting temperature and amplification success.\n\nExtraction:\n\nEfficiency depends on lysis method and whether DNA is intracellular or adsorbed to particles."
+    "text": "Molecular considerations in eDNA analysis\nInhibition:\n\nHumic acids, tannins, and metals can inhibit PCR or qPCR by binding polymerases or chelating Mg²⁺.\n\nPrimer design:\n\nShorter amplicons (80–150 bp) — meaning smaller target DNA fragments — perform better with degraded eDNA because environmental degradation breaks DNA into shorter pieces. Since the average fragment length in aquatic eDNA is often &lt;200 bp, shorter target regions are more likely to remain intact and be successfully amplified.\nGC content affects melting temperature and amplification success.\n\nExtraction:\n\nEfficiency depends on lysis method and whether DNA is intracellular or adsorbed to particles."
   },
   {
     "objectID": "overview.html#persistence-and-interpretation",
