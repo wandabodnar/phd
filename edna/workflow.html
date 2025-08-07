@@ -440,76 +440,6 @@ Coversion between µL and mL
 </ul>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Understanding DNA barcoding vs. metabarcoding">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Understanding DNA barcoding vs.&nbsp;metabarcoding
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the context of eDNA metabarcoding, a <strong>DNA barcode</strong> is a short, standardised region of DNA — typically 100–600 base pairs long — made up of a unique sequence of nucleotides (A, T, C, and G).</p>
-<p>This region is highly conserved within a species (remaining nearly identical across individuals) but sufficiently variable between species, making it an effective tool for accurate identification.</p>
-<p>Just like a supermarket barcode distinguishes between products using a pattern of black and white lines, a DNA barcode distinguishes between species using a unique DNA sequence.</p>
-<ul>
-<li><p>DNA barcodes are targeted using <strong>primers</strong> (short synthetic DNA sequences) during <strong>PCR amplification</strong>.</p></li>
-<li><p>For fish, a commonly used barcode is the <strong>12S rRNA mitochondrial gene</strong>.</p></li>
-<li><p>After amplification, these sequences are compared against <strong>reference databases</strong> like GenBank or BOLD to determine species identity.</p></li>
-</ul>
-<p>This approach enables species detection from even trace amounts of eDNA.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 40%">
-<col style="width: 39%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>DNA barcoding</th>
-<th>DNA metabarcoding</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Target</td>
-<td>One species at a time</td>
-<td>Many species at once</td>
-</tr>
-<tr class="even">
-<td>Sample type</td>
-<td>Individual tissue (e.g.&nbsp;fin, scale)</td>
-<td>Environmental sample (e.g.&nbsp;water, soil)</td>
-</tr>
-<tr class="odd">
-<td>Method</td>
-<td>Amplify barcode from one organism</td>
-<td>Amplify barcode from mixed community DNA</td>
-</tr>
-<tr class="even">
-<td>Sequencing</td>
-<td>Simple Sanger sequencing</td>
-<td>High-throughput sequencing (e.g.&nbsp;MiSeq)</td>
-</tr>
-<tr class="odd">
-<td>Use case</td>
-<td>Species ID, taxonomy</td>
-<td>Community structure, biodiversity surveys</td>
-</tr>
-</tbody>
-</table>
-<div class="container">
-<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
-<figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/DNA_%28meta%29barcoding_differences.pdf/page1-1200px-DNA_%28meta%29barcoding_differences.pdf.jpg" class="img-fluid figure-img"></p>
-<figcaption>DNA (meta)barcoding differences (Source: Wikipedia)</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
 <hr>
 </section>
 <section id="pcr-amplification" class="level2">
@@ -518,7 +448,7 @@ Understanding DNA barcoding vs.&nbsp;metabarcoding
 <p><strong>Goal</strong>: To amplify a target DNA barcode region from eDNA extracts to detectable levels using polymerase chain reaction (PCR).</p>
 </blockquote>
 <ul>
-<li><p>PCR targets a barcode region used for species identification (e.g.&nbsp;12S rRNA in vertebrates).</p></li>
+<li><p>PCR targets a barcode region used for species identification.</p></li>
 <li><p>Primers are short, custom‑made DNA sequences that define the start and end points of the region to be amplified. They are ordered from suppliers such as IDT or Eurofins.</p></li>
 <li><p>Two primers are needed:</p>
 <ul>
@@ -803,7 +733,7 @@ Materials
 <ul>
 <li><p><strong>Millions of short DNA reads</strong> (typically 150–300 base pairs)</p></li>
 <li><p><strong>Quality scores</strong> for each base</p></li>
-<li><p>Each read ideally corresponds to a <strong>copy of the amplified barcode region</strong> (e.g.&nbsp;mitochondrial 12S rRNA for fish).</p></li>
+<li><p>Each read ideally corresponds to a <strong>copy of the amplified barcode region</strong>.</p></li>
 </ul></li>
 <li><p>Example: A read like <code>AGCCTTGAGAACTGCTTAC...</code> might be identified as <strong>European seabass</strong> through comparison with a reference database.</p></li>
 </ul></li>
