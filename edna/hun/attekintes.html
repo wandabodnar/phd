@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>attekintes – Környezeti DNS Munkafolyamat Útmutató</title>
+<title>attekintes – Környezeti DNS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Környezeti DNS Munkafolyamat Útmutató</span>
+    <span class="navbar-title">Környezeti DNS</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -127,11 +127,15 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#a-dns" id="toc-a-dns" class="nav-link active" data-scroll-target="#a-dns">A DNS</a></li>
+  <li><a href="#mitokondriális-dns" id="toc-mitokondriális-dns" class="nav-link" data-scroll-target="#mitokondriális-dns">Mitokondriális DNS</a></li>
+  <li><a href="#markerválasztás-és-genetika-az-edns-ben" id="toc-markerválasztás-és-genetika-az-edns-ben" class="nav-link" data-scroll-target="#markerválasztás-és-genetika-az-edns-ben">Markerválasztás és genetika az eDNS-ben</a></li>
   <li><a href="#a-dns-szerkezete" id="toc-a-dns-szerkezete" class="nav-link" data-scroll-target="#a-dns-szerkezete">A DNS szerkezete</a></li>
   <li><a href="#dns-a-környezetben" id="toc-dns-a-környezetben" class="nav-link" data-scroll-target="#dns-a-környezetben">DNS a környezetben</a></li>
-  <li><a href="#molekuláris-szempontok-edns-analízisnél" id="toc-molekuláris-szempontok-edns-analízisnél" class="nav-link" data-scroll-target="#molekuláris-szempontok-edns-analízisnél">Molekuláris szempontok eDNS-analízisnél</a></li>
-  <li><a href="#perzisztencia" id="toc-perzisztencia" class="nav-link" data-scroll-target="#perzisztencia">Perzisztencia</a></li>
-  <li><a href="#technológiák" id="toc-technológiák" class="nav-link" data-scroll-target="#technológiák">Technológiák</a></li>
+  <li><a href="#molekuláris-megfontolások-az-edns-analízisben" id="toc-molekuláris-megfontolások-az-edns-analízisben" class="nav-link" data-scroll-target="#molekuláris-megfontolások-az-edns-analízisben">Molekuláris megfontolások az eDNS-analízisben</a></li>
+  <li><a href="#fennmaradás-és-értelmezés" id="toc-fennmaradás-és-értelmezés" class="nav-link" data-scroll-target="#fennmaradás-és-értelmezés">Fennmaradás és értelmezés</a></li>
+  <li><a href="#technológiai-és-biotechnológiai-háttér" id="toc-technológiai-és-biotechnológiai-háttér" class="nav-link" data-scroll-target="#technológiai-és-biotechnológiai-háttér">Technológiai és biotechnológiai háttér</a></li>
+  <li><a href="#edns-idővonal-áttekintés" id="toc-edns-idővonal-áttekintés" class="nav-link" data-scroll-target="#edns-idővonal-áttekintés">eDNS idővonal – áttekintés</a></li>
+  <li><a href="#edns-tanulmányok-idővonala-folyóvízi-és-torkolati-ökoszisztémákban" id="toc-edns-tanulmányok-idővonala-folyóvízi-és-torkolati-ökoszisztémákban" class="nav-link" data-scroll-target="#edns-tanulmányok-idővonala-folyóvízi-és-torkolati-ökoszisztémákban">eDNS-tanulmányok idővonala folyóvízi és torkolati ökoszisztémákban</a></li>
   </ul>
 </nav>
 </nav>
@@ -147,23 +151,455 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="a-dns" class="level2">
 <h2 class="anchored" data-anchor-id="a-dns">A DNS</h2>
-<p>Az eukariótákban a genetikai információ <strong>DNS-ben (dezoxiribonukleinsav)</strong> tárolódik. A DNS a sejtmagban található, és tartalmazza mindazokat az utasításokat, amelyek szükségesek egy élőlény felépítéséhez és működéséhez. Ez az információ a DNS bázissorrendjében van kódolva, amely meghatározza a fehérjék és egyes RNS-molekulák szerkezetét és működését.</p>
-<p>A DNS meghatározott funkciójú szakaszait <strong>géneknek</strong> nevezzük. Egy gén egy adott fehérje vagy RNS előállításának tervét hordozza. A gének között nem kódoló szakaszok is találhatók, amelyek például a génműködés szabályozásában vagy a DNS szerkezetének fenntartásában vesznek részt.</p>
-<p>Ha egy emberi sejt teljes DNS-ét kinyújtanánk, körülbelül <strong>2 méter hosszú</strong> lenne, mégis rendkívül tömören, hisztonfehérjékkel csomagolva fér el a sejtmagban, amely mindössze <strong>5–10 µm</strong> (0,005–0,01 mm) átmérőjű. A DNS és a hisztonfehérjék együtt <strong>kromatint</strong> alkotnak, amely a sejtosztódás során tovább tömörödik, és létrehozza a mikroszkóp alatt is jól látható <strong>kromoszómákat</strong>.</p>
-<p>Az ember testi sejtjeiben 46 kromoszóma található, 23 párba rendeződve – a pár egyik tagja az anyától, a másik az apától származik. Az összes kromoszóma együtt alkotja a <strong>genomot</strong>, vagyis a teljes genetikai állományt.</p>
+<p>Az eukariótákban a genetikai információ a <strong>DNS-ben (dezoxiribonukleinsav)</strong> tárolódik.<br>
+A DNS a sejtmagban található, és tartalmazza az összes utasítást, amely az élőlény felépítéséhez és működtetéséhez szükséges.<br>
+Ez az információ a négy DNS-bázis (Adenin – A, Timin – T, Guanin – G és Citozin – C) sorrendjében kódolódik, és ez határozza meg a fehérjék és a funkcionális RNS-molekulák felépítésére vonatkozó genetikai utasításokat.</p>
+<p>A DNS egyes funkcionális szakaszait <strong>géneknek</strong> nevezzük.<br>
+Egy gén tartalmazza egy adott fehérje vagy RNS előállításához szükséges tervrajzot.<br>
+A gének között nem kódoló szakaszok is találhatók, amelyek a génkifejeződést szabályozhatják, vagy a DNS szerkezetének fenntartásában játszanak szerepet.</p>
+<p>Ha egyetlen emberi sejt DNS-ét teljesen kinyújtanánk, körülbelül 2 méter hosszú lenne, mégis rendkívül szorosan csomagolódik hisztonfehérjék segítségével, hogy beférjen a mindössze 5–10 µm (0,005–0,01 mm) átmérőjű sejtmagba.<br>
+A DNS és a hisztonfehérjék együtt alkotják a kromatint, amely a sejtosztódás során tovább tömörödik, és így kialakulnak a jól látható <strong>kromoszómák</strong>.</p>
+<p>Az emberi testi (szomatikus) sejtek 46 kromoszómát tartalmaznak, amelyek 23 párba rendeződnek – minden pár egyik tagját az anyától, a másikat az apától örököljük.<br>
+A kromoszómák összessége alkotja a <strong>genomot</strong>, amely az élőlény teljes genetikai állományát jelenti.</p>
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
+<figure class="figure">
+<p><img src="http://52.29.31.254/moonshotblog/wp-content/uploads/2018/04/from-cell-to-gene.jpg" class="img-fluid figure-img"></p>
+<figcaption>A gének, a DNS és a kromoszómák közötti kapcsolat</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="mitokondriális-dns" class="level2">
+<h2 class="anchored" data-anchor-id="mitokondriális-dns">Mitokondriális DNS</h2>
+<p>A sejtmagban található DNS-en kívül az eukarióta sejtek <strong>mitokondriális DNS-t (mtDNS)</strong> is tartalmaznak.<br>
+A mitokondriumok energiatermelő sejtszervecskék, amelyek ősi baktériumokból fejlődtek ki, és megőrizték saját, kisméretű, kör alakú genomjukat.</p>
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
+<figure class="figure">
+<p><img src="https://ifg-ivf.com/cache/axa/content/122221.png" class="img-fluid figure-img"></p>
+<figcaption>mtDNS</figcaption>
+</figure>
+</div>
+</div>
+<section id="a-mtdns-fő-jellemzői" class="level3">
+<h3 class="anchored" data-anchor-id="a-mtdns-fő-jellemzői">A mtDNS fő jellemzői</h3>
+<ul>
+<li>Sokkal kisebb, mint a sejtmagban található DNS (emberben kb. 16 500 bázispár)</li>
+<li>Sejtenként sok, azonos példányban fordul elő, mivel minden sejt több mitokondriumot tartalmaz</li>
+<li>Az esetek többségében anyai ágon öröklődik</li>
+<li>Fehérjekódoló géneket, transzfer RNS-t (tRNS) és riboszomális RNS-t (rRNS) kódoló géneket tartalmaz</li>
+</ul>
+</section>
+<section id="az-emberi-mtdns-becsült-mennyisége" class="level3">
+<h3 class="anchored" data-anchor-id="az-emberi-mtdns-becsült-mennyisége">Az emberi mtDNS becsült mennyisége</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 45%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Paraméter</th>
+<th>Megközelítő érték</th>
+<th>Megjegyzés</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Sejtek száma az emberi testben</strong></td>
+<td>~37 billió (3,7 × 10¹³)</td>
+<td>Egyénenként változik; átlagos felnőttre becsülve</td>
+</tr>
+<tr class="even">
+<td><strong>Mitokondriumok száma sejtenként</strong></td>
+<td>100–2 000</td>
+<td>Izomsejtekben több, vörösvértestekben nincs</td>
+</tr>
+<tr class="odd">
+<td><strong>mtDNS-kópiák száma mitokondriumonként</strong></td>
+<td>2–10</td>
+<td>Minden mitokondrium több genomkópiát tartalmaz</td>
+</tr>
+<tr class="even">
+<td><strong>Átlagos mtDNS-kópiák száma sejtenként</strong></td>
+<td>100–20 000</td>
+<td>Mitokondriumszám × kópiák száma</td>
+</tr>
+<tr class="odd">
+<td><strong>Teljes mtDNS-kópiák száma a testben</strong></td>
+<td>~3,7 kvadrillió – 740 kvadrillió</td>
+<td>Jóval több, mint a sejtmagban található 2 példány/kromoszóma</td>
+</tr>
+<tr class="even">
+<td><strong>Az emberi mtDNS genom mérete</strong></td>
+<td>~16 569 bázispár</td>
+<td>Kör alakú, kettős szálú DNS-molekula</td>
+</tr>
+<tr class="odd">
+<td><strong>Teljes mtDNS bázispárszám a testben</strong></td>
+<td>~6 × 10¹⁹ – 1 × 10²¹</td>
+<td>Nagyságrendi becslés</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a-halak-mtdns-ének-becsült-mennyisége" class="level3">
+<h3 class="anchored" data-anchor-id="a-halak-mtdns-ének-becsült-mennyisége">A halak mtDNS-ének becsült mennyisége</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 45%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Paraméter</th>
+<th>Megközelítő érték</th>
+<th>Megjegyzés</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Sejtek száma egy kifejlett halban</strong></td>
+<td>~100 milliárd – 10 billió (1 × 10¹¹ – 1 × 10¹³)</td>
+<td>Kisebb halakban kevesebb, nagyobb fajokban több</td>
+</tr>
+<tr class="even">
+<td><strong>Mitokondriumok száma sejtenként</strong></td>
+<td>100–1 000</td>
+<td>Magasabb vörös izomszövetben, alacsonyabb a bőrben és májban</td>
+</tr>
+<tr class="odd">
+<td><strong>mtDNS-kópiák száma mitokondriumonként</strong></td>
+<td>2–10</td>
+<td>Hasonló más gerincesekhez</td>
+</tr>
+<tr class="even">
+<td><strong>Átlagos mtDNS-kópiák száma sejtenként</strong></td>
+<td>200–10 000</td>
+<td>Mitokondriumszám × kópiák száma</td>
+</tr>
+<tr class="odd">
+<td><strong>Teljes mtDNS-kópiák száma egy halban</strong></td>
+<td>~20 billió – 100 kvadrillió</td>
+<td>Fajtól és mérettől függ</td>
+</tr>
+<tr class="even">
+<td><strong>Halak mtDNS genom mérete</strong></td>
+<td>~16 500–17 000 bázispár</td>
+<td>Kör alakú, kettős szálú DNS-molekula; fajtól függ</td>
+</tr>
+<tr class="odd">
+<td><strong>Teljes mtDNS bázispárszám egy halban</strong></td>
+<td>~3 × 10¹⁷ – 2 × 10²¹</td>
+<td>Teljes kópiaszám × genom méret</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a-12s-rrns-gén-az-edns-vizsgálatokban" class="level3">
+<h3 class="anchored" data-anchor-id="a-12s-rrns-gén-az-edns-vizsgálatokban">A 12S rRNS gén az eDNS-vizsgálatokban</h3>
+<p>A mitokondriális rRNS-gének egyike, a <strong>12S riboszomális RNS (12S rRNS)</strong> gén a mitokondriális riboszóma kis alegységének egy részét kódolja.</p>
+<blockquote class="blockquote">
+<p><em>A riboszomális RNS (rRNS) egy olyan RNS-molekula, amely a riboszómák szerkezeti és funkcionális magját alkotja (ezek a sejtszervecskék felelősek a fehérjeszintézisért), lehetővé téve számukra, hogy leolvassák a hírvivő RNS-t (mRNS), és aminosavakból fehérjéket építsenek.</em></p>
+</blockquote>
+<p>Ez a gén különösen elterjedt az eDNS-vizsgálatokban, főként gerincesek esetében, mert:</p>
+<ul>
+<li><p><strong>Magas kópiaszám</strong>: a mitokondriális DNS nagy számban van jelen a sejtekben, ami növeli a kimutatás esélyét még degradált környezetmintákból is.</p></li>
+<li><p><strong>Konzervált régiók</strong>: lehetővé teszik univerzális primerek tervezését, amelyek sok faj esetében működnek.</p>
+<blockquote class="blockquote">
+<p><em>Az univerzális primerek rövid, mesterséges DNS-szekvenciák, amelyek egy célgén konzervált régiójához kötődnek, és lehetővé teszik, hogy ugyanaz a PCR-reakció több különböző faj génjét is felerősítse.</em></p>
+</blockquote>
+<p>Példa (MiFish primerek):</p>
+<ul>
+<li>Forward: <code>GTCGGTAAAACTCGTGCCAGC</code> (MiFish-U-F)<br>
+</li>
+<li>Reverse: <code>CATGGTCTGATGTGACCTGAG</code> (MiFish-U-R)</li>
+</ul></li>
+<li><p><strong>Változékony régiók</strong>: a gén bizonyos szakaszai fajonként eltérnek, így a szekvenálás után fajszintű azonosítást tesznek lehetővé.</p></li>
+<li><p><strong>Rövid célfragmensek</strong> (80–150 bp): jól illeszkednek az eDNS tipikusan töredezett természetéhez.</p></li>
+</ul>
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
+<figure class="figure">
+<p><img src="http://www.contexo.info/dna_basics/chromosomes/mitochondria/index_files/mitochondrial_dna.png" class="img-fluid figure-img"></p>
+<figcaption>Az emberi mitokondriális DNS, amely a fehérjéket és RNS-molekulákat kódoló régiókat mutatja</figcaption>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section id="markerválasztás-és-genetika-az-edns-ben" class="level2">
+<h2 class="anchored" data-anchor-id="markerválasztás-és-genetika-az-edns-ben">Markerválasztás és genetika az eDNS-ben</h2>
+<p>A megfelelő genetikai marker kiválasztása az eDNS-kutatások egyik legfontosabb lépése.<br>
+Ez hatással van a kimutatási valószínűségre, a taxonómiai felbontásra és az eredmények összehasonlíthatóságára más tanulmányokkal.</p>
+<section id="mi-az-a-marker" class="level3">
+<h3 class="anchored" data-anchor-id="mi-az-a-marker">Mi az a marker?</h3>
+<p>A <strong>marker</strong> egy meghatározott DNS-régió, amelyet felerősítünk és szekvenálunk az élőlények azonosításához.</p>
+<p>Az eDNS-vizsgálatok gyakran céloznak:</p>
+<ul>
+<li><strong>Mitokondriális génekre</strong> (állatok, ritkábban növények)<br>
+</li>
+<li><strong>Kloroplasztisz génekre</strong> (növények, algák)<br>
+</li>
+<li><strong>Magban található riboszomális génekre</strong> (gombák, egyes eukarióták)<br>
+</li>
+<li><strong>Prokarióta riboszomális génekre</strong> (baktériumok, archeák)</li>
+</ul>
+</section>
+<section id="gyakori-markerek-az-edns-ben" class="level3">
+<h3 class="anchored" data-anchor-id="gyakori-markerek-az-edns-ben">Gyakori markerek az eDNS-ben</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 24%">
+<col style="width: 22%">
+<col style="width: 16%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Marker</th>
+<th>Genom helye</th>
+<th>Céltaxonok</th>
+<th>Előnyök</th>
+<th>Hátrányok</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>12S rRNS</strong></td>
+<td>Mitokondriális</td>
+<td>Gerincesek</td>
+<td>Magas kópiaszám; rövid amplikonok; jó degradált DNS-re</td>
+<td>Korlátozott gerincteleneknél; primer torzítás lehetséges</td>
+</tr>
+<tr class="even">
+<td><strong>16S rRNS</strong></td>
+<td>Prokarióta &amp; mitokondriális</td>
+<td>Baktériumok, archeák, egyes gerinctelenek</td>
+<td>Jó mikrobiális felbontás; nagy adatbázis</td>
+<td>Korlátozott eukarióták esetén</td>
+</tr>
+<tr class="odd">
+<td><strong>COI</strong></td>
+<td>Mitokondriális</td>
+<td>A legtöbb állat</td>
+<td>Kiváló fajszintű felbontás; BOLD/GenBank lefedettség</td>
+<td>Gyakran túl hosszú degradált DNS-hez, hacsak nem használnak „mini-barcode”-ot</td>
+</tr>
+<tr class="even">
+<td><strong>Cyt b</strong></td>
+<td>Mitokondriális</td>
+<td>Gerincesek</td>
+<td>Jó filogenetikában; fajazonosítás</td>
+<td>Hosszabb amplikon; ritkább metabarkódolásban</td>
+</tr>
+<tr class="odd">
+<td><strong>ITS</strong></td>
+<td>Magi riboszomális</td>
+<td>Gombák, növények</td>
+<td>Magas variabilitás fajszintű azonosításhoz</td>
+<td>Kevésbé konzervált; nehezebb univerzális primert tervezni</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fő-szempontok-markerválasztásnál" class="level3">
+<h3 class="anchored" data-anchor-id="fő-szempontok-markerválasztásnál">Fő szempontok markerválasztásnál</h3>
+<ol type="1">
+<li><strong>Cél taxon</strong>: gerincesek, összes állat, mikrobák vagy növények?<br>
+</li>
+<li><strong>Referencia-adatbázis lefedettség</strong>: rendelkezésre állnak a szekvenciák?<br>
+</li>
+<li><strong>Taxonómiai felbontás</strong>: fajszint vagy elegendő a nemzetség/család?<br>
+</li>
+<li><strong>DNS-degradáció</strong>: rövidebb célterületek (&lt;150 bp) jobban fennmaradnak az eDNS-ben.<br>
+</li>
+<li><strong>Konzerváltság vs.&nbsp;változékonyság</strong>:
+<ul>
+<li><em>Konzervált régiók</em>: primerkötő helyek<br>
+</li>
+<li><em>Változékony régiók</em>: fajmegkülönböztetés</li>
+</ul></li>
+</ol>
+</section>
+<section id="primertervezés-és-torzítás" class="level3">
+<h3 class="anchored" data-anchor-id="primertervezés-és-torzítás">Primertervezés és torzítás</h3>
+<ul>
+<li><strong>Univerzális primerek</strong>: konzervált régiókat céloznak, így egy PCR-rel több taxon is felerősíthető.</li>
+<li><strong>Primer torzítás</strong>: ha a primerek egyes fajokra jobban illeszkednek, másokra kevésbé, az egyenlőtlen amplifikációhoz vezethet.
+<ul>
+<li><em>In silico</em> tesztelés adatbázisokkal előre jelezheti a torzítást.<br>
+</li>
+<li><strong>Primer-koktélok</strong> növelhetik a lefedettséget.</li>
+</ul></li>
+</ul>
+</section>
+<section id="miért-dominálnak-a-mitokondriális-markerek-az-állati-edns-ben" class="level3">
+<h3 class="anchored" data-anchor-id="miért-dominálnak-a-mitokondriális-markerek-az-állati-edns-ben">Miért dominálnak a mitokondriális markerek az állati eDNS-ben?</h3>
+<ul>
+<li>Magas kópiaszám → jobb kimutatás nyomnyi mintákból<br>
+</li>
+<li>Kis genom → könnyebb amplifikáció<br>
+</li>
+<li>Anyai öröklődés → fajon belül egységes<br>
+</li>
+<li>Konzervált szerkezet → univerzális primerek tervezhetők</li>
+</ul>
+</section>
+<section id="mag--és-mitokondriális-dns-összehasonlítása" class="level3">
+<h3 class="anchored" data-anchor-id="mag--és-mitokondriális-dns-összehasonlítása">Mag- és mitokondriális DNS összehasonlítása</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 45%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Jellemző</th>
+<th>Magi DNS (nDNS)</th>
+<th>Mitokondriális DNS (mtDNS)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Elhelyezkedés</strong></td>
+<td>Sejtmag</td>
+<td>Mitokondrium</td>
+</tr>
+<tr class="even">
+<td><strong>Szerkezet</strong></td>
+<td>Lineáris kromoszómák</td>
+<td>Kör alakú molekula</td>
+</tr>
+<tr class="odd">
+<td><strong>Kópiaszám</strong></td>
+<td>Két példány sejtenként (diploid)</td>
+<td>Száz–ezer példány sejtenként</td>
+</tr>
+<tr class="even">
+<td><strong>Méret</strong></td>
+<td>~3,2 milliárd bp (ember)</td>
+<td>~16 500 bp (ember)</td>
+</tr>
+<tr class="odd">
+<td><strong>Gének</strong></td>
+<td>~20 000–25 000 fehérjekódoló gén</td>
+<td>37 gén (13 fehérje, 22 tRNS, 2 rRNS)</td>
+</tr>
+<tr class="even">
+<td><strong>Öröklődés</strong></td>
+<td>Két szülőtől</td>
+<td>Csak anyai ágon</td>
+</tr>
+<tr class="odd">
+<td><strong>Funkció</strong></td>
+<td>A legtöbb sejtfehérje és szabályozás</td>
+<td>Oxidatív foszforiláció komponensei</td>
+</tr>
+<tr class="even">
+<td><strong>Mutációs ráta</strong></td>
+<td>Alacsony (hisztonok és javítási mechanizmusok védik)</td>
+<td>Magasabb (reaktív oxigén hatásának kitett)</td>
+</tr>
+<tr class="odd">
+<td><strong>Kutatási cél</strong></td>
+<td>Genomika, betegségek, evolúció</td>
+<td>Anyai leszármazás vizsgálata, fajazonosítás</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gyakori-markergének-az-edns-vizsgálatokban" class="level3">
+<h3 class="anchored" data-anchor-id="gyakori-markergének-az-edns-vizsgálatokban">Gyakori markergének az eDNS-vizsgálatokban</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 35%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Marker gén</th>
+<th>Genom helye</th>
+<th>Funkció</th>
+<th>Tipikus eDNS amplikonhossz</th>
+<th>Fő felhasználás</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>12S rRNS</strong></td>
+<td>mtDNS</td>
+<td>A mitokondriális riboszóma kis alegysége</td>
+<td>80–150 bp</td>
+<td>Gerinces metabarkódolás; magas érzékenység</td>
+</tr>
+<tr class="even">
+<td><strong>16S rRNS</strong></td>
+<td>Prokarióta &amp; mtDNS</td>
+<td>Riboszóma nagy alegysége</td>
+<td>100–500 bp</td>
+<td>Mikrobiális profilozás; egyes gerinctelenek és mitokondriumok</td>
+</tr>
+<tr class="odd">
+<td><strong>COI</strong></td>
+<td>mtDNS</td>
+<td>Citoszóm-c-oxidáz I alegység</td>
+<td>650 bp (teljes), 150–300 bp (mini)</td>
+<td>Standard állat-barkód; halak és gerinctelenek</td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="a-dns-szerkezete" class="level2">
 <h2 class="anchored" data-anchor-id="a-dns-szerkezete">A DNS szerkezete</h2>
-<p>A DNS jellegzetes <strong>kettős hélix</strong> szerkezetű, amely <strong>két, egymással komplementer polinukleotid-láncból</strong> áll.</p>
-<p>Fő szerkezeti elemek:</p>
+<p>A DNS jellegzetes kettős hélix formával rendelkezik, amely két, egymással komplementer polinukleotid-szál egymás köré csavarodásából áll.</p>
+<p>Minden nukleotid, a DNS alapegysége, három fő részből épül fel:</p>
 <ul>
-<li><p>Cukor–foszfát gerinc: a hélix külső részén váltakozó foszfátcsoportok és ötszénatomos cukrok (dezoxiribóz) alkotják a vázat.</p></li>
-<li><p>Nitrogéntartalmú bázisok: befelé irányulnak, és hidrogénkötésekkel párosodnak a másik szál bázisaival, így kialakítva a „létrafokokat”:</p>
+<li>Egy pentóz cukor (<strong>dezoxiribóz</strong>, öt szénatomos cukor)</li>
+<li>Egy foszfátcsoport</li>
+<li>Egy nitrogénbázis</li>
+</ul>
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
+<figure class="figure">
+<p><img src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1094/2016/11/03164446/OSC_Microbio_10_02_Nucleotide.jpg" class="img-fluid figure-img"></p>
+<figcaption>a) DNS-nukleotid. b) A dezoxiribóz öt szénatomját 1ʹ, 2ʹ, 3ʹ, 4ʹ és 5ʹ jelöléssel látjuk el.</figcaption>
+</figure>
+</div>
+</div>
+<section id="polinukleotid-lánc" class="level3">
+<h3 class="anchored" data-anchor-id="polinukleotid-lánc">Polinukleotid-lánc</h3>
+<p>A nukleotidok kondenzációs reakció során kapcsolódnak össze: az egyik nukleotid foszfátcsoportja és a másik cukormolekulájának hidroxilcsoportja között <strong>foszfodiészter-kötés</strong> alakul ki, amely a 3′ szénatomot köti össze az egyik cukorban az 5′ szénatomhoz kapcsolt foszfátcsoporttal a következő nukleotidban.<br>
+Ennek eredménye a folyamatos <strong>cukor–foszfát gerinc</strong>.</p>
+<div class="container">
+<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
+<figure class="figure">
+<p><img src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1094/2016/11/03164452/OSC_Microbio_10_02_NAcidStrand.jpg" class="img-fluid figure-img"></p>
+<figcaption>Cukor–foszfát gerinc</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="elrendeződés-a-kettős-hélixben" class="level3">
+<h3 class="anchored" data-anchor-id="elrendeződés-a-kettős-hélixben">Elrendeződés a kettős hélixben</h3>
 <ul>
-<li>Adenin (A) – Timin (T): két hidrogénkötés</li>
-<li>Guanin (G) – Citozin (C): három hidrogénkötés</li>
+<li><strong>Gerinc helyzete</strong>: a cukor–foszfát gerincek a kettős spirál külső oldalán helyezkednek el.</li>
+<li><strong>Bázispárosodás</strong>: a nitrogénbázisok a gerinc belseje felé nyúlnak, és meghatározott módon párosodnak az ellentétes szál bázisaival:
+<ul>
+<li>Adenin (A) – Timin (T) két hidrogénkötéssel</li>
+<li>Guanin (G) – Citozin (C) három hidrogénkötéssel</li>
 </ul></li>
 </ul>
+<p>Ezek a komplementer bázispárok tartják össze a két szálat, biztosítva a kettős hélix egységes alakját.</p>
 <div class="container">
 <div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
 <figure class="figure">
@@ -172,94 +608,435 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </div>
-<p>Minden nukleotid három részből áll:</p>
+</section>
+<section id="a-szálak-irányítottsága" class="level3">
+<h3 class="anchored" data-anchor-id="a-szálak-irányítottsága">A szálak irányítottsága</h3>
+<p>A dezoxiribóz szénatomjait 1′–5′ jelöléssel látjuk el:</p>
 <ul>
-<li>egy ötszénatomos cukor (dezoxiribóz)</li>
-<li>egy foszfátcsoport</li>
-<li>egy nitrogéntartalmú bázis (A, T, G vagy C)</li>
+<li><strong>C1′</strong> – a nitrogénbázishoz kapcsolódik<br>
+</li>
+<li><strong>C3′</strong> – OH-csoportot tartalmaz, amely a következő nukleotid foszfátcsoportjához kapcsolódik<br>
+</li>
+<li><strong>C4′</strong> – a gyűrűs szerkezet része<br>
+</li>
+<li><strong>C5′</strong> – a gyűrűn kívül helyezkedik el, a foszfátcsoporthoz kapcsolódva</li>
 </ul>
+<p>Az egyik szál 5′ → 3′ irányban fut (szabad foszfát az 5′ végen, szabad –OH a 3′ végen), a másik pedig 3′ → 5′ irányban.</p>
 <div class="container">
 <div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
 <figure class="figure">
-<p><img src="https://opentextbc.ca/biology/wp-content/uploads/sites/96/2015/02/Figure_09_01_02a.jpg" class="img-fluid figure-img"></p>
-<figcaption>DNS nukleotid</figcaption>
+<p><img src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1094/2016/11/03164502/OSC_Microbio_10_02_DoubHelix.jpg" class="img-fluid figure-img"></p>
+<figcaption>a) A cukor–foszfát gerinc a kettős spirál külső oldalán helyezkedik el, a purinok (A, G) és pirimidinek (C, T) pedig a „létrafokokat” alkotják. b) A két DNS-szál antiparallel. c) Az irányítottságot a cukor szénatomjainak számozása adja.</figcaption>
 </figure>
 </div>
 </div>
-<p>A nukleotidok úgy kapcsolódnak egymáshoz, hogy az egyik nukleotid foszfátcsoportja <strong>foszfodiészter-kötéssel</strong> kapcsolódik a következő nukleotid cukorrészének 3′ szénatomjához. Így jön létre a folyamatos cukor–foszfát gerinc.</p>
-<p>A dezoxiribóz szénatomjait 1′-től 5′-ig számozzuk:</p>
+</section>
+<section id="az-antiparallel-elrendezés-jelentősége" class="level3">
+<h3 class="anchored" data-anchor-id="az-antiparallel-elrendezés-jelentősége">Az antiparallel elrendezés jelentősége</h3>
 <ul>
-<li>1′ szénatom: ehhez kapcsolódik a nitrogéntartalmú bázis</li>
-<li>5′ szénatom: ehhez kapcsolódik a foszfátcsoport</li>
-<li>3′ szénatom: –OH csoportot hordoz, amely a következő nukleotid foszfátcsoportjával képez kötést</li>
+<li><strong>Bázispárosodás</strong>: stabil hidrogénkötések csak akkor alakulnak ki, ha a szálak ellentétes irányban futnak, biztosítva a spirál egyenletes szélességét.</li>
+<li><strong>Replikáció</strong>: a DNS-polimeráz csak a 3′ véghez képes nukleotidokat hozzáadni.</li>
+<li><strong>Stabilitás</strong>: az ellentétes irány és a foszfátcsoportok elhelyezkedése csökkenti az elektrosztatikus taszítást, stabilizálva a szerkezetet.</li>
 </ul>
-<p>Az egyik DNS-szál <strong>5′ → 3′</strong> irányban fut (5′ vég: szabad foszfátcsoport, 3′ vég: szabad –OH csoport), míg a komplementer szál <strong>3′ → 5′</strong> irányban.</p>
-<div class="container">
-<div class="quarto-figure quarto-figure-center" style="max-width: 100%; height: auto;">
-<figure class="figure">
-<p><img src="https://opentextbc.ca/biology/wp-content/uploads/sites/96/2021/03/Figure_09_01_03ab-768x417.jpg" class="img-fluid figure-img"></p>
-<figcaption>Bázispárosodás</figcaption>
-</figure>
-</div>
-</div>
-<p>Ez az <strong>antiparallel</strong> elrendezés elengedhetetlen a következő okok miatt:</p>
-<ul>
-<li>Bázispárosodás: stabil hidrogénkötések csak ellentétes irányú szálak között jönnek létre, így marad a helix szabályos alakja.</li>
-<li>Replikáció: a DNS-polimeráz csak a növekvő szál 3′ végéhez tud új nukleotidot kapcsolni.</li>
-<li>Stabilitás: az ellentétes irány és a foszfátcsoportok elhelyezkedése csökkenti az elektrosztatikus taszítást, így stabilizálja a kettős hélixet.</li>
-</ul>
+</section>
 </section>
 <section id="dns-a-környezetben" class="level2">
 <h2 class="anchored" data-anchor-id="dns-a-környezetben">DNS a környezetben</h2>
-<p>Amikor a DNS elhagyja a sejtet, <strong>környezeti DNS-sé (eDNA)</strong> válik. Ez lehet:</p>
+<p>Amikor a DNS elhagyja a sejtet, <strong>környezeti DNS</strong>-sé (eDNS) válik, amely többféle formában fordulhat elő:</p>
 <ul>
-<li>Intracelluláris: még sejtekben vagy sejtszervecskékben található, így védettebb.</li>
-<li>Extracelluláris: szabadon lebegő, részecskékhez kötődő vagy üledékfelszínen adszorbeálódott.</li>
-<li>Adszorbeált: agyagásványokhoz vagy szerves anyaghoz kötődve, ami növelheti a stabilitását.</li>
+<li><strong>Intracelluláris</strong>: még sejten vagy sejtszervecskén belül, ami nagyobb védelmet biztosít a lebomlás ellen.<br>
+</li>
+<li><strong>Extracelluláris</strong>: szabadon lebeg a vízben, részecskékhez kötődve, vagy üledékfelszínekhez adszorbeálódva.<br>
+</li>
+<li><strong>Adszorbeált</strong>: ásványi részecskékhez (pl. agyag) vagy szerves anyaghoz kötődve, ami meghosszabbíthatja a DNS fennmaradását.</li>
 </ul>
-<p>A környezeti DNS lebomlását okozhatja:</p>
+<p>A környezeti DNS erősen ki van téve a lebomlásnak, amelyet több tényező gyorsít:</p>
 <ul>
-<li>mikrobiális nukleázok (enzimes lebontás)</li>
-<li>UV-sugárzás (timindimerek kialakulása)</li>
-<li>hőmérséklet (magasabb = gyorsabb lebomlás)</li>
-<li>szélsőséges pH (sav/bázis hidrolízis)</li>
-<li>sótartalom (átmenetileg stabilizálhat, de kicsapódást is okozhat)</li>
+<li><strong>Mikrobiális nukleázok</strong> (enzimatikus bontás)<br>
+</li>
+<li><strong>UV-sugárzás</strong> (timin-dimerek képződése)<br>
+</li>
+<li><strong>Hőmérséklet</strong> (magasabb hőmérsékleten gyorsabb lebomlás)<br>
+</li>
+<li><strong>pH-szélsőségek</strong> (savas vagy lúgos hidrolízis)<br>
+</li>
+<li><strong>Sótartalom</strong> (átmenetileg stabilizálhatja, de kicsapódást is okozhat)</li>
 </ul>
-<p>Vízben az eDNS töredékhossza jellemzően <strong>&lt;200 bp</strong> a lebomlás miatt.</p>
-<hr>
+<p>Vízben a tipikus eDNS-töredékhossz általában <strong>200 bázispárnál rövidebb</strong> a degradáció miatt.</p>
+<blockquote class="blockquote">
+<p><em>A környezeti DNS az összes DNS, amelyet környezeti mintákból vonunk ki. A genomi DNS ezzel szemben közvetlenül a szervezetek szöveteiből származik.</em></p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled" title="Primerek kötődése töredezett eDNS-ben">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Primerek kötődése töredezett eDNS-ben
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mivel a mitokondriális DNS sok azonos példányban van jelen minden sejtben, még a kisebb darabokra tört DNS-ből is előfordulnak olyan fragmentumok, amelyek tartalmazzák a primerkötő helyeket.</p>
+<p>Bár a környezetben a mitokondriális DNS jelentősen töredezett, a genomok nagy száma és a törések véletlenszerűsége miatt a fragmentumok egy része tartalmazza azokat a pontos szekvenciákat, ahol a primerek képesek kötődni.</p>
+<p>Rövid, konzervált régiók (80–150 bp) célzása és elegendő mintamennyiség gyűjtése növeli annak esélyét, hogy a célfragmens jelen legyen, és sikeres legyen az amplifikáció.</p>
+</div>
+</div>
 </section>
-<section id="molekuláris-szempontok-edns-analízisnél" class="level2">
-<h2 class="anchored" data-anchor-id="molekuláris-szempontok-edns-analízisnél">Molekuláris szempontok eDNS-analízisnél</h2>
-<p>Inhibíció:</p>
+<section id="molekuláris-megfontolások-az-edns-analízisben" class="level2">
+<h2 class="anchored" data-anchor-id="molekuláris-megfontolások-az-edns-analízisben">Molekuláris megfontolások az eDNS-analízisben</h2>
+<p><strong>Inhibíció</strong><br>
+- A huminsavak, csersavak és fémionok gátolhatják a PCR-t vagy a qPCR-t azáltal, hogy megkötik a polimeráz enzimeket, vagy elvonják a szükséges Mg²⁺ ionokat.</p>
+<p><strong>Primertervezés</strong><br>
+- A rövidebb amplikonok (80–150 bp) jobban teljesítenek degradált eDNS-sel, mivel a környezeti degradáció rövidebb darabokra töri a DNS-t.<br>
+- A GC-tartalom befolyásolja az olvadási hőmérsékletet (Tm) és az amplifikáció sikerét.<br>
+- A G és C bázisokat három hidrogénkötés tartja össze (szemben az A és T bázisok két kötésével), ezért magasabb GC-tartalom magasabb Tm-et eredményez, ami több hőt igényel a szálak szétválasztásához.<br>
+- A magas GC-tartalmú régiók stabil másodlagos szerkezeteket képezhetnek, amelyek akadályozhatják a primerkötődést vagy a polimeráz aktivitását.<br>
+- A nagyon alacsony GC-tartalom gyenge primerkötést és nem specifikus amplifikációt okozhat.<br>
+- A <strong>kiegyensúlyozott (~40–60 %) GC-tartalmú primerek</strong> általában megbízhatóbb eredményt adnak.</p>
+<p><strong>Extrahálás</strong><br>
+- A hatékonyság függ a sejtfeltárás (lízis) módszerétől és attól, hogy a DNS intracelluláris formában vagy részecskékhez kötődve van jelen.</p>
+</section>
+<section id="fennmaradás-és-értelmezés" class="level2">
+<h2 class="anchored" data-anchor-id="fennmaradás-és-értelmezés">Fennmaradás és értelmezés</h2>
 <ul>
-<li>Huminsavak, tanninok és fémionok gátolhatják a PCR/qPCR-t polimerázhoz kötődve vagy Mg²⁺ ionokat megkötve.</li>
-</ul>
-<p>Primertervezés:</p>
-<ul>
-<li>Rövidebb amplikonok (80–150 bp) jobban teljesítenek degradált eDNA esetén.</li>
-<li>A GC-tartalom befolyásolja az olvadáspontot és a PCR-hatékonyságot.</li>
-</ul>
-<p>Extrakció:</p>
-<ul>
-<li>A hatékonyság függ a sejtfeltárás módjától és attól, hogy a DNS intracelluláris vagy részecskékhez kötött.</li>
+<li><strong>Fennmaradás</strong>: vízben órákig–hetekig, üledékben hónapokig vagy akár tovább is megőrződhet.<br>
+</li>
+<li><strong>Transzport</strong>: a vízáramlás az eDNS-t elviheti a forrásától távolabbra.<br>
+</li>
+<li><strong>Hamis pozitívok</strong>: korábbi jelenlétből származó, már elpusztult szervezetek DNS-e.<br>
+</li>
+<li><strong>Hamis negatívok</strong>: gyors degradáció vagy alacsony DNS-kibocsátás miatt.</li>
 </ul>
 </section>
-<section id="perzisztencia" class="level2">
-<h2 class="anchored" data-anchor-id="perzisztencia">Perzisztencia</h2>
+<section id="technológiai-és-biotechnológiai-háttér" class="level2">
+<h2 class="anchored" data-anchor-id="technológiai-és-biotechnológiai-háttér">Technológiai és biotechnológiai háttér</h2>
+<p>Az eDNS-analízis minden lépése – a mintavételtől a bioinformatikai feldolgozásig – modern molekuláris biotechnológiai módszereken alapul.</p>
+<section id="mintavétel-és-dns-extrakció" class="level3">
+<h3 class="anchored" data-anchor-id="mintavétel-és-dns-extrakció">Mintavétel és DNS-extrakció</h3>
 <ul>
-<li>Perzisztencia: vízben órák–hetek, üledékben hónapok vagy akár évek.</li>
-<li>Transzport: áramlás elszállíthatja az eDNS-t a forrástól.</li>
-<li>Hamis pozitív: elpusztult szervezetek „örökség-DNS-e”.</li>
-<li>Hamis negatív: gyors lebomlás vagy alacsony kibocsátás.</li>
+<li>A vízből, üledékből vagy talajból származó DNS-t lízispufferrel, enzimes sejtfeltárással (pl. proteináz K) és szűréssel nyerik ki – ezek mind klasszikus molekuláris biotechnológiai laboreljárások.</li>
 </ul>
 </section>
-<section id="technológiák" class="level2">
-<h2 class="anchored" data-anchor-id="technológiák">Technológiák</h2>
+<section id="dns-amplifikáció-és-kimutatási-módszerek" class="level3">
+<h3 class="anchored" data-anchor-id="dns-amplifikáció-és-kimutatási-módszerek">DNS-amplifikáció és kimutatási módszerek</h3>
+<p>Az eDNS-elemzésben a céltérség megsokszorozását és kimutatását általában különböző PCR-alapú technikákkal végzik.<br>
+A genetikai marker megválasztása kulcsfontosságú — rövid mitokondriális génszakaszok (pl. 12S rRNS gén) gyakran előnyösek a magas kópiaszám, a széles fajlefedettségű primerek és a környezeti degradációnak való ellenállás miatt.</p>
+<p>Az eDNS-kimutatás három fő csoportba sorolható:</p>
 <ul>
-<li>qPCR: fajspecifikus, nagy érzékenységű.</li>
-<li>Metabarkódolás: közösségi szintű biodiverzitás, de ritka fajoknál alacsonyabb érzékenység.</li>
-<li>ddPCR: nagy érzékenység, inhibitorokkal szembeni jobb ellenállás.</li>
+<li><p><strong>Fajspecifikus kimutatás</strong>:<br>
+Egy-egy faj kimutatására szolgáló, fajspecifikus primereket használ. Különösen alkalmas veszélyeztetett, ritka vagy invazív fajok nyomon követésére.</p>
+<ul>
+<li>Elterjedt módszerek:
+<ul>
+<li><strong>Hagyományos PCR (cPCR)</strong>: az ampliconokat gél-elektroforézissel jelenítik meg.<br>
+</li>
+<li><strong>Kvantitatív valós idejű PCR (qPCR)</strong>: a szaporodást valós időben, fluoreszcencia segítségével követi.<br>
+</li>
+<li><strong>Nested PCR (nPCR)</strong>: kétlépcsős módszer, amely egy szélesebb célterületen belüli szakaszt újraamplifikál, növelve az érzékenységet és a fajspecifitást. Hasznos alacsony DNS-mennyiség vagy nehezen detektálható fajok esetén.<br>
+</li>
+<li><strong>Digitális csepp-PCR (ddPCR)</strong>: a mintát több ezer apró reakcióra osztja. Ideális ritka fajok detektálására komplex mintákból.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>eDNS-metabarkodolás</strong>:<br>
+Lehetővé teszi több faj egyidejű kimutatását egyetlen eDNS-mintából, univerzális primerekkel, amelyek konzervált génrégiókra (pl. 12S gerincesek esetén) kötődnek.</p></li>
+<li><p><strong>eDNS-metagenomika</strong>:<br>
+A metagenomika az összes DNS közvetlen, „shotgun” szekvenálását jelenti — amplifikáció nélkül. Ez magában foglalja a kódoló és nem kódoló régiókat is, teljes képet adva a genetikai diverzitásról és az ökológiai funkciókról.</p></li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="DNS-barkódolás vs. metabarkodolás vs. metagenomika">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+DNS-barkódolás vs.&nbsp;metabarkodolás vs.&nbsp;metagenomika
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 23%">
+<col style="width: 28%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Jellemző</strong></th>
+<th><strong>DNS-barkódolás</strong></th>
+<th><strong>DNS-metabarkodolás</strong></th>
+<th><strong>eDNS-metagenomika</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Cél</strong></td>
+<td>Egy faj egyszerre</td>
+<td>Több faj egyidejű kimutatása</td>
+<td>Minden DNS, ami a mintában jelen van</td>
+</tr>
+<tr class="even">
+<td><strong>Minta típusa</strong></td>
+<td>Egyedi szövet (pl. úszó, pikkely)</td>
+<td>Környezeti minta (pl. víz, talaj)</td>
+<td>Környezeti minta (pl. víz, üledék, talaj)</td>
+</tr>
+<tr class="odd">
+<td><strong>Módszer</strong></td>
+<td>Egy faj barkódjának amplifikálása</td>
+<td>Barkód amplifikálása kevert közösségi DNS-ből</td>
+<td>Amplifikáció nélkül, közvetlen shotgun-szekvenálás</td>
+</tr>
+<tr class="even">
+<td><strong>Szekvenálás</strong></td>
+<td>Sanger-szekvenálás</td>
+<td>Nagy áteresztőképességű szekvenálás (MiSeq)</td>
+<td>Shotgun nagy áteresztőképességű szekvenálás (NovaSeq)</td>
+</tr>
+<tr class="odd">
+<td><strong>Használat</strong></td>
+<td>Fajazonosítás, taxonómia</td>
+<td>Közösségszerkezet, biodiverzitás-felmérés</td>
+<td>Funkcionális diverzitás, táplálékháló, mikrobiológia</td>
+</tr>
+<tr class="even">
+<td><strong>Komplexitás</strong></td>
+<td>Alacsony</td>
+<td>Közepes (bioinformatika szükséges)</td>
+<td>Magas (fejlett szekvenálási és számítási erőforrások)</td>
+</tr>
+<tr class="odd">
+<td><strong>Korlátok</strong></td>
+<td>Egy faj / reakció</td>
+<td>Primer-bias, ritka fajok kihagyása</td>
+<td>Költséges, számításigényes, bonyolult adatelemzés</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="újgenerációs-szekvenálás-ngs" class="level3">
+<h3 class="anchored" data-anchor-id="újgenerációs-szekvenálás-ngs">Újgenerációs szekvenálás (NGS)</h3>
+<ul>
+<li>Az Illumina vagy Ion Torrent platformok nagyszámú rövid DNS-szakaszt szekvenálnak, lehetővé téve a fajazonosítást és a közösségszerkezet elemzését.</li>
+</ul>
+</section>
+<section id="bioinformatikai-feldolgozás" class="level3">
+<h3 class="anchored" data-anchor-id="bioinformatikai-feldolgozás">Bioinformatikai feldolgozás</h3>
+<ul>
+<li>A nyers szekvenciaadatokat tisztítják, hibajavítást végeznek, és taxonómiai besorolást adnak szoftverek (pl. DADA2, QIIME2) segítségével; ez a lépés kapcsolja össze a laborban végzett molekuláris munkát az ökológiai értelmezéssel.</li>
+</ul>
+<p>Összességében az eDNS-módszerek lehetővé teszik fajok és közösségek tanulmányozását anélkül, hogy közvetlenül meg kellene figyelni vagy befogni őket, minimálisra csökkentve az élőhelyek zavarását. Alkalmazhatók invazív fajok korai kimutatására, védett vagy ritka fajok monitorozására, valamint élőhely-rekonstrukciós projektek hatékonyságának értékelésére.</p>
+</section>
+</section>
+<section id="edns-idővonal-áttekintés" class="level2">
+<h2 class="anchored" data-anchor-id="edns-idővonal-áttekintés">eDNS idővonal – áttekintés</h2>
+<div class="timeline">
+<ul>
+<li><strong>1987</strong>: Az „environmental DNA” kifejezés megjelenése a mikrobiológiában (Ogram et <em>al.</em> 1987).<br>
+</li>
+<li><strong>1998</strong>: Növényi DNS kimutatása talajmintából — a makrobiális eDNS-kutatás kezdete (Paget et <em>al.</em> 1998).<br>
+</li>
+<li><strong>2003</strong>: Talaj eDNS metagenetikai elemzése (Willerslev et <em>al.</em> 2003).<br>
+</li>
+<li><strong>2005</strong>: Az első makrobiális eDNS-kimutatás folyóvízből (Martellini et <em>al.</em> 2005).<br>
+</li>
+<li><strong>2008</strong>: Invazív amerikai bikabéka kimutatása eDNS-sel (Ficetola et <em>al.</em> 2008).<br>
+</li>
+<li><strong>2010</strong>: Metagenetikai módszerek környezeti mintákra alkalmazva (Creer et <em>al.</em> 2010).<br>
+</li>
+<li><strong>2011</strong>:
+<ul>
+<li>Első folyóvízi hal-közösség eDNS-metabarkodolása (Minamoto et <em>al.</em> 2011).<br>
+</li>
+<li>Invazív ezüst- és pettyesfejű busa kimutatása Észak-Amerikában (Jerde et <em>al.</em> 2011).<br>
+</li>
+<li>Vízben élő mikroorganizmusok (baktériumok, vírusok, gombák, paraziták) kimutatása (Minamoto et <em>al.</em> 2011).<br>
+</li>
+</ul></li>
+<li><strong>2012</strong>:
+<ul>
+<li>Első tengeri eDNS-vizsgálatok: halfajgazdagság (Thomsen et <em>al.</em> 2012), tengeri emlősök (Foote et <em>al.</em> 2012).<br>
+</li>
+<li>Szélesebb körű természetvédelmi alkalmazások (Thomsen et <em>al.</em> 2012).<br>
+</li>
+<li>Ritka és veszélyeztetett fajok megerősítése eDNS-sel (Minamoto et <em>al.</em> 2012).<br>
+</li>
+<li>Biomassza-becslés eDNS-ből (Takahara et <em>al.</em> 2012).<br>
+</li>
+</ul></li>
+<li><strong>2013</strong>:
+<ul>
+<li>Halpatogének és invazív fajok kimutatása (Takahara et <em>al.</em> 2013).<br>
+</li>
+<li>Kétéltűek és puhatestűek eDNS-kimutatása (Pilliod et <em>al.</em> 2013; Goldberg et <em>al.</em> 2013).<br>
+</li>
+</ul></li>
+<li><strong>2014</strong>:
+<ul>
+<li>Hüllők kimutatása eDNS-sel (Piaggio et <em>al.</em> 2014).<br>
+</li>
+<li>Referencia-adatbázisok fontosságának hangsúlyozása (Rees et <em>al.</em> 2014).<br>
+</li>
+<li>Invazív fajok azonosítása eDNS-sel (Keskin, 2014).<br>
+</li>
+</ul></li>
+<li><strong>2015</strong>:
+<ul>
+<li>Nehezen megfigyelhető fajok kimutatása (Deiner et <em>al.</em> 2015; Fukumoto et <em>al.</em> 2015).<br>
+</li>
+<li>Kétéltű-monitoring folytatódik (Biggs et <em>al.</em> 2015).<br>
+</li>
+<li>eDNS-metabarkodolás fejlesztése hal-közösségek becslésére (Miya et <em>al.</em> 2015).<br>
+</li>
+</ul></li>
+<li><strong>2016</strong>:
+<ul>
+<li>Horizontális és vertikális fajgazdagsági mintázatok feltárása (Olds et <em>al.</em> 2016).<br>
+</li>
+<li>Szélesebb biodiverzitás-monitoring (Evans et <em>al.</em> 2016).<br>
+</li>
+</ul></li>
+<li><strong>2018</strong>:
+<ul>
+<li>Vándorló halfajok nyomon követése eDNS-sel (Xu et <em>al.</em> 2018).<br>
+</li>
+<li>Rákfélék kimutatása eDNS-sel (Wu et <em>al.</em> 2018).<br>
+</li>
+</ul></li>
+<li><strong>2019</strong>:
+<ul>
+<li>Emlősök, hüllők kimutatása eDNS-sel (Franklin et <em>al.</em> 2019; Evans et <em>al.</em> 2019).<br>
+</li>
+<li>MinION hordozható szekvenálás terepi alkalmazása (Garlapati et <em>al.</em> 2019).<br>
+</li>
+</ul></li>
+<li><strong>2020</strong>:
+<ul>
+<li>Vadon élő fajok tér- és időbeli eloszlásának elemzése (Carraro et <em>al.</em> 2020).<br>
+</li>
+<li>Rákfélék közösségi vizsgálata (Troth et <em>al.</em> 2020).<br>
+</li>
+</ul></li>
+<li><strong>2021</strong>:
+<ul>
+<li>Szárazföldi és vízi biodiverzitás felmérése (Evans, 2019).<br>
+</li>
+<li>Élőhelypreferencia-modellezés (Xie et <em>al.</em> 2021).<br>
+</li>
+<li>Fajgazdagsági mintázatok feltárása (Canals et <em>al.</em> 2021; Wood et <em>al.</em> 2021).<br>
+</li>
+</ul></li>
+<li><strong>2022</strong>:
+<ul>
+<li>Ívási ökológia vizsgálata (Wu et <em>al.</em> 2022).<br>
+</li>
+<li>Hüllők kimutatásának bővítése (Nishizawa et <em>al.</em> 2022).<br>
+</li>
+</ul></li>
+<li><strong>2023</strong>:
+<ul>
+<li>Antropogén hatások és klímaváltozás értékelése (Curtis et <em>al.</em> 2023).<br>
+</li>
+<li>Invazív fajok előrejelzésének finomítása (Beridze et <em>al.</em> 2023).<br>
+</li>
+<li>Távoli ökoszisztémák feltárása (Rishan et <em>al.</em> 2023).<br>
+</li>
+</ul></li>
+<li><strong>2024</strong>:
+<ul>
+<li>Fitoplankton- és baktériumközösségek elemzése tengeri üledékből (Sahu et <em>al.</em> 2024).<br>
+</li>
+<li>Ökoszisztéma-hatások és szennyezés monitorozása (Suzuki et <em>al.</em> 2024).<br>
+</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="edns-tanulmányok-idővonala-folyóvízi-és-torkolati-ökoszisztémákban" class="level2">
+<h2 class="anchored" data-anchor-id="edns-tanulmányok-idővonala-folyóvízi-és-torkolati-ökoszisztémákban">eDNS-tanulmányok idővonala folyóvízi és torkolati ökoszisztémákban</h2>
+<div class="timeline">
+<ul>
+<li><p><strong>2018</strong><br>
+<strong>Cél:</strong> A veszélyeztetett kínai tok halfaj szezonális eloszlásának nyomon követése eDNS-sel<br>
+<strong>Helyszín:</strong> Jangce folyó középső és alsó szakasza, Kína<br>
+<strong>Eredmény:</strong> Ívási időszakban 9, ívás után 14 helyszínen mutatták ki az eDNS-t; a középső szakaszon stabil, az alsó szakaszon változó kimutatás, a migrációt tükrözve<br>
+<strong>Következtetés:</strong> Az eDNS-metabarkodolás megbízható eszköz a veszélyeztetett halfajok szezonális vándorlásának követésére nagy folyórendszerekben<br>
+<strong>Hivatkozás:</strong> Xu et <em>al</em>. 2018</p></li>
+<li><p><strong>2021</strong><br>
+<strong>Cél:</strong> A biodiverzitás tér- és időbeli változásainak becslése eDNS segítségével<br>
+<strong>Helyszín:</strong> Tweed, Tees, Esk torkolat, Anglia<br>
+<strong>Eredmény:</strong> 93 halfaj, 2 kétéltű, 51 madár, 51 emlős, 13 gerinctelen azonosítva<br>
+<strong>Következtetés:</strong> Az eDNS széles körben alkalmazható eszköz; a protokollokat standardizálni kell<br>
+<strong>Hivatkozás:</strong> Mariani et <em>al.</em> 2021</p></li>
+<li><p><strong>2021</strong><br>
+<strong>Cél:</strong> Az eDNS-metabarkodolás szerepének értékelése az árapályzóna élőhelyeinek monitorozásában<br>
+<strong>Helyszín:</strong> Temze-torkolat, Egyesült Királyság<br>
+<strong>Taxonok:</strong> Számos halfaj és makrogerinctelen több tér- és időskálán<br>
+<strong>Következtetés:</strong> Az eDNS-metabarkodolás értékes ökológiai betekintést nyújt és kiegészíti a hagyományos monitoringot; kiemeli a finom léptékű térbeli mintavétel fontosságát<br>
+<strong>Hivatkozás:</strong> Hallam et <em>al.</em> 2021 (PhD értekezés, Queen Mary University of London)</p></li>
+<li><p><strong>2022</strong><br>
+<strong>Cél:</strong> Halfaj-diverzitás összehasonlítása fenékhálózás és eDNS-metabarkodolás segítségével<br>
+<strong>Helyszín:</strong> Gyöngy-folyó torkolata, Dél-kínai-tenger<br>
+<strong>Eredmény:</strong> 49 halfaj azonosítva<br>
+<strong>Következtetés:</strong> Az eDNS sikeressége a molekuláris munkafolyamaton múlik<br>
+<strong>Hivatkozás:</strong> Ruan et <em>al.</em> 2022</p></li>
+<li><p><strong>2022</strong><br>
+<strong>Cél:</strong> Szezonális változások és a közösségszerkezetet meghatározó taxonok vizsgálata<br>
+<strong>Helyszín:</strong> Manly Lagoon, Ausztrália<br>
+<strong>Eredmény:</strong> 14 eukarióta, 23 halfaj azonosítva<br>
+<strong>Következtetés:</strong> Az eDNS képes nyomon követni a környezeti változások által vezérelt közösség-átalakulásokat<br>
+<strong>Hivatkozás:</strong> DiBattista et <em>al.</em> 2022</p></li>
+<li><p><strong>2022</strong><br>
+<strong>Cél:</strong> Halfaj-diverzitás becslése<br>
+<strong>Helyszín:</strong> Merbok torkolat, Malajzia<br>
+<strong>Eredmény:</strong> 178 halfaj azonosítva<br>
+<strong>Következtetés:</strong> Az eDNS teljesítményét a vízáramlás, a DNS külső transzportja, a primer-szelekció és az adatbázis-minőség befolyásolja<br>
+<strong>Hivatkozás:</strong> Zainal Abidin et <em>al.</em> 2022</p></li>
+<li><p><strong>2023</strong><br>
+<strong>Cél:</strong> A veszélyeztetett torkolati csikóhal kimutatása és élőhely-kapcsolatainak vizsgálata<br>
+<strong>Helyszín:</strong> Bushmans torkolat, Dél-Afrika<br>
+<strong>Eredmény:</strong> Magas pozitív eDNS-kimutatási arány<br>
+<strong>Következtetés:</strong> Az eDNS erős detektálási képességgel bír; szükség van egy eszköztárra a veszélyeztetett halak monitorozásához<br>
+<strong>Hivatkozás:</strong> Nester et <em>al.</em> 2023</p></li>
+<li><p><strong>2023</strong><br>
+<strong>Cél:</strong> Halfaj-összetétel dokumentálása<br>
+<strong>Helyszín:</strong> Mangrove-erdők, Fülöp-szigetek<br>
+<strong>Eredmény:</strong> 89 halfaj azonosítva<br>
+<strong>Következtetés:</strong> Ígéretes eszköz; korlátozó tényezők a referenciaadatbázisok és a terepi/laboratóriumi korlátok<br>
+<strong>Hivatkozás:</strong> Naputo et <em>al.</em> 2024</p></li>
+<li><p><strong>2023</strong><br>
+<strong>Cél:</strong> Halfaj-diverzitás vizsgálata<br>
+<strong>Helyszín:</strong> Inhambane-öböl, Dél-afrikai mangrove<br>
+<strong>Eredmény:</strong> 109 halfaj azonosítva<br>
+<strong>Következtetés:</strong> Az eDNS felülmúlta a vizuális felmérési módszereket<br>
+<strong>Hivatkozás:</strong> Janna, 2023</p></li>
+<li><p><strong>2023</strong><br>
+<strong>Cél:</strong> Hal-közösségszerkezet vizsgálata élőhelytípusok között<br>
+<strong>Helyszín:</strong> Qinglangang Mangrove Rezervátum, Kína<br>
+<strong>Eredmény:</strong> Mangrove (117 nemzetség), Tengeri fű (112), Korallzátony (102)<br>
+<strong>Következtetés:</strong> Az eDNS ideális a különböző élőhelyek heterogenitásának monitorozására<br>
+<strong>Hivatkozás:</strong> Qiu et <em>al.</em> 2023</p></li>
+<li><p><strong>2023</strong><br>
+<strong>Cél:</strong> Hagyományos módszerekkel és eDNS-sel nyert adatok összehasonlítása<br>
+<strong>Helyszín:</strong> Dee torkolat, Egyesült Királyság<br>
+<strong>Eredmény:</strong> 17 halfaj azonosítva<br>
+<strong>Következtetés:</strong> Az eDNS javítja a meglévő hal-monitoring módszereket<br>
+<strong>Hivatkozás:</strong> Gibson et <em>al.</em> 2023</p></li>
+<li><p><strong>2024</strong><br>
+<strong>Cél:</strong> Táplálkozási szintek vizsgálata mikrobiom, plankton és hal eDNS alapján<br>
+<strong>Helyszín:</strong> Mangrove-ökoszisztémák, Hajnan-sziget, Kína<br>
+<strong>Eredmény:</strong> 3779 taxonómiai egység azonosítva<br>
+<strong>Következtetés:</strong> Az eDNS lehetővé teszi a több trofikus szint egy mintából való vizsgálatát<br>
+<strong>Hivatkozás:</strong> Meng et <em>al.</em> 2024</p></li>
+<li><p><strong>2024</strong><br>
+<strong>Cél:</strong> Átfogó áttekintés az eDNS-metabarkodolás alkalmazásáról a halbiodiverzitás értékelésében torkolati területeken<br>
+<strong>Megközelítés:</strong> Különböző torkolati rendszerek és módszertanok szintézise<br>
+<strong>Kulcsmegállapítások:</strong> Hangsúly a talajba ülepedett eDNS hosszú távú fennmaradásán (hónapok, stabil körülmények között akár évek); a gyors szűrés fontossága a degradáció elkerülése érdekében<br>
+<strong>Következtetés:</strong> Legjobb gyakorlatok meghatározása a dinamikus torkolati rendszerek eDNS-mintavételéhez<br>
+<strong>Hivatkozás:</strong> Alenzi et <em>al.</em> 2024</p></li>
+</ul>
+</div>
 
 
 </section>
