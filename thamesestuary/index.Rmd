@@ -1,0 +1,95 @@
+---
+title: "Thames Estuary fish: spawning, recruitment and key habitats"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: rows
+---
+
+
+Home
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Map
+
+
+
+
+Row
+-----------------------------------------------------------------------
+
+### Seasonal life-cycle calendar
+| **Season** | **Key biological events**                                                                                                                                                  |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **March–April**    | Smelt migrate upstream to spawn around Battersea–Wandsworth; Dace mass-spawn in Wandsworth; First elvers (~65 mm) arrive.                                      |
+| **May**            | Dace larvae (~9 mm) drift downstream; Flounder post-larvae (>8 mm) appear in multiple waves; Smelt fry (~18 mm) present; Bream recruitment begins.             |
+| **June**           | Sand smelt spawn in the Greenwich area; Common goby fry (>7–9 mm) appear; First bass fry waves (>12 mm) enter the estuary.                                     |
+| **July–August**    | Continued waves of bass fry; High abundance of juvenile goby, flounder, and bass throughout mid–upper estuary.                                                     |
+| **September**      | Thin-lipped grey mullet fry (>15–20 mm) arrive; Juvenile bass, smelt, goby and flounder penetrate upriver to Chiswick–Richmond.                                    |
+| **October–Winter** | Progressive downstream migration of estuarine and marine species; Freshwater species move downstream as temperatures drop; Adult marine species exit to the North Sea. |
+
+### Recruitment hotspots
+| **Area**                    | **Species**                   | 
+| --------------------------- | ------------------------------------------------------- |  
+| **Richmond**                | Bream, Perch, Roach, Bass fry, Flounder, Goby |               
+| **Brentford**               | Bream, Perch                                            |            
+| **Wandsworth – Battersea**  | Dace, Smelt                                             |           
+| **Chelsea Creek**           | Roach                                                   |                 
+| **Greenwich**               | Sand smelt                                              |                    
+| **Upper Estuary (general)** | Goby, Flounder, Smelt fry, Bass fry                  |     
+| **Dock basins**             | Smelt                                                   | 
+
+
+### Habitats
+| **Area**                                       | **Species**                                          | **Why this area matters**                                                                                                          |
+| -------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Richmond – Brentford **                 | Dace, roach, perch, bream; juvenile goby; bass fry; flounder | Primary nursery zone for freshwater and euryhaline juveniles; shallow margins and low salinity provide refuge and feeding habitat. |
+| **Wandsworth – Battersea**                               | Dace, Smelt                                                     | Confirmed major spawning corridor: dace (April) and smelt (March–April); crucial upstream migration route.                     |
+| **Greenwich**                                       | Sand smelt, smelt fry                                           | Likely spawning area for sand smelt.                             |
+| **West Thurrock & below**                           | Sole, plaice, dab, juvenile bass                        | Major flatfish nursery and important marine–estuarine interface; high abundance of juvenile marine fishes.                     |
+| **Gravesend & below**                                    | Adult smelt; marine juveniles                                           | Primary entry corridor for marine species; starting point of smelt upstream spawning migration.                                |
+| **Dock basins**                                         | Smelt; mixed freshwater & estuarine species                             | Provide refuge habitats with stable temperatures and reduced flow; important overwintering and nursery areas.                  |
+| **Soft marginal vegetation**                              | Roundfish fry: dace, smelt, bass                                    | Essential microhabitat for fry using selective tidal stream transport; supports feeding and shelter; increasingly rare.        |
+| **Continuous tidal foreshore**                           | Dace fry, smelt larvae, bass fry                                        | Required for uninterrupted fry migrations; heavily reduced (<1% of natural bank remains) due to encroachment and hard engineering. |
+
+
+Species list
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+
+### Species list
+
+
+<iframe 
+  src="https://wandabodnar.github.io/phd/tefish/" 
+  width="100%" 
+  height="800px" 
+  style="border: none;">
+</iframe>
+
+
+References
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+
+### References
+
+Araujo, R. (1998). Seasonal and between-year variations of fish populations in the middle Thames estuary (1980–1989). Journal of Fish Biology, 53(6), 1130–1147.
+
+Thomas, M. (1998). Temporal changes in the movements and abundance of Thames estuary fish populations. In: Attrill, M.J. (eds) A Rehabilitated Estuarine Ecosystem. Springer, Boston, MA.
+
+Araujo, R., Bailey, R., & Williams, P. (1999). Spatial and temporal variability of fish populations in the upper Thames estuary. Marine Biology, 135, 123–137.
+
+Colclough, S. R., Gray, G., Bark, A., & Knights, B. (2000). Tidal Thames Fish Survey 1994–1996: Summary Report. Environment Agency / National Rivers Authority Thames Region.
+
+Colclough, S. R., Fonseca, L., Astley, T., Thomas, B., & Watts, W. (2002). Fish and fisheries of the tidal Thames: Management of the modern resource, research aims and future pressures. Journal of Fish Biology, 61(sA), 64–73.
+
+Zoological Society of London. (2019). Larval and juvenile fish in the tidal Thames: Baseline survey report. Prepared for the Thames Tideway Tunnel project. Tideway London.
