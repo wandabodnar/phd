@@ -198,5 +198,35 @@
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>From living organisms to environmental DNA</span>"
     ]
+  },
+  {
+    "objectID": "timeline.html",
+    "href": "timeline.html",
+    "title": "eDNA timeline overview",
+    "section": "",
+    "text": "1980s: Foundations of DNA fingerprinting and environmental DNA",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+    ]
+  },
+  {
+    "objectID": "timeline.html#s-foundations-of-dna-fingerprinting-and-environmental-dna",
+    "href": "timeline.html#s-foundations-of-dna-fingerprinting-and-environmental-dna",
+    "title": "eDNA timeline overview",
+    "section": "",
+    "text": "DNA fingerprinting established (Jeffreys et al. 1985)\n\nDiscovery of hypervariable minisatellite regions.\nFirst individual-specific DNA “barcode.”\nLaid the foundation for forensic genetics, paternity testing, and later molecular ecology.\n\n\n\n\nThe term “environmental DNA” introduced (Ogram et al. 1987)\n\nDeveloped methods to extract intracellular and extracellular DNA directly from sediments.\nIntroduced the concept of recovering DNA directly from environmental samples without isolating organisms.\n\nPCR enables DNA fingerprinting from tiny samples\n\nJeffreys et al. (1988): PCR amplification of minisatellites made DNA fingerprinting practical from very small samples.\nHoelzel et al. (1988): DNA fingerprinting applied to whale skin biopsies, demonstrating non-lethal genetic monitoring of wildlife.\n\n\nMajor breakthrough of the decade: DNA became a practical tool for identifying individuals, and environmental DNA was first recognised as a recoverable genetic resource.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+    ]
+  },
+  {
+    "objectID": "timeline.html#s-from-dna-fingerprinting-to-dna-barcodes-and-early-environmental-dna-applications",
+    "href": "timeline.html#s-from-dna-fingerprinting-to-dna-barcodes-and-early-environmental-dna-applications",
+    "title": "eDNA timeline overview",
+    "section": "1990s: From DNA fingerprinting to DNA barcodes and early environmental DNA applications",
+    "text": "1990s: From DNA fingerprinting to DNA barcodes and early environmental DNA applications\n\n\nGiovannoni et al. 1990 analysed 16S ribosomal RNA (rRNA) gene sequences directly from a microbial community in the Sargasso Sea, providing one of the first culture-independent surveys of environmental microbial diversity.\nAmos et al. 1992 demonstrated that DNA recovered from naturally shed material, such as whale skin, could be used for genetic analysis.\nArnot et al. 1993 Introduced the concept of using distinctive genetic sequence patterns as biological identifiers, and the term “DNA barcode” was first used to describe molecular signatures capable of distinguishing biological samples.\nPaget et al. 1998 demonstrated that plant DNA could be recovered directly from soil, providing early evidence that environmental samples preserve genetic traces of larger organisms.\n\n\nMajor breakthrough of the decade: DNA analysis expanded from identifying individual organisms to characterising entire biological communities. Environmental sequencing revealed hidden microbial diversity, DNA barcoding introduced genetic identification frameworks, and early macrobial eDNA studies demonstrated that environmental samples could act as archives of biodiversity. Together, these advances established the foundations of modern eDNA metabarcoding, biodiversity assessment, and molecular ecology.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+    ]
   }
 ]
