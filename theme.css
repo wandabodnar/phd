@@ -1,0 +1,26 @@
+/* Body text */
+
+body {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+/* Headings */
+
+h1, h2, h3, h4 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.4em;
+}
+
+h2 {
+    margin-top: 2em;
+}
+
+p {
+    text-align: justify;
+}
