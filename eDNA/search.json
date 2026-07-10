@@ -14,7 +14,7 @@
     "href": "chapter-1.html",
     "title": "The molecular foundation of environmental DNA",
     "section": "",
-    "text": "Life as an information system\nEvery environmental DNA (eDNA) study begins with an apparently simple question: how can a few microscopic fragments of DNA in a sample reveal which organisms live in an ecosystem?\nThe answer lies in understanding DNA itself. Environmental DNA analysis is fundamentally an application of molecular biology. Before learning how DNA is collected, amplified, sequenced, and analysed, it is essential to understand what DNA is, how it is organised within cells, and why its sequence can be used to identify organisms.\nThis chapter introduces the molecular organisation of living organisms, beginning with cells and progressing through chromosomes, genomes, genes and DNA. Rather than treating these concepts as isolated facts, they are presented as parts of a continuous biological hierarchy that ultimately explains why eDNA can be used to monitor biodiversity.\nEvery living organism, from bacteria to whales, must perform the same fundamental tasks. It must obtain energy, maintain its internal environment, respond to external conditions, reproduce, and pass hereditary information to the next generation. These processes require instructions which are stored in DNA (deoxyribonucleic acid).\nRather than viewing DNA simply as a chemical molecule, it is more helpful to think of it as the biological information storage system of life. Just as a computer stores information as digital code, living organisms store biological information as sequences of four nucleotide bases:\nThe order of these bases forms a molecular language. Every cell interprets this language to manufacture proteins, regulate metabolism, and coordinate development.\nImportantly, different species possess different DNA sequences. Although much of the genome is shared because all organisms perform similar cellular functions, enough sequence variation exists to distinguish one species from another.\nThis principle forms the foundation of environmental DNA analysis.",
+    "text": "Life as an information system\nEvery environmental DNA (eDNA) study begins with a simple question: how can a few microscopic fragments of DNA in a sample reveal which organisms live in an ecosystem? The answer lies in understanding DNA itself.\nEnvironmental DNA analysis is fundamentally an application of molecular biology. Before learning how DNA is collected, amplified, sequenced, and analysed, it is essential to understand what DNA is, how it is organised within cells, and why its sequence can be used to identify organisms.\nEvery living organism, from bacteria to whales, must perform the same fundamental tasks. It must obtain energy, maintain its internal environment, respond to external conditions, reproduce, and pass hereditary information to the next generation. These processes require instructions which are stored in DNA (deoxyribonucleic acid).\nRather than viewing DNA simply as a chemical molecule, it is more helpful to think of it as the biological information storage system of life. Just as a computer stores information as binary code, living organisms store biological information as sequences of four nucleotide bases:\nThe order of these bases forms a molecular language. Every cell interprets this language to manufacture proteins, regulate metabolism, and coordinate development.\nImportantly, different species possess different DNA sequences. Although much of the genome is shared because all organisms perform similar cellular functions, enough sequence variation exists to distinguish one species from another.\nThis principle forms the foundation of environmental DNA analysis.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>The molecular foundation of environmental DNA</span>"
     ]
@@ -24,7 +24,7 @@
     "href": "chapter-1.html#life-as-an-information-system",
     "title": "The molecular foundation of environmental DNA",
     "section": "",
-    "text": "Adenine (A)\nThymine (T)\nCytosine (C)\nGuanine (G)",
+    "text": "Adenine (A)\nThymine (T)\nCytosine (C)\nGuanine (G)\n\n\n\n\n\n\n\nNucleotide bases",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>The molecular foundation of environmental DNA</span>"
     ]
@@ -34,7 +34,7 @@
     "href": "chapter-1.html#the-cell-the-basic-unit-of-life",
     "title": "The molecular foundation of environmental DNA",
     "section": "The cell: the basic unit of life",
-    "text": "The cell: the basic unit of life\nCells are the smallest structural and functional units capable of independent life. Each cell contains specialised components known as organelles, each performing a particular function.\nExamples include:\n\nthe nucleus: stores most genetic information;\nmitochondria: produce ATP through cellular respiration;\nribosomes: synthesise proteins;\nthe endoplasmic reticulum and Golgi apparatus: process and transport proteins;\nlysosomes and peroxisomes: recycle cellular materials.\n\nAlthough cells differ greatly among organisms, almost every eukaryotic cell follows the same fundamental organisational plan.\nThe genetic information that controls cellular function is largely contained within the nucleus.",
+    "text": "The cell: the basic unit of life\nCells are the smallest structural and functional units capable of independent life. Each cell contains specialised components known as organelles, each performing a particular function.\nExamples include:\n\nNucleus: stores most genetic information\nMitochondria: produce ATP through cellular respiration\nRibosomes: synthesise proteins\nEndoplasmic reticulum and Golgi apparatus: process and transport proteins;\nLysosomes and peroxisomes: recycle cellular materials.\n\nAlthough cells differ greatly among organisms, almost every eukaryotic cell follows the same fundamental organisational plan.\nThe genetic information that controls cellular function is largely contained within the nucleus.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>The molecular foundation of environmental DNA</span>"
     ]
@@ -94,7 +94,7 @@
     "href": "chapter-1.html#why-we-do-not-sequence-entire-genomes",
     "title": "The molecular foundation of environmental DNA",
     "section": "Why we do not sequence entire genomes",
-    "text": "Why we do not sequence entire genomes\nAt first glance, sequencing an organism’s complete genome might appear ideal. In environmental samples, however, this is neither practical nor necessary. Water, soil and sediment contain DNA from thousands of organisms simultaneously. Most environmental DNA is fragmented, damaged and present in extremely small quantities. Instead of sequencing billions of base pairs, researchers target short diagnostic regions that provide enough variation for species identification. This approach dramatically reduces sequencing costs while increasing detection sensitivity.",
+    "text": "Why we do not sequence entire genomes\nAt first glance, sequencing the complete genome of an organism might appear ideal. In environmental samples, however, this is neither practical nor necessary. Water, soil and sediment contain DNA from thousands of organisms simultaneously. Most environmental DNA is fragmented, damaged and present in extremely small quantities. Instead of sequencing billions of base pairs, researchers target short diagnostic regions that provide enough variation for species identification. This approach dramatically reduces sequencing costs while increasing detection sensitivity.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>The molecular foundation of environmental DNA</span>"
     ]
@@ -124,7 +124,7 @@
     "href": "chapter-2.html",
     "title": "From living organisms to environmental DNA",
     "section": "",
-    "text": "What is environmental DNA?\nIn the previous chapter, we learned that DNA stores the genetic information required to build and maintain every living organism. However, environmental DNA analysis does not study DNA inside living cells. Instead, it relies on fragments of genetic material that have been released into the environment.\nThis immediately raises an important question.\nHow does DNA leave an organism and become environmental DNA?\nAnswering this question is essential because every stage of eDNA analysis depends on understanding where environmental DNA originates, how it changes after release, and why only a small fraction survives long enough to be detected.\nEnvironmental DNA (eDNA) is genetic material recovered directly from environmental samples such as water, soil, sediment, snow, ice or air without first isolating the target organisms. Importantly, eDNA is not chemically different from DNA inside a living cell. The difference lies entirely in its location.\nInside an organism, DNA is protected by cellular membranes, organelles, proteins and repair systems. Once released into the environment, these protective mechanisms disappear, and DNA becomes exposed to physical, chemical and biological degradation.\nConsequently, environmental DNA should be viewed as ordinary DNA existing under extraordinary conditions.",
+    "text": "What is environmental DNA?\nIn the previous chapter, we learned that DNA stores the genetic information required to build and maintain every living organism. However, environmental DNA analysis does not study DNA inside living cells. Instead, it relies on fragments of genetic material that have been released into the environment. This immediately raises an important question.\nHow does DNA leave an organism and become environmental DNA?\nAnswering this question is essential because every stage of eDNA analysis depends on understanding where environmental DNA originates, how it changes after release, and why only a small fraction survives long enough to be detected.\nEnvironmental DNA (eDNA) is genetic material recovered directly from environmental samples such as water, soil, sediment, snow, ice or air without first isolating the target organisms. Importantly, eDNA is not chemically different from DNA inside a living cell. The difference lies entirely in its location.\nInside an organism, DNA is protected by cellular membranes, organelles, proteins and repair systems. Once released into the environment, these protective mechanisms disappear, and DNA becomes exposed to physical, chemical and biological degradation.\nConsequently, environmental DNA should be viewed as ordinary DNA existing under extraordinary conditions.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>From living organisms to environmental DNA</span>"
     ]
@@ -134,7 +134,7 @@
     "href": "chapter-2.html#sources-of-environmental-dna",
     "title": "From living organisms to environmental DNA",
     "section": "Sources of environmental DNA",
-    "text": "Sources of environmental DNA\nEvery organism continuously releases genetic material into its surroundings. This release occurs throughout life and continues after death.\nMajor sources include shed skin cells, mucus, faeces, urine, saliva, blood, scales, feathers and hair, reproductive cells, decomposing tissues and decaying carcasses.\nAquatic organisms constantly release cells into surrounding water, while terrestrial organisms contribute DNA to soil and to the atmosphere.\nEnvironmental DNA therefore represents a mixture of genetic material originating from many individuals and species simultaneously.",
+    "text": "Sources of environmental DNA\nEvery organism continuously releases genetic material into its surroundings. This release occurs throughout life and continues after death. Major sources include shed skin cells, mucus, faeces, urine, saliva, blood, scales, feathers and hair, reproductive cells, decomposing tissues and decaying carcasses. Aquatic organisms constantly release cells into surrounding water, while terrestrial organisms contribute DNA to soil and to the atmosphere. Environmental DNA therefore represents a mixture of genetic material originating from many individuals and species simultaneously.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>From living organisms to environmental DNA</span>"
     ]
@@ -144,7 +144,7 @@
     "href": "chapter-2.html#intracellular-and-extracellular-dna",
     "title": "From living organisms to environmental DNA",
     "section": "Intracellular and extracellular DNA",
-    "text": "Intracellular and extracellular DNA\nOnce released, environmental DNA exists in two principal forms.\n\nIntracellular DNA\nSome DNA remains enclosed within intact or partially intact cells, mitochondria or other cellular structures.\nThese membranes provide temporary protection from degradation, increasing the likelihood that DNA survives long enough for detection.\n\n\nExtracellular DNA\nOther DNA exists freely within the environment.\nExtracellular DNA may:\n\ndissolve in water;\nadsorb onto clay minerals;\nbind to organic particles;\nbecome incorporated into sediments;\nattach to biofilms.\n\nExtracellular DNA is generally more vulnerable to enzymatic degradation but may persist surprisingly long when protected by mineral surfaces.",
+    "text": "Intracellular and extracellular DNA\nOnce released, environmental DNA exists in two principal forms.\n\nIntracellular DNA\nSome DNA remains enclosed within intact or partially intact cells, mitochondria or other cellular structures. These membranes provide temporary protection from degradation, increasing the likelihood that DNA survives long enough for detection.\n\n\nExtracellular DNA\nOther DNA exists freely within the environment.\nExtracellular DNA may:\n\ndissolve in water\nadsorb onto clay minerals\nbind to organic particles\nbecome incorporated into sediments\nattach to biofilms\n\nExtracellular DNA is generally more vulnerable to enzymatic degradation but may persist surprisingly long when protected by mineral surfaces.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>From living organisms to environmental DNA</span>"
     ]
@@ -170,11 +170,11 @@
     ]
   },
   {
-    "objectID": "chapter-2.html#why-environmental-dna-ss-fragmented",
-    "href": "chapter-2.html#why-environmental-dna-ss-fragmented",
+    "objectID": "chapter-2.html#why-environmental-dna-is-fragmented",
+    "href": "chapter-2.html#why-environmental-dna-is-fragmented",
     "title": "From living organisms to environmental DNA",
-    "section": "Why environmental DNA ss fragmented",
-    "text": "Why environmental DNA ss fragmented\nUnlike genomic DNA extracted directly from fresh tissue, environmental DNA is rarely intact. Instead, it consists primarily of short fragments. In aquatic environments, fragments shorter than approximately 200 base pairs are particularly common. This fragmentation has profound consequences for molecular analysis.\nLong DNA targets are unlikely to remain intact. Short targets survive much more frequently. This simple observation explains why most environmental DNA studies amplify fragments between approximately 80 and 150 base pairs.\nMarker choice is therefore driven not only by evolutionary biology but also by molecular degradation.\n\nPersistence\nEnvironmental DNA does not disappear immediately after an organism leaves an area. Persistence depends on environmental conditions.\nIn flowing rivers, detectable DNA may remain for only hours or days. In lakes, persistence may extend to several weeks. Within sediments, protected DNA may survive for months or even years.\nPersistence increases the probability of detection but also introduces uncertainty. DNA may indicate recent rather than current presence. Consequently, eDNA surveys must always be interpreted within their environmental context.",
+    "section": "Why environmental DNA is fragmented",
+    "text": "Why environmental DNA is fragmented\nUnlike genomic DNA extracted directly from fresh tissue, environmental DNA is rarely intact. Instead, it consists primarily of short fragments. In aquatic environments, fragments shorter than approximately 200 base pairs are particularly common. This fragmentation has profound consequences for molecular analysis.\nLong DNA targets are unlikely to remain intact. Short targets survive much more frequently. This simple observation explains why most environmental DNA studies amplify fragments between approximately 80 and 150 base pairs.\nMarker choice is therefore driven not only by evolutionary biology but also by molecular degradation.\n\nPersistence\nEnvironmental DNA does not disappear immediately after an organism leaves an area. Persistence depends on environmental conditions. In flowing rivers, detectable DNA may remain for only hours or days. In lakes, persistence may extend to several weeks. Within sediments, protected DNA may survive for months or even years. Persistence increases the probability of detection but also introduces uncertainty. DNA may indicate recent rather than current presence. Consequently, eDNA surveys must always be interpreted within their environmental context.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>From living organisms to environmental DNA</span>"
     ]
@@ -200,13 +200,213 @@
     ]
   },
   {
+    "objectID": "chapter-3.html",
+    "href": "chapter-3.html",
+    "title": "DNA structure and function",
+    "section": "",
+    "text": "DNA as a polymer\nEnvironmental DNA (eDNA) analysis depends on one remarkable property of DNA: although it begins to degrade once released into the environment, fragments often remain sufficiently intact to be detected, amplified and sequenced. This persistence is possible because DNA is a chemically stable molecule capable of storing biological information over long periods of time.\nTo understand why eDNA methods work, it is necessary to understand how DNA is built, how it stores genetic information, and how its molecular structure influences stability, replication and detection. These same structural features determine where PCR primers bind, why short DNA fragments can be successfully amplified, and how DNA sequences can be used to distinguish one species from another.\nDNA (deoxyribonucleic acid) is a long biological polymer composed of repeating units called nucleotides. Each nucleotide contributes one “letter” to the DNA sequence, and the precise order of these nucleotides stores the hereditary information of an organism.\nUnlike proteins, which are built from twenty different amino acids, DNA is constructed from only four types of nucleotides. Despite this apparent simplicity, the enormous number of possible nucleotide combinations enables DNA to encode the genetic information required for the development, function and reproduction of every known organism.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DNA structure and function</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#the-structure-of-a-nucleotide",
+    "href": "chapter-3.html#the-structure-of-a-nucleotide",
+    "title": "DNA structure and function",
+    "section": "The structure of a nucleotide",
+    "text": "The structure of a nucleotide\nEach nucleotide consists of three components:\n\na five-carbon sugar (deoxyribose);\na phosphate group;\na nitrogen-containing base.\n\nThe sugar and phosphate form the structural framework of DNA, while the nitrogenous bases carry the genetic information.\nThe four bases found in DNA are:\n\nAdenine (A)\nThymine (T)\nCytosine (C)\nGuanine (G)\n\nThe order, or sequence, of these bases stores the genetic information of an organism.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DNA structure and function</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#building-a-dna-strand",
+    "href": "chapter-3.html#building-a-dna-strand",
+    "title": "DNA structure and function",
+    "section": "Building a DNA strand",
+    "text": "Building a DNA strand\nIndividual nucleotides are joined together by phosphodiester bonds. These covalent bonds link the phosphate group attached to the 5′ carbon of one nucleotide to the hydroxyl group attached to the 3′ carbon of the next nucleotide. As nucleotides are added, they form a continuous sugar–phosphate backbone. Importantly, the backbone is chemically uniform. The only part of the molecule that varies is the sequence of nitrogenous bases, which projects inward from the backbone. This distinction explains why DNA can maintain a stable overall structure while simultaneously storing enormous amounts of genetic information.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DNA structure and function</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#the-double-helix",
+    "href": "chapter-3.html#the-double-helix",
+    "title": "DNA structure and function",
+    "section": "The double helix",
+    "text": "The double helix\nDNA usually exists as two complementary strands twisted around one another to form the familiar double helix. The sugar–phosphate backbones lie on the outside of the molecule, while the nitrogenous bases project inward. Bases pair in a highly specific manner:\n\nAdenine pairs with thymine through two hydrogen bonds.\nGuanine pairs with cytosine through three hydrogen bonds.\n\nThese complementary base pairs hold the two strands together while maintaining the constant diameter of the double helix. Because each strand determines the sequence of its partner, either strand can serve as a template for DNA replication.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DNA structure and function</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#antiparallel-orientation",
+    "href": "chapter-3.html#antiparallel-orientation",
+    "title": "DNA structure and function",
+    "section": "Antiparallel orientation",
+    "text": "Antiparallel orientation\nThe two DNA strands do not run in the same direction. Instead, they are antiparallel. One strand runs from the 5′ end to the 3′ end, while the complementary strand runs from 3′ to 5′. This orientation is determined by the numbering of carbon atoms within the deoxyribose sugar. Although this arrangement may appear to be a structural detail, it has major biological consequences. DNA polymerases can synthesise DNA only by adding nucleotides to the free 3′ hydroxyl group of a growing strand. Consequently, every process involving DNA replication, repair and PCR depends on strand directionality.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DNA structure and function</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#dna-sequence-the-language-of-biology",
+    "href": "chapter-3.html#dna-sequence-the-language-of-biology",
+    "title": "DNA structure and function",
+    "section": "DNA sequence: the language of biology",
+    "text": "DNA sequence: the language of biology\nThe order of nucleotides within DNA forms the biological equivalent of a written language. Just as changing a letter alters the meaning of a word, changing a nucleotide can alter genetic information.\nFor example:\nATGCTTAC…\nand\nATGCGTAC…\ndiffer by only a single nucleotide.\nAlthough the difference appears small, it may distinguish one species from another or alter the function of a gene. Environmental DNA analysis exploits these sequence differences to identify organisms from tiny DNA fragments recovered from environmental samples.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DNA structure and function</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#the-genetic-code",
+    "href": "chapter-3.html#the-genetic-code",
+    "title": "DNA structure and function",
+    "section": "The genetic code",
+    "text": "The genetic code\nThe sequence of nucleotides in DNA contains the instructions needed to build proteins. However, proteins are composed of amino acids rather than nucleotides, so this genetic information must first be translated into a different molecular language.\nThe first step is transcription, in which the DNA sequence is copied into messenger RNA (mRNA). The mRNA molecule carries the genetic instructions from the nucleus to ribosomes, where proteins are synthesised. During translation, the mRNA sequence is read according to a set of rules known as the genetic code.\nThe genetic code is read in groups of three nucleotides, called codons. Each codon specifies either one amino acid or a signal to begin or end protein synthesis. For example, the codon ATG (or AUG in mRNA) encodes the amino acid methionine and usually serves as the start codon, whereas TAA, TAG and TGA function as stop codons.\nBecause each codon contains three nucleotide positions and each position can contain one of four bases, there are 4 × 4 × 4 = 64 possible codons. Of these, 61 encode the 20 standard amino acids, while three function as stop signals. Since several codons specify the same amino acid, the genetic code is described as degenerate, or redundant.\nAlthough the genetic code explains how DNA directs protein synthesis, most eDNA studies do not analyse proteins. Instead, they examine the DNA sequence itself. As DNA sequences accumulate mutations over evolutionary time, they become increasingly different among species, providing the sequence variation required for species identification.\n\n\n\nGenetic code",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DNA structure and function</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#conserved-and-variable-regions",
+    "href": "chapter-3.html#conserved-and-variable-regions",
+    "title": "DNA structure and function",
+    "section": "Conserved and variable regions",
+    "text": "Conserved and variable regions\nNot all DNA evolves at the same rate. Some regions perform essential biological functions and therefore change very little during evolution. These are known as conserved regions. Other regions accumulate mutations more rapidly and differ substantially among species. These are referred to as variable regions. This combination of conservation and variation makes molecular identification possible. Conserved regions provide stable binding sites for PCR primers. The variable sequence located between these primer binding sites contains the information required to distinguish species. This principle underlies nearly every eDNA metabarcoding assay.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DNA structure and function</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#from-dna-structure-to-environmental-dna",
+    "href": "chapter-3.html#from-dna-structure-to-environmental-dna",
+    "title": "DNA structure and function",
+    "section": "From DNA structure to environmental DNA",
+    "text": "From DNA structure to environmental DNA\nThe molecular structure of DNA underpins every stage of environmental DNA analysis. After DNA is released into the environment, its chemical stability allows some fragments to survive despite continuous degradation. During PCR, the DNA strands are separated by heating, allowing primers to bind to conserved target regions. DNA polymerase then amplifies the intervening variable region, producing millions of copies for sequencing. The resulting sequences are compared with reference databases to identify the organisms that contributed the environmental DNA.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DNA structure and function</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#connecting-the-concepts",
+    "href": "chapter-3.html#connecting-the-concepts",
+    "title": "DNA structure and function",
+    "section": "Connecting the concepts",
+    "text": "Connecting the concepts\nNucleotides are linked together by phosphodiester bonds to form DNA strands, and two complementary strands pair to create the DNA double helix. The sequence of nucleotides stores genetic information, which is interpreted according to the genetic code to produce proteins. Over evolutionary time, mutations generate conserved and variable regions within DNA. Conserved regions provide binding sites for PCR primers, while the intervening variable regions are amplified and sequenced to enable species identification.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DNA structure and function</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#key-concepts",
+    "href": "chapter-3.html#key-concepts",
+    "title": "DNA structure and function",
+    "section": "Key concepts",
+    "text": "Key concepts\nAt the end of this chapter, the most important ideas are:\n\nDNA is composed of repeating nucleotide units.\nNucleotides are linked by phosphodiester bonds to form a sugar–phosphate backbone.\nTwo complementary DNA strands form the double helix.\nDNA strands are antiparallel.\nGenetic information is stored in the sequence of nucleotides.\nThe genetic code translates nucleotide triplets (codons) into amino acids during protein synthesis.\nConserved regions provide primer-binding sites, while variable regions enable species identification in eDNA analyses.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DNA structure and function</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html",
+    "href": "chapter-4.html",
+    "title": "Mitochondrial DNA",
+    "section": "",
+    "text": "What are mitochondria?\nIn the previous chapter, we learned that DNA stores genetic information in the sequence of nucleotide bases and that differences in these sequences allow species to be distinguished. However, environmental samples contain only tiny amounts of highly fragmented DNA originating from many different organisms. This raises an important question:\nIf every cell contains thousands of genes, why do most eDNA studies analyse only a few specific regions of mitochondrial DNA?\nThe answer lies in the unique biological properties of mitochondria. Compared with nuclear DNA, mitochondrial DNA is present in many more copies per cell, has a compact genome, and contains genes that combine highly conserved regions with species-specific variation. These characteristics make mitochondrial DNA particularly well suited for detecting organisms from trace amounts of degraded environmental DNA.\nMitochondria are membrane-bound organelles found in almost all eukaryotic cells. Their primary role is to produce adenosine triphosphate (ATP), the universal energy currency of the cell, through cellular respiration.\nUnlike most organelles, mitochondria possess their own genome. This is because they evolved from free-living bacteria that entered into a symbiotic relationship with ancestral eukaryotic cells more than 1.5 billion years ago. Although most of the original bacterial genes have been transferred to the nucleus during evolution, mitochondria have retained a small circular genome that is replicated independently of nuclear DNA.\nThis evolutionary history explains why mitochondria contain their own DNA and why mitochondrial genes differ from those found in the nucleus.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Mitochondrial DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#what-are-mitochondria",
+    "href": "chapter-4.html#what-are-mitochondria",
+    "title": "Mitochondrial DNA",
+    "section": "",
+    "text": "Mitochondria",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Mitochondrial DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#the-mitochondrial-genome",
+    "href": "chapter-4.html#the-mitochondrial-genome",
+    "title": "Mitochondrial DNA",
+    "section": "The mitochondrial genome",
+    "text": "The mitochondrial genome\nThe mitochondrial genome is much smaller than the nuclear genome. For example, the human nuclear genome contains approximately 3.2 billion base pairs, whereas the mitochondrial genome consists of only about 16,500 base pairs. Despite its small size, mitochondrial DNA contains genes that are essential for cellular respiration, including protein-coding genes, transfer RNA (tRNA) genes and ribosomal RNA (rRNA) genes.\nUnlike nuclear chromosomes, mitochondrial DNA is:\n\ncircular rather than linear\npresent in many copies per cell\ninherited almost exclusively from the mother in most animals\nnot packaged into chromosomes\n\nAlthough compact, the mitochondrial genome contains sufficient sequence variation to distinguish many species.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Mitochondrial DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#why-mitochondrial-dna-is-ideal-for-edna",
+    "href": "chapter-4.html#why-mitochondrial-dna-is-ideal-for-edna",
+    "title": "Mitochondrial DNA",
+    "section": "Why mitochondrial DNA is ideal for eDNA",
+    "text": "Why mitochondrial DNA is ideal for eDNA\nEnvironmental DNA studies are essentially a search for extremely rare DNA fragments. The probability of detecting DNA depends largely on how many copies of the target sequence are present in the original sample. Each eukaryotic cell contains only two copies of most nuclear genes but may contain hundreds to thousands of copies of mitochondrial DNA because every cell contains numerous mitochondria, each carrying multiple copies of its genome. This dramatically increases the probability that at least one copy of a mitochondrial gene survives environmental degradation and is recovered during sampling.\nThe large number of mitochondrial genomes present in each cell means that many copies of the target DNA are released into the environment. Although most fragments eventually degrade, the high initial copy number increases the likelihood that some remain intact long enough to be sampled, amplified and sequenced, thereby improving detection sensitivity.\nFor this reason, mitochondrial DNA is generally much easier to detect than nuclear DNA in environmental samples.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Mitochondrial DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#mitochondrial-genes-used-in-edna",
+    "href": "chapter-4.html#mitochondrial-genes-used-in-edna",
+    "title": "Mitochondrial DNA",
+    "section": "Mitochondrial genes used in eDNA",
+    "text": "Mitochondrial genes used in eDNA\nNot every mitochondrial gene is equally useful. An ideal genetic marker should satisfy two requirements:\n\nConserved regions that allow universal PCR primers to bind across many species.\nVariable regions that differ sufficiently to distinguish species.\n\nSeveral mitochondrial genes meet these criteria.\n\n12S ribosomal RNA (12S rRNA)\nThe 12S rRNA gene is one of the most widely used markers for vertebrate eDNA studies. Its short variable regions are flanked by highly conserved sequences, allowing universal primers to amplify DNA from a wide range of fish, amphibians, reptiles, birds and mammals.\n\n\nCytochrome c oxidase subunit I (COI)\nCOI is the standard DNA barcode for animals and provides excellent species resolution. However, the full-length barcode is relatively long and often unsuitable for degraded environmental DNA unless shorter “mini-barcode” regions are used.\n\n\nCytochrome b (Cyt b)\nCytochrome b is frequently used in phylogenetic studies and species identification but is less commonly employed in high-throughput metabarcoding because it generally requires longer DNA fragments.\nThe choice of marker therefore depends on the organisms being studied, the condition of the DNA and the objectives of the investigation.\n\n\n\nMitochondrial DNA",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Mitochondrial DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#mitochondrial-dna-is-not-perfect",
+    "href": "chapter-4.html#mitochondrial-dna-is-not-perfect",
+    "title": "Mitochondrial DNA",
+    "section": "Mitochondrial DNA is not perfect",
+    "text": "Mitochondrial DNA is not perfect\nAlthough mitochondrial DNA offers many advantages, it also has limitations. Because it is inherited maternally in most animals, mitochondrial DNA represents only a single genetic lineage. It therefore provides less information about population genetics than nuclear DNA. Some closely related species possess nearly identical mitochondrial sequences, making reliable discrimination difficult. In addition, the number of mitochondrial genomes varies among tissues and species, meaning that mitochondrial DNA abundance does not necessarily reflect organism abundance. Consequently, eDNA studies detect DNA, not individuals.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Mitochondrial DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#from-mitochondrial-dna-to-species-identification",
+    "href": "chapter-4.html#from-mitochondrial-dna-to-species-identification",
+    "title": "Mitochondrial DNA",
+    "section": "From mitochondrial DNA to species identification",
+    "text": "From mitochondrial DNA to species identification\nLiving cells contain numerous mitochondria, and each mitochondrion carries multiple copies of mitochondrial DNA. When cells are shed or die, these mitochondrial genomes are released into the environment. Although many DNA molecules degrade over time, some fragments remain sufficiently intact to be recovered during sampling. In the laboratory, PCR amplifies short mitochondrial DNA markers, which are then sequenced. The resulting sequences are compared with reference databases to identify the species from which the environmental DNA originated.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Mitochondrial DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#comparing-nuclear-and-mitochondrial-dna",
+    "href": "chapter-4.html#comparing-nuclear-and-mitochondrial-dna",
+    "title": "Mitochondrial DNA",
+    "section": "Comparing nuclear and mitochondrial DNA",
+    "text": "Comparing nuclear and mitochondrial DNA\n\n\n\n\n\n\n\n\nFeature\nNuclear DNA\nMitochondrial DNA\n\n\n\n\nLocation\nNucleus\nMitochondria\n\n\nStructure\nLinear chromosomes\nCircular genome\n\n\nCopies per cell\nTwo\nHundreds to thousands\n\n\nGenome size\nVery large\nSmall\n\n\nInheritance\nBiparental\nUsually maternal\n\n\nDetection in eDNA\nLower sensitivity\nHigher sensitivity\n\n\nPrimary use\nPopulation genetics, genomics\nSpecies detection and metabarcoding",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Mitochondrial DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#key-concepts",
+    "href": "chapter-4.html#key-concepts",
+    "title": "Mitochondrial DNA",
+    "section": "Key concepts",
+    "text": "Key concepts\nAt the end of this chapter, the most important ideas are:\n\nMitochondria possess their own independent genome.\nMitochondrial DNA is present in many more copies than nuclear DNA.\nHigh copy number increases the probability of detecting degraded environmental DNA.\nMitochondrial genes contain both conserved and variable regions, making them excellent genetic markers.\nMitochondrial DNA is highly effective for species detection but has important biological limitations.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Mitochondrial DNA</span>"
+    ]
+  },
+  {
     "objectID": "timeline.html",
     "href": "timeline.html",
     "title": "eDNA timeline overview",
     "section": "",
     "text": "1980s: Foundations of DNA fingerprinting and environmental DNA",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>eDNA timeline overview</span>"
     ]
   },
   {
@@ -216,7 +416,7 @@
     "section": "",
     "text": "DNA fingerprinting established (Jeffreys et al. 1985)\n\nDiscovery of hypervariable minisatellite regions.\nFirst individual-specific DNA “barcode.”\nLaid the foundation for forensic genetics, paternity testing, and later molecular ecology.\n\n\n\n\nThe term “environmental DNA” introduced (Ogram et al. 1987)\n\nDeveloped methods to extract intracellular and extracellular DNA directly from sediments.\nIntroduced the concept of recovering DNA directly from environmental samples without isolating organisms.\n\nPCR enables DNA fingerprinting from tiny samples\n\nJeffreys et al. (1988): PCR amplification of minisatellites made DNA fingerprinting practical from very small samples.\nHoelzel et al. (1988): DNA fingerprinting applied to whale skin biopsies, demonstrating non-lethal genetic monitoring of wildlife.\n\n\nMajor breakthrough of the decade: DNA became a practical tool for identifying individuals, and environmental DNA was first recognised as a recoverable genetic resource.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>eDNA timeline overview</span>"
     ]
   },
   {
@@ -226,7 +426,7 @@
     "section": "1990s: From DNA fingerprinting to DNA barcodes and early environmental DNA applications",
     "text": "1990s: From DNA fingerprinting to DNA barcodes and early environmental DNA applications\n\n\nGiovannoni et al. 1990 analysed 16S ribosomal RNA (rRNA) gene sequences directly from a microbial community in the Sargasso Sea, providing one of the first culture-independent surveys of environmental microbial diversity.\nAmos et al. 1992 demonstrated that DNA recovered from naturally shed material, such as whale skin, could be used for genetic analysis.\nArnot et al. 1993 Introduced the concept of using distinctive genetic sequence patterns as biological identifiers, and the term “DNA barcode” was first used to describe molecular signatures capable of distinguishing biological samples.\nPaget et al. 1998 demonstrated that plant DNA could be recovered directly from soil, providing early evidence that environmental samples preserve genetic traces of larger organisms.\n\n\nMajor breakthrough of the decade: DNA analysis expanded from identifying individual organisms to characterising entire biological communities. Environmental sequencing revealed hidden microbial diversity, DNA barcoding introduced genetic identification frameworks, and early macrobial eDNA studies demonstrated that environmental samples could act as archives of biodiversity. Together, these advances established the foundations of modern eDNA metabarcoding, biodiversity assessment, and molecular ecology.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>eDNA timeline overview</span>"
     ]
   }
 ]
