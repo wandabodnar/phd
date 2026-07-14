@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Wanda Bodnar">
 
-<title>Environmental DNA</title>
+<title>DNA sequencing technologies – Environmental DNA</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter-1.html" rel="next">
+<link href="./chapter-8.html" rel="next">
+<link href="./chapter-6.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -253,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Content</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-7.html"><span class="chapter-title">DNA sequencing technologies</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -283,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Content</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Content</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -318,7 +318,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">DNA sequencing technologies</span></a>
+  <a href="./chapter-7.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">DNA sequencing technologies</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -341,7 +341,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#content" id="toc-content" class="nav-link active" data-scroll-target="#content">Content</a></li>
+  <li><a href="#what-is-dna-sequencing" id="toc-what-is-dna-sequencing" class="nav-link active" data-scroll-target="#what-is-dna-sequencing">What is DNA sequencing?</a></li>
+  <li><a href="#first-generation-sequencing-sanger-sequencing" id="toc-first-generation-sequencing-sanger-sequencing" class="nav-link" data-scroll-target="#first-generation-sequencing-sanger-sequencing">First-generation sequencing: Sanger sequencing</a></li>
+  <li><a href="#second-generation-sequencing-next-generation-sequencing" id="toc-second-generation-sequencing-next-generation-sequencing" class="nav-link" data-scroll-target="#second-generation-sequencing-next-generation-sequencing">Second-generation sequencing (Next-generation sequencing)</a>
+  <ul class="collapse">
+  <li><a href="#illumina-sequencing" id="toc-illumina-sequencing" class="nav-link" data-scroll-target="#illumina-sequencing">Illumina sequencing</a></li>
+  </ul></li>
+  <li><a href="#third-generation-sequencing" id="toc-third-generation-sequencing" class="nav-link" data-scroll-target="#third-generation-sequencing">Third-generation sequencing</a></li>
+  <li><a href="#sequencing-reads" id="toc-sequencing-reads" class="nav-link" data-scroll-target="#sequencing-reads">Sequencing reads</a></li>
+  <li><a href="#choosing-a-sequencing-platform" id="toc-choosing-a-sequencing-platform" class="nav-link" data-scroll-target="#choosing-a-sequencing-platform">Choosing a sequencing platform</a></li>
+  <li><a href="#from-pcr-product-to-dna-sequence" id="toc-from-pcr-product-to-dna-sequence" class="nav-link" data-scroll-target="#from-pcr-product-to-dna-sequence">From PCR product to DNA sequence</a></li>
+  <li><a href="#connecting-the-concepts" id="toc-connecting-the-concepts" class="nav-link" data-scroll-target="#connecting-the-concepts">Connecting the concepts</a></li>
+  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key concepts</a></li>
   </ul>
 </nav>
     </div>
@@ -351,19 +362,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Environmental DNA</h1>
+<h1 class="title"><span class="chapter-title">DNA sequencing technologies</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Wanda Bodnar </p>
-          </div>
-  </div>
     
   
     
@@ -374,8 +379,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="content" class="level1">
-<h1>Content</h1>
+<p>Polymerase chain reaction (PCR) produces millions of copies of a selected DNA fragment, but amplification alone does not reveal the identity of the organisms present in an environmental sample. To identify species, the exact order of nucleotides within each amplified DNA fragment must be determined.</p>
+<p>This process, known as <strong>DNA sequencing</strong>, converts DNA molecules into digital sequence data that can be compared with reference databases. Advances in sequencing technology have transformed environmental DNA research, allowing millions of DNA fragments from hundreds or thousands of species to be analysed simultaneously.</p>
+<p>This chapter introduces the principles of DNA sequencing and describes the technologies that have made modern eDNA metabarcoding possible.</p>
+<section id="what-is-dna-sequencing" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-dna-sequencing">What is DNA sequencing?</h2>
+<p>DNA sequencing is the process of determining the precise order of nucleotides within a DNA molecule. For example, sequencing may produce the following DNA fragment:</p>
+<p><strong>ATGCGTTACCGATG…</strong></p>
+<p>The sequence itself is the biological information used for species identification. Once obtained, it can be compared with reference databases to determine the organism from which it originated. Unlike PCR, which simply copies DNA, sequencing reveals its nucleotide composition.</p>
+</section>
+<section id="first-generation-sequencing-sanger-sequencing" class="level2">
+<h2 class="anchored" data-anchor-id="first-generation-sequencing-sanger-sequencing">First-generation sequencing: Sanger sequencing</h2>
+<p>The first widely adopted DNA sequencing method was developed by Frederick Sanger in 1977. Sanger sequencing determines DNA sequences by incorporating fluorescently labelled chain-terminating nucleotides during DNA synthesis. The resulting fragments are separated by size, allowing the nucleotide sequence to be reconstructed. Sanger sequencing produces highly accurate reads of approximately 700–1,000 base pairs. However, it sequences only one DNA fragment at a time. For this reason, Sanger sequencing is well suited to analysing individual specimens but is generally unsuitable for complex environmental samples containing DNA from many species.</p>
+</section>
+<section id="second-generation-sequencing-next-generation-sequencing" class="level2">
+<h2 class="anchored" data-anchor-id="second-generation-sequencing-next-generation-sequencing">Second-generation sequencing (Next-generation sequencing)</h2>
+<p>The development of <strong>next-generation sequencing (NGS)</strong> transformed molecular ecology by allowing millions of DNA fragments to be sequenced simultaneously. Instead of analysing a single DNA molecule, NGS sequences large numbers of DNA fragments in parallel, dramatically increasing speed while reducing cost per sequence. This capability makes NGS ideally suited for eDNA metabarcoding, where environmental samples may contain DNA from hundreds of species. Among the available platforms, Illumina sequencing has become the most widely used in environmental DNA research because of its high accuracy and throughput.</p>
+<section id="illumina-sequencing" class="level3">
+<h3 class="anchored" data-anchor-id="illumina-sequencing">Illumina sequencing</h3>
+<p>Illumina sequencing works by attaching amplified DNA fragments to a flow cell, where each fragment is copied to form a small cluster of identical molecules. During sequencing, fluorescently labelled nucleotides are added one base at a time. Each incorporated nucleotide emits a characteristic colour that is detected by a camera. The sequence of colours is converted into the corresponding DNA sequence. Illumina platforms typically produce short sequence reads ranging from approximately 150 to 300 base pairs, making them well suited to the short DNA fragments commonly recovered in environmental samples.</p>
+</section>
+</section>
+<section id="third-generation-sequencing" class="level2">
+<h2 class="anchored" data-anchor-id="third-generation-sequencing">Third-generation sequencing</h2>
+<p>Third-generation sequencing technologies analyse individual DNA molecules without requiring extensive amplification. Two widely used platforms are:</p>
+<ul>
+<li><p><strong>Pacific Biosciences (PacBio)</strong>, which produces highly accurate long reads through circular consensus sequencing.</p></li>
+<li><p><strong>Oxford Nanopore Technologies</strong>, which measures changes in electrical current as DNA molecules pass through microscopic nanopores.</p></li>
+</ul>
+<p>These technologies generate much longer sequence reads than Illumina, often exceeding several thousand base pairs. Although long-read sequencing is becoming increasingly important, most eDNA metabarcoding studies continue to rely on short-read sequencing because environmental DNA is typically highly fragmented.</p>
+</section>
+<section id="sequencing-reads" class="level2">
+<h2 class="anchored" data-anchor-id="sequencing-reads">Sequencing reads</h2>
+<p>Each DNA fragment generated during sequencing is known as a <strong>read</strong>. An environmental sample may produce thousands to millions of reads, each representing a short DNA sequence derived from one of the many organisms present in the sample.</p>
+<p>The total number of reads obtained for a sample is referred to as its <strong>sequencing depth</strong>. Sequencing depth is an important measure because it influences the likelihood of detecting species, particularly those that are rare or present in low abundance. In general, a greater sequencing depth increases the probability of recovering DNA from uncommon species, although it also increases sequencing costs and may eventually yield diminishing returns.</p>
+<p>Before species identification, sequencing reads undergo <strong>quality filtering</strong> to remove low-quality sequences, sequencing errors and artefacts that could compromise downstream analyses. The remaining high-quality reads are then used for bioinformatic processing, where they are compared with reference databases to identify the species present in the environmental sample.</p>
+</section>
+<section id="choosing-a-sequencing-platform" class="level2">
+<h2 class="anchored" data-anchor-id="choosing-a-sequencing-platform">Choosing a sequencing platform</h2>
+<p>The choice of sequencing platform depends on several factors, including:</p>
+<ul>
+<li><p>the objectives of the study</p></li>
+<li><p>expected DNA fragment length</p></li>
+<li><p>sequencing accuracy</p></li>
+<li><p>cost</p></li>
+<li><p>throughput</p></li>
+<li><p>available bioinformatic resources</p></li>
+</ul>
+<p>For most eDNA metabarcoding applications, Illumina platforms provide an effective balance between read quality, throughput and cost. Long-read technologies are becoming increasingly valuable for genome assembly, population genomics and certain specialised eDNA applications.</p>
+</section>
+<section id="from-pcr-product-to-dna-sequence" class="level2">
+<h2 class="anchored" data-anchor-id="from-pcr-product-to-dna-sequence">From PCR product to DNA sequence</h2>
+<p>Following PCR amplification, DNA fragments are prepared for sequencing by attaching platform-specific adapters and sample-identifying indices. The sequencing instrument then determines the order of nucleotides within each amplified fragment, producing millions of individual sequence reads. These digital sequences are exported for computational analysis, where they are filtered, compared with reference databases and assigned to species.</p>
+</section>
+<section id="connecting-the-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-the-concepts">Connecting the concepts</h2>
+<p>PCR generates millions of copies of a selected DNA marker, while sequencing determines the exact nucleotide sequence of each amplified fragment. These sequences provide the genetic information needed for bioinformatic analysis and species identification.</p>
+</section>
+<section id="key-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="key-concepts">Key concepts</h2>
+<p>At the end of this chapter, the most important ideas are:</p>
+<ul>
+<li><p>DNA sequencing determines the order of nucleotides in a DNA molecule.</p></li>
+<li><p>PCR amplifies DNA, whereas sequencing reveals its nucleotide sequence.</p></li>
+<li><p>Sanger sequencing analyses one DNA fragment at a time.</p></li>
+<li><p>Next-generation sequencing enables millions of DNA fragments to be sequenced simultaneously.</p></li>
+<li><p>Illumina sequencing is the most widely used platform for eDNA metabarcoding.</p></li>
+<li><p>Sequencing reads provide the raw data for bioinformatic analysis.</p></li>
+</ul>
 
 
 </section>
@@ -734,10 +805,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./chapter-6.html" class="pagination-link" aria-label="DNA extraction and Polymerase Chain Reaction (PCR)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">DNA extraction and Polymerase Chain Reaction (PCR)</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-1.html" class="pagination-link" aria-label="The molecular foundation of environmental DNA">
-        <span class="nav-page-text"><span class="chapter-title">The molecular foundation of environmental DNA</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-8.html" class="pagination-link" aria-label="Bioinformatics and taxonomic assignment">
+        <span class="nav-page-text"><span class="chapter-title">Bioinformatics and taxonomic assignment</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

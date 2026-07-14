@@ -400,13 +400,433 @@
     ]
   },
   {
+    "objectID": "chapter-5.html",
+    "href": "chapter-5.html",
+    "title": "Genetic markers and primer design",
+    "section": "",
+    "text": "What is a genetic marker?\nIn the previous chapter, we learned that mitochondrial DNA is widely used in environmental DNA (eDNA) studies because its high copy number increases the probability of detecting degraded DNA fragments. However, sequencing an entire mitochondrial genome from every organism present in an environmental sample is neither practical nor necessary.\nInstead, eDNA studies target short regions of DNA known as genetic markers. These markers contain sufficient sequence variation to distinguish species while remaining conserved enough to allow universal amplification using PCR.\nSelecting the appropriate genetic marker is one of the most important decisions in any eDNA study. Marker choice determines which organisms can be detected, the taxonomic resolution that can be achieved, and the overall reliability of species identification.\nThis chapter introduces the principles of genetic marker selection and explains how PCR primers are designed to amplify the most informative regions of DNA.\nA genetic marker is a specific region of DNA used to identify organisms or distinguish between species. Rather than analysing an entire genome, researchers examine relatively short DNA sequences that contain informative genetic variation.\nThe ideal marker should satisfy two important criteria:\nThese properties allow DNA from many organisms to be amplified simultaneously while retaining enough sequence variation for species identification.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Genetic markers and primer design</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#what-is-a-genetic-marker",
+    "href": "chapter-5.html#what-is-a-genetic-marker",
+    "title": "Genetic markers and primer design",
+    "section": "",
+    "text": "it should be highly conserved at its ends so that universal PCR primers can bind across many species;\nit should contain a variable internal region that differs among species and provides taxonomic information.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Genetic markers and primer design</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#dna-barcoding-and-metabarcoding",
+    "href": "chapter-5.html#dna-barcoding-and-metabarcoding",
+    "title": "Genetic markers and primer design",
+    "section": "DNA barcoding and metabarcoding",
+    "text": "DNA barcoding and metabarcoding\nTraditional DNA barcoding identifies a single organism by sequencing one standard genetic marker.\nIn contrast, DNA metabarcoding analyses environmental samples that contain DNA from many species simultaneously. Universal primers amplify the same genetic marker from all organisms present in the sample, and high-throughput sequencing generates millions of DNA sequences that are assigned to individual taxa using reference databases.\nWhile DNA barcoding focuses on individual specimens, metabarcoding provides a comprehensive assessment of entire biological communities.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Genetic markers and primer design</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#characteristics-of-an-ideal-genetic-marker",
+    "href": "chapter-5.html#characteristics-of-an-ideal-genetic-marker",
+    "title": "Genetic markers and primer design",
+    "section": "Characteristics of an ideal genetic marker",
+    "text": "Characteristics of an ideal genetic marker\nNo single genetic marker is suitable for every organism or research question. However, an effective marker generally possesses several important characteristics.\nAn ideal marker should:\n\nbe present in all target organisms\ncontain conserved primer-binding regions\ninclude sufficient sequence variation to distinguish species\nbe short enough to amplify degraded environmental DNA\nhave comprehensive reference sequences available in public databases\n\nBalancing these characteristics is often the greatest challenge in marker selection.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Genetic markers and primer design</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#common-genetic-markers",
+    "href": "chapter-5.html#common-genetic-markers",
+    "title": "Genetic markers and primer design",
+    "section": "Common genetic markers",
+    "text": "Common genetic markers\nDifferent taxonomic groups require different genetic markers because evolutionary rates vary among genes and organisms.\n\n12S rRNA\nThe mitochondrial 12S ribosomal RNA gene is one of the most widely used markers for vertebrate eDNA studies. Its conserved primer-binding regions and short variable regions make it particularly suitable for degraded environmental DNA.\nTypical applications include fish, amphibians, reptiles, birds, and mammals.\n\n\nCytochrome c oxidase subunit I (COI)\nCOI is the standard DNA barcode for animals and provides excellent species-level resolution. However, the full-length barcode is approximately 650 base pairs long, making it less suitable for fragmented environmental DNA. Consequently, many eDNA studies employ shorter COI mini-barcodes.\n\n\n16S rRNA\nThe 16S ribosomal RNA gene is widely used to study bacteria and archaea. Conserved regions permit universal amplification, while variable regions enable taxonomic classification.\n\n\n18S rRNA\nThe 18S ribosomal RNA gene is highly conserved and is commonly used to investigate diverse eukaryotic communities, particularly protists and other microscopic organisms.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Genetic markers and primer design</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#primer-design",
+    "href": "chapter-5.html#primer-design",
+    "title": "Genetic markers and primer design",
+    "section": "Primer design",
+    "text": "Primer design\nPCR requires two short DNA molecules known as primers. A forward primer binds to one DNA strand. A reverse primer binds to the complementary strand. Together, they define the DNA region that will be amplified. Primers are typically 18–30 nucleotides long and are designed to bind to conserved regions that flank a variable DNA sequence. Because PCR can amplify only the DNA located between the primers, primer design determines which organisms are detected. Poorly designed primers may fail to amplify certain species, resulting in biased biodiversity estimates.\n\n\n\nHow primers work",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Genetic markers and primer design</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#universal-and-taxon-specific-primers",
+    "href": "chapter-5.html#universal-and-taxon-specific-primers",
+    "title": "Genetic markers and primer design",
+    "section": "Universal and taxon-specific primers",
+    "text": "Universal and taxon-specific primers\nNot all primers are designed for the same purpose. Universal primers amplify DNA from a wide range of organisms and are commonly used in biodiversity surveys. Taxon-specific primers target particular groups, such as fish, amphibians or mammals, while excluding unrelated organisms. The choice between universal and taxon-specific primers depends on the objectives of the study.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Genetic markers and primer design</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#marker-selection-in-edna-studies",
+    "href": "chapter-5.html#marker-selection-in-edna-studies",
+    "title": "Genetic markers and primer design",
+    "section": "Marker selection in eDNA studies",
+    "text": "Marker selection in eDNA studies\nChoosing an appropriate marker requires balancing several competing factors. Researchers must consider:\n\nthe target taxonomic group\nexpected DNA degradation\nrequired taxonomic resolution\navailability of reference sequences\nsequencing platform\nstudy objectives\n\nNo marker is universally superior. The most appropriate marker depends on the biological question being addressed.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Genetic markers and primer design</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#from-marker-selection-to-pcr",
+    "href": "chapter-5.html#from-marker-selection-to-pcr",
+    "title": "Genetic markers and primer design",
+    "section": "From marker selection to PCR",
+    "text": "From marker selection to PCR\nMarker selection begins by defining the target organisms or taxonomic group to be studied. An appropriate genetic marker is then chosen based on the objectives of the study and the characteristics of the target DNA. PCR primers are designed to bind to conserved regions flanking the marker, allowing the intervening variable region to be amplified. The amplified DNA is subsequently sequenced, and the resulting sequences are compared with reference databases to identify the species present in the environmental sample.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Genetic markers and primer design</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#connecting-the-concepts",
+    "href": "chapter-5.html#connecting-the-concepts",
+    "title": "Genetic markers and primer design",
+    "section": "Connecting the concepts",
+    "text": "Connecting the concepts\nGenetic markers are short regions of DNA selected because they contain both conserved and variable sequences. Conserved regions provide reliable binding sites for PCR primers, while the intervening variable region contains the genetic differences required for species identification. Marker selection therefore determines which organisms can be detected and how accurately they can be identified.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Genetic markers and primer design</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#key-concepts",
+    "href": "chapter-5.html#key-concepts",
+    "title": "Genetic markers and primer design",
+    "section": "Key concepts",
+    "text": "Key concepts\nAt the end of this chapter, the most important ideas are:\n\nGenetic markers are short DNA regions used for species identification.\nAn ideal marker combines conserved primer-binding sites with variable internal sequences.\nDifferent taxonomic groups require different genetic markers.\nPCR primers determine which DNA regions are amplified.\nMarker choice directly influences detection success and taxonomic resolution.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Genetic markers and primer design</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html",
+    "href": "chapter-6.html",
+    "title": "DNA extraction and Polymerase Chain Reaction (PCR)",
+    "section": "",
+    "text": "DNA extraction\nPrevious chapters introduced the principles of environmental DNA (eDNA), explained why mitochondrial DNA is widely used for species detection, and described how genetic markers and primers are selected. However, selecting the appropriate marker is only the beginning of the analytical process.\nEnvironmental samples typically contain extremely small quantities of degraded DNA mixed with sediments, microorganisms, organic matter and substances that can interfere with molecular analyses. Before species can be identified, DNA must first be isolated from the sample and then amplified to produce sufficient copies for sequencing.\nDNA extraction and polymerase chain reaction (PCR) form the foundation of every eDNA workflow. The quality of the extracted DNA and the efficiency of PCR directly influence species detection, making these two laboratory procedures among the most critical steps in environmental DNA analysis.\nDNA extraction is the process of isolating DNA from environmental material while removing substances that may interfere with downstream analyses. In eDNA studies, DNA may be extracted from water filters, soil, sediment, biofilms or air filters. Regardless of sample type, the objective remains the same: to recover as much target DNA as possible while minimising contamination and DNA loss. Because environmental DNA is often present in extremely low concentrations, efficient extraction is essential for successful species detection.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>DNA extraction and Polymerase Chain Reaction (PCR)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#stages-of-dna-extraction",
+    "href": "chapter-6.html#stages-of-dna-extraction",
+    "title": "DNA extraction and Polymerase Chain Reaction (PCR)",
+    "section": "Stages of DNA extraction",
+    "text": "Stages of DNA extraction\nAlthough extraction protocols vary, they generally involve four principal steps.\n\nCell lysis\nThe first stage involves breaking open cells and mitochondria to release DNA. This is achieved using combinations of detergents, enzymes and mechanical disruption.\n\n\nRemoval of contaminants\nProteins, lipids and other cellular components are removed using chemical reagents or purification columns.\n\n\nDNA purification\nThe released DNA is separated from inhibitory compounds such as humic acids, which are common in soil and sediment samples.\n\n\nDNA elution\nFinally, purified DNA is dissolved in a suitable buffer or sterile water, producing a DNA extract ready for molecular analysis.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>DNA extraction and Polymerase Chain Reaction (PCR)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#polymerase-chain-reaction-pcr",
+    "href": "chapter-6.html#polymerase-chain-reaction-pcr",
+    "title": "DNA extraction and Polymerase Chain Reaction (PCR)",
+    "section": "Polymerase Chain Reaction (PCR)",
+    "text": "Polymerase Chain Reaction (PCR)\nEnvironmental DNA is typically present in quantities far below the detection limits of most analytical methods. PCR overcomes this limitation by producing millions of copies of a selected DNA fragment. Rather than copying an entire genome, PCR amplifies only the region located between two primers. Because primers bind to conserved sequences surrounding a genetic marker, only the target region is copied. PCR therefore converts minute quantities of environmental DNA into sufficient material for sequencing and species identification.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>DNA extraction and Polymerase Chain Reaction (PCR)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#components-of-pcr",
+    "href": "chapter-6.html#components-of-pcr",
+    "title": "DNA extraction and Polymerase Chain Reaction (PCR)",
+    "section": "Components of PCR",
+    "text": "Components of PCR\nA PCR reaction requires several essential components.\n\nTemplate DNA\nThe extracted environmental DNA containing the target sequence.\n\n\nPrimers\nForward and reverse primers define the DNA region to be amplified.\n\n\nDNA polymerase\nA heat-stable enzyme, commonly Taq polymerase, synthesises new DNA strands.\n\n\nNucleotides (dNTPs)\nThe building blocks required to synthesise new DNA molecules.\n\n\nBuffer and magnesium ions\nThese provide the optimal chemical conditions for DNA polymerase activity.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>DNA extraction and Polymerase Chain Reaction (PCR)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#the-pcr-cycle",
+    "href": "chapter-6.html#the-pcr-cycle",
+    "title": "DNA extraction and Polymerase Chain Reaction (PCR)",
+    "section": "The PCR cycle",
+    "text": "The PCR cycle\nPCR consists of repeated cycles, each containing three stages.\n\nDenaturation\nThe reaction is heated to approximately 94–95°C, causing the two DNA strands to separate.\n\n\n\nDenaturation\n\n\n\n\nAnnealing\nThe temperature is lowered to allow primers to bind to complementary DNA sequences.\n\n\n\nAnnealing\n\n\n\n\nExtension\nThe temperature is increased to approximately 72°C, enabling DNA polymerase to synthesise new DNA strands.\nEach cycle approximately doubles the amount of target DNA.\nAfter 30–40 cycles, millions to billions of copies of the original DNA fragment may be produced.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>DNA extraction and Polymerase Chain Reaction (PCR)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#exponential-amplification",
+    "href": "chapter-6.html#exponential-amplification",
+    "title": "DNA extraction and Polymerase Chain Reaction (PCR)",
+    "section": "Exponential amplification",
+    "text": "Exponential amplification\nPCR is often described as an exponential amplification process.\n\n\n\nAmplification",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>DNA extraction and Polymerase Chain Reaction (PCR)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#pcr-inhibition",
+    "href": "chapter-6.html#pcr-inhibition",
+    "title": "DNA extraction and Polymerase Chain Reaction (PCR)",
+    "section": "PCR inhibition",
+    "text": "PCR inhibition\nEnvironmental samples frequently contain compounds that interfere with PCR. Common inhibitors include:\n\nhumic acids\ntannins\nheavy metals\npolysaccharides\nphenolic compounds\n\nThese substances reduce DNA polymerase activity or prevent primers from binding efficiently, leading to weak amplification or false-negative results. Consequently, removing inhibitors during DNA extraction is a critical component of eDNA analysis.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>DNA extraction and Polymerase Chain Reaction (PCR)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#preventing-contamination",
+    "href": "chapter-6.html#preventing-contamination",
+    "title": "DNA extraction and Polymerase Chain Reaction (PCR)",
+    "section": "Preventing contamination",
+    "text": "Preventing contamination\nBecause PCR is capable of amplifying even a single DNA molecule, contamination represents one of the greatest challenges in molecular laboratories. Potential contamination sources include:\n\nprevious PCR products\nlaboratory equipment\nsampling equipment\nairborne DNA\noperator handling\n\nTo minimise contamination, laboratories employ dedicated work areas, sterile consumables, negative controls and strict quality assurance procedures.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>DNA extraction and Polymerase Chain Reaction (PCR)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#from-environmental-sample-to-pcr-product",
+    "href": "chapter-6.html#from-environmental-sample-to-pcr-product",
+    "title": "DNA extraction and Polymerase Chain Reaction (PCR)",
+    "section": "From environmental sample to PCR product",
+    "text": "From environmental sample to PCR product\nEnvironmental samples are collected and filtered to concentrate DNA. DNA is then extracted by lysing cells, removing contaminants and purifying the genetic material. The purified DNA serves as the template for PCR, where primers bind to conserved regions surrounding the target marker. Through repeated cycles of denaturation, annealing and extension, DNA polymerase amplifies the target sequence millions of times. The amplified DNA is then ready for sequencing and subsequent species identification.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>DNA extraction and Polymerase Chain Reaction (PCR)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#connecting-the-concepts",
+    "href": "chapter-6.html#connecting-the-concepts",
+    "title": "DNA extraction and Polymerase Chain Reaction (PCR)",
+    "section": "Connecting the concepts",
+    "text": "Connecting the concepts\nDNA extraction isolates genetic material from complex environmental samples, while PCR selectively amplifies short target regions suitable for sequencing. Together, these techniques transform minute quantities of degraded environmental DNA into sufficient genetic material for accurate species identification.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>DNA extraction and Polymerase Chain Reaction (PCR)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#key-concepts",
+    "href": "chapter-6.html#key-concepts",
+    "title": "DNA extraction and Polymerase Chain Reaction (PCR)",
+    "section": "Key concepts",
+    "text": "Key concepts\nAt the end of this chapter, the most important ideas are:\n\nDNA extraction isolates DNA while removing contaminants and inhibitors.\nEnvironmental DNA is often present in low concentrations and is highly fragmented.\nPCR selectively amplifies DNA located between two primers.\nPCR consists of denaturation, annealing and extension.\nPCR amplification is exponential during the early stages of the reaction.\nContamination control is essential for reliable eDNA analyses.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>DNA extraction and Polymerase Chain Reaction (PCR)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html",
+    "href": "chapter-7.html",
+    "title": "DNA sequencing technologies",
+    "section": "",
+    "text": "What is DNA sequencing?\nPolymerase chain reaction (PCR) produces millions of copies of a selected DNA fragment, but amplification alone does not reveal the identity of the organisms present in an environmental sample. To identify species, the exact order of nucleotides within each amplified DNA fragment must be determined.\nThis process, known as DNA sequencing, converts DNA molecules into digital sequence data that can be compared with reference databases. Advances in sequencing technology have transformed environmental DNA research, allowing millions of DNA fragments from hundreds or thousands of species to be analysed simultaneously.\nThis chapter introduces the principles of DNA sequencing and describes the technologies that have made modern eDNA metabarcoding possible.\nDNA sequencing is the process of determining the precise order of nucleotides within a DNA molecule. For example, sequencing may produce the following DNA fragment:\nATGCGTTACCGATG…\nThe sequence itself is the biological information used for species identification. Once obtained, it can be compared with reference databases to determine the organism from which it originated. Unlike PCR, which simply copies DNA, sequencing reveals its nucleotide composition.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>DNA sequencing technologies</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#first-generation-sequencing-sanger-sequencing",
+    "href": "chapter-7.html#first-generation-sequencing-sanger-sequencing",
+    "title": "DNA sequencing technologies",
+    "section": "First-generation sequencing: Sanger sequencing",
+    "text": "First-generation sequencing: Sanger sequencing\nThe first widely adopted DNA sequencing method was developed by Frederick Sanger in 1977. Sanger sequencing determines DNA sequences by incorporating fluorescently labelled chain-terminating nucleotides during DNA synthesis. The resulting fragments are separated by size, allowing the nucleotide sequence to be reconstructed. Sanger sequencing produces highly accurate reads of approximately 700–1,000 base pairs. However, it sequences only one DNA fragment at a time. For this reason, Sanger sequencing is well suited to analysing individual specimens but is generally unsuitable for complex environmental samples containing DNA from many species.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>DNA sequencing technologies</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#second-generation-sequencing-next-generation-sequencing",
+    "href": "chapter-7.html#second-generation-sequencing-next-generation-sequencing",
+    "title": "DNA sequencing technologies",
+    "section": "Second-generation sequencing (Next-generation sequencing)",
+    "text": "Second-generation sequencing (Next-generation sequencing)\nThe development of next-generation sequencing (NGS) transformed molecular ecology by allowing millions of DNA fragments to be sequenced simultaneously. Instead of analysing a single DNA molecule, NGS sequences large numbers of DNA fragments in parallel, dramatically increasing speed while reducing cost per sequence. This capability makes NGS ideally suited for eDNA metabarcoding, where environmental samples may contain DNA from hundreds of species. Among the available platforms, Illumina sequencing has become the most widely used in environmental DNA research because of its high accuracy and throughput.\n\nIllumina sequencing\nIllumina sequencing works by attaching amplified DNA fragments to a flow cell, where each fragment is copied to form a small cluster of identical molecules. During sequencing, fluorescently labelled nucleotides are added one base at a time. Each incorporated nucleotide emits a characteristic colour that is detected by a camera. The sequence of colours is converted into the corresponding DNA sequence. Illumina platforms typically produce short sequence reads ranging from approximately 150 to 300 base pairs, making them well suited to the short DNA fragments commonly recovered in environmental samples.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>DNA sequencing technologies</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#third-generation-sequencing",
+    "href": "chapter-7.html#third-generation-sequencing",
+    "title": "DNA sequencing technologies",
+    "section": "Third-generation sequencing",
+    "text": "Third-generation sequencing\nThird-generation sequencing technologies analyse individual DNA molecules without requiring extensive amplification. Two widely used platforms are:\n\nPacific Biosciences (PacBio), which produces highly accurate long reads through circular consensus sequencing.\nOxford Nanopore Technologies, which measures changes in electrical current as DNA molecules pass through microscopic nanopores.\n\nThese technologies generate much longer sequence reads than Illumina, often exceeding several thousand base pairs. Although long-read sequencing is becoming increasingly important, most eDNA metabarcoding studies continue to rely on short-read sequencing because environmental DNA is typically highly fragmented.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>DNA sequencing technologies</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#sequencing-reads",
+    "href": "chapter-7.html#sequencing-reads",
+    "title": "DNA sequencing technologies",
+    "section": "Sequencing reads",
+    "text": "Sequencing reads\nEach DNA fragment generated during sequencing is known as a read. An environmental sample may produce thousands to millions of reads, each representing a short DNA sequence derived from one of the many organisms present in the sample.\nThe total number of reads obtained for a sample is referred to as its sequencing depth. Sequencing depth is an important measure because it influences the likelihood of detecting species, particularly those that are rare or present in low abundance. In general, a greater sequencing depth increases the probability of recovering DNA from uncommon species, although it also increases sequencing costs and may eventually yield diminishing returns.\nBefore species identification, sequencing reads undergo quality filtering to remove low-quality sequences, sequencing errors and artefacts that could compromise downstream analyses. The remaining high-quality reads are then used for bioinformatic processing, where they are compared with reference databases to identify the species present in the environmental sample.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>DNA sequencing technologies</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#choosing-a-sequencing-platform",
+    "href": "chapter-7.html#choosing-a-sequencing-platform",
+    "title": "DNA sequencing technologies",
+    "section": "Choosing a sequencing platform",
+    "text": "Choosing a sequencing platform\nThe choice of sequencing platform depends on several factors, including:\n\nthe objectives of the study\nexpected DNA fragment length\nsequencing accuracy\ncost\nthroughput\navailable bioinformatic resources\n\nFor most eDNA metabarcoding applications, Illumina platforms provide an effective balance between read quality, throughput and cost. Long-read technologies are becoming increasingly valuable for genome assembly, population genomics and certain specialised eDNA applications.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>DNA sequencing technologies</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#from-pcr-product-to-dna-sequence",
+    "href": "chapter-7.html#from-pcr-product-to-dna-sequence",
+    "title": "DNA sequencing technologies",
+    "section": "From PCR product to DNA sequence",
+    "text": "From PCR product to DNA sequence\nFollowing PCR amplification, DNA fragments are prepared for sequencing by attaching platform-specific adapters and sample-identifying indices. The sequencing instrument then determines the order of nucleotides within each amplified fragment, producing millions of individual sequence reads. These digital sequences are exported for computational analysis, where they are filtered, compared with reference databases and assigned to species.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>DNA sequencing technologies</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#connecting-the-concepts",
+    "href": "chapter-7.html#connecting-the-concepts",
+    "title": "DNA sequencing technologies",
+    "section": "Connecting the concepts",
+    "text": "Connecting the concepts\nPCR generates millions of copies of a selected DNA marker, while sequencing determines the exact nucleotide sequence of each amplified fragment. These sequences provide the genetic information needed for bioinformatic analysis and species identification.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>DNA sequencing technologies</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#key-concepts",
+    "href": "chapter-7.html#key-concepts",
+    "title": "DNA sequencing technologies",
+    "section": "Key concepts",
+    "text": "Key concepts\nAt the end of this chapter, the most important ideas are:\n\nDNA sequencing determines the order of nucleotides in a DNA molecule.\nPCR amplifies DNA, whereas sequencing reveals its nucleotide sequence.\nSanger sequencing analyses one DNA fragment at a time.\nNext-generation sequencing enables millions of DNA fragments to be sequenced simultaneously.\nIllumina sequencing is the most widely used platform for eDNA metabarcoding.\nSequencing reads provide the raw data for bioinformatic analysis.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>DNA sequencing technologies</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html",
+    "href": "chapter-8.html",
+    "title": "Bioinformatics and taxonomic assignment",
+    "section": "",
+    "text": "What is bioinformatics?\nDNA sequencing generates millions of short DNA sequences, known as reads, from every environmental sample. However, these raw sequencing data do not immediately reveal which species are present. Before ecological interpretation is possible, the reads must undergo a series of computational analyses to remove sequencing errors, eliminate artefacts and assign each sequence to its most likely taxonomic origin.\nThis process is known as bioinformatics. Bioinformatic analysis transforms raw sequencing data into species lists, estimates of biodiversity and community composition, making it an essential component of every environmental DNA (eDNA) study.\nBioinformatics is the application of computational methods to store, process and analyse biological data.\nIn eDNA studies, bioinformatics converts millions of raw DNA sequences into meaningful biological information. The objective is to determine which organisms contributed DNA to the environmental sample while minimising errors introduced during PCR and sequencing.\nWithout bioinformatics, sequencing data would simply consist of millions of strings of nucleotide letters with no biological interpretation.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Bioinformatics and taxonomic assignment</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#the-bioinformatic-workflow",
+    "href": "chapter-8.html#the-bioinformatic-workflow",
+    "title": "Bioinformatics and taxonomic assignment",
+    "section": "The bioinformatic workflow",
+    "text": "The bioinformatic workflow\nAlthough individual pipelines differ, most eDNA analyses follow a similar sequence of steps. First, sequencing reads are imported into specialised software. Low-quality reads and sequencing artefacts are removed. Primer and adapter sequences are trimmed. Identical or highly similar sequences are grouped. Representative sequences are compared with reference databases. Finally, taxonomic identities are assigned and summarised for ecological analysis. Each stage improves the quality and reliability of the final dataset.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Bioinformatics and taxonomic assignment</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#quality-filtering",
+    "href": "chapter-8.html#quality-filtering",
+    "title": "Bioinformatics and taxonomic assignment",
+    "section": "Quality filtering",
+    "text": "Quality filtering\nSequencing instruments occasionally produce errors, including incorrect nucleotides, incomplete reads or low-confidence base calls. Quality filtering removes these unreliable sequences before further analysis.\nTypical filtering procedures include:\n\nremoving short reads\nexcluding low-quality sequences\ntrimming poor-quality bases\ndiscarding reads containing ambiguous nucleotides (N)\n\nQuality filtering reduces false species detections and improves confidence in downstream analyses.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Bioinformatics and taxonomic assignment</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#removing-chimeras",
+    "href": "chapter-8.html#removing-chimeras",
+    "title": "Bioinformatics and taxonomic assignment",
+    "section": "Removing chimeras",
+    "text": "Removing chimeras\nPCR occasionally produces artificial DNA sequences known as chimeras.\nA chimera is formed when fragments from two different DNA molecules are mistakenly joined together during amplification.\nBecause chimeras do not represent real biological sequences, they must be detected and removed before taxonomic assignment.\nModern bioinformatic software identifies chimeras by comparing sequences with more abundant parental sequences.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Bioinformatics and taxonomic assignment</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#otus-and-asvs",
+    "href": "chapter-8.html#otus-and-asvs",
+    "title": "Bioinformatics and taxonomic assignment",
+    "section": "OTUs and ASVs",
+    "text": "OTUs and ASVs\nOnce poor-quality sequences have been removed, similar sequences are grouped to simplify analysis. Historically, sequences sharing a predefined level of similarity (commonly 97%) were clustered into Operational Taxonomic Units (OTUs). More recently, many studies have adopted Amplicon Sequence Variants (ASVs). Unlike OTUs, ASVs distinguish sequences differing by as little as a single nucleotide, providing higher taxonomic resolution and greater reproducibility between studies. Today, ASVs are increasingly regarded as the preferred approach for analysing eDNA metabarcoding data.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Bioinformatics and taxonomic assignment</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#taxonomic-assignment",
+    "href": "chapter-8.html#taxonomic-assignment",
+    "title": "Bioinformatics and taxonomic assignment",
+    "section": "Taxonomic assignment",
+    "text": "Taxonomic assignment\nAfter quality filtering, each sequence is compared with reference databases containing DNA sequences from known organisms. The closest matching reference sequence is used to assign a taxonomic identity. Depending on sequence quality and database completeness, identification may be possible at different taxonomic levels, including species, genus, family, and order. Not every sequence can be assigned to species level. Some sequences may represent organisms absent from current reference databases.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Bioinformatics and taxonomic assignment</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#reference-databases",
+    "href": "chapter-8.html#reference-databases",
+    "title": "Bioinformatics and taxonomic assignment",
+    "section": "Reference databases",
+    "text": "Reference databases\nAccurate species identification depends on comprehensive and reliable reference databases.\nSeveral databases are commonly used in eDNA studies.\n\nGenBank\nGenBank is the world’s largest public nucleotide sequence database and contains DNA sequences from a wide variety of organisms.\n\n\nBOLD (Barcode of Life Data System)\nBOLD specialises in DNA barcode sequences and is widely used for animal identification, particularly using the COI gene.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Bioinformatics and taxonomic assignment</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#sources-of-error",
+    "href": "chapter-8.html#sources-of-error",
+    "title": "Bioinformatics and taxonomic assignment",
+    "section": "Sources of error",
+    "text": "Sources of error\nEven after careful laboratory procedures, bioinformatic analyses remain susceptible to error.\nPotential sources include:\n\nsequencing errors\nPCR artefacts\ncontamination\nincomplete reference databases\nincorrect database annotations\nclosely related species sharing similar DNA sequences\n\nFor these reasons, bioinformatic results should always be interpreted alongside appropriate laboratory controls and ecological knowledge.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Bioinformatics and taxonomic assignment</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#from-raw-reads-to-species-list",
+    "href": "chapter-8.html#from-raw-reads-to-species-list",
+    "title": "Bioinformatics and taxonomic assignment",
+    "section": "From raw reads to species list",
+    "text": "From raw reads to species list\nThe bioinformatic workflow can be summarised as follows.\nSequencing generates millions of DNA reads. Low-quality reads, sequencing errors and chimeras are removed through quality filtering. The remaining high-quality sequences are grouped into ASVs or OTUs and compared with reference databases. Based on the closest matches, taxonomic identities are assigned, producing a list of species detected in the environmental sample.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Bioinformatics and taxonomic assignment</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#connecting-the-concepts",
+    "href": "chapter-8.html#connecting-the-concepts",
+    "title": "Bioinformatics and taxonomic assignment",
+    "section": "Connecting the concepts",
+    "text": "Connecting the concepts\nDNA sequencing produces millions of short reads, but these reads have little biological meaning until they are processed computationally. Bioinformatics filters sequencing errors, removes artefacts and compares DNA sequences with reference databases, transforming raw sequence data into reliable species identifications.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Bioinformatics and taxonomic assignment</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#key-concepts",
+    "href": "chapter-8.html#key-concepts",
+    "title": "Bioinformatics and taxonomic assignment",
+    "section": "Key concepts",
+    "text": "Key concepts\nAt the end of this chapter, the most important ideas are:\n\nBioinformatics converts raw sequencing reads into biological information.\nQuality filtering removes unreliable DNA sequences.\nChimeras are artificial sequences produced during PCR.\nASVs provide higher sequence resolution than traditional OTUs.\nSpecies identification depends on comparison with reference databases.\nDatabase quality strongly influences taxonomic accuracy.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Bioinformatics and taxonomic assignment</span>"
+    ]
+  },
+  {
     "objectID": "timeline.html",
     "href": "timeline.html",
     "title": "eDNA timeline overview",
     "section": "",
     "text": "1980s: Foundations of DNA fingerprinting and environmental DNA",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>eDNA timeline overview</span>"
     ]
   },
   {
@@ -416,7 +836,7 @@
     "section": "",
     "text": "DNA fingerprinting established (Jeffreys et al. 1985)\n\nDiscovery of hypervariable minisatellite regions.\nFirst individual-specific DNA “barcode.”\nLaid the foundation for forensic genetics, paternity testing, and later molecular ecology.\n\n\n\n\nThe term “environmental DNA” introduced (Ogram et al. 1987)\n\nDeveloped methods to extract intracellular and extracellular DNA directly from sediments.\nIntroduced the concept of recovering DNA directly from environmental samples without isolating organisms.\n\nPCR enables DNA fingerprinting from tiny samples\n\nJeffreys et al. (1988): PCR amplification of minisatellites made DNA fingerprinting practical from very small samples.\nHoelzel et al. (1988): DNA fingerprinting applied to whale skin biopsies, demonstrating non-lethal genetic monitoring of wildlife.\n\n\nMajor breakthrough of the decade: DNA became a practical tool for identifying individuals, and environmental DNA was first recognised as a recoverable genetic resource.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>eDNA timeline overview</span>"
     ]
   },
   {
@@ -426,7 +846,17 @@
     "section": "1990s: From DNA fingerprinting to DNA barcodes and early environmental DNA applications",
     "text": "1990s: From DNA fingerprinting to DNA barcodes and early environmental DNA applications\n\n\nGiovannoni et al. 1990 analysed 16S ribosomal RNA (rRNA) gene sequences directly from a microbial community in the Sargasso Sea, providing one of the first culture-independent surveys of environmental microbial diversity.\nAmos et al. 1992 demonstrated that DNA recovered from naturally shed material, such as whale skin, could be used for genetic analysis.\nArnot et al. 1993 Introduced the concept of using distinctive genetic sequence patterns as biological identifiers, and the term “DNA barcode” was first used to describe molecular signatures capable of distinguishing biological samples.\nPaget et al. 1998 demonstrated that plant DNA could be recovered directly from soil, providing early evidence that environmental samples preserve genetic traces of larger organisms.\n\n\nMajor breakthrough of the decade: DNA analysis expanded from identifying individual organisms to characterising entire biological communities. Environmental sequencing revealed hidden microbial diversity, DNA barcoding introduced genetic identification frameworks, and early macrobial eDNA studies demonstrated that environmental samples could act as archives of biodiversity. Together, these advances established the foundations of modern eDNA metabarcoding, biodiversity assessment, and molecular ecology.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+    ]
+  },
+  {
+    "objectID": "timeline.html#s-environmental-dna-becomes-a-tool-for-biodiversity-reconstruction-pollution-tracking-and-species-detection",
+    "href": "timeline.html#s-environmental-dna-becomes-a-tool-for-biodiversity-reconstruction-pollution-tracking-and-species-detection",
+    "title": "eDNA timeline overview",
+    "section": "2000s: Environmental DNA becomes a tool for biodiversity reconstruction, pollution tracking, and species detection",
+    "text": "2000s: Environmental DNA becomes a tool for biodiversity reconstruction, pollution tracking, and species detection\n\nDNA persistence and the ecological role of dissolved DNA (Matsui et al. 2001)\n\nDemonstrated that extracellular dissolved DNA (dDNA) can persist in aquatic environments, with DNA fragments of approximately 400 bp surviving for up to 7 days at 18°C.\nProvided early experimental evidence that environmental DNA is not immediately degraded after release into water, supporting its use as a molecular signal for species detection.\nHighlighted the natural occurrence of dissolved extracellular DNA, which enters ecosystems through cell death, shedding of tissues, and biological secretions.\nShowed that environmental DNA persistence is influenced by environmental factors including UV radiation, temperature, and nuclease activity.\nEstablished that dissolved DNA is not only genetic information but also an important ecological resource, providing microorganisms with carbon, nitrogen, and phosphorus.\nDemonstrated that microbes can utilise extracellular DNA through enzymatic degradation, recycling genetic material as nutrients.\n\nUV radiation identified as a major factor affecting DNA persistence (Ravanet et al. 2001)\n\nHighlighted UV exposure as an important abiotic factor influencing the persistence and detectability of environmental DNA.\nContributed to understanding why eDNA signals vary between habitats and why DNA preservation differs among ecosystems.\n\nFirst metagenetic analysis of soil eDNA (Willerslev et al. 2003)\n\nDemonstrated that DNA extracted from permafrost and sediment samples could reveal past biodiversity in the absence of visible fossils or macrofossils.\nRecovered ancient DNA sequences from Siberian permafrost cores dating from 400,000 to 10,000 years ago, including plant taxa and megafaunal species such as mammoth, bison, and horse.\nShowed that sedimentary DNA could reconstruct historical changes in ecosystem composition and biodiversity through time.\nEstablished environmental DNA as a powerful archive for studying past ecosystems and long-term ecological change.\n\nEnvironmental DNA as a resource for microorganisms (Chen and Dubnau 2004)\n\nExpanded understanding of the ecological functions of extracellular DNA by showing that bacteria can actively acquire environmental DNA.\nDemonstrated two major roles of environmental DNA for microorganisms:\n\nGenetic resource: DNA from related bacteria may provide templates for repairing damaged genetic material.\nNutritional resource: DNA can be degraded and used as a source of carbon, nitrogen, and phosphorus.\n\nHighlighted that extracellular DNA is an active component of microbial ecosystems rather than simply degraded biological material.\n\nFirst microbial and faecal eDNA detection in river water (Martellini et al. 2005)\n\nDeveloped a PCR-based method to detect and distinguish faecal contamination from human, bovine, ovine, and porcine sources in aquatic environments.\nUsed species-specific mitochondrial DNA markers to identify the origin of pollution in wastewater, agricultural runoff, and river samples.\nRepresented the first application of eukaryotic genetic material from water samples to trace animal-derived pollution sources.\nDemonstrated the potential of eDNA approaches for environmental monitoring, water quality assessment, and microbial source tracking.\n\neDNA enables detection of invasive and cryptic species (Ficetola et al. 2008)\n\nDeveloped one of the first widely recognised applications of eDNA for detecting a target species in freshwater ecosystems.\nUsed species-specific mitochondrial DNA primers to detect American bullfrog DNA in controlled experiments and natural wetlands.\nSuccessfully identified populations even when species densities were low and traditional surveys were ineffective.\nDemonstrated that eDNA could provide a sensitive, non-invasive method for monitoring invasive, rare, and difficult-to-detect species.\nHighlighted challenges associated with interpreting eDNA signals, including uncertainty over how long DNA remains detectable after an organism leaves an environment.\n\nDNA barcoding becomes integrated into ecology (Valentini et al. 2008)\n\nProvided an overview of DNA barcoding as a method for species identification using standardised genetic markers.\nDemonstrated the value of molecular identification tools for ecological studies, biodiversity surveys, and species monitoring.\nHelped connect traditional ecological research with emerging molecular approaches.\n\nNon-invasive genetics advances ecological monitoring (Beja-Pereira et al. 2009)\n\nReviewed the development of non-invasive genetic sampling approaches for wildlife studies.\nShowed how DNA obtained from naturally shed biological material could transform population monitoring and conservation genetics.\nHighlighted technological improvements that increased the feasibility of studying wildlife without capture or disturbance.\nProvided important methodological foundations for later vertebrate eDNA applications.\n\n\nMajor breakthrough of the decade: Environmental DNA transitioned from a concept describing DNA persistence in the environment into a practical ecological monitoring tool. During the 2000s, researchers demonstrated that DNA could be recovered from sediments, water, and naturally shed material to reconstruct past ecosystems, trace pollution sources, and detect rare or invasive species. Advances in PCR, DNA barcoding, and non-invasive genetics transformed eDNA from a theoretical possibility into a powerful method for biodiversity assessment and conservation biology.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>eDNA timeline overview</span>"
     ]
   }
 ]

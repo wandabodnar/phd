@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Wanda Bodnar">
 
-<title>Environmental DNA</title>
+<title>Genetic markers and primer design – Environmental DNA</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter-1.html" rel="next">
+<link href="./chapter-6.html" rel="next">
+<link href="./chapter-4.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -253,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Content</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-5.html"><span class="chapter-title">Genetic markers and primer design</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -283,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Content</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Content</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -308,7 +308,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Genetic markers and primer design</span></a>
+  <a href="./chapter-5.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Genetic markers and primer design</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -341,7 +341,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#content" id="toc-content" class="nav-link active" data-scroll-target="#content">Content</a></li>
+  <li><a href="#what-is-a-genetic-marker" id="toc-what-is-a-genetic-marker" class="nav-link active" data-scroll-target="#what-is-a-genetic-marker">What is a genetic marker?</a></li>
+  <li><a href="#dna-barcoding-and-metabarcoding" id="toc-dna-barcoding-and-metabarcoding" class="nav-link" data-scroll-target="#dna-barcoding-and-metabarcoding">DNA barcoding and metabarcoding</a></li>
+  <li><a href="#characteristics-of-an-ideal-genetic-marker" id="toc-characteristics-of-an-ideal-genetic-marker" class="nav-link" data-scroll-target="#characteristics-of-an-ideal-genetic-marker">Characteristics of an ideal genetic marker</a></li>
+  <li><a href="#common-genetic-markers" id="toc-common-genetic-markers" class="nav-link" data-scroll-target="#common-genetic-markers">Common genetic markers</a>
+  <ul class="collapse">
+  <li><a href="#s-rrna" id="toc-s-rrna" class="nav-link" data-scroll-target="#s-rrna">12S rRNA</a></li>
+  <li><a href="#cytochrome-c-oxidase-subunit-i-coi" id="toc-cytochrome-c-oxidase-subunit-i-coi" class="nav-link" data-scroll-target="#cytochrome-c-oxidase-subunit-i-coi">Cytochrome c oxidase subunit I (COI)</a></li>
+  <li><a href="#s-rrna-1" id="toc-s-rrna-1" class="nav-link" data-scroll-target="#s-rrna-1">16S rRNA</a></li>
+  <li><a href="#s-rrna-2" id="toc-s-rrna-2" class="nav-link" data-scroll-target="#s-rrna-2">18S rRNA</a></li>
+  </ul></li>
+  <li><a href="#primer-design" id="toc-primer-design" class="nav-link" data-scroll-target="#primer-design">Primer design</a></li>
+  <li><a href="#universal-and-taxon-specific-primers" id="toc-universal-and-taxon-specific-primers" class="nav-link" data-scroll-target="#universal-and-taxon-specific-primers">Universal and taxon-specific primers</a></li>
+  <li><a href="#marker-selection-in-edna-studies" id="toc-marker-selection-in-edna-studies" class="nav-link" data-scroll-target="#marker-selection-in-edna-studies">Marker selection in eDNA studies</a></li>
+  <li><a href="#from-marker-selection-to-pcr" id="toc-from-marker-selection-to-pcr" class="nav-link" data-scroll-target="#from-marker-selection-to-pcr">From marker selection to PCR</a></li>
+  <li><a href="#connecting-the-concepts" id="toc-connecting-the-concepts" class="nav-link" data-scroll-target="#connecting-the-concepts">Connecting the concepts</a></li>
+  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key concepts</a></li>
   </ul>
 </nav>
     </div>
@@ -351,19 +366,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Environmental DNA</h1>
+<h1 class="title"><span class="chapter-title">Genetic markers and primer design</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Wanda Bodnar </p>
-          </div>
-  </div>
     
   
     
@@ -374,8 +383,105 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="content" class="level1">
-<h1>Content</h1>
+<p>In the previous chapter, we learned that mitochondrial DNA is widely used in environmental DNA (eDNA) studies because its high copy number increases the probability of detecting degraded DNA fragments. However, sequencing an entire mitochondrial genome from every organism present in an environmental sample is neither practical nor necessary.</p>
+<p>Instead, eDNA studies target short regions of DNA known as <strong>genetic markers</strong>. These markers contain sufficient sequence variation to distinguish species while remaining conserved enough to allow universal amplification using PCR.</p>
+<p>Selecting the appropriate genetic marker is one of the most important decisions in any eDNA study. Marker choice determines which organisms can be detected, the taxonomic resolution that can be achieved, and the overall reliability of species identification.</p>
+<p>This chapter introduces the principles of genetic marker selection and explains how PCR primers are designed to amplify the most informative regions of DNA.</p>
+<section id="what-is-a-genetic-marker" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-genetic-marker">What is a genetic marker?</h2>
+<p>A <strong>genetic marker</strong> is a specific region of DNA used to identify organisms or distinguish between species. Rather than analysing an entire genome, researchers examine relatively short DNA sequences that contain informative genetic variation.</p>
+<p>The ideal marker should satisfy two important criteria:</p>
+<ul>
+<li><p>it should be <strong>highly conserved</strong> at its ends so that universal PCR primers can bind across many species;</p></li>
+<li><p>it should contain a <strong>variable internal region</strong> that differs among species and provides taxonomic information.</p></li>
+</ul>
+<p>These properties allow DNA from many organisms to be amplified simultaneously while retaining enough sequence variation for species identification.</p>
+</section>
+<section id="dna-barcoding-and-metabarcoding" class="level2">
+<h2 class="anchored" data-anchor-id="dna-barcoding-and-metabarcoding">DNA barcoding and metabarcoding</h2>
+<p>Traditional <strong>DNA barcoding</strong> identifies a single organism by sequencing one standard genetic marker.</p>
+<p>In contrast, <strong>DNA metabarcoding</strong> analyses environmental samples that contain DNA from many species simultaneously. Universal primers amplify the same genetic marker from all organisms present in the sample, and high-throughput sequencing generates millions of DNA sequences that are assigned to individual taxa using reference databases.</p>
+<p>While DNA barcoding focuses on individual specimens, metabarcoding provides a comprehensive assessment of entire biological communities.</p>
+</section>
+<section id="characteristics-of-an-ideal-genetic-marker" class="level2">
+<h2 class="anchored" data-anchor-id="characteristics-of-an-ideal-genetic-marker">Characteristics of an ideal genetic marker</h2>
+<p>No single genetic marker is suitable for every organism or research question. However, an effective marker generally possesses several important characteristics.</p>
+<p>An ideal marker should:</p>
+<ul>
+<li><p>be present in all target organisms</p></li>
+<li><p>contain conserved primer-binding regions</p></li>
+<li><p>include sufficient sequence variation to distinguish species</p></li>
+<li><p>be short enough to amplify degraded environmental DNA</p></li>
+<li><p>have comprehensive reference sequences available in public databases</p></li>
+</ul>
+<p>Balancing these characteristics is often the greatest challenge in marker selection.</p>
+</section>
+<section id="common-genetic-markers" class="level2">
+<h2 class="anchored" data-anchor-id="common-genetic-markers">Common genetic markers</h2>
+<p>Different taxonomic groups require different genetic markers because evolutionary rates vary among genes and organisms.</p>
+<section id="s-rrna" class="level3">
+<h3 class="anchored" data-anchor-id="s-rrna">12S rRNA</h3>
+<p>The mitochondrial 12S ribosomal RNA gene is one of the most widely used markers for vertebrate eDNA studies. Its conserved primer-binding regions and short variable regions make it particularly suitable for degraded environmental DNA.</p>
+<p>Typical applications include fish, amphibians, reptiles, birds, and mammals.</p>
+</section>
+<section id="cytochrome-c-oxidase-subunit-i-coi" class="level3">
+<h3 class="anchored" data-anchor-id="cytochrome-c-oxidase-subunit-i-coi">Cytochrome c oxidase subunit I (COI)</h3>
+<p>COI is the standard DNA barcode for animals and provides excellent species-level resolution. However, the full-length barcode is approximately 650 base pairs long, making it less suitable for fragmented environmental DNA. Consequently, many eDNA studies employ shorter COI mini-barcodes.</p>
+</section>
+<section id="s-rrna-1" class="level3">
+<h3 class="anchored" data-anchor-id="s-rrna-1">16S rRNA</h3>
+<p>The 16S ribosomal RNA gene is widely used to study bacteria and archaea. Conserved regions permit universal amplification, while variable regions enable taxonomic classification.</p>
+</section>
+<section id="s-rrna-2" class="level3">
+<h3 class="anchored" data-anchor-id="s-rrna-2">18S rRNA</h3>
+<p>The 18S ribosomal RNA gene is highly conserved and is commonly used to investigate diverse eukaryotic communities, particularly protists and other microscopic organisms.</p>
+</section>
+</section>
+<section id="primer-design" class="level2">
+<h2 class="anchored" data-anchor-id="primer-design">Primer design</h2>
+<p>PCR requires two short DNA molecules known as <strong>primers</strong>. A forward primer binds to one DNA strand. A reverse primer binds to the complementary strand. Together, they define the DNA region that will be amplified. Primers are typically 18–30 nucleotides long and are designed to bind to conserved regions that flank a variable DNA sequence. Because PCR can amplify only the DNA located between the primers, primer design determines which organisms are detected. Poorly designed primers may fail to amplify certain species, resulting in biased biodiversity estimates.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.ebi.ac.uk/training/online/courses/exploring-environmental-dna/wp-content/uploads/sites/277/2024/09/dna-barcode-1024x323.png" class="img-fluid figure-img"></p>
+<figcaption>How primers work</figcaption>
+</figure>
+</div>
+</section>
+<section id="universal-and-taxon-specific-primers" class="level2">
+<h2 class="anchored" data-anchor-id="universal-and-taxon-specific-primers">Universal and taxon-specific primers</h2>
+<p>Not all primers are designed for the same purpose. <strong>Universal primers</strong> amplify DNA from a wide range of organisms and are commonly used in biodiversity surveys. <strong>Taxon-specific primers</strong> target particular groups, such as fish, amphibians or mammals, while excluding unrelated organisms. The choice between universal and taxon-specific primers depends on the objectives of the study.</p>
+</section>
+<section id="marker-selection-in-edna-studies" class="level2">
+<h2 class="anchored" data-anchor-id="marker-selection-in-edna-studies">Marker selection in eDNA studies</h2>
+<p>Choosing an appropriate marker requires balancing several competing factors. Researchers must consider:</p>
+<ul>
+<li><p>the target taxonomic group</p></li>
+<li><p>expected DNA degradation</p></li>
+<li><p>required taxonomic resolution</p></li>
+<li><p>availability of reference sequences</p></li>
+<li><p>sequencing platform</p></li>
+<li><p>study objectives</p></li>
+</ul>
+<p>No marker is universally superior. The most appropriate marker depends on the biological question being addressed.</p>
+</section>
+<section id="from-marker-selection-to-pcr" class="level2">
+<h2 class="anchored" data-anchor-id="from-marker-selection-to-pcr">From marker selection to PCR</h2>
+<p>Marker selection begins by defining the target organisms or taxonomic group to be studied. An appropriate genetic marker is then chosen based on the objectives of the study and the characteristics of the target DNA. PCR primers are designed to bind to conserved regions flanking the marker, allowing the intervening variable region to be amplified. The amplified DNA is subsequently sequenced, and the resulting sequences are compared with reference databases to identify the species present in the environmental sample.</p>
+</section>
+<section id="connecting-the-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-the-concepts">Connecting the concepts</h2>
+<p>Genetic markers are short regions of DNA selected because they contain both conserved and variable sequences. Conserved regions provide reliable binding sites for PCR primers, while the intervening variable region contains the genetic differences required for species identification. Marker selection therefore determines which organisms can be detected and how accurately they can be identified.</p>
+</section>
+<section id="key-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="key-concepts">Key concepts</h2>
+<p>At the end of this chapter, the most important ideas are:</p>
+<ul>
+<li><p>Genetic markers are short DNA regions used for species identification.</p></li>
+<li><p>An ideal marker combines conserved primer-binding sites with variable internal sequences.</p></li>
+<li><p>Different taxonomic groups require different genetic markers.</p></li>
+<li><p>PCR primers determine which DNA regions are amplified.</p></li>
+<li><p>Marker choice directly influences detection success and taxonomic resolution.</p></li>
+</ul>
 
 
 </section>
@@ -734,10 +840,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./chapter-4.html" class="pagination-link" aria-label="Mitochondrial DNA">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Mitochondrial DNA</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-1.html" class="pagination-link" aria-label="The molecular foundation of environmental DNA">
-        <span class="nav-page-text"><span class="chapter-title">The molecular foundation of environmental DNA</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-6.html" class="pagination-link" aria-label="DNA extraction and Polymerase Chain Reaction (PCR)">
+        <span class="nav-page-text"><span class="chapter-title">DNA extraction and Polymerase Chain Reaction (PCR)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

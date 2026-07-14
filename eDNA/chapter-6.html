@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Wanda Bodnar">
 
-<title>Environmental DNA</title>
+<title>DNA extraction and Polymerase Chain Reaction (PCR) – Environmental DNA</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter-1.html" rel="next">
+<link href="./chapter-7.html" rel="next">
+<link href="./chapter-5.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -253,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Content</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-6.html"><span class="chapter-title">DNA extraction and Polymerase Chain Reaction (PCR)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -283,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Content</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Content</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -313,7 +313,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">DNA extraction and Polymerase Chain Reaction (PCR)</span></a>
+  <a href="./chapter-6.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">DNA extraction and Polymerase Chain Reaction (PCR)</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -341,7 +341,35 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#content" id="toc-content" class="nav-link active" data-scroll-target="#content">Content</a></li>
+  <li><a href="#dna-extraction" id="toc-dna-extraction" class="nav-link active" data-scroll-target="#dna-extraction">DNA extraction</a></li>
+  <li><a href="#stages-of-dna-extraction" id="toc-stages-of-dna-extraction" class="nav-link" data-scroll-target="#stages-of-dna-extraction">Stages of DNA extraction</a>
+  <ul class="collapse">
+  <li><a href="#cell-lysis" id="toc-cell-lysis" class="nav-link" data-scroll-target="#cell-lysis">Cell lysis</a></li>
+  <li><a href="#removal-of-contaminants" id="toc-removal-of-contaminants" class="nav-link" data-scroll-target="#removal-of-contaminants">Removal of contaminants</a></li>
+  <li><a href="#dna-purification" id="toc-dna-purification" class="nav-link" data-scroll-target="#dna-purification">DNA purification</a></li>
+  <li><a href="#dna-elution" id="toc-dna-elution" class="nav-link" data-scroll-target="#dna-elution">DNA elution</a></li>
+  </ul></li>
+  <li><a href="#polymerase-chain-reaction-pcr" id="toc-polymerase-chain-reaction-pcr" class="nav-link" data-scroll-target="#polymerase-chain-reaction-pcr">Polymerase Chain Reaction (PCR)</a></li>
+  <li><a href="#components-of-pcr" id="toc-components-of-pcr" class="nav-link" data-scroll-target="#components-of-pcr">Components of PCR</a>
+  <ul class="collapse">
+  <li><a href="#template-dna" id="toc-template-dna" class="nav-link" data-scroll-target="#template-dna">Template DNA</a></li>
+  <li><a href="#primers" id="toc-primers" class="nav-link" data-scroll-target="#primers">Primers</a></li>
+  <li><a href="#dna-polymerase" id="toc-dna-polymerase" class="nav-link" data-scroll-target="#dna-polymerase">DNA polymerase</a></li>
+  <li><a href="#nucleotides-dntps" id="toc-nucleotides-dntps" class="nav-link" data-scroll-target="#nucleotides-dntps">Nucleotides (dNTPs)</a></li>
+  <li><a href="#buffer-and-magnesium-ions" id="toc-buffer-and-magnesium-ions" class="nav-link" data-scroll-target="#buffer-and-magnesium-ions">Buffer and magnesium ions</a></li>
+  </ul></li>
+  <li><a href="#the-pcr-cycle" id="toc-the-pcr-cycle" class="nav-link" data-scroll-target="#the-pcr-cycle">The PCR cycle</a>
+  <ul class="collapse">
+  <li><a href="#denaturation" id="toc-denaturation" class="nav-link" data-scroll-target="#denaturation">Denaturation</a></li>
+  <li><a href="#annealing" id="toc-annealing" class="nav-link" data-scroll-target="#annealing">Annealing</a></li>
+  <li><a href="#extension" id="toc-extension" class="nav-link" data-scroll-target="#extension">Extension</a></li>
+  </ul></li>
+  <li><a href="#exponential-amplification" id="toc-exponential-amplification" class="nav-link" data-scroll-target="#exponential-amplification">Exponential amplification</a></li>
+  <li><a href="#pcr-inhibition" id="toc-pcr-inhibition" class="nav-link" data-scroll-target="#pcr-inhibition">PCR inhibition</a></li>
+  <li><a href="#preventing-contamination" id="toc-preventing-contamination" class="nav-link" data-scroll-target="#preventing-contamination">Preventing contamination</a></li>
+  <li><a href="#from-environmental-sample-to-pcr-product" id="toc-from-environmental-sample-to-pcr-product" class="nav-link" data-scroll-target="#from-environmental-sample-to-pcr-product">From environmental sample to PCR product</a></li>
+  <li><a href="#connecting-the-concepts" id="toc-connecting-the-concepts" class="nav-link" data-scroll-target="#connecting-the-concepts">Connecting the concepts</a></li>
+  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key concepts</a></li>
   </ul>
 </nav>
     </div>
@@ -351,19 +379,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Environmental DNA</h1>
+<h1 class="title"><span class="chapter-title">DNA extraction and Polymerase Chain Reaction (PCR)</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Wanda Bodnar </p>
-          </div>
-  </div>
     
   
     
@@ -374,8 +396,144 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="content" class="level1">
-<h1>Content</h1>
+<p>Previous chapters introduced the principles of environmental DNA (eDNA), explained why mitochondrial DNA is widely used for species detection, and described how genetic markers and primers are selected. However, selecting the appropriate marker is only the beginning of the analytical process.</p>
+<p>Environmental samples typically contain extremely small quantities of degraded DNA mixed with sediments, microorganisms, organic matter and substances that can interfere with molecular analyses. Before species can be identified, DNA must first be isolated from the sample and then amplified to produce sufficient copies for sequencing.</p>
+<p>DNA extraction and polymerase chain reaction (PCR) form the foundation of every eDNA workflow. The quality of the extracted DNA and the efficiency of PCR directly influence species detection, making these two laboratory procedures among the most critical steps in environmental DNA analysis.</p>
+<section id="dna-extraction" class="level2">
+<h2 class="anchored" data-anchor-id="dna-extraction">DNA extraction</h2>
+<p>DNA extraction is the process of isolating DNA from environmental material while removing substances that may interfere with downstream analyses. In eDNA studies, DNA may be extracted from water filters, soil, sediment, biofilms or air filters. Regardless of sample type, the objective remains the same: to recover as much target DNA as possible while minimising contamination and DNA loss. Because environmental DNA is often present in extremely low concentrations, efficient extraction is essential for successful species detection.</p>
+</section>
+<section id="stages-of-dna-extraction" class="level2">
+<h2 class="anchored" data-anchor-id="stages-of-dna-extraction">Stages of DNA extraction</h2>
+<p>Although extraction protocols vary, they generally involve four principal steps.</p>
+<section id="cell-lysis" class="level3">
+<h3 class="anchored" data-anchor-id="cell-lysis">Cell lysis</h3>
+<p>The first stage involves breaking open cells and mitochondria to release DNA. This is achieved using combinations of detergents, enzymes and mechanical disruption.</p>
+</section>
+<section id="removal-of-contaminants" class="level3">
+<h3 class="anchored" data-anchor-id="removal-of-contaminants">Removal of contaminants</h3>
+<p>Proteins, lipids and other cellular components are removed using chemical reagents or purification columns.</p>
+</section>
+<section id="dna-purification" class="level3">
+<h3 class="anchored" data-anchor-id="dna-purification">DNA purification</h3>
+<p>The released DNA is separated from inhibitory compounds such as humic acids, which are common in soil and sediment samples.</p>
+</section>
+<section id="dna-elution" class="level3">
+<h3 class="anchored" data-anchor-id="dna-elution">DNA elution</h3>
+<p>Finally, purified DNA is dissolved in a suitable buffer or sterile water, producing a DNA extract ready for molecular analysis.</p>
+</section>
+</section>
+<section id="polymerase-chain-reaction-pcr" class="level2">
+<h2 class="anchored" data-anchor-id="polymerase-chain-reaction-pcr">Polymerase Chain Reaction (PCR)</h2>
+<p>Environmental DNA is typically present in quantities far below the detection limits of most analytical methods. PCR overcomes this limitation by producing millions of copies of a selected DNA fragment. Rather than copying an entire genome, PCR amplifies only the region located between two primers. Because primers bind to conserved sequences surrounding a genetic marker, only the target region is copied. PCR therefore converts minute quantities of environmental DNA into sufficient material for sequencing and species identification.</p>
+</section>
+<section id="components-of-pcr" class="level2">
+<h2 class="anchored" data-anchor-id="components-of-pcr">Components of PCR</h2>
+<p>A PCR reaction requires several essential components.</p>
+<section id="template-dna" class="level3">
+<h3 class="anchored" data-anchor-id="template-dna">Template DNA</h3>
+<p>The extracted environmental DNA containing the target sequence.</p>
+</section>
+<section id="primers" class="level3">
+<h3 class="anchored" data-anchor-id="primers">Primers</h3>
+<p>Forward and reverse primers define the DNA region to be amplified.</p>
+</section>
+<section id="dna-polymerase" class="level3">
+<h3 class="anchored" data-anchor-id="dna-polymerase">DNA polymerase</h3>
+<p>A heat-stable enzyme, commonly <strong>Taq polymerase</strong>, synthesises new DNA strands.</p>
+</section>
+<section id="nucleotides-dntps" class="level3">
+<h3 class="anchored" data-anchor-id="nucleotides-dntps">Nucleotides (dNTPs)</h3>
+<p>The building blocks required to synthesise new DNA molecules.</p>
+</section>
+<section id="buffer-and-magnesium-ions" class="level3">
+<h3 class="anchored" data-anchor-id="buffer-and-magnesium-ions">Buffer and magnesium ions</h3>
+<p>These provide the optimal chemical conditions for DNA polymerase activity.</p>
+</section>
+</section>
+<section id="the-pcr-cycle" class="level2">
+<h2 class="anchored" data-anchor-id="the-pcr-cycle">The PCR cycle</h2>
+<p>PCR consists of repeated cycles, each containing three stages.</p>
+<section id="denaturation" class="level3">
+<h3 class="anchored" data-anchor-id="denaturation">Denaturation</h3>
+<p>The reaction is heated to approximately 94–95°C, causing the two DNA strands to separate.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://cdn.bento.bio/app/uploads/protocols/pcr-intro/pcr-denaturing-animation.gif" class="img-fluid figure-img"></p>
+<figcaption>Denaturation</figcaption>
+</figure>
+</div>
+</section>
+<section id="annealing" class="level3">
+<h3 class="anchored" data-anchor-id="annealing">Annealing</h3>
+<p>The temperature is lowered to allow primers to bind to complementary DNA sequences.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://cdn.bento.bio/app/uploads/protocols/pcr-intro/pcr-annealing-animation.gif" class="img-fluid figure-img"></p>
+<figcaption>Annealing</figcaption>
+</figure>
+</div>
+</section>
+<section id="extension" class="level3">
+<h3 class="anchored" data-anchor-id="extension">Extension</h3>
+<p>The temperature is increased to approximately 72°C, enabling DNA polymerase to synthesise new DNA strands.</p>
+<p>Each cycle approximately doubles the amount of target DNA.</p>
+<p>After 30–40 cycles, millions to billions of copies of the original DNA fragment may be produced.</p>
+</section>
+</section>
+<section id="exponential-amplification" class="level2">
+<h2 class="anchored" data-anchor-id="exponential-amplification">Exponential amplification</h2>
+<p>PCR is often described as an exponential amplification process.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.genome.gov/sites/default/files/media/images/tg/PCR.jpg" class="img-fluid figure-img"></p>
+<figcaption>Amplification</figcaption>
+</figure>
+</div>
+</section>
+<section id="pcr-inhibition" class="level2">
+<h2 class="anchored" data-anchor-id="pcr-inhibition">PCR inhibition</h2>
+<p>Environmental samples frequently contain compounds that interfere with PCR. Common inhibitors include:</p>
+<ul>
+<li><p>humic acids</p></li>
+<li><p>tannins</p></li>
+<li><p>heavy metals</p></li>
+<li><p>polysaccharides</p></li>
+<li><p>phenolic compounds</p></li>
+</ul>
+<p>These substances reduce DNA polymerase activity or prevent primers from binding efficiently, leading to weak amplification or false-negative results. Consequently, removing inhibitors during DNA extraction is a critical component of eDNA analysis.</p>
+</section>
+<section id="preventing-contamination" class="level2">
+<h2 class="anchored" data-anchor-id="preventing-contamination">Preventing contamination</h2>
+<p>Because PCR is capable of amplifying even a single DNA molecule, contamination represents one of the greatest challenges in molecular laboratories. Potential contamination sources include:</p>
+<ul>
+<li><p>previous PCR products</p></li>
+<li><p>laboratory equipment</p></li>
+<li><p>sampling equipment</p></li>
+<li><p>airborne DNA</p></li>
+<li><p>operator handling</p></li>
+</ul>
+<p>To minimise contamination, laboratories employ dedicated work areas, sterile consumables, negative controls and strict quality assurance procedures.</p>
+</section>
+<section id="from-environmental-sample-to-pcr-product" class="level2">
+<h2 class="anchored" data-anchor-id="from-environmental-sample-to-pcr-product">From environmental sample to PCR product</h2>
+<p>Environmental samples are collected and filtered to concentrate DNA. DNA is then extracted by lysing cells, removing contaminants and purifying the genetic material. The purified DNA serves as the template for PCR, where primers bind to conserved regions surrounding the target marker. Through repeated cycles of denaturation, annealing and extension, DNA polymerase amplifies the target sequence millions of times. The amplified DNA is then ready for sequencing and subsequent species identification.</p>
+</section>
+<section id="connecting-the-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-the-concepts">Connecting the concepts</h2>
+<p>DNA extraction isolates genetic material from complex environmental samples, while PCR selectively amplifies short target regions suitable for sequencing. Together, these techniques transform minute quantities of degraded environmental DNA into sufficient genetic material for accurate species identification.</p>
+</section>
+<section id="key-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="key-concepts">Key concepts</h2>
+<p>At the end of this chapter, the most important ideas are:</p>
+<ul>
+<li><p>DNA extraction isolates DNA while removing contaminants and inhibitors.</p></li>
+<li><p>Environmental DNA is often present in low concentrations and is highly fragmented.</p></li>
+<li><p>PCR selectively amplifies DNA located between two primers.</p></li>
+<li><p>PCR consists of denaturation, annealing and extension.</p></li>
+<li><p>PCR amplification is exponential during the early stages of the reaction.</p></li>
+<li><p>Contamination control is essential for reliable eDNA analyses.</p></li>
+</ul>
 
 
 </section>
@@ -734,10 +892,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./chapter-5.html" class="pagination-link" aria-label="Genetic markers and primer design">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Genetic markers and primer design</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-1.html" class="pagination-link" aria-label="The molecular foundation of environmental DNA">
-        <span class="nav-page-text"><span class="chapter-title">The molecular foundation of environmental DNA</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-7.html" class="pagination-link" aria-label="DNA sequencing technologies">
+        <span class="nav-page-text"><span class="chapter-title">DNA sequencing technologies</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Wanda Bodnar">
 
-<title>Environmental DNA</title>
+<title>Bioinformatics and taxonomic assignment – Environmental DNA</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter-1.html" rel="next">
+<link href="./timeline.html" rel="next">
+<link href="./chapter-7.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -253,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Content</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-8.html"><span class="chapter-title">Bioinformatics and taxonomic assignment</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -283,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Content</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Content</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -323,7 +323,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bioinformatics and taxonomic assignment</span></a>
+  <a href="./chapter-8.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Bioinformatics and taxonomic assignment</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -341,7 +341,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#content" id="toc-content" class="nav-link active" data-scroll-target="#content">Content</a></li>
+  <li><a href="#what-is-bioinformatics" id="toc-what-is-bioinformatics" class="nav-link active" data-scroll-target="#what-is-bioinformatics">What is bioinformatics?</a></li>
+  <li><a href="#the-bioinformatic-workflow" id="toc-the-bioinformatic-workflow" class="nav-link" data-scroll-target="#the-bioinformatic-workflow">The bioinformatic workflow</a></li>
+  <li><a href="#quality-filtering" id="toc-quality-filtering" class="nav-link" data-scroll-target="#quality-filtering">Quality filtering</a></li>
+  <li><a href="#removing-chimeras" id="toc-removing-chimeras" class="nav-link" data-scroll-target="#removing-chimeras">Removing chimeras</a></li>
+  <li><a href="#otus-and-asvs" id="toc-otus-and-asvs" class="nav-link" data-scroll-target="#otus-and-asvs">OTUs and ASVs</a></li>
+  <li><a href="#taxonomic-assignment" id="toc-taxonomic-assignment" class="nav-link" data-scroll-target="#taxonomic-assignment">Taxonomic assignment</a></li>
+  <li><a href="#reference-databases" id="toc-reference-databases" class="nav-link" data-scroll-target="#reference-databases">Reference databases</a>
+  <ul class="collapse">
+  <li><a href="#genbank" id="toc-genbank" class="nav-link" data-scroll-target="#genbank">GenBank</a></li>
+  <li><a href="#bold-barcode-of-life-data-system" id="toc-bold-barcode-of-life-data-system" class="nav-link" data-scroll-target="#bold-barcode-of-life-data-system">BOLD (Barcode of Life Data System)</a></li>
+  </ul></li>
+  <li><a href="#sources-of-error" id="toc-sources-of-error" class="nav-link" data-scroll-target="#sources-of-error">Sources of error</a></li>
+  <li><a href="#from-raw-reads-to-species-list" id="toc-from-raw-reads-to-species-list" class="nav-link" data-scroll-target="#from-raw-reads-to-species-list">From raw reads to species list</a></li>
+  <li><a href="#connecting-the-concepts" id="toc-connecting-the-concepts" class="nav-link" data-scroll-target="#connecting-the-concepts">Connecting the concepts</a></li>
+  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key concepts</a></li>
   </ul>
 </nav>
     </div>
@@ -351,19 +365,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Environmental DNA</h1>
+<h1 class="title"><span class="chapter-title">Bioinformatics and taxonomic assignment</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Wanda Bodnar </p>
-          </div>
-  </div>
     
   
     
@@ -374,8 +382,92 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="content" class="level1">
-<h1>Content</h1>
+<p>DNA sequencing generates millions of short DNA sequences, known as reads, from every environmental sample. However, these raw sequencing data do not immediately reveal which species are present. Before ecological interpretation is possible, the reads must undergo a series of computational analyses to remove sequencing errors, eliminate artefacts and assign each sequence to its most likely taxonomic origin.</p>
+<p>This process is known as <strong>bioinformatics</strong>. Bioinformatic analysis transforms raw sequencing data into species lists, estimates of biodiversity and community composition, making it an essential component of every environmental DNA (eDNA) study.</p>
+<section id="what-is-bioinformatics" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-bioinformatics">What is bioinformatics?</h2>
+<p>Bioinformatics is the application of computational methods to store, process and analyse biological data.</p>
+<p>In eDNA studies, bioinformatics converts millions of raw DNA sequences into meaningful biological information. The objective is to determine which organisms contributed DNA to the environmental sample while minimising errors introduced during PCR and sequencing.</p>
+<p>Without bioinformatics, sequencing data would simply consist of millions of strings of nucleotide letters with no biological interpretation.</p>
+</section>
+<section id="the-bioinformatic-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-bioinformatic-workflow">The bioinformatic workflow</h2>
+<p>Although individual pipelines differ, most eDNA analyses follow a similar sequence of steps. First, sequencing reads are imported into specialised software. Low-quality reads and sequencing artefacts are removed. Primer and adapter sequences are trimmed. Identical or highly similar sequences are grouped. Representative sequences are compared with reference databases. Finally, taxonomic identities are assigned and summarised for ecological analysis. Each stage improves the quality and reliability of the final dataset.</p>
+</section>
+<section id="quality-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="quality-filtering">Quality filtering</h2>
+<p>Sequencing instruments occasionally produce errors, including incorrect nucleotides, incomplete reads or low-confidence base calls. Quality filtering removes these unreliable sequences before further analysis.</p>
+<p>Typical filtering procedures include:</p>
+<ul>
+<li><p>removing short reads</p></li>
+<li><p>excluding low-quality sequences</p></li>
+<li><p>trimming poor-quality bases</p></li>
+<li><p>discarding reads containing ambiguous nucleotides (N)</p></li>
+</ul>
+<p>Quality filtering reduces false species detections and improves confidence in downstream analyses.</p>
+</section>
+<section id="removing-chimeras" class="level2">
+<h2 class="anchored" data-anchor-id="removing-chimeras">Removing chimeras</h2>
+<p>PCR occasionally produces artificial DNA sequences known as <strong>chimeras</strong>.</p>
+<p>A chimera is formed when fragments from two different DNA molecules are mistakenly joined together during amplification.</p>
+<p>Because chimeras do not represent real biological sequences, they must be detected and removed before taxonomic assignment.</p>
+<p>Modern bioinformatic software identifies chimeras by comparing sequences with more abundant parental sequences.</p>
+</section>
+<section id="otus-and-asvs" class="level2">
+<h2 class="anchored" data-anchor-id="otus-and-asvs">OTUs and ASVs</h2>
+<p>Once poor-quality sequences have been removed, similar sequences are grouped to simplify analysis. Historically, sequences sharing a predefined level of similarity (commonly 97%) were clustered into <strong>Operational Taxonomic Units (OTUs)</strong>. More recently, many studies have adopted <strong>Amplicon Sequence Variants (ASVs)</strong>. Unlike OTUs, ASVs distinguish sequences differing by as little as a single nucleotide, providing higher taxonomic resolution and greater reproducibility between studies. Today, ASVs are increasingly regarded as the preferred approach for analysing eDNA metabarcoding data.</p>
+</section>
+<section id="taxonomic-assignment" class="level2">
+<h2 class="anchored" data-anchor-id="taxonomic-assignment">Taxonomic assignment</h2>
+<p>After quality filtering, each sequence is compared with reference databases containing DNA sequences from known organisms. The closest matching reference sequence is used to assign a taxonomic identity. Depending on sequence quality and database completeness, identification may be possible at different taxonomic levels, including species, genus, family, and order. Not every sequence can be assigned to species level. Some sequences may represent organisms absent from current reference databases.</p>
+</section>
+<section id="reference-databases" class="level2">
+<h2 class="anchored" data-anchor-id="reference-databases">Reference databases</h2>
+<p>Accurate species identification depends on comprehensive and reliable reference databases.</p>
+<p>Several databases are commonly used in eDNA studies.</p>
+<section id="genbank" class="level3">
+<h3 class="anchored" data-anchor-id="genbank">GenBank</h3>
+<p>GenBank is the world’s largest public nucleotide sequence database and contains DNA sequences from a wide variety of organisms.</p>
+</section>
+<section id="bold-barcode-of-life-data-system" class="level3">
+<h3 class="anchored" data-anchor-id="bold-barcode-of-life-data-system">BOLD (Barcode of Life Data System)</h3>
+<p>BOLD specialises in DNA barcode sequences and is widely used for animal identification, particularly using the COI gene.</p>
+</section>
+</section>
+<section id="sources-of-error" class="level2">
+<h2 class="anchored" data-anchor-id="sources-of-error">Sources of error</h2>
+<p>Even after careful laboratory procedures, bioinformatic analyses remain susceptible to error.</p>
+<p>Potential sources include:</p>
+<ul>
+<li><p>sequencing errors</p></li>
+<li><p>PCR artefacts</p></li>
+<li><p>contamination</p></li>
+<li><p>incomplete reference databases</p></li>
+<li><p>incorrect database annotations</p></li>
+<li><p>closely related species sharing similar DNA sequences</p></li>
+</ul>
+<p>For these reasons, bioinformatic results should always be interpreted alongside appropriate laboratory controls and ecological knowledge.</p>
+</section>
+<section id="from-raw-reads-to-species-list" class="level2">
+<h2 class="anchored" data-anchor-id="from-raw-reads-to-species-list">From raw reads to species list</h2>
+<p>The bioinformatic workflow can be summarised as follows.</p>
+<p>Sequencing generates millions of DNA reads. Low-quality reads, sequencing errors and chimeras are removed through quality filtering. The remaining high-quality sequences are grouped into ASVs or OTUs and compared with reference databases. Based on the closest matches, taxonomic identities are assigned, producing a list of species detected in the environmental sample.</p>
+</section>
+<section id="connecting-the-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-the-concepts">Connecting the concepts</h2>
+<p>DNA sequencing produces millions of short reads, but these reads have little biological meaning until they are processed computationally. Bioinformatics filters sequencing errors, removes artefacts and compares DNA sequences with reference databases, transforming raw sequence data into reliable species identifications.</p>
+</section>
+<section id="key-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="key-concepts">Key concepts</h2>
+<p>At the end of this chapter, the most important ideas are:</p>
+<ul>
+<li><p>Bioinformatics converts raw sequencing reads into biological information.</p></li>
+<li><p>Quality filtering removes unreliable DNA sequences.</p></li>
+<li><p>Chimeras are artificial sequences produced during PCR.</p></li>
+<li><p>ASVs provide higher sequence resolution than traditional OTUs.</p></li>
+<li><p>Species identification depends on comparison with reference databases.</p></li>
+<li><p>Database quality strongly influences taxonomic accuracy.</p></li>
+</ul>
 
 
 </section>
@@ -734,10 +826,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./chapter-7.html" class="pagination-link" aria-label="DNA sequencing technologies">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">DNA sequencing technologies</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-1.html" class="pagination-link" aria-label="The molecular foundation of environmental DNA">
-        <span class="nav-page-text"><span class="chapter-title">The molecular foundation of environmental DNA</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./timeline.html" class="pagination-link" aria-label="eDNA timeline overview">
+        <span class="nav-page-text"><span class="chapter-title">eDNA timeline overview</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
