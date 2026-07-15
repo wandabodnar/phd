@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Environmental DNA",
+    "title": "A very short introduction to environmental DNA",
     "section": "",
     "text": "Content",
     "crumbs": [
@@ -114,7 +114,7 @@
     "href": "chapter-1.html#key-concepts",
     "title": "The molecular foundation of environmental DNA",
     "section": "Key concepts",
-    "text": "Key concepts\n\nDNA is the universal hereditary material of almost all living organisms.\nThe genome represents all genetic information within an organism.\nChromosomes package and organise DNA.\nGenes are functional regions of DNA.\nDNA sequence differences allow species to be distinguished.\nEnvironmental DNA analysis identifies organisms by analysing short diagnostic DNA sequences rather than whole genomes.\n\n\n\n\n\n\nThe relationship between genes, DNA and chromosomes",
+    "text": "Key concepts\n\nDNA is the universal hereditary material of almost all living organisms.\nThe genome represents all genetic information within an organism.\nChromosomes package and organise DNA.\nGenes are functional regions of DNA.\nDNA sequence differences allow species to be distinguished.\nEnvironmental DNA analysis identifies organisms by analysing short diagnostic DNA sequences rather than whole genomes.\n\n\n\n\nThe relationship between genes, DNA and chromosomes",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>The molecular foundation of environmental DNA</span>"
     ]
@@ -264,7 +264,7 @@
     "href": "chapter-3.html#the-genetic-code",
     "title": "DNA structure and function",
     "section": "The genetic code",
-    "text": "The genetic code\nThe sequence of nucleotides in DNA contains the instructions needed to build proteins. However, proteins are composed of amino acids rather than nucleotides, so this genetic information must first be translated into a different molecular language.\nThe first step is transcription, in which the DNA sequence is copied into messenger RNA (mRNA). The mRNA molecule carries the genetic instructions from the nucleus to ribosomes, where proteins are synthesised. During translation, the mRNA sequence is read according to a set of rules known as the genetic code.\nThe genetic code is read in groups of three nucleotides, called codons. Each codon specifies either one amino acid or a signal to begin or end protein synthesis. For example, the codon ATG (or AUG in mRNA) encodes the amino acid methionine and usually serves as the start codon, whereas TAA, TAG and TGA function as stop codons.\nBecause each codon contains three nucleotide positions and each position can contain one of four bases, there are 4 × 4 × 4 = 64 possible codons. Of these, 61 encode the 20 standard amino acids, while three function as stop signals. Since several codons specify the same amino acid, the genetic code is described as degenerate, or redundant.\nAlthough the genetic code explains how DNA directs protein synthesis, most eDNA studies do not analyse proteins. Instead, they examine the DNA sequence itself. As DNA sequences accumulate mutations over evolutionary time, they become increasingly different among species, providing the sequence variation required for species identification.\n\n\n\nGenetic code",
+    "text": "The genetic code\nThe sequence of nucleotides in DNA contains the instructions needed to build proteins. However, proteins are composed of amino acids rather than nucleotides, so this genetic information must first be translated into a different molecular language.\nThe first step is transcription, in which the DNA sequence is copied into messenger RNA (mRNA). The mRNA molecule carries the genetic instructions from the nucleus to ribosomes, where proteins are synthesised. During translation, the mRNA sequence is read according to a set of rules known as the genetic code.\nThe genetic code is read in groups of three nucleotides, called codons. Each codon specifies either one amino acid or a signal to begin or end protein synthesis. For example, the codon ATG (or AUG in mRNA) encodes the amino acid methionine and usually serves as the start codon, whereas TAA, TAG and TGA function as stop codons.\nBecause each codon contains three nucleotide positions and each position can contain one of four bases, there are 4 × 4 × 4 = 64 possible codons. Of these, 61 encode the 20 standard amino acids, while three function as stop signals. Since several codons specify the same amino acid, the genetic code is described as degenerate, or redundant.\nAlthough the genetic code explains how DNA directs protein synthesis, most eDNA studies do not analyse proteins. Instead, they examine the DNA sequence itself. As DNA sequences accumulate mutations over evolutionary time, they become increasingly different among species, providing the sequence variation required for species identification.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>DNA structure and function</span>"
     ]
@@ -820,13 +820,223 @@
     ]
   },
   {
+    "objectID": "chapter-9.html",
+    "href": "chapter-9.html",
+    "title": "Interpreting environmental DNA data",
+    "section": "",
+    "text": "What does eDNA detect?\nAfter bioinformatic analysis, researchers obtain a list of species detected in each environmental sample. Although this information appears straightforward, interpreting eDNA results requires careful consideration of both biological and technical factors.\nThe detection of environmental DNA confirms that DNA from a species was present in the sampled environment, but it does not necessarily indicate the number of individuals, their precise location, or whether they are currently alive. DNA can be transported, diluted and degraded before sampling, and every stage of the eDNA workflow introduces uncertainty.\nUnderstanding what eDNA can and cannot tell us is essential for drawing reliable ecological conclusions and making informed management decisions.\nEnvironmental DNA analysis detects DNA molecules, not organisms themselves. When a species is identified from an environmental sample, the result indicates that DNA from that species was present in the sampled environment. The DNA may have originated from living individuals, recently deceased organisms, shed cells, faeces, mucus, gametes or other biological material. Consequently, eDNA provides evidence of species presence but does not directly observe the organism.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Interpreting environmental DNA data</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-9.html#presence-and-absence",
+    "href": "chapter-9.html#presence-and-absence",
+    "title": "Interpreting environmental DNA data",
+    "section": "Presence and absence",
+    "text": "Presence and absence\nThe simplest interpretation of eDNA data is whether a species has been detected. A positive detection indicates that DNA matching a particular species was recovered and identified. However, the absence of a detection does not necessarily mean that the species is absent. DNA concentrations may be extremely low, environmental conditions may accelerate DNA degradation, or laboratory and analytical processes may fail to recover or amplify the target DNA. For this reason, eDNA studies often use repeated sampling and statistical methods to estimate detection probability.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Interpreting environmental DNA data</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-9.html#can-edna-estimate-abundance",
+    "href": "chapter-9.html#can-edna-estimate-abundance",
+    "title": "Interpreting environmental DNA data",
+    "section": "Can eDNA estimate abundance?",
+    "text": "Can eDNA estimate abundance?\nOne of the most common questions in eDNA research is whether the amount of DNA reflects the abundance of a species. In some situations, higher eDNA concentrations are associated with greater numbers or biomass of organisms. However, this relationship is influenced by many additional factors, including:\n\nrates of DNA shedding\norganism size\nwater temperature\nmicrobial activity\nwater movement\nDNA degradation\n\nAs a result, eDNA concentration should generally be interpreted as an indicator of relative rather than absolute abundance.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Interpreting environmental DNA data</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-9.html#false-positives-and-false-negatives",
+    "href": "chapter-9.html#false-positives-and-false-negatives",
+    "title": "Interpreting environmental DNA data",
+    "section": "False positives and false negatives",
+    "text": "False positives and false negatives\nNo monitoring method is completely free from error. A false positive occurs when a species is reported even though it is not truly present. Possible causes include contamination, sequencing errors or incorrect taxonomic assignment. A false negative occurs when a species is present but is not detected. This may result from low DNA concentration, inefficient sampling, DNA degradation, PCR inhibition or insufficient sequencing depth. Understanding these errors is essential for interpreting eDNA results with confidence.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Interpreting environmental DNA data</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-9.html#factors-influencing-detection",
+    "href": "chapter-9.html#factors-influencing-detection",
+    "title": "Interpreting environmental DNA data",
+    "section": "Factors influencing detection",
+    "text": "Factors influencing detection\nSpecies detection depends on many interacting biological and environmental factors. These include:\n\norganism abundance\nDNA shedding rates\nenvironmental conditions\ntransport of DNA\ndegradation rates\nsampling strategy\nlaboratory procedures\nsequencing depth\nbioinformatic analysis\n\nBecause each stage influences the final result, careful study design is essential for obtaining reliable biodiversity data.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Interpreting environmental DNA data</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-9.html#detection-probability",
+    "href": "chapter-9.html#detection-probability",
+    "title": "Interpreting environmental DNA data",
+    "section": "Detection probability",
+    "text": "Detection probability\nEnvironmental DNA surveys rarely detect every species present. Instead, each species has a probability of detection, representing the likelihood that its DNA will be recovered and identified if the species is present. Detection probability generally increases with:\n\nlarger sample volumes\nmultiple field replicates\nefficient DNA extraction\nsuccessful PCR amplification\ngreater sequencing depth\n\nEstimating detection probability helps researchers account for imperfect detection when analysing biodiversity.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Interpreting environmental DNA data</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-9.html#from-species-lists-to-ecological-information",
+    "href": "chapter-9.html#from-species-lists-to-ecological-information",
+    "title": "Interpreting environmental DNA data",
+    "section": "From species lists to ecological information",
+    "text": "From species lists to ecological information\nOnce species have been identified, the data can be used to answer ecological questions. Researchers may:\n\ncompare biodiversity among sites\nmonitor changes over time\ndetect invasive species\nidentify threatened species\nassess ecosystem restoration\nevaluate conservation management\n\nThus, eDNA provides a powerful tool for understanding biological communities without directly observing every organism.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Interpreting environmental DNA data</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-9.html#connecting-the-concepts",
+    "href": "chapter-9.html#connecting-the-concepts",
+    "title": "Interpreting environmental DNA data",
+    "section": "Connecting the concepts",
+    "text": "Connecting the concepts\nEnvironmental DNA analysis produces species detections rather than direct observations of organisms. Interpreting these detections requires an understanding of DNA persistence, transport, laboratory methods and statistical uncertainty. When these factors are considered, eDNA provides valuable information for monitoring biodiversity and supporting ecological research.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Interpreting environmental DNA data</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-9.html#key-concepts",
+    "href": "chapter-9.html#key-concepts",
+    "title": "Interpreting environmental DNA data",
+    "section": "Key concepts",
+    "text": "Key concepts\nAt the end of this chapter, the most important ideas are:\n\neDNA detects DNA rather than organisms.\nPositive detections indicate the presence of species DNA in the sampled environment.\nNegative results do not always indicate species absence.\nDetection probability varies among species and environments.\nFalse positives and false negatives are important sources of uncertainty.\neDNA data support a wide range of ecological and conservation applications.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Interpreting environmental DNA data</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html",
+    "href": "chapter-10.html",
+    "title": "Applications of environmental DNA",
+    "section": "",
+    "text": "Biodiversity monitoring\nEnvironmental DNA (eDNA) has transformed the way scientists monitor biodiversity. By detecting DNA released into water, soil or air, researchers can identify organisms without capturing or directly observing them. This non-invasive approach has expanded the scope of ecological research and is now widely used in conservation, environmental management and biosecurity.\nThe versatility of eDNA means that it can be applied across a wide range of ecosystems and taxonomic groups. From monitoring endangered species to detecting invasive organisms and assessing ecosystem health, eDNA has become an indispensable tool in modern environmental science.\nThis chapter explores the principal applications of eDNA and highlights its growing role in research, conservation and environmental decision-making.\nOne of the most important applications of eDNA is the assessment of biodiversity. Environmental samples often contain DNA from many different organisms, allowing researchers to characterise entire biological communities from a single water, soil or sediment sample. Repeated sampling over time enables changes in species richness and community composition to be monitored with minimal disturbance to the environment.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications of environmental DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#monitoring-endangered-species",
+    "href": "chapter-10.html#monitoring-endangered-species",
+    "title": "Applications of environmental DNA",
+    "section": "Monitoring endangered species",
+    "text": "Monitoring endangered species\nDetecting rare or threatened species using conventional methods can be difficult because populations are often small, cryptic or widely dispersed. Environmental DNA increases the probability of detection by identifying genetic material released into the environment. This allows conservation practitioners to confirm the presence of endangered species without handling or disturbing individuals. Such information is valuable for population monitoring, habitat protection and conservation planning.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications of environmental DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#detecting-invasive-species",
+    "href": "chapter-10.html#detecting-invasive-species",
+    "title": "Applications of environmental DNA",
+    "section": "Detecting invasive species",
+    "text": "Detecting invasive species\nEarly detection is essential for controlling invasive species before they become established. Because eDNA can detect organisms at very low abundance, it often identifies invasive species before they are observed using traditional survey techniques. Rapid detection enables management agencies to implement control measures while populations remain small and more easily managed.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications of environmental DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#fisheries-management",
+    "href": "chapter-10.html#fisheries-management",
+    "title": "Applications of environmental DNA",
+    "section": "Fisheries management",
+    "text": "Fisheries management\nEnvironmental DNA is increasingly used to monitor fish communities in rivers, lakes and marine environments. Compared with conventional methods such as electrofishing or netting, eDNA surveys are often less invasive, require less field effort and can detect species that are difficult to capture. These data support fisheries management by monitoring species distributions, evaluating stocking programmes and assessing changes in fish communities over time.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications of environmental DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#ecosystem-health-assessment",
+    "href": "chapter-10.html#ecosystem-health-assessment",
+    "title": "Applications of environmental DNA",
+    "section": "Ecosystem health assessment",
+    "text": "Ecosystem health assessment\nThe composition of biological communities provides valuable information about ecosystem condition. Changes in species diversity or community structure detected through eDNA may indicate habitat degradation, pollution, climate change or ecological restoration. Consequently, eDNA is becoming an important component of environmental impact assessments and long-term ecological monitoring programmes.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications of environmental DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#marine-and-freshwater-monitoring",
+    "href": "chapter-10.html#marine-and-freshwater-monitoring",
+    "title": "Applications of environmental DNA",
+    "section": "Marine and freshwater monitoring",
+    "text": "Marine and freshwater monitoring\nEnvironmental DNA is widely applied in both marine and freshwater ecosystems. Typical applications include:\n\nmonitoring fish communities\ndetecting marine mammals\nsurveying amphibians\nassessing coral reef biodiversity\nmonitoring plankton communities\n\nBecause sampling usually requires only water collection, large areas can often be surveyed more efficiently than with conventional methods.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications of environmental DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#terrestrial-applications",
+    "href": "chapter-10.html#terrestrial-applications",
+    "title": "Applications of environmental DNA",
+    "section": "Terrestrial applications",
+    "text": "Terrestrial applications\nAlthough eDNA was first developed primarily for aquatic environments, it is increasingly used in terrestrial ecosystems. DNA can be recovered from soil, snow, leaf surfaces and even air, enabling researchers to detect plants, fungi, insects, mammals and birds. These emerging approaches continue to expand the range of questions that can be addressed using eDNA.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications of environmental DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#disease-and-pathogen-surveillance",
+    "href": "chapter-10.html#disease-and-pathogen-surveillance",
+    "title": "Applications of environmental DNA",
+    "section": "Disease and pathogen surveillance",
+    "text": "Disease and pathogen surveillance\nEnvironmental DNA and environmental RNA are increasingly used to monitor pathogens in natural and managed environments. Applications include detecting amphibian pathogens, monitoring agricultural pests, identifying disease-causing microorganisms and tracking pathogens in wastewater. These approaches support both ecosystem management and public health surveillance.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications of environmental DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#advantages-of-edna-applications",
+    "href": "chapter-10.html#advantages-of-edna-applications",
+    "title": "Applications of environmental DNA",
+    "section": "Advantages of eDNA applications",
+    "text": "Advantages of eDNA applications\nCompared with many traditional survey methods, eDNA offers several important advantages. It is:\n\nnon-invasive\nhighly sensitive\ncapable of detecting multiple species simultaneously\napplicable across a wide range of habitats\noften more cost-effective for large-scale monitoring\n\nThese advantages have contributed to the rapid adoption of eDNA in ecological research and environmental management.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications of environmental DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#recognising-the-limitations",
+    "href": "chapter-10.html#recognising-the-limitations",
+    "title": "Applications of environmental DNA",
+    "section": "Recognising the limitations",
+    "text": "Recognising the limitations\nDespite its versatility, eDNA should not be viewed as a replacement for all conventional survey methods. DNA persistence, environmental transport, incomplete reference databases and imperfect detection can influence results. Consequently, eDNA is often most effective when used alongside traditional ecological surveys. Combining multiple sources of evidence provides a more comprehensive understanding of biodiversity and ecosystem condition.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications of environmental DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#connecting-the-concepts",
+    "href": "chapter-10.html#connecting-the-concepts",
+    "title": "Applications of environmental DNA",
+    "section": "Connecting the concepts",
+    "text": "Connecting the concepts\nEnvironmental DNA has become a versatile tool for monitoring biodiversity, supporting conservation, detecting invasive species and assessing ecosystem health. Its ability to detect organisms non-invasively makes it valuable across aquatic and terrestrial environments, although careful interpretation remains essential.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications of environmental DNA</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#key-concepts",
+    "href": "chapter-10.html#key-concepts",
+    "title": "Applications of environmental DNA",
+    "section": "Key concepts",
+    "text": "Key concepts\nAt the end of this chapter, the most important ideas are:\n\neDNA supports biodiversity monitoring across diverse ecosystems.\nIt enables early detection of invasive species and monitoring of threatened species.\neDNA contributes to fisheries management, ecosystem assessment and conservation planning.\nNew applications continue to emerge in terrestrial ecology, pathogen surveillance and environmental management.\neDNA complements rather than completely replaces traditional survey methods.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications of environmental DNA</span>"
+    ]
+  },
+  {
     "objectID": "timeline.html",
     "href": "timeline.html",
     "title": "eDNA timeline overview",
     "section": "",
     "text": "1980s: Foundations of DNA fingerprinting and environmental DNA",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>eDNA timeline overview</span>"
     ]
   },
   {
@@ -836,7 +1046,7 @@
     "section": "",
     "text": "DNA fingerprinting established (Jeffreys et al. 1985)\n\nDiscovery of hypervariable minisatellite regions.\nFirst individual-specific DNA “barcode.”\nLaid the foundation for forensic genetics, paternity testing, and later molecular ecology.\n\n\n\n\nThe term “environmental DNA” introduced (Ogram et al. 1987)\n\nDeveloped methods to extract intracellular and extracellular DNA directly from sediments.\nIntroduced the concept of recovering DNA directly from environmental samples without isolating organisms.\n\nPCR enables DNA fingerprinting from tiny samples\n\nJeffreys et al. (1988): PCR amplification of minisatellites made DNA fingerprinting practical from very small samples.\nHoelzel et al. (1988): DNA fingerprinting applied to whale skin biopsies, demonstrating non-lethal genetic monitoring of wildlife.\n\n\nMajor breakthrough of the decade: DNA became a practical tool for identifying individuals, and environmental DNA was first recognised as a recoverable genetic resource.",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>eDNA timeline overview</span>"
     ]
   },
   {
@@ -846,7 +1056,7 @@
     "section": "1990s: From DNA fingerprinting to DNA barcodes and early environmental DNA applications",
     "text": "1990s: From DNA fingerprinting to DNA barcodes and early environmental DNA applications\n\n\nGiovannoni et al. 1990 analysed 16S ribosomal RNA (rRNA) gene sequences directly from a microbial community in the Sargasso Sea, providing one of the first culture-independent surveys of environmental microbial diversity.\nAmos et al. 1992 demonstrated that DNA recovered from naturally shed material, such as whale skin, could be used for genetic analysis.\nArnot et al. 1993 Introduced the concept of using distinctive genetic sequence patterns as biological identifiers, and the term “DNA barcode” was first used to describe molecular signatures capable of distinguishing biological samples.\nPaget et al. 1998 demonstrated that plant DNA could be recovered directly from soil, providing early evidence that environmental samples preserve genetic traces of larger organisms.\n\n\nMajor breakthrough of the decade: DNA analysis expanded from identifying individual organisms to characterising entire biological communities. Environmental sequencing revealed hidden microbial diversity, DNA barcoding introduced genetic identification frameworks, and early macrobial eDNA studies demonstrated that environmental samples could act as archives of biodiversity. Together, these advances established the foundations of modern eDNA metabarcoding, biodiversity assessment, and molecular ecology.",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>eDNA timeline overview</span>"
     ]
   },
   {
@@ -856,7 +1066,7 @@
     "section": "2000s: Environmental DNA becomes a tool for biodiversity reconstruction, pollution tracking, and species detection",
     "text": "2000s: Environmental DNA becomes a tool for biodiversity reconstruction, pollution tracking, and species detection\n\nDNA persistence and the ecological role of dissolved DNA (Matsui et al. 2001)\n\nDemonstrated that extracellular dissolved DNA (dDNA) can persist in aquatic environments, with DNA fragments of approximately 400 bp surviving for up to 7 days at 18°C.\nProvided early experimental evidence that environmental DNA is not immediately degraded after release into water, supporting its use as a molecular signal for species detection.\nHighlighted the natural occurrence of dissolved extracellular DNA, which enters ecosystems through cell death, shedding of tissues, and biological secretions.\nShowed that environmental DNA persistence is influenced by environmental factors including UV radiation, temperature, and nuclease activity.\nEstablished that dissolved DNA is not only genetic information but also an important ecological resource, providing microorganisms with carbon, nitrogen, and phosphorus.\nDemonstrated that microbes can utilise extracellular DNA through enzymatic degradation, recycling genetic material as nutrients.\n\nUV radiation identified as a major factor affecting DNA persistence (Ravanet et al. 2001)\n\nHighlighted UV exposure as an important abiotic factor influencing the persistence and detectability of environmental DNA.\nContributed to understanding why eDNA signals vary between habitats and why DNA preservation differs among ecosystems.\n\nFirst metagenetic analysis of soil eDNA (Willerslev et al. 2003)\n\nDemonstrated that DNA extracted from permafrost and sediment samples could reveal past biodiversity in the absence of visible fossils or macrofossils.\nRecovered ancient DNA sequences from Siberian permafrost cores dating from 400,000 to 10,000 years ago, including plant taxa and megafaunal species such as mammoth, bison, and horse.\nShowed that sedimentary DNA could reconstruct historical changes in ecosystem composition and biodiversity through time.\nEstablished environmental DNA as a powerful archive for studying past ecosystems and long-term ecological change.\n\nEnvironmental DNA as a resource for microorganisms (Chen and Dubnau 2004)\n\nExpanded understanding of the ecological functions of extracellular DNA by showing that bacteria can actively acquire environmental DNA.\nDemonstrated two major roles of environmental DNA for microorganisms:\n\nGenetic resource: DNA from related bacteria may provide templates for repairing damaged genetic material.\nNutritional resource: DNA can be degraded and used as a source of carbon, nitrogen, and phosphorus.\n\nHighlighted that extracellular DNA is an active component of microbial ecosystems rather than simply degraded biological material.\n\nFirst microbial and faecal eDNA detection in river water (Martellini et al. 2005)\n\nDeveloped a PCR-based method to detect and distinguish faecal contamination from human, bovine, ovine, and porcine sources in aquatic environments.\nUsed species-specific mitochondrial DNA markers to identify the origin of pollution in wastewater, agricultural runoff, and river samples.\nRepresented the first application of eukaryotic genetic material from water samples to trace animal-derived pollution sources.\nDemonstrated the potential of eDNA approaches for environmental monitoring, water quality assessment, and microbial source tracking.\n\neDNA enables detection of invasive and cryptic species (Ficetola et al. 2008)\n\nDeveloped one of the first widely recognised applications of eDNA for detecting a target species in freshwater ecosystems.\nUsed species-specific mitochondrial DNA primers to detect American bullfrog DNA in controlled experiments and natural wetlands.\nSuccessfully identified populations even when species densities were low and traditional surveys were ineffective.\nDemonstrated that eDNA could provide a sensitive, non-invasive method for monitoring invasive, rare, and difficult-to-detect species.\nHighlighted challenges associated with interpreting eDNA signals, including uncertainty over how long DNA remains detectable after an organism leaves an environment.\n\nDNA barcoding becomes integrated into ecology (Valentini et al. 2008)\n\nProvided an overview of DNA barcoding as a method for species identification using standardised genetic markers.\nDemonstrated the value of molecular identification tools for ecological studies, biodiversity surveys, and species monitoring.\nHelped connect traditional ecological research with emerging molecular approaches.\n\nNon-invasive genetics advances ecological monitoring (Beja-Pereira et al. 2009)\n\nReviewed the development of non-invasive genetic sampling approaches for wildlife studies.\nShowed how DNA obtained from naturally shed biological material could transform population monitoring and conservation genetics.\nHighlighted technological improvements that increased the feasibility of studying wildlife without capture or disturbance.\nProvided important methodological foundations for later vertebrate eDNA applications.\n\n\nMajor breakthrough of the decade: Environmental DNA transitioned from a concept describing DNA persistence in the environment into a practical ecological monitoring tool. During the 2000s, researchers demonstrated that DNA could be recovered from sediments, water, and naturally shed material to reconstruct past ecosystems, trace pollution sources, and detect rare or invasive species. Advances in PCR, DNA barcoding, and non-invasive genetics transformed eDNA from a theoretical possibility into a powerful method for biodiversity assessment and conservation biology.",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>eDNA timeline overview</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>eDNA timeline overview</span>"
     ]
   }
 ]

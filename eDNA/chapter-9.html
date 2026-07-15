@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DNA sequencing technologies – A very short introduction to environmental DNA</title>
+<title>Interpreting environmental DNA data – A very short introduction to environmental DNA</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter-8.html" rel="next">
-<link href="./chapter-6.html" rel="prev">
+<link href="./chapter-10.html" rel="next">
+<link href="./chapter-8.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -253,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-7.html"><span class="chapter-title">DNA sequencing technologies</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-9.html"><span class="chapter-title">Interpreting environmental DNA data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -318,7 +318,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-7.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">DNA sequencing technologies</span></a>
+  <a href="./chapter-7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">DNA sequencing technologies</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -328,7 +328,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Interpreting environmental DNA data</span></a>
+  <a href="./chapter-9.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Interpreting environmental DNA data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -351,16 +351,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-dna-sequencing" id="toc-what-is-dna-sequencing" class="nav-link active" data-scroll-target="#what-is-dna-sequencing">What is DNA sequencing?</a></li>
-  <li><a href="#first-generation-sequencing-sanger-sequencing" id="toc-first-generation-sequencing-sanger-sequencing" class="nav-link" data-scroll-target="#first-generation-sequencing-sanger-sequencing">First-generation sequencing: Sanger sequencing</a></li>
-  <li><a href="#second-generation-sequencing-next-generation-sequencing" id="toc-second-generation-sequencing-next-generation-sequencing" class="nav-link" data-scroll-target="#second-generation-sequencing-next-generation-sequencing">Second-generation sequencing (Next-generation sequencing)</a>
-  <ul class="collapse">
-  <li><a href="#illumina-sequencing" id="toc-illumina-sequencing" class="nav-link" data-scroll-target="#illumina-sequencing">Illumina sequencing</a></li>
-  </ul></li>
-  <li><a href="#third-generation-sequencing" id="toc-third-generation-sequencing" class="nav-link" data-scroll-target="#third-generation-sequencing">Third-generation sequencing</a></li>
-  <li><a href="#sequencing-reads" id="toc-sequencing-reads" class="nav-link" data-scroll-target="#sequencing-reads">Sequencing reads</a></li>
-  <li><a href="#choosing-a-sequencing-platform" id="toc-choosing-a-sequencing-platform" class="nav-link" data-scroll-target="#choosing-a-sequencing-platform">Choosing a sequencing platform</a></li>
-  <li><a href="#from-pcr-product-to-dna-sequence" id="toc-from-pcr-product-to-dna-sequence" class="nav-link" data-scroll-target="#from-pcr-product-to-dna-sequence">From PCR product to DNA sequence</a></li>
+  <li><a href="#what-does-edna-detect" id="toc-what-does-edna-detect" class="nav-link active" data-scroll-target="#what-does-edna-detect">What does eDNA detect?</a></li>
+  <li><a href="#presence-and-absence" id="toc-presence-and-absence" class="nav-link" data-scroll-target="#presence-and-absence">Presence and absence</a></li>
+  <li><a href="#can-edna-estimate-abundance" id="toc-can-edna-estimate-abundance" class="nav-link" data-scroll-target="#can-edna-estimate-abundance">Can eDNA estimate abundance?</a></li>
+  <li><a href="#false-positives-and-false-negatives" id="toc-false-positives-and-false-negatives" class="nav-link" data-scroll-target="#false-positives-and-false-negatives">False positives and false negatives</a></li>
+  <li><a href="#factors-influencing-detection" id="toc-factors-influencing-detection" class="nav-link" data-scroll-target="#factors-influencing-detection">Factors influencing detection</a></li>
+  <li><a href="#detection-probability" id="toc-detection-probability" class="nav-link" data-scroll-target="#detection-probability">Detection probability</a></li>
+  <li><a href="#from-species-lists-to-ecological-information" id="toc-from-species-lists-to-ecological-information" class="nav-link" data-scroll-target="#from-species-lists-to-ecological-information">From species lists to ecological information</a></li>
   <li><a href="#connecting-the-concepts" id="toc-connecting-the-concepts" class="nav-link" data-scroll-target="#connecting-the-concepts">Connecting the concepts</a></li>
   <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key concepts</a></li>
   </ul>
@@ -372,7 +369,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">DNA sequencing technologies</span></h1>
+<h1 class="title"><span class="chapter-title">Interpreting environmental DNA data</span></h1>
 </div>
 
 
@@ -389,73 +386,89 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Polymerase chain reaction (PCR) produces millions of copies of a selected DNA fragment, but amplification alone does not reveal the identity of the organisms present in an environmental sample. To identify species, the exact order of nucleotides within each amplified DNA fragment must be determined.</p>
-<p>This process, known as <strong>DNA sequencing</strong>, converts DNA molecules into digital sequence data that can be compared with reference databases. Advances in sequencing technology have transformed environmental DNA research, allowing millions of DNA fragments from hundreds or thousands of species to be analysed simultaneously.</p>
-<p>This chapter introduces the principles of DNA sequencing and describes the technologies that have made modern eDNA metabarcoding possible.</p>
-<section id="what-is-dna-sequencing" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-dna-sequencing">What is DNA sequencing?</h2>
-<p>DNA sequencing is the process of determining the precise order of nucleotides within a DNA molecule. For example, sequencing may produce the following DNA fragment:</p>
-<p><strong>ATGCGTTACCGATG…</strong></p>
-<p>The sequence itself is the biological information used for species identification. Once obtained, it can be compared with reference databases to determine the organism from which it originated. Unlike PCR, which simply copies DNA, sequencing reveals its nucleotide composition.</p>
+<p>After bioinformatic analysis, researchers obtain a list of species detected in each environmental sample. Although this information appears straightforward, interpreting eDNA results requires careful consideration of both biological and technical factors.</p>
+<p>The detection of environmental DNA confirms that DNA from a species was present in the sampled environment, but it does not necessarily indicate the number of individuals, their precise location, or whether they are currently alive. DNA can be transported, diluted and degraded before sampling, and every stage of the eDNA workflow introduces uncertainty.</p>
+<p>Understanding what eDNA can and cannot tell us is essential for drawing reliable ecological conclusions and making informed management decisions.</p>
+<section id="what-does-edna-detect" class="level2">
+<h2 class="anchored" data-anchor-id="what-does-edna-detect">What does eDNA detect?</h2>
+<p>Environmental DNA analysis detects <strong>DNA molecules</strong>, not organisms themselves. When a species is identified from an environmental sample, the result indicates that DNA from that species was present in the sampled environment. The DNA may have originated from living individuals, recently deceased organisms, shed cells, faeces, mucus, gametes or other biological material. Consequently, eDNA provides evidence of species presence but does not directly observe the organism.</p>
 </section>
-<section id="first-generation-sequencing-sanger-sequencing" class="level2">
-<h2 class="anchored" data-anchor-id="first-generation-sequencing-sanger-sequencing">First-generation sequencing: Sanger sequencing</h2>
-<p>The first widely adopted DNA sequencing method was developed by Frederick Sanger in 1977. Sanger sequencing determines DNA sequences by incorporating fluorescently labelled chain-terminating nucleotides during DNA synthesis. The resulting fragments are separated by size, allowing the nucleotide sequence to be reconstructed. Sanger sequencing produces highly accurate reads of approximately 700–1,000 base pairs. However, it sequences only one DNA fragment at a time. For this reason, Sanger sequencing is well suited to analysing individual specimens but is generally unsuitable for complex environmental samples containing DNA from many species.</p>
+<section id="presence-and-absence" class="level2">
+<h2 class="anchored" data-anchor-id="presence-and-absence">Presence and absence</h2>
+<p>The simplest interpretation of eDNA data is whether a species has been detected. A positive detection indicates that DNA matching a particular species was recovered and identified. However, the absence of a detection does not necessarily mean that the species is absent. DNA concentrations may be extremely low, environmental conditions may accelerate DNA degradation, or laboratory and analytical processes may fail to recover or amplify the target DNA. For this reason, eDNA studies often use repeated sampling and statistical methods to estimate detection probability.</p>
 </section>
-<section id="second-generation-sequencing-next-generation-sequencing" class="level2">
-<h2 class="anchored" data-anchor-id="second-generation-sequencing-next-generation-sequencing">Second-generation sequencing (Next-generation sequencing)</h2>
-<p>The development of <strong>next-generation sequencing (NGS)</strong> transformed molecular ecology by allowing millions of DNA fragments to be sequenced simultaneously. Instead of analysing a single DNA molecule, NGS sequences large numbers of DNA fragments in parallel, dramatically increasing speed while reducing cost per sequence. This capability makes NGS ideally suited for eDNA metabarcoding, where environmental samples may contain DNA from hundreds of species. Among the available platforms, Illumina sequencing has become the most widely used in environmental DNA research because of its high accuracy and throughput.</p>
-<section id="illumina-sequencing" class="level3">
-<h3 class="anchored" data-anchor-id="illumina-sequencing">Illumina sequencing</h3>
-<p>Illumina sequencing works by attaching amplified DNA fragments to a flow cell, where each fragment is copied to form a small cluster of identical molecules. During sequencing, fluorescently labelled nucleotides are added one base at a time. Each incorporated nucleotide emits a characteristic colour that is detected by a camera. The sequence of colours is converted into the corresponding DNA sequence. Illumina platforms typically produce short sequence reads ranging from approximately 150 to 300 base pairs, making them well suited to the short DNA fragments commonly recovered in environmental samples.</p>
-</section>
-</section>
-<section id="third-generation-sequencing" class="level2">
-<h2 class="anchored" data-anchor-id="third-generation-sequencing">Third-generation sequencing</h2>
-<p>Third-generation sequencing technologies analyse individual DNA molecules without requiring extensive amplification. Two widely used platforms are:</p>
+<section id="can-edna-estimate-abundance" class="level2">
+<h2 class="anchored" data-anchor-id="can-edna-estimate-abundance">Can eDNA estimate abundance?</h2>
+<p>One of the most common questions in eDNA research is whether the amount of DNA reflects the abundance of a species. In some situations, higher eDNA concentrations are associated with greater numbers or biomass of organisms. However, this relationship is influenced by many additional factors, including:</p>
 <ul>
-<li><p><strong>Pacific Biosciences (PacBio)</strong>, which produces highly accurate long reads through circular consensus sequencing.</p></li>
-<li><p><strong>Oxford Nanopore Technologies</strong>, which measures changes in electrical current as DNA molecules pass through microscopic nanopores.</p></li>
+<li><p>rates of DNA shedding</p></li>
+<li><p>organism size</p></li>
+<li><p>water temperature</p></li>
+<li><p>microbial activity</p></li>
+<li><p>water movement</p></li>
+<li><p>DNA degradation</p></li>
 </ul>
-<p>These technologies generate much longer sequence reads than Illumina, often exceeding several thousand base pairs. Although long-read sequencing is becoming increasingly important, most eDNA metabarcoding studies continue to rely on short-read sequencing because environmental DNA is typically highly fragmented.</p>
+<p>As a result, eDNA concentration should generally be interpreted as an indicator of relative rather than absolute abundance.</p>
 </section>
-<section id="sequencing-reads" class="level2">
-<h2 class="anchored" data-anchor-id="sequencing-reads">Sequencing reads</h2>
-<p>Each DNA fragment generated during sequencing is known as a <strong>read</strong>. An environmental sample may produce thousands to millions of reads, each representing a short DNA sequence derived from one of the many organisms present in the sample.</p>
-<p>The total number of reads obtained for a sample is referred to as its <strong>sequencing depth</strong>. Sequencing depth is an important measure because it influences the likelihood of detecting species, particularly those that are rare or present in low abundance. In general, a greater sequencing depth increases the probability of recovering DNA from uncommon species, although it also increases sequencing costs and may eventually yield diminishing returns.</p>
-<p>Before species identification, sequencing reads undergo <strong>quality filtering</strong> to remove low-quality sequences, sequencing errors and artefacts that could compromise downstream analyses. The remaining high-quality reads are then used for bioinformatic processing, where they are compared with reference databases to identify the species present in the environmental sample.</p>
+<section id="false-positives-and-false-negatives" class="level2">
+<h2 class="anchored" data-anchor-id="false-positives-and-false-negatives">False positives and false negatives</h2>
+<p>No monitoring method is completely free from error. A <strong>false positive</strong> occurs when a species is reported even though it is not truly present. Possible causes include contamination, sequencing errors or incorrect taxonomic assignment. A <strong>false negative</strong> occurs when a species is present but is not detected. This may result from low DNA concentration, inefficient sampling, DNA degradation, PCR inhibition or insufficient sequencing depth. Understanding these errors is essential for interpreting eDNA results with confidence.</p>
 </section>
-<section id="choosing-a-sequencing-platform" class="level2">
-<h2 class="anchored" data-anchor-id="choosing-a-sequencing-platform">Choosing a sequencing platform</h2>
-<p>The choice of sequencing platform depends on several factors, including:</p>
+<section id="factors-influencing-detection" class="level2">
+<h2 class="anchored" data-anchor-id="factors-influencing-detection">Factors influencing detection</h2>
+<p>Species detection depends on many interacting biological and environmental factors. These include:</p>
 <ul>
-<li><p>the objectives of the study</p></li>
-<li><p>expected DNA fragment length</p></li>
-<li><p>sequencing accuracy</p></li>
-<li><p>cost</p></li>
-<li><p>throughput</p></li>
-<li><p>available bioinformatic resources</p></li>
+<li><p>organism abundance</p></li>
+<li><p>DNA shedding rates</p></li>
+<li><p>environmental conditions</p></li>
+<li><p>transport of DNA</p></li>
+<li><p>degradation rates</p></li>
+<li><p>sampling strategy</p></li>
+<li><p>laboratory procedures</p></li>
+<li><p>sequencing depth</p></li>
+<li><p>bioinformatic analysis</p></li>
 </ul>
-<p>For most eDNA metabarcoding applications, Illumina platforms provide an effective balance between read quality, throughput and cost. Long-read technologies are becoming increasingly valuable for genome assembly, population genomics and certain specialised eDNA applications.</p>
+<p>Because each stage influences the final result, careful study design is essential for obtaining reliable biodiversity data.</p>
 </section>
-<section id="from-pcr-product-to-dna-sequence" class="level2">
-<h2 class="anchored" data-anchor-id="from-pcr-product-to-dna-sequence">From PCR product to DNA sequence</h2>
-<p>Following PCR amplification, DNA fragments are prepared for sequencing by attaching platform-specific adapters and sample-identifying indices. The sequencing instrument then determines the order of nucleotides within each amplified fragment, producing millions of individual sequence reads. These digital sequences are exported for computational analysis, where they are filtered, compared with reference databases and assigned to species.</p>
+<section id="detection-probability" class="level2">
+<h2 class="anchored" data-anchor-id="detection-probability">Detection probability</h2>
+<p>Environmental DNA surveys rarely detect every species present. Instead, each species has a <strong>probability of detection</strong>, representing the likelihood that its DNA will be recovered and identified if the species is present. Detection probability generally increases with:</p>
+<ul>
+<li><p>larger sample volumes</p></li>
+<li><p>multiple field replicates</p></li>
+<li><p>efficient DNA extraction</p></li>
+<li><p>successful PCR amplification</p></li>
+<li><p>greater sequencing depth</p></li>
+</ul>
+<p>Estimating detection probability helps researchers account for imperfect detection when analysing biodiversity.</p>
+</section>
+<section id="from-species-lists-to-ecological-information" class="level2">
+<h2 class="anchored" data-anchor-id="from-species-lists-to-ecological-information">From species lists to ecological information</h2>
+<p>Once species have been identified, the data can be used to answer ecological questions. Researchers may:</p>
+<ul>
+<li><p>compare biodiversity among sites</p></li>
+<li><p>monitor changes over time</p></li>
+<li><p>detect invasive species</p></li>
+<li><p>identify threatened species</p></li>
+<li><p>assess ecosystem restoration</p></li>
+<li><p>evaluate conservation management</p></li>
+</ul>
+<p>Thus, eDNA provides a powerful tool for understanding biological communities without directly observing every organism.</p>
 </section>
 <section id="connecting-the-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="connecting-the-concepts">Connecting the concepts</h2>
-<p>PCR generates millions of copies of a selected DNA marker, while sequencing determines the exact nucleotide sequence of each amplified fragment. These sequences provide the genetic information needed for bioinformatic analysis and species identification.</p>
+<p>Environmental DNA analysis produces species detections rather than direct observations of organisms. Interpreting these detections requires an understanding of DNA persistence, transport, laboratory methods and statistical uncertainty. When these factors are considered, eDNA provides valuable information for monitoring biodiversity and supporting ecological research.</p>
 </section>
 <section id="key-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="key-concepts">Key concepts</h2>
 <p>At the end of this chapter, the most important ideas are:</p>
 <ul>
-<li><p>DNA sequencing determines the order of nucleotides in a DNA molecule.</p></li>
-<li><p>PCR amplifies DNA, whereas sequencing reveals its nucleotide sequence.</p></li>
-<li><p>Sanger sequencing analyses one DNA fragment at a time.</p></li>
-<li><p>Next-generation sequencing enables millions of DNA fragments to be sequenced simultaneously.</p></li>
-<li><p>Illumina sequencing is the most widely used platform for eDNA metabarcoding.</p></li>
-<li><p>Sequencing reads provide the raw data for bioinformatic analysis.</p></li>
+<li><p>eDNA detects DNA rather than organisms.</p></li>
+<li><p>Positive detections indicate the presence of species DNA in the sampled environment.</p></li>
+<li><p>Negative results do not always indicate species absence.</p></li>
+<li><p>Detection probability varies among species and environments.</p></li>
+<li><p>False positives and false negatives are important sources of uncertainty.</p></li>
+<li><p>eDNA data support a wide range of ecological and conservation applications.</p></li>
 </ul>
 
 
@@ -815,13 +828,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-6.html" class="pagination-link" aria-label="DNA extraction and Polymerase Chain Reaction (PCR)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">DNA extraction and Polymerase Chain Reaction (PCR)</span></span>
+      <a href="./chapter-8.html" class="pagination-link" aria-label="Bioinformatics and taxonomic assignment">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Bioinformatics and taxonomic assignment</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-8.html" class="pagination-link" aria-label="Bioinformatics and taxonomic assignment">
-        <span class="nav-page-text"><span class="chapter-title">Bioinformatics and taxonomic assignment</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-10.html" class="pagination-link" aria-label="Applications of environmental DNA">
+        <span class="nav-page-text"><span class="chapter-title">Applications of environmental DNA</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
